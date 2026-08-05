@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "fNl9S8ESdB8EQ-W225nsY9gpIittcqzOqqHSf55HqvI",
   },
   other: {
     "geo.region": "AE-SH",
