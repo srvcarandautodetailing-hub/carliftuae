@@ -12,16 +12,16 @@ import { localBusinessSchema, faqSchema, speakableSchema } from "@/lib/schema";
 import { FAQS } from "@/data/faqs";
 
 export const metadata: Metadata = {
-  title: "Car Lift UAE – Daily Car Lift from Sharjah to Business Bay & Dubai",
+  title: "Car Lift UAE – Carlift Sharjah to Business Bay from AED 300/Month | Carlift Service",
   description:
-    "UAE's #1 daily car lift service. Sharjah to Business Bay from AED 350/month. Safe, GPS-tracked, verified drivers. Ladies car lift available. 4.9★ rated by 247+ riders. Book via WhatsApp!",
+    "Carlift UAE – Sharjah to Business Bay from AED 300/month. Salik included, GPS-tracked, verified drivers. Ladies car lift available. 4.9★ rated by 247+ riders. Book via WhatsApp +971 56 228 6455 in 60 seconds.",
   keywords:
-    "car lift uae, car lift sharjah, car lift sharjah to business bay, sharjah to business bay car lift, car lift service uae, daily car lift sharjah, monthly car lift dubai, car lift ajman, ladies car lift",
+    "carlift uae, car lift uae, carlift sharjah to business bay, car lift sharjah to business bay, car lift sharjah, car lift service uae, daily car lift sharjah, monthly car lift dubai, car lift ajman, ladies car lift uae, carlift service",
   alternates: { canonical: "https://www.carlift.ae" },
   openGraph: {
-    title: "Car Lift UAE – Daily Car Lift Sharjah to Business Bay from AED 350/month",
+    title: "Carlift UAE – Sharjah to Business Bay from AED 300/month | GPS-Tracked",
     description:
-      "Join 500+ professionals commuting daily from Sharjah to Dubai by car lift. Safe, affordable, GPS-tracked. Book via WhatsApp in 60 seconds.",
+      "Join 500+ professionals using Car Lift UAE daily from Sharjah to Business Bay. Salik included, ladies option, GPS-tracked. Book via WhatsApp in 60 seconds.",
     images: [{ url: "/og/home.jpg", width: 1200, height: 630, alt: "Car Lift UAE" }],
   },
 };

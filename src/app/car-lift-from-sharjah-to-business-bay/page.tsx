@@ -1,0 +1,463 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  Car,
+  Clock,
+  DollarSign,
+  MapPin,
+  CheckCircle,
+  MessageCircle,
+  Phone,
+  ArrowRight,
+  ChevronDown,
+  Users,
+  Star,
+  Shield,
+  Navigation,
+  BadgeCheck,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Breadcrumb from "@/components/sections/breadcrumb";
+import SchemaScript from "@/components/sections/schema-script";
+import {
+  localBusinessSchema,
+  faqSchema,
+  breadcrumbSchema,
+  serviceSchema,
+  speakableSchema,
+} from "@/lib/schema";
+import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
+
+export const revalidate = 86400;
+
+export const metadata: Metadata = {
+  title: "Car Lift from Sharjah to Business Bay – From AED 300/Month | Carlift UAE",
+  description:
+    "Car lift from Sharjah to Business Bay from AED 300/month. Salik included, GPS-tracked, verified drivers. Ladies car lift available. Daily departures 6:30 AM–8:00 AM. Book via WhatsApp in 60 seconds.",
+  keywords:
+    "car lift from sharjah to business bay, carlift from sharjah to business bay, car lift sharjah to business bay, sharjah to business bay car lift, sharjah business bay car lift price, monthly car lift sharjah to business bay",
+  alternates: {
+    canonical: "https://www.carlift.ae/car-lift-from-sharjah-to-business-bay",
+  },
+  openGraph: {
+    title: "Car Lift from Sharjah to Business Bay – AED 300–420/month | Carlift UAE",
+    description:
+      "The complete guide to car lift from Sharjah to Business Bay. Pricing by area, departure times, pickup points, ladies option. Book via WhatsApp in seconds.",
+    images: [{ url: "https://www.carlift.ae/opengraph-image", width: 1200, height: 630, alt: "Car Lift from Sharjah to Business Bay" }],
+  },
+};
+
+const PAGE_FAQS = [
+  {
+    question: "How much is car lift from Sharjah to Business Bay?",
+    answer:
+      "Car lift from Sharjah to Business Bay costs AED 300–420/month depending on your pickup area. Al Nahda (Sharjah) is AED 300/month. Muweilah is AED 380/month. University City is AED 420/month. Daily trips cost AED 25–35 per one-way. All prices include Salik tolls — no hidden charges.",
+  },
+  {
+    question: "How long does car lift from Sharjah to Business Bay take?",
+    answer:
+      "The car lift from Sharjah to Business Bay takes 40–70 minutes. The 6:30 AM departure is fastest at 40–50 minutes via Emirates Road (E311). The 7:30–8:00 AM slot takes 60–70 minutes due to peak-hour traffic. Most professionals use the 7:00 AM timing for a reliable 45–55 minute journey.",
+  },
+  {
+    question: "What areas in Sharjah have car lift to Business Bay?",
+    answer:
+      "Car lift from Sharjah to Business Bay is available from Al Nahda, Al Taawun, Al Khan, Al Majaz, Muweilah, University City, Al Zahia, Rolla, Al Qasimia, and all other Sharjah areas. Contact us with your building name and we will confirm your nearest pickup point.",
+  },
+  {
+    question: "Is Salik included in car lift from Sharjah to Business Bay?",
+    answer:
+      "Yes. All Salik toll charges are included in the monthly and daily car lift price from Sharjah to Business Bay. This includes Salik gates on Emirates Road (E311), Sheikh Zayed Road, and Al Ittihad Road. You pay one flat rate — nothing extra.",
+  },
+  {
+    question: "What time does the car lift from Sharjah to Business Bay depart?",
+    answer:
+      "Morning departures from Sharjah to Business Bay: 6:30 AM, 7:00 AM, 7:30 AM, and 8:00 AM. Evening returns from Business Bay to Sharjah: 5:00 PM, 5:30 PM, 6:00 PM, and 6:30 PM. You select your preferred timing when booking and keep the same slot every day.",
+  },
+  {
+    question: "How do I book a car lift from Sharjah to Business Bay?",
+    answer:
+      "Book via WhatsApp at +971 56 228 6455. Send your name, pickup area in Sharjah, preferred timing, and whether you need morning only, evening only, or both. We confirm your seat within 60 minutes. Monthly packages can start any day of the month.",
+  },
+  {
+    question: "Is there a ladies car lift from Sharjah to Business Bay?",
+    answer:
+      "Yes. We offer a dedicated ladies car lift from Sharjah to Business Bay with a female driver available on request. The vehicle is exclusively for female passengers — GPS-tracked, emergency contact system, and verified female driver. Many of our female riders have been with us for 2+ years.",
+  },
+  {
+    question: "Can I book a daily car lift from Sharjah to Business Bay without monthly commitment?",
+    answer:
+      "Yes. Daily car lift from Sharjah to Business Bay is available at AED 25–35 per one-way trip. Book via WhatsApp by 9:00 PM the night before. No monthly contract, no lock-in. If you travel regularly, the monthly package (from AED 300) is significantly cheaper.",
+  },
+  {
+    question: "What vehicle is used for car lift from Sharjah to Business Bay?",
+    answer:
+      "We use Toyota Innova, Mitsubishi Montero, Honda Odyssey, and similar 7-seater SUVs/MPVs. All vehicles are less than 5 years old, fully air-conditioned, GPS-tracked in real time, and carry comprehensive UAE insurance. Maximum 4 passengers per vehicle — everyone gets a proper seat with a seatbelt.",
+  },
+  {
+    question: "Can I start the monthly car lift from Sharjah mid-month?",
+    answer:
+      "Yes. Monthly car lift packages from Sharjah to Business Bay can start on any day of the month. You pay a prorated amount for the remaining days of your first month, then a fixed monthly rate from the following month onward.",
+  },
+  {
+    question: "Where exactly does the car lift drop off in Business Bay?",
+    answer:
+      "Drop-off points in Business Bay include Business Bay Metro Station, Bay Square, Opus Tower, Executive Towers, Al Habtoor City, Marriott Marquis area, DAMAC Towers, Churchill Towers, and most major office buildings. Confirm your building when booking and we arrange the closest drop-off.",
+  },
+  {
+    question: "Is car lift from Sharjah to Business Bay safe?",
+    answer:
+      "Yes. All Car Lift UAE drivers are UAE-licensed professionals with valid UAE driving licences, background checks, and training. Vehicles are GPS-tracked in real time. All passengers are covered by comprehensive vehicle insurance. For ladies, a female driver option and emergency contact system are available.",
+  },
+];
+
+const PRICING_TABLE = [
+  { area: "Al Nahda (Sharjah)", monthly: "AED 300", daily: "AED 25", note: "Closest zone" },
+  { area: "Al Taawun / Al Khan", monthly: "AED 320", daily: "AED 26", note: "" },
+  { area: "Al Majaz / Rolla", monthly: "AED 350", daily: "AED 28", note: "" },
+  { area: "Muweilah", monthly: "AED 380", daily: "AED 30", note: "" },
+  { area: "University City / Al Zahia", monthly: "AED 420", daily: "AED 33", note: "Farther zone" },
+];
+
+const ROUTE_FACTS = [
+  { label: "From", value: "Sharjah (all areas)" },
+  { label: "To", value: "Business Bay, Dubai" },
+  { label: "Via", value: "Emirates Road (E311) / SZR" },
+  { label: "Distance", value: "27–38 km" },
+  { label: "Drive Time", value: "40–70 min" },
+  { label: "Monthly (from)", value: "AED 300/person" },
+  { label: "Daily Rate", value: "AED 25–35/trip" },
+  { label: "Service Days", value: "Mon – Sat" },
+];
+
+export default function CarLiftFromSharjahToBusinessBayPage() {
+  const whatsappHref = formatWhatsAppHref(
+    BUSINESS.whatsapp,
+    "Hi! I want to book car lift from Sharjah to Business Bay."
+  );
+  const phoneHref = formatPhoneHref(BUSINESS.phone);
+
+  const schemas = [
+    localBusinessSchema(),
+    serviceSchema({
+      name: "Car Lift from Sharjah to Business Bay",
+      description:
+        "Daily shared car lift from Sharjah to Business Bay, Dubai. Monthly packages from AED 300/month. Salik included, GPS-tracked, ladies option available.",
+      url: "/car-lift-from-sharjah-to-business-bay",
+      price: "300",
+    }),
+    faqSchema(PAGE_FAQS),
+    breadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "Car Lift from Sharjah to Business Bay", url: "/car-lift-from-sharjah-to-business-bay" },
+    ]),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
+  ];
+
+  return (
+    <>
+      <SchemaScript schema={schemas} />
+
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
+      <section
+        aria-labelledby="hero-heading"
+        className="relative overflow-hidden py-16 sm:py-20"
+        style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c2340 100%)" }}
+      >
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[{ label: "Home", href: "/" }, { label: "Car Lift from Sharjah to Business Bay" }]}
+            className="mb-6 [&_*]:text-slate-400 [&_a]:text-slate-300 [&_a:hover]:text-white"
+          />
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full px-4 py-1.5 text-sm text-emerald-300 font-semibold mb-5">
+                <Navigation className="h-4 w-4" aria-hidden="true" />
+                Sharjah &rarr; Business Bay &nbsp;·&nbsp; From AED 300/month
+              </div>
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+                Car Lift from Sharjah to Business Bay
+              </h1>
+              <p className="speakable-desc text-slate-300 text-base sm:text-lg leading-relaxed mb-6 max-w-xl">
+                UAE&apos;s most popular daily commute route — shared car lift from all Sharjah areas to Business Bay, Dubai.
+                Salik included, GPS-tracked, verified drivers. Monthly seats from AED 300/person.
+              </p>
+
+              {/* Quick answer for AI/voice search */}
+              <div className="bg-white/10 border border-white/20 rounded-2xl p-5 mb-6">
+                <p className="text-emerald-300 text-xs font-bold uppercase tracking-widest mb-2">Quick Answer</p>
+                <p className="text-white text-sm leading-relaxed">
+                  Car lift from Sharjah to Business Bay costs <strong>AED 300–420/month</strong> depending on your pickup area (Al Nahda is AED 300, Muweilah is AED 380).
+                  Salik is included. Journey takes <strong>40–70 minutes</strong>. Book via WhatsApp — seat confirmed within 60 minutes.
+                </p>
+              </div>
+
+              <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list">
+                {[
+                  { icon: DollarSign, label: "From AED 300", sub: "/month" },
+                  { icon: Clock, label: "40–70 min", sub: "Journey time" },
+                  { icon: Car, label: "4 Timings", sub: "Daily morning" },
+                  { icon: Users, label: "3–4 pax", sub: "Shared ride" },
+                ].map(({ icon: Icon, label, sub }) => (
+                  <li key={sub} className="bg-white/10 border border-white/15 rounded-xl p-4 text-center">
+                    <Icon className="h-5 w-5 text-blue-400 mx-auto mb-1.5" aria-hidden="true" />
+                    <p className="text-white font-extrabold text-base leading-none">{label}</p>
+                    <p className="text-slate-400 text-xs mt-1">{sub}</p>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button asChild variant="whatsapp" size="lg">
+                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label="Book car lift Sharjah to Business Bay via WhatsApp">
+                    <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                    Book via WhatsApp
+                  </a>
+                </Button>
+                <Button asChild size="lg" className="border-2 border-white/30 bg-white/10 text-white hover:bg-white/20">
+                  <a href={phoneHref}>
+                    <Phone className="h-5 w-5" aria-hidden="true" />
+                    Call {BUSINESS.phone}
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Route card */}
+            <aside className="lg:w-72 bg-white/10 border border-white/15 backdrop-blur-sm rounded-2xl p-6 shrink-0" aria-label="Route details">
+              <p className="text-white font-bold text-base mb-4">Route Details</p>
+              <dl className="space-y-3">
+                {ROUTE_FACTS.map(({ label, value }) => (
+                  <div key={label} className="flex justify-between items-center">
+                    <dt className="text-slate-400 text-xs">{label}</dt>
+                    <dd className="text-white text-xs font-semibold text-right">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <div className="mt-5 pt-4 border-t border-white/10">
+                <p className="text-emerald-300 text-xs font-bold mb-1">Departures (Morning)</p>
+                <p className="text-slate-300 text-xs">6:30 · 7:00 · 7:30 · 8:00 AM</p>
+                <p className="text-emerald-300 text-xs font-bold mt-2 mb-1">Returns (Evening)</p>
+                <p className="text-slate-300 text-xs">5:00 · 5:30 · 6:00 · 6:30 PM</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pricing ──────────────────────────────────────────────────────── */}
+      <section aria-labelledby="pricing-heading" className="py-14 sm:py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Pricing</p>
+            <h2 id="pricing-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">
+              How Much is Car Lift from Sharjah to Business Bay?
+            </h2>
+            <p className="text-slate-600 max-w-xl mx-auto text-sm">
+              Price depends on your pickup area in Sharjah. Salik tolls always included. Morning + evening rides both covered in monthly price.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-slate-200 mb-8">
+            <table className="w-full text-sm" aria-label="Car lift pricing from different Sharjah areas to Business Bay">
+              <thead className="bg-slate-800 text-white">
+                <tr>
+                  <th className="text-left px-5 py-4 font-semibold">Pickup Area (Sharjah)</th>
+                  <th className="text-center px-5 py-4 font-semibold">Monthly (both ways)</th>
+                  <th className="text-center px-5 py-4 font-semibold">Daily Rate</th>
+                  <th className="text-center px-5 py-4 font-semibold">Salik</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PRICING_TABLE.map((row, i) => (
+                  <tr key={row.area} className={i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                    <td className="px-5 py-4 font-medium text-slate-800">
+                      {row.area}
+                      {row.note && <span className="ml-2 text-xs text-blue-500 font-semibold">({row.note})</span>}
+                    </td>
+                    <td className="px-5 py-4 text-center font-extrabold text-emerald-600">{row.monthly}</td>
+                    <td className="px-5 py-4 text-center text-slate-700">{row.daily}</td>
+                    <td className="px-5 py-4 text-center">
+                      <CheckCircle className="h-4 w-4 text-emerald-500 mx-auto" aria-label="Salik included" />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { title: "vs. Driving Yourself", amount: "~AED 1,200/month", sub: "Fuel + Salik + Parking in Business Bay", color: "bg-red-50 border-red-200", textColor: "text-red-600" },
+              { title: "Car Lift (Al Nahda)", amount: "AED 300/month", sub: "Morning + evening · Salik included", color: "bg-emerald-50 border-emerald-200", textColor: "text-emerald-600" },
+              { title: "You Save", amount: "AED 900+/month", sub: "That&apos;s AED 10,800 per year", color: "bg-blue-50 border-blue-200", textColor: "text-blue-600" },
+            ].map(({ title, amount, sub, color, textColor }) => (
+              <Card key={title} className={`border ${color}`}>
+                <CardContent className="p-5 pt-5 text-center">
+                  <p className="text-slate-600 text-xs font-semibold mb-2">{title}</p>
+                  <p className={`text-2xl font-extrabold ${textColor} mb-1`}>{amount}</p>
+                  <p className="text-slate-500 text-xs">{sub}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why choose + How to book ─────────────────────────────────────── */}
+      <section aria-labelledby="why-heading" className="py-14 sm:py-16 bg-slate-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Why Car Lift UAE</p>
+              <h2 id="why-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-6">
+                Why 500+ Professionals Choose Our Sharjah Car Lift
+              </h2>
+              <ul className="space-y-4" role="list">
+                {[
+                  { icon: Shield, title: "Verified, Licensed Drivers", desc: "Every driver is UAE-licensed, background-checked, and trained. You know who is driving you each day." },
+                  { icon: Navigation, title: "GPS-Tracked Every Trip", desc: "Real-time GPS on all vehicles. Share your live location with family via WhatsApp during any trip." },
+                  { icon: DollarSign, title: "Salik Always Included", desc: "No surprise toll charges. One flat monthly price covers fuel, Salik, and driver — everything." },
+                  { icon: Users, title: "Ladies Car Lift Available", desc: "Female driver option, ladies-only vehicle, and emergency contact system for female passengers." },
+                  { icon: BadgeCheck, title: "No Lock-In, Pause Anytime", desc: "Cancel anytime. Pause for up to 7 days/month when you travel. Start any day of the month." },
+                ].map(({ icon: Icon, title, desc }) => (
+                  <li key={title} className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shrink-0">
+                      <Icon className="h-5 w-5 text-white" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-slate-900 text-sm mb-0.5">{title}</p>
+                      <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">How to Book</p>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-6">
+                Book Your Car Lift in Under 2 Minutes
+              </h2>
+              <ol className="space-y-5 list-none" role="list">
+                {[
+                  { step: "1", title: "WhatsApp Us", desc: "Send your name, pickup area in Sharjah, preferred timing (6:30 / 7:00 / 7:30 / 8:00 AM), and whether you need both ways or one direction." },
+                  { step: "2", title: "Get Confirmed", desc: "We confirm your seat within 60 minutes and share your driver details and exact pickup point." },
+                  { step: "3", title: "Start Riding", desc: "Show up at your pickup point at your timing. Pay monthly via cash or bank transfer. No app needed." },
+                ].map(({ step, title, desc }) => (
+                  <li key={step} className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-full bg-emerald-500 flex items-center justify-center shrink-0 font-extrabold text-white text-sm">{step}</div>
+                    <div>
+                      <p className="font-bold text-slate-900 text-sm mb-0.5">{title}</p>
+                      <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              <div className="mt-8 p-5 bg-emerald-50 border border-emerald-200 rounded-2xl">
+                <p className="text-emerald-800 font-bold text-sm mb-3">Book Now via WhatsApp</p>
+                <Button asChild variant="whatsapp" size="lg" className="w-full">
+                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                    Open WhatsApp – {BUSINESS.phone}
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ─────────────────────────────────────────────────────────── */}
+      <section aria-labelledby="faq-heading" className="py-14 sm:py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">FAQs</p>
+            <h2 id="faq-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">
+              Car Lift from Sharjah to Business Bay – All Questions Answered
+            </h2>
+          </div>
+          <dl className="space-y-4">
+            {PAGE_FAQS.map((faq, i) => (
+              <details key={i} className="group border border-slate-200 rounded-2xl overflow-hidden">
+                <summary className="flex items-center justify-between gap-4 cursor-pointer p-5 font-semibold text-slate-900 hover:bg-slate-50 transition-colors list-none [&::-webkit-details-marker]:hidden">
+                  <dt className="text-left text-base">{faq.question}</dt>
+                  <ChevronDown className="h-5 w-5 text-slate-400 shrink-0 transition-transform duration-300 group-open:rotate-180" aria-hidden="true" />
+                </summary>
+                <dd className="px-5 pb-5 text-slate-600 leading-relaxed text-sm border-t border-slate-100 pt-4">
+                  {faq.answer}
+                </dd>
+              </details>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ── Related pages ────────────────────────────────────────────────── */}
+      <section aria-label="Related car lift pages" className="py-12 bg-slate-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">More Car Lift Information</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
+            {[
+              { href: "/bus-car-lift-sharjah-to-business-bay", label: "Bus Car Lift Sharjah to Business Bay", desc: "Timings, pickup points" },
+              { href: "/bus-car-lift-service-from-sharjah-sheikh-zayed", label: "Sharjah via Sheikh Zayed Road", desc: "SZR route – DIFC, JLT, Marina" },
+              { href: "/locations/sharjah", label: "Sharjah Car Lift", desc: "All Sharjah areas & routes" },
+              { href: "/pricing", label: "Full Pricing Guide", desc: "Monthly, daily, ladies, school" },
+            ].map(({ href, label, desc }) => (
+              <li key={href}>
+                <Link href={href} className="group flex flex-col gap-2 p-5 border border-slate-200 hover:border-blue-300 rounded-2xl hover:shadow-md transition-all h-full bg-white">
+                  <span className="font-bold text-slate-900 group-hover:text-blue-600 text-sm">{label}</span>
+                  <span className="text-slate-500 text-xs flex-1">{desc}</span>
+                  <span className="text-blue-500 text-xs font-medium flex items-center gap-1 mt-2">
+                    View <ArrowRight className="h-3 w-3" aria-hidden="true" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── CTA ─────────────────────────────────────────────────────────── */}
+      <section
+        aria-label="Book car lift CTA"
+        className="relative overflow-hidden py-16"
+        style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c2340 100%)" }}
+      >
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <div className="flex items-center justify-center gap-0.5 mb-4" aria-label="4.9 out of 5 stars">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
+            ))}
+          </div>
+          <h2 className="text-white font-extrabold text-2xl sm:text-3xl mb-3">
+            Book Your Car Lift from Sharjah to Business Bay
+          </h2>
+          <p className="text-slate-300 text-sm mb-6">
+            {BUSINESS.rating}★ rated by {BUSINESS.reviewCount}+ verified riders. Seats fill fast — book now to secure your monthly slot.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button asChild size="xl" className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold">
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                WhatsApp – Book Now
+              </a>
+            </Button>
+            <Button asChild size="xl" className="border-2 border-white/40 bg-white/10 text-white hover:bg-white/20">
+              <a href={phoneHref}>
+                <Phone className="h-5 w-5" aria-hidden="true" />
+                Call {BUSINESS.phone}
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
