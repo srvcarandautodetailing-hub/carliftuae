@@ -36,7 +36,7 @@ export function organizationSchema() {
 export function localBusinessSchema(overrides?: Record<string, unknown>) {
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "TaxiService"],
     "@id": `${BASE_URL}/#localbusiness`,
     name: BUSINESS.name,
     description:
@@ -201,8 +201,9 @@ export function articleSchema({
     datePublished,
     dateModified: dateModified || datePublished,
     author: {
-      "@type": "Person",
+      "@type": "Organization",
       name: authorName,
+      url: BASE_URL,
     },
     publisher: {
       "@type": "Organization",
@@ -234,14 +235,6 @@ export function websiteSchema() {
     url: BASE_URL,
     name: BUSINESS.name,
     description: BUSINESS.tagline,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${BASE_URL}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 

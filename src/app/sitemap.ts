@@ -8,73 +8,76 @@ const BASE_URL = "https://www.carlift.ae";
 type ChangeFrequency = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString();
+  // Fixed dates: use the site launch date for stable pages so crawlers
+  // can distinguish genuinely updated pages from unchanged ones.
+  const LAUNCH_DATE = "2025-01-01";
+  const LAST_UPDATED = "2026-08-05";
 
   // Static core pages
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
-      lastModified: now,
+      lastModified: LAST_UPDATED,
       changeFrequency: "daily" as ChangeFrequency,
       priority: 1.0,
     },
     {
       url: `${BASE_URL}/about`,
-      lastModified: now,
+      lastModified: LAUNCH_DATE,
       changeFrequency: "monthly" as ChangeFrequency,
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/services`,
-      lastModified: now,
+      lastModified: LAST_UPDATED,
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/locations`,
-      lastModified: now,
+      lastModified: LAST_UPDATED,
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/routes`,
-      lastModified: now,
+      lastModified: LAST_UPDATED,
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/pricing`,
-      lastModified: now,
+      lastModified: LAST_UPDATED,
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/faqs`,
-      lastModified: now,
+      lastModified: LAST_UPDATED,
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/blog`,
-      lastModified: now,
+      lastModified: LAST_UPDATED,
       changeFrequency: "daily" as ChangeFrequency,
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/contact`,
-      lastModified: now,
+      lastModified: LAUNCH_DATE,
       changeFrequency: "monthly" as ChangeFrequency,
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/privacy`,
-      lastModified: now,
+      lastModified: LAUNCH_DATE,
       changeFrequency: "yearly" as ChangeFrequency,
       priority: 0.3,
     },
     {
       url: `${BASE_URL}/terms`,
-      lastModified: now,
+      lastModified: LAUNCH_DATE,
       changeFrequency: "yearly" as ChangeFrequency,
       priority: 0.3,
     },
@@ -83,7 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Location pages — high SEO value
   const locationPages: MetadataRoute.Sitemap = LOCATIONS.map((loc) => ({
     url: `${BASE_URL}/locations/${loc.slug}`,
-    lastModified: now,
+    lastModified: LAST_UPDATED,
     changeFrequency: "weekly" as ChangeFrequency,
     priority: loc.slug === "sharjah" || loc.slug === "business-bay" ? 0.95 : 0.85,
   }));
@@ -91,12 +94,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Service pages
   const servicePages: MetadataRoute.Sitemap = SERVICES.map((svc) => ({
     url: `${BASE_URL}/services/${svc.slug}`,
-    lastModified: now,
+    lastModified: LAST_UPDATED,
     changeFrequency: "weekly" as ChangeFrequency,
     priority: 0.85,
   }));
 
-  // Blog posts
+  // Blog posts — use each post's own publish date
   const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: post.publishDate,
@@ -107,7 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog category pages
   const blogCategoryPages: MetadataRoute.Sitemap = BLOG_CATEGORIES.map((cat) => ({
     url: `${BASE_URL}/blog/category/${cat.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`,
-    lastModified: now,
+    lastModified: LAST_UPDATED,
     changeFrequency: "weekly" as ChangeFrequency,
     priority: 0.6,
   }));

@@ -119,7 +119,7 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${plan.ctaText} â€“ ${plan.name}`}
+            aria-label={`${plan.ctaText} – ${plan.name}`}
           >
             {plan.ctaText}
           </a>

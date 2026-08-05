@@ -39,7 +39,6 @@ export const BUSINESS = {
     city: "Sharjah",
     state: "Sharjah",
     country: "UAE",
-    postalCode: "",
   },
   coordinates: {
     lat: 25.3573,

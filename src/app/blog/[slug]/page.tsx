@@ -51,6 +51,14 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.publishDate,
       tags: post.tags,
+      images: [
+        {
+          url: `https://www.carlift.ae/og/blog/${slug}.jpg`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
   };
 }
@@ -789,6 +797,7 @@ export default async function BlogPostPage({
     url: `/blog/${post.slug}`,
     datePublished: post.publishDate,
     authorName: "Car Lift UAE Team",
+    image: `https://www.carlift.ae/og/blog/${post.slug}.jpg`,
   });
 
   const bcSchema = breadcrumbSchema([

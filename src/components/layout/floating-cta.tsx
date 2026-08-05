@@ -71,8 +71,8 @@ export function FloatingCTA() {
       <motion.button
         onClick={() => setExpanded(!expanded)}
         className={cn(
-          "w-14 h-14 rounded-2xl flex items-center justify-center shadow-2xl transition-all duration-300 whatsapp-pulse",
-          expanded ? "bg-slate-800 rotate-45" : "bg-[#25D366] hover:bg-[#1ebe57]"
+          "w-14 h-14 rounded-2xl flex items-center justify-center shadow-2xl transition-all duration-300",
+          expanded ? "bg-slate-800 rotate-45" : "bg-[#25D366] hover:bg-[#1ebe57] whatsapp-pulse"
         )}
         whileTap={{ scale: 0.95 }}
         aria-label={expanded ? "Close contact options" : "Open contact options"}

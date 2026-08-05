@@ -60,7 +60,7 @@ export async function generateMetadata({
       description: location.description,
       images: [
         {
-          url: `/og/locations/${location.slug}.jpg`,
+          url: `https://www.carlift.ae/opengraph-image`,
           width: 1200,
           height: 630,
           alt: `Car Lift from ${location.name} to Business Bay`,

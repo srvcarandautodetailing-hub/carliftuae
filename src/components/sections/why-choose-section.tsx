@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import {
@@ -24,7 +24,7 @@ const benefits: Benefit[] = [
     icon: Shield,
     title: "Save AED 600+/Month",
     description:
-      "Stop paying for fuel, parking, Salik, and car maintenance. Switch to a shared car lift and put AED 600â€“1,200 back in your pocket every month vs. driving yourself.",
+      "Stop paying for fuel, parking, Salik, and car maintenance. Switch to a shared car lift and put AED 600–1,200 back in your pocket every month vs. driving yourself.",
     accentColor: "text-amber-400",
     bgColor: "bg-amber-400/10 border-amber-400/20",
   },
@@ -64,7 +64,7 @@ const benefits: Benefit[] = [
     icon: Zap,
     title: "Salik Included",
     description:
-      "Every package includes Salik toll charges. No surprise deductions, no end-of-month bills for road tolls. Your monthly rate is your total cost â€” full stop.",
+      "Every package includes Salik toll charges. No surprise deductions, no end-of-month bills for road tolls. Your monthly rate is your total cost – full stop.",
     accentColor: "text-cyan-400",
     bgColor: "bg-cyan-400/10 border-cyan-400/20",
   },
@@ -149,7 +149,7 @@ export default function WhyChooseSection() {
             variants={headingVariants}
             className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
           >
-            More than just a ride â€” a smarter way to commute across Sharjah,
+            More than just a ride – a smarter way to commute across Sharjah,
             Dubai, and Ajman every working day.
           </motion.p>
         </motion.div>
@@ -206,9 +206,9 @@ export default function WhyChooseSection() {
           <div className="inline-block glass rounded-2xl border border-white/10 px-8 py-6 max-w-2xl">
             <p className="text-slate-300 text-base leading-relaxed">
               <span className="text-white font-semibold">
-                The average Car Lift UAE rider saves AED 700â€“1,200/month
+                The average Car Lift UAE rider saves AED 700–1,200/month
               </span>{" "}
-              compared to driving â€” that&apos;s AED 8,400â€“14,400 per year back in
+              compared to driving – that&apos;s AED 8,400–14,400 per year back in
               your pocket, plus hours of stress-free commute time.
             </p>
           </div>

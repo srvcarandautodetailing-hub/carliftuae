@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -39,7 +39,7 @@ const itemVariants = {
 };
 
 const trustBadges = [
-  { icon: Star, label: "4.9â˜… Rated", color: "text-amber-400" },
+  { icon: Star, label: "4.9★ Rated", color: "text-amber-400" },
   { icon: Users, label: "247+ Reviews", color: "text-blue-400" },
   { icon: Navigation, label: "GPS Tracked", color: "text-emerald-400" },
   { icon: Calendar, label: "6 Days/Week", color: "text-violet-400" },
@@ -60,7 +60,7 @@ export default function HeroSection() {
 
   return (
     <section
-      aria-label="Car Lift UAE â€“ Daily Car Lift Service from Sharjah to Dubai"
+      aria-label="Car Lift UAE – Daily Car Lift Service from Sharjah to Dubai"
       className="relative min-h-screen flex items-center overflow-hidden bg-slate-900"
     >
       {/* Animated mesh gradient background */}
@@ -108,7 +108,7 @@ export default function HeroSection() {
               </span>
               <MapPin className="h-3.5 w-3.5 text-blue-400" aria-hidden="true" />
               <span className="text-sm font-semibold text-white/90 tracking-wide">
-                Sharjah â†’ Business Bay, Dubai
+                Sharjah → Business Bay, Dubai
               </span>
               <Badge variant="default" className="text-[11px] px-2 py-0">
                 Live
@@ -128,7 +128,7 @@ export default function HeroSection() {
           {/* Sub-heading */}
           <motion.div variants={itemVariants}>
             <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-blue-300 tracking-wide">
-              Sharjah â†’ Business Bay, Dubai
+              Sharjah → Business Bay, Dubai
             </p>
           </motion.div>
 
@@ -138,7 +138,7 @@ export default function HeroSection() {
               Safe, reliable, and affordable shared rides.{" "}
               <span className="text-white font-semibold">From AED 350/month.</span>{" "}
               GPS tracked. Verified drivers.{" "}
-              <span className="text-amber-400 font-semibold">4.9â˜… rated.</span>
+              <span className="text-amber-400 font-semibold">4.9★ rated.</span>
             </p>
           </motion.div>
 

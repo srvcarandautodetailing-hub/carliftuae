@@ -361,7 +361,7 @@ export default function RouteSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          All prices include Salik tolls. Monthly rates cover 6 days/week (Monâ€“Sat),
+          All prices include Salik tolls. Monthly rates cover 6 days/week (Mon–Sat),
           both ways (morning pickup + evening drop-off). Prices subject to change based on route distance.
         </motion.p>
       </div>
