@@ -10,7 +10,7 @@ export const FAQS: FAQ[] = [
     category: "Booking",
     question: "How do I book a car lift in UAE?",
     answer:
-      "Booking is simple. WhatsApp us at +971 50 123 4567 with your pickup location, destination, and preferred timing. We'll confirm your seat within an hour. You can also book via our website contact form.",
+      "Booking is simple. WhatsApp us at +971 56 228 6455 with your pickup location, destination, and preferred timing. We'll confirm your seat within an hour. You can also book via our website contact form.",
   },
   {
     category: "Booking",
@@ -80,7 +80,7 @@ export const FAQS: FAQ[] = [
     category: "Safety",
     question: "What if I feel unsafe during a car lift ride?",
     answer:
-      "Your safety is our priority. If you ever feel unsafe, you can immediately call our 24/7 support line at +971 50 123 4567. All rides are GPS-tracked, and our operations team monitors all active routes.",
+      "Your safety is our priority. If you ever feel unsafe, you can immediately call our 24/7 support line at +971 56 228 6455. All rides are GPS-tracked, and our operations team monitors all active routes.",
   },
   {
     category: "Safety",

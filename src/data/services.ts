@@ -43,7 +43,7 @@ export const SERVICES: Service[] = [
       {
         question: "How do I book a daily car lift?",
         answer:
-          "Simply WhatsApp us at +971 50 123 4567 by 9:00 PM the night before. Confirm your pickup location and preferred timing, and we'll handle the rest.",
+          "Simply WhatsApp us at +971 56 228 6455 by 9:00 PM the night before. Confirm your pickup location and preferred timing, and we'll handle the rest.",
       },
       {
         question: "Can I cancel a daily car lift booking?",

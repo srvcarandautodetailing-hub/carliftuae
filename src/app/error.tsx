@@ -42,7 +42,7 @@ export default function Error({
             Go Home
           </Link>
           <a
-            href="https://wa.me/971501234567?text=Hi%2C+I%20encountered%20an%20error%20on%20the%20website."
+            href="https://wa.me/971562286455?text=Hi%2C+I%20encountered%20an%20error%20on%20the%20website."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-xl hover:bg-[#1ebe57] transition-colors"

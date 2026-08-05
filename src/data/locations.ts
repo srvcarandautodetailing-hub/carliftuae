@@ -185,7 +185,7 @@ export const LOCATIONS: Location[] = [
       {
         question: "How do I find a car lift to Business Bay from Sharjah?",
         answer:
-          "Simply contact Car Lift UAE via WhatsApp at +971 50 123 4567. We'll match you with available seats on existing routes or create a new route based on demand.",
+          "Simply contact Car Lift UAE via WhatsApp at +971 56 228 6455. We'll match you with available seats on existing routes or create a new route based on demand.",
       },
     ],
   },
