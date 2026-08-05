@@ -1,0 +1,416 @@
+import type { Metadata } from "next";
+import { MessageCircle, Phone, Mail, Clock, MapPin } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Breadcrumb from "@/components/sections/breadcrumb";
+import SchemaScript from "@/components/sections/schema-script";
+import { localBusinessSchema } from "@/lib/schema";
+import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
+import BookingForm from "./booking-form";
+
+export const revalidate = 86400;
+
+export const metadata: Metadata = {
+  title: "Contact Car Lift UAE – Book Your Ride Today",
+  description:
+    "Contact Car Lift UAE to book your daily car lift. WhatsApp, phone, or email. Mon–Sat 6AM–10PM. Fastest response via WhatsApp +971 50 123 4567. Book monthly from AED 200.",
+  alternates: { canonical: "https://www.carlift.ae/contact" },
+  openGraph: {
+    title: "Contact Car Lift UAE – Book Your Daily Car Lift",
+    description:
+      "Book your car lift via WhatsApp, call, or email. We respond within 60 minutes. Mon–Sat 6AM–10PM.",
+    images: [{ url: "/og/contact.jpg", width: 1200, height: 630, alt: "Contact Car Lift UAE" }],
+  },
+};
+
+const contactMethods = [
+  {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    subtitle: "Fastest response — book in 60 seconds",
+    value: BUSINESS.phone,
+    href: formatWhatsAppHref(
+      BUSINESS.whatsapp,
+      "Hi! I'd like to book a car lift or get more information."
+    ),
+    cta: "Chat on WhatsApp",
+    color: "bg-emerald-500",
+    cardBg: "bg-emerald-50 border-emerald-200",
+    textColor: "text-emerald-800",
+    ctaVariant: "whatsapp" as const,
+    description:
+      "Our primary booking channel. Send us your pickup location, destination, and preferred timing. We confirm your seat within the hour.",
+  },
+  {
+    icon: Phone,
+    title: "Phone Call",
+    subtitle: "Speak directly with our team",
+    value: BUSINESS.phone,
+    href: formatPhoneHref(BUSINESS.phone),
+    cta: "Call Us Now",
+    color: "bg-blue-600",
+    cardBg: "bg-blue-50 border-blue-200",
+    textColor: "text-blue-800",
+    ctaVariant: "default" as const,
+    description:
+      "Prefer to speak to someone? Call us directly during operating hours. Mon–Sat 6:00 AM to 10:00 PM.",
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    subtitle: "For non-urgent enquiries",
+    value: BUSINESS.email,
+    href: `mailto:${BUSINESS.email}`,
+    cta: "Send Email",
+    color: "bg-slate-700",
+    cardBg: "bg-slate-50 border-slate-200",
+    textColor: "text-slate-800",
+    ctaVariant: "dark" as const,
+    description:
+      "Email us for corporate packages, invoices, or route requests. We reply within 1 business day.",
+  },
+  {
+    icon: Clock,
+    title: "Operating Hours",
+    subtitle: "When we're available",
+    value: null,
+    href: null,
+    cta: null,
+    color: "bg-amber-500",
+    cardBg: "bg-amber-50 border-amber-200",
+    textColor: "text-amber-800",
+    ctaVariant: null,
+    description: null,
+    hours: [
+      { day: "Mon – Thu", time: BUSINESS.hours.weekdays },
+      { day: "Friday", time: BUSINESS.hours.friday },
+      { day: "Saturday", time: BUSINESS.hours.saturday },
+      { day: "Sunday", time: "Closed (WhatsApp only)" },
+    ],
+  },
+];
+
+export default function ContactPage() {
+  return (
+    <>
+      <SchemaScript schema={localBusinessSchema()} />
+
+      {/* ─── Page Hero ─── */}
+      <section
+        aria-labelledby="contact-hero-heading"
+        className="relative overflow-hidden py-16 sm:py-20"
+        style={{
+          background:
+            "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c2340 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Contact" },
+            ]}
+            className="mb-6 [&_*]:text-slate-400 [&_a]:text-slate-300 [&_a:hover]:text-white"
+          />
+          <h1
+            id="contact-hero-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4"
+          >
+            Get in Touch
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+            Ready to book your car lift? Have a question? We&apos;re here to help.
+            The fastest way to reach us is WhatsApp — we reply in minutes.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── Contact Methods Grid ─── */}
+      <section
+        aria-labelledby="contact-methods-heading"
+        className="py-14 sm:py-16 bg-white"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            id="contact-methods-heading"
+            className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-8 text-center"
+          >
+            How to Reach Us
+          </h2>
+
+          <ul
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5 list-none"
+            role="list"
+          >
+            {contactMethods.map((method) => (
+              <li key={method.title}>
+                <Card className={`h-full border ${method.cardBg}`}>
+                  <CardContent className="p-6 pt-6 flex flex-col h-full">
+                    {/* Icon + title */}
+                    <div className="flex items-start gap-4 mb-4">
+                      <div
+                        className={`w-12 h-12 ${method.color} rounded-xl flex items-center justify-center shrink-0`}
+                      >
+                        <method.icon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div>
+                        <h3 className={`font-bold text-lg ${method.textColor}`}>
+                          {method.title}
+                        </h3>
+                        <p className="text-slate-500 text-sm">{method.subtitle}</p>
+                      </div>
+                    </div>
+
+                    {/* Value / contact info */}
+                    {method.value && (
+                      <p className="text-slate-800 font-semibold text-base mb-3">
+                        {method.value}
+                      </p>
+                    )}
+
+                    {/* Hours list */}
+                    {"hours" in method && method.hours && (
+                      <ul className="space-y-1.5 mb-4 list-none" role="list">
+                        {method.hours.map((h) => (
+                          <li
+                            key={h.day}
+                            className="flex items-center justify-between text-sm"
+                          >
+                            <span className="text-slate-600 font-medium">{h.day}</span>
+                            <span className="text-slate-800 font-semibold">{h.time}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {/* Description */}
+                    {method.description && (
+                      <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
+                        {method.description}
+                      </p>
+                    )}
+
+                    {/* CTA */}
+                    {method.href && method.cta && method.ctaVariant && (
+                      <Button
+                        asChild
+                        variant={method.ctaVariant}
+                        size="default"
+                        className="mt-auto w-full"
+                      >
+                        <a
+                          href={method.href}
+                          target={method.href.startsWith("http") ? "_blank" : undefined}
+                          rel={method.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                          aria-label={`${method.cta} – Car Lift UAE`}
+                        >
+                          <method.icon className="h-4 w-4" aria-hidden="true" />
+                          {method.cta}
+                        </a>
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── Booking Form Section ─── */}
+      <section
+        aria-labelledby="booking-form-heading"
+        className="py-16 sm:py-20 bg-slate-50"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12">
+            {/* Left: info */}
+            <div className="lg:col-span-2">
+              <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">
+                Booking Form
+              </p>
+              <h2
+                id="booking-form-heading"
+                className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight"
+              >
+                Book Your Car Lift in Under 2 Minutes
+              </h2>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Fill in your details below. We&apos;ll open WhatsApp with a pre-filled
+                message that you can send with one tap. We confirm your seat within
+                the hour.
+              </p>
+
+              <ul className="space-y-3 list-none" role="list">
+                {[
+                  "No app download required",
+                  "Seat confirmed within 60 minutes",
+                  "Monthly packages start any day",
+                  "Cancel anytime — no lock-in",
+                  "Pay monthly via cash or transfer",
+                ].map((point) => (
+                  <li key={point} className="flex items-center gap-2.5 text-sm text-slate-700">
+                    <span
+                      className="h-5 w-5 bg-emerald-100 rounded-full flex items-center justify-center shrink-0"
+                      aria-hidden="true"
+                    >
+                      <span className="block w-2 h-2 bg-emerald-500 rounded-full" />
+                    </span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Direct WhatsApp link */}
+              <div className="mt-8 p-4 bg-emerald-50 rounded-xl border border-emerald-200">
+                <p className="text-sm font-semibold text-emerald-800 mb-2">
+                  Prefer to message directly?
+                </p>
+                <a
+                  href={formatWhatsAppHref(
+                    BUSINESS.whatsapp,
+                    "Hi! I'd like to book a car lift."
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-700 font-bold text-sm hover:underline underline-offset-2"
+                >
+                  Open WhatsApp → {BUSINESS.phone}
+                </a>
+              </div>
+            </div>
+
+            {/* Right: form */}
+            <div className="lg:col-span-3">
+              <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+                <BookingForm />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Location / Map Section ─── */}
+      <section
+        aria-labelledby="location-heading"
+        className="py-14 sm:py-16 bg-white"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">
+                Our Base
+              </p>
+              <h2
+                id="location-heading"
+                className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight"
+              >
+                Based in Sharjah, Serving All UAE
+              </h2>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Car Lift UAE is headquartered in the heart of Sharjah, at Al Majaz
+                — perfectly positioned to serve all Sharjah, Ajman, and Dubai
+                routes. We operate across the entire UAE.
+              </p>
+
+              <ul className="space-y-3 list-none" role="list">
+                <li className="flex items-start gap-3 text-sm text-slate-700">
+                  <MapPin className="h-5 w-5 text-blue-500 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>
+                    <strong className="text-slate-900">Address:</strong>{" "}
+                    {BUSINESS.address.street}, {BUSINESS.address.city}, UAE
+                  </span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-slate-700">
+                  <Phone className="h-5 w-5 text-blue-500 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>
+                    <strong className="text-slate-900">Phone:</strong>{" "}
+                    <a
+                      href={formatPhoneHref(BUSINESS.phone)}
+                      className="text-blue-600 hover:underline"
+                    >
+                      {BUSINESS.phone}
+                    </a>
+                  </span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-slate-700">
+                  <Mail className="h-5 w-5 text-blue-500 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>
+                    <strong className="text-slate-900">Email:</strong>{" "}
+                    <a
+                      href={`mailto:${BUSINESS.email}`}
+                      className="text-blue-600 hover:underline"
+                    >
+                      {BUSINESS.email}
+                    </a>
+                  </span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-slate-700">
+                  <Clock className="h-5 w-5 text-blue-500 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>
+                    <strong className="text-slate-900">Hours:</strong>{" "}
+                    Mon–Sat {BUSINESS.hours.weekdays} | Friday {BUSINESS.hours.friday}
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Google Maps embed — Sharjah */}
+            <div className="w-full rounded-2xl overflow-hidden border border-slate-200 shadow-md aspect-video">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57946.01963374025!2d55.35044155!3d25.34634155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f4b9d6a1fd1%3A0x7d84c17e7f0c5c1a!2sSharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1699000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Car Lift UAE location in Sharjah, UAE"
+                aria-label="Google Maps showing Sharjah UAE, base of Car Lift UAE operations"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Final Quick CTA ─── */}
+      <section aria-label="Quick contact CTA" className="py-12 bg-blue-600">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-white font-bold text-lg sm:text-xl mb-5">
+            The fastest way to book? Just WhatsApp us.
+          </p>
+          <Button
+            asChild
+            size="xl"
+            className="bg-white text-blue-700 hover:bg-blue-50 font-bold"
+          >
+            <a
+              href={formatWhatsAppHref(
+                BUSINESS.whatsapp,
+                "Hi! I'd like to book a car lift."
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book car lift via WhatsApp"
+            >
+              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+              Open WhatsApp — {BUSINESS.phone}
+            </a>
+          </Button>
+        </div>
+      </section>
+    </>
+  );
+}

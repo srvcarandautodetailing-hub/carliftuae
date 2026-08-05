@@ -1,0 +1,319 @@
+import type { Metadata } from "next";
+import { MessageCircle, CheckCircle, Info, DollarSign } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Breadcrumb from "@/components/sections/breadcrumb";
+import PricingSection from "@/components/sections/pricing-section";
+import SchemaScript from "@/components/sections/schema-script";
+import { serviceSchema } from "@/lib/schema";
+import { ROUTE_PRICES } from "@/data/pricing";
+import { FAQS } from "@/data/faqs";
+import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
+
+export const revalidate = 86400;
+
+export const metadata: Metadata = {
+  title: "Car Lift UAE Pricing – Transparent Monthly & Daily Rates",
+  description:
+    "Clear, transparent car lift prices in UAE. Monthly shared rides from AED 200/month. Sharjah to Business Bay from AED 350/month. Daily trips from AED 18/trip. Salik included. No hidden fees.",
+  alternates: { canonical: "https://www.carlift.ae/pricing" },
+  openGraph: {
+    title: "Car Lift UAE Pricing – Monthly from AED 200, Daily from AED 18",
+    description:
+      "Transparent car lift pricing across UAE. Monthly packages, daily rides, ladies packages. All prices include Salik tolls. Compare routes and book today.",
+    images: [{ url: "/og/pricing.jpg", width: 1200, height: 630, alt: "Car Lift UAE Pricing" }],
+  },
+};
+
+const PRICING_FAQS = FAQS.filter((f) => f.category === "Pricing");
+
+const customQuoteHref = formatWhatsAppHref(
+  BUSINESS.whatsapp,
+  "Hi! I'd like to get a custom quote for a car lift. My route is: "
+);
+
+export default function PricingPage() {
+  return (
+    <>
+      <SchemaScript
+        schema={serviceSchema({
+          name: "Car Lift UAE – Monthly & Daily Shared Ride Service",
+          description:
+            "Daily car lift service from Sharjah, Ajman, and Dubai locations to Business Bay and all major UAE destinations. Monthly packages from AED 200, daily rides from AED 18.",
+          url: "/pricing",
+          price: "350",
+        })}
+      />
+
+      {/* ─── Page Hero ─── */}
+      <section
+        aria-labelledby="pricing-hero-heading"
+        className="relative overflow-hidden py-16 sm:py-20"
+        style={{
+          background:
+            "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c2340 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Pricing" },
+            ]}
+            className="mb-6 [&_*]:text-slate-400 [&_a]:text-slate-300 [&_a:hover]:text-white"
+          />
+          <h1
+            id="pricing-hero-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4"
+          >
+            Simple, Transparent Car Lift Pricing
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+            No hidden fees. No surge pricing. Salik tolls always included.
+            Pick a plan that works for your commute.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── Money Saving Info Box ─── */}
+      <section aria-label="Cost comparison info" className="bg-emerald-50 border-b border-emerald-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center shrink-0">
+              <DollarSign className="h-5 w-5 text-white" aria-hidden="true" />
+            </div>
+            <p className="text-emerald-900 font-semibold text-sm sm:text-base">
+              <strong>Driving yourself costs AED 1,200+/month</strong> in fuel, Salik, and parking.{" "}
+              Car Lift UAE costs just <strong>AED 350/month</strong> — all in. Save over{" "}
+              <strong>AED 850 every month.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Pricing Plans (reuse existing component) ─── */}
+      <PricingSection />
+
+      {/* ─── Route Price Table ─── */}
+      <section
+        aria-labelledby="route-price-heading"
+        className="py-16 sm:py-20 bg-white"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">
+              Route-by-Route Prices
+            </p>
+            <h2
+              id="route-price-heading"
+              className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4"
+            >
+              Car Lift Prices by Route
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              All prices below are per person, per month. Salik tolls included.
+              Daily rates are one-way per trip.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm" aria-label="Car lift route prices">
+                <thead>
+                  <tr className="bg-slate-800 text-white">
+                    <th className="text-left px-5 py-4 font-semibold">From</th>
+                    <th className="text-left px-5 py-4 font-semibold">To</th>
+                    <th className="text-right px-5 py-4 font-semibold">Monthly Shared</th>
+                    <th className="text-right px-5 py-4 font-semibold hidden sm:table-cell">
+                      Monthly Private
+                    </th>
+                    <th className="text-right px-5 py-4 font-semibold">Daily Rate</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {ROUTE_PRICES.map((route, index) => (
+                    <tr
+                      key={index}
+                      className={index % 2 === 0 ? "bg-white" : "bg-slate-50/60"}
+                    >
+                      <td className="px-5 py-3.5 font-medium text-slate-800">{route.from}</td>
+                      <td className="px-5 py-3.5 text-slate-600">{route.to}</td>
+                      <td className="px-5 py-3.5 text-right font-bold text-emerald-600">
+                        AED {route.monthlyShared}
+                      </td>
+                      <td className="px-5 py-3.5 text-right text-slate-600 hidden sm:table-cell">
+                        AED {route.monthlyPrivate.toLocaleString()}
+                      </td>
+                      <td className="px-5 py-3.5 text-right text-slate-700 font-medium">
+                        AED {route.dailyRate}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="px-5 py-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center gap-2">
+              <Info className="h-4 w-4 text-slate-400 shrink-0 mt-0.5 sm:mt-0" aria-hidden="true" />
+              <p className="text-xs text-slate-500 leading-relaxed">
+                All prices are approximate and depend on exact pickup location. Private monthly pricing is per vehicle (up to 7 seats).
+                Prices valid as of 2024. Contact us for a precise quote for your specific route.
+              </p>
+            </div>
+          </div>
+
+          {/* Custom quote CTA */}
+          <div className="mt-10 text-center">
+            <p className="text-slate-600 mb-4">
+              Don&apos;t see your area? We cover all UAE locations.
+            </p>
+            <Button asChild variant="whatsapp" size="lg">
+              <a
+                href={customQuoteHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get a custom car lift quote via WhatsApp"
+              >
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                Get a Custom Quote
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── What's Included Section ─── */}
+      <section
+        aria-labelledby="included-heading"
+        className="py-14 sm:py-16 bg-slate-50"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2
+              id="included-heading"
+              className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3"
+            >
+              What&apos;s Always Included — at No Extra Cost
+            </h2>
+            <p className="text-slate-600 max-w-xl mx-auto">
+              Every car lift package includes these by default. What you see is
+              what you pay.
+            </p>
+          </div>
+
+          <ul
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none"
+            role="list"
+          >
+            {[
+              "Salik toll charges (both ways)",
+              "Fuel costs (no extra charge)",
+              "Air-conditioned vehicle",
+              "Real-time GPS tracking",
+              "WhatsApp booking & support",
+              "Verified, background-checked driver",
+              "Invoice/receipt on request",
+              "Up to 5 minutes waiting at pickup",
+              "Morning + Evening trips (monthly)",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-3 bg-white rounded-xl border border-slate-200 px-4 py-3.5 shadow-sm"
+              >
+                <CheckCircle
+                  className="h-5 w-5 text-emerald-500 shrink-0"
+                  aria-hidden="true"
+                />
+                <span className="text-slate-700 font-medium text-sm">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── Pricing FAQs ─── */}
+      <section
+        aria-labelledby="pricing-faq-heading"
+        className="py-16 sm:py-20 bg-white"
+      >
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">
+              Pricing FAQs
+            </p>
+            <h2
+              id="pricing-faq-heading"
+              className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3"
+            >
+              Common Questions About Pricing
+            </h2>
+          </div>
+
+          <dl className="flex flex-col gap-4">
+            {PRICING_FAQS.map((faq, index) => (
+              <div
+                key={index}
+                className="rounded-xl border border-slate-200 bg-slate-50 px-6 py-5"
+              >
+                <dt className="font-bold text-slate-900 mb-2 text-base leading-snug">
+                  {faq.question}
+                </dt>
+                <dd className="text-slate-600 leading-relaxed text-sm">
+                  {faq.answer}
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          <div className="mt-10 text-center">
+            <p className="text-slate-600 mb-4 text-sm">Still have pricing questions?</p>
+            <Button asChild variant="whatsapp" size="lg">
+              <a
+                href={formatWhatsAppHref(
+                  BUSINESS.whatsapp,
+                  "Hi! I have a question about Car Lift UAE pricing."
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                Ask Us on WhatsApp
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Final CTA ─── */}
+      <section aria-label="Book now CTA" className="py-14 bg-blue-600">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
+            Start Saving from This Month
+          </h2>
+          <p className="text-blue-100 mb-8 leading-relaxed">
+            Monthly packages start mid-month too. Book your seat today and stop
+            wasting money on fuel and parking.
+          </p>
+          <Button asChild size="xl" className="bg-white text-blue-700 hover:bg-blue-50 font-bold">
+            <a
+              href={customQuoteHref}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+              Book My Car Lift Now
+            </a>
+          </Button>
+        </div>
+      </section>
+    </>
+  );
+}

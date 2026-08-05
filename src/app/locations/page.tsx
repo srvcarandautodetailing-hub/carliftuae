@@ -1,0 +1,481 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  MapPin,
+  Clock,
+  DollarSign,
+  ArrowRight,
+  MessageCircle,
+  Star,
+  Users,
+  Navigation,
+  TrendingUp,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import Breadcrumb from "@/components/sections/breadcrumb";
+import SchemaScript from "@/components/sections/schema-script";
+import { localBusinessSchema, breadcrumbSchema } from "@/lib/schema";
+import { LOCATIONS, getLocationsByEmirate, type Location } from "@/data/locations";
+import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
+
+export const revalidate = 86400;
+
+export const metadata: Metadata = {
+  title: "Car Lift Locations UAE – Sharjah, Dubai, Ajman & All Areas",
+  description:
+    "Car lift service across UAE. Find your nearest pickup area: Sharjah, Dubai, Business Bay, Ajman, Al Nahda, Al Qusais, JVC, JLT, Silicon Oasis and more.",
+  alternates: { canonical: "https://www.carlift.ae/locations" },
+  openGraph: {
+    title: "Car Lift Locations UAE – Sharjah, Dubai, Ajman & All Areas",
+    description:
+      "Car lift service across UAE. Find your nearest pickup area: Sharjah, Dubai, Business Bay, Ajman, Al Nahda, Al Qusais, JVC, JLT, Silicon Oasis and more.",
+    images: [
+      {
+        url: "/og/locations.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Car Lift UAE Locations",
+      },
+    ],
+  },
+};
+
+// Top 5 most-searched routes (ordered by popularity)
+const POPULAR_ROUTES: { from: string; slug: string; price: number; time: string }[] = [
+  { from: "Sharjah",         slug: "sharjah",       price: 350, time: "30–50 min" },
+  { from: "Al Nahda",        slug: "al-nahda",       price: 300, time: "25–40 min" },
+  { from: "Ajman",           slug: "ajman",          price: 420, time: "45–70 min" },
+  { from: "Al Qusais",       slug: "al-qusais",      price: 220, time: "20–35 min" },
+  { from: "Silicon Oasis",   slug: "silicon-oasis",  price: 290, time: "25–40 min" },
+];
+
+const emirateBadgeStyle: Record<Location["emirate"], string> = {
+  sharjah: "bg-blue-100 text-blue-700",
+  dubai:   "bg-emerald-100 text-emerald-700",
+  ajman:   "bg-purple-100 text-purple-700",
+};
+
+const emirateLabel: Record<Location["emirate"], string> = {
+  sharjah: "Sharjah",
+  dubai:   "Dubai",
+  ajman:   "Ajman",
+};
+
+function LocationCard({ location }: { location: Location }) {
+  return (
+    <article aria-label={`Car lift from ${location.name}`}>
+      <Card className="h-full hover:shadow-lg transition-shadow duration-200 group">
+        <CardContent className="p-5 pt-5 flex flex-col h-full">
+          {/* Header */}
+          <div className="flex items-start justify-between gap-2 mb-3">
+            <h3 className="text-base font-bold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors">
+              {location.name}
+            </h3>
+            <span
+              className={`shrink-0 text-xs font-semibold px-2.5 py-1 rounded-full ${emirateBadgeStyle[location.emirate]}`}
+            >
+              {emirateLabel[location.emirate]}
+            </span>
+          </div>
+
+          {/* Route indicator */}
+          <div className="flex items-center gap-2 text-xs text-slate-500 mb-4">
+            <Navigation className="h-3.5 w-3.5 text-blue-400 shrink-0" aria-hidden="true" />
+            <span className="font-medium">
+              {location.name}{" "}
+              <ArrowRight className="inline h-3 w-3" aria-hidden="true" />{" "}
+              Business Bay
+            </span>
+          </div>
+
+          {/* Stats row */}
+          <ul className="grid grid-cols-3 gap-2 mb-4 list-none" role="list">
+            <li className="text-center bg-slate-50 rounded-lg p-2">
+              <MapPin className="h-3.5 w-3.5 text-slate-400 mx-auto mb-1" aria-hidden="true" />
+              <p className="text-xs font-bold text-slate-800 leading-none">{location.distance}</p>
+              <p className="text-[10px] text-slate-500 mt-0.5">Distance</p>
+            </li>
+            <li className="text-center bg-slate-50 rounded-lg p-2">
+              <Clock className="h-3.5 w-3.5 text-slate-400 mx-auto mb-1" aria-hidden="true" />
+              <p className="text-xs font-bold text-slate-800 leading-none">{location.drivingTime}</p>
+              <p className="text-[10px] text-slate-500 mt-0.5">Drive Time</p>
+            </li>
+            <li className="text-center bg-emerald-50 rounded-lg p-2">
+              <DollarSign className="h-3.5 w-3.5 text-emerald-500 mx-auto mb-1" aria-hidden="true" />
+              <p className="text-xs font-bold text-emerald-700 leading-none">
+                AED {location.monthlyPrice}
+              </p>
+              <p className="text-[10px] text-emerald-600 mt-0.5">/month</p>
+            </li>
+          </ul>
+
+          {/* Pickup points preview */}
+          {location.pickupPoints.length > 0 && (
+            <div className="mb-4">
+              <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                {location.pickupPoints.length} Pickup Point{location.pickupPoints.length !== 1 ? "s" : ""}
+              </p>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                {location.pickupPoints.slice(0, 3).join(", ")}
+                {location.pickupPoints.length > 3 && (
+                  <span className="text-blue-500 font-medium">
+                    {" "}+{location.pickupPoints.length - 3} more
+                  </span>
+                )}
+              </p>
+            </div>
+          )}
+
+          {/* CTA links */}
+          <div className="mt-auto pt-2">
+            <Button asChild variant="outline" size="sm" className="w-full text-xs">
+              <Link href={`/locations/${location.slug}`}>
+                View Full Details
+                <ArrowRight className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    </article>
+  );
+}
+
+const emirateOrder: Location["emirate"][] = ["sharjah", "ajman", "dubai"];
+
+const emirateSectionLabel: Record<Location["emirate"], string> = {
+  sharjah: "Sharjah Service Areas",
+  dubai:   "Dubai Service Areas",
+  ajman:   "Ajman Service Areas",
+};
+
+const emirateSectionDesc: Record<Location["emirate"], string> = {
+  sharjah:
+    "The most popular car lift corridor in the UAE. Thousands of professionals rely on our Sharjah–Dubai routes every working day.",
+  dubai:
+    "Internal Dubai routes connecting major residential communities to Business Bay, DIFC, and Downtown Dubai.",
+  ajman:
+    "Long-route specialists connecting Ajman to Dubai with comfortable, air-conditioned vehicles built for the distance.",
+};
+
+export default function LocationsPage() {
+  const sharjahLocations = getLocationsByEmirate("sharjah");
+  const ajmanLocations   = getLocationsByEmirate("ajman");
+  const dubaiLocations   = getLocationsByEmirate("dubai");
+
+  const locationsByEmirate: Record<Location["emirate"], Location[]> = {
+    sharjah: sharjahLocations,
+    ajman:   ajmanLocations,
+    dubai:   dubaiLocations,
+  };
+
+  const schemas = [
+    localBusinessSchema(),
+    breadcrumbSchema([
+      { name: "Home",      url: "/" },
+      { name: "Locations", url: "/locations" },
+    ]),
+  ];
+
+  return (
+    <>
+      <SchemaScript schema={schemas} />
+
+      {/* ─── Hero ─── */}
+      <section
+        aria-labelledby="locations-hero-heading"
+        className="relative overflow-hidden py-16 sm:py-20"
+        style={{
+          background:
+            "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c2340 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "Home",      href: "/" },
+              { label: "Locations" },
+            ]}
+            className="mb-6 [&_*]:text-slate-400 [&_a]:text-slate-300 [&_a:hover]:text-white"
+          />
+
+          <h1
+            id="locations-hero-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4"
+          >
+            Car Lift Service Locations in UAE
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed mb-8">
+            We cover Sharjah, Dubai, Ajman and all surrounding areas. Find your
+            nearest pickup point and book a monthly seat from AED 200.
+          </p>
+
+          {/* Quick stats */}
+          <ul className="flex flex-wrap gap-6 list-none" role="list">
+            {[
+              { icon: MapPin,  label: `${LOCATIONS.length} Locations` },
+              { icon: Users,   label: "500+ Daily Riders" },
+              { icon: Star,    label: `${BUSINESS.rating}★ Rated Service` },
+            ].map(({ icon: Icon, label }) => (
+              <li key={label} className="flex items-center gap-2 text-slate-300">
+                <Icon className="h-4 w-4 text-blue-400" aria-hidden="true" />
+                <span className="text-sm font-medium">{label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── Popular Routes ─── */}
+      <section
+        aria-labelledby="popular-routes-heading"
+        className="py-12 bg-gradient-to-r from-blue-50 to-slate-50 border-b border-slate-200"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-6">
+            <TrendingUp className="h-5 w-5 text-blue-600" aria-hidden="true" />
+            <h2
+              id="popular-routes-heading"
+              className="text-xl font-bold text-slate-900"
+            >
+              Most Popular Routes to Business Bay
+            </h2>
+          </div>
+
+          <ul
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 list-none"
+            role="list"
+          >
+            {POPULAR_ROUTES.map((route, index) => (
+              <li key={route.slug}>
+                <Link
+                  href={`/locations/${route.slug}`}
+                  className="group flex flex-col gap-2 bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md rounded-2xl p-4 transition-all duration-200"
+                  aria-label={`Car lift from ${route.from} to Business Bay`}
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center shrink-0">
+                      {index + 1}
+                    </span>
+                    <span className="font-bold text-slate-900 text-sm leading-snug group-hover:text-blue-600 transition-colors">
+                      {route.from}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs text-slate-500">
+                    <span className="flex items-center gap-1">
+                      <Clock className="h-3 w-3" aria-hidden="true" />
+                      {route.time}
+                    </span>
+                    <span className="font-bold text-emerald-600">
+                      AED {route.price}
+                      <span className="font-normal text-emerald-500">/mo</span>
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs text-blue-500 font-medium">
+                    <span>View details</span>
+                    <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── Locations Grouped by Emirate ─── */}
+      <section
+        aria-labelledby="all-locations-heading"
+        className="py-16 sm:py-20 bg-slate-50"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">
+              All Service Areas
+            </p>
+            <h2
+              id="all-locations-heading"
+              className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4"
+            >
+              Browse Locations by Emirate
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Click any location for full route details, pickup points, pricing,
+              FAQs, and more.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {emirateOrder.map((emirate) => {
+              const locations = locationsByEmirate[emirate];
+              if (!locations.length) return null;
+
+              return (
+                <div key={emirate}>
+                  {/* Emirate section header */}
+                  <div className="mb-6">
+                    <div className="flex flex-wrap items-center gap-3 mb-2">
+                      <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        {emirateSectionLabel[emirate]}
+                      </h2>
+                      <Badge
+                        variant={
+                          emirate === "sharjah"
+                            ? "default"
+                            : emirate === "ajman"
+                            ? "info"
+                            : "success"
+                        }
+                        className="text-xs"
+                      >
+                        {locations.length} area{locations.length !== 1 ? "s" : ""}
+                      </Badge>
+                    </div>
+                    <p className="text-slate-600 text-sm leading-relaxed max-w-2xl">
+                      {emirateSectionDesc[emirate]}
+                    </p>
+                  </div>
+
+                  <ul
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 list-none"
+                    role="list"
+                  >
+                    {locations.map((location) => (
+                      <li key={location.slug}>
+                        <LocationCard location={location} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Why Choose section ─── */}
+      <section
+        aria-labelledby="why-locations-heading"
+        className="py-14 sm:py-16 bg-white"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">
+              Why Car Lift UAE
+            </p>
+            <h2
+              id="why-locations-heading"
+              className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-4"
+            >
+              The Smart Way to Commute Across UAE
+            </h2>
+          </div>
+
+          <ul
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none"
+            role="list"
+          >
+            {[
+              {
+                title: "Save AED 850+/Month",
+                desc:  "Fuel, Salik, and parking in Business Bay can cost AED 1,200+ per month. Our car lift costs AED 350 — all in.",
+                icon:  DollarSign,
+              },
+              {
+                title: "GPS-Tracked Rides",
+                desc:  "Every vehicle in our fleet is equipped with real-time GPS. Know exactly where your car lift is at all times.",
+                icon:  MapPin,
+              },
+              {
+                title: "Verified Drivers",
+                desc:  "All drivers are background-checked, UAE-licensed professionals. Ladies-only options available with female drivers.",
+                icon:  Users,
+              },
+              {
+                title: "Flexible Timings",
+                desc:  "Morning departures from 6:30 AM. Evening returns from 5:00 PM. Book one-way or both-way rides.",
+                icon:  Clock,
+              },
+              {
+                title: "All UAE Areas Covered",
+                desc:  `${LOCATIONS.length} locations and growing. If your area isn't listed, contact us and we'll create a route.`,
+                icon:  Navigation,
+              },
+              {
+                title: "Top-Rated Service",
+                desc:  `${BUSINESS.rating}★ rated by ${BUSINESS.reviewCount}+ verified riders. Punctual, professional, and reliable every day.`,
+                icon:  Star,
+              },
+            ].map(({ title, desc, icon: Icon }) => (
+              <li
+                key={title}
+                className="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shrink-0">
+                  <Icon className="h-5 w-5 text-white" aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-slate-900 text-sm mb-1">{title}</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed">{desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── CTA ─── */}
+      <section aria-label="Book a car lift" className="py-14 bg-blue-600">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
+            Find Your Car Lift Today
+          </h2>
+          <p className="text-blue-100 mb-8 leading-relaxed">
+            Select your area above or WhatsApp us — we&apos;ll match you with a
+            route in minutes.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              size="xl"
+              className="bg-white text-blue-700 hover:bg-blue-50 font-bold"
+            >
+              <a
+                href={formatWhatsAppHref(
+                  BUSINESS.whatsapp,
+                  "Hi! I'd like to book a car lift. My pickup area is: "
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Book a car lift via WhatsApp"
+              >
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                Book via WhatsApp
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="xl"
+              className="border-2 border-white/50 bg-transparent text-white hover:bg-white/10"
+            >
+              <Link href="/pricing">
+                View Pricing
+                <ArrowRight className="h-5 w-5" aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

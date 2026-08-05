@@ -1,0 +1,260 @@
+import type { Metadata } from "next";
+import { MessageCircle, HelpCircle } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Breadcrumb from "@/components/sections/breadcrumb";
+import FaqSection from "@/components/sections/faq-section";
+import SchemaScript from "@/components/sections/schema-script";
+import { faqSchema } from "@/lib/schema";
+import { FAQS, FAQ_CATEGORIES } from "@/data/faqs";
+import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
+
+export const revalidate = 86400;
+
+export const metadata: Metadata = {
+  title: "Car Lift UAE FAQs – All Your Questions Answered",
+  description:
+    "Get answers to every question about Car Lift UAE. How to book, pricing, safety, routes, timing, ladies-only options, drivers, vehicles, and more. 25+ questions answered.",
+  alternates: { canonical: "https://www.carlift.ae/faqs" },
+  openGraph: {
+    title: "Car Lift UAE FAQs – Booking, Pricing, Safety & Routes Explained",
+    description:
+      "Everything you need to know about UAE car lift service. 25+ questions answered on booking, pricing, safety, routes, and more.",
+    images: [{ url: "/og/faqs.jpg", width: 1200, height: 630, alt: "Car Lift UAE FAQs" }],
+  },
+};
+
+// AEO-optimized featured answer blocks for the top commonly asked questions
+const featuredAnswers = [
+  {
+    question: "What is a car lift in UAE?",
+    answer:
+      "A car lift in UAE is a daily shared ride service where a professional driver picks up multiple commuters along a route and drops them at a common destination — typically a business hub like Business Bay or DIFC. It is similar to carpooling but organized by a service provider with scheduled departure times, fixed pricing, and verified drivers. Car lift UAE services typically run Monday to Saturday and cost AED 200–AED 450/month.",
+  },
+  {
+    question: "How does Car Lift UAE work?",
+    answer:
+      "Car Lift UAE works in 3 simple steps: (1) WhatsApp us your pickup location, destination, and preferred timing. (2) We confirm your seat and share the driver details. (3) Your driver picks you up at the agreed time daily. Monthly riders get a fixed seat, fixed driver, and fixed time — no need to re-book each day. Payment is monthly via cash, bank transfer, or WhatsApp Pay.",
+  },
+  {
+    question: "Is car lift safe in UAE?",
+    answer:
+      "Yes. Car Lift UAE operates a fully safe and verified service. All drivers are UAE-licensed with valid UAE driving licenses and undergo background checks before joining. Every vehicle in the fleet carries comprehensive insurance, is GPS-tracked in real time, and is less than 5 years old. Female passengers can request ladies-only car lift vehicles with a female driver. Our service is rated 4.9 stars by 247+ verified riders.",
+  },
+  {
+    question: "What is the cheapest car lift from Sharjah to Business Bay?",
+    answer:
+      "Car Lift UAE offers the most affordable daily car lift from Sharjah to Business Bay starting at AED 300–AED 360/month for monthly shared packages depending on your exact pickup area. This compares to AED 1,200+ per month if you were to drive yourself (factoring in petrol, Salik tolls of AED 8 each way × 22 working days, and Business Bay parking fees).",
+  },
+];
+
+export default function FaqsPage() {
+  const whatsappHref = formatWhatsAppHref(
+    BUSINESS.whatsapp,
+    "Hi! I have a question about Car Lift UAE that I didn't find in the FAQ."
+  );
+
+  return (
+    <>
+      <SchemaScript schema={faqSchema(FAQS)} />
+
+      {/* ─── Page Hero ─── */}
+      <section
+        aria-labelledby="faq-hero-heading"
+        className="relative overflow-hidden py-16 sm:py-20"
+        style={{
+          background:
+            "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c2340 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "FAQs" },
+            ]}
+            className="mb-6 [&_*]:text-slate-400 [&_a]:text-slate-300 [&_a:hover]:text-white"
+          />
+          <h1
+            id="faq-hero-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4"
+          >
+            Frequently Asked Questions
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+            Everything you need to know about Car Lift UAE — booking, pricing,
+            safety, routes, and more. Can&apos;t find your answer? WhatsApp us.
+          </p>
+
+          {/* Category overview */}
+          <ul className="flex flex-wrap gap-2 mt-8 list-none" role="list">
+            {FAQ_CATEGORIES.map((cat) => (
+              <li key={cat}>
+                <span className="inline-block bg-white/10 border border-white/15 text-white/80 text-xs font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
+                  {cat}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── AEO Featured Answer Blocks ─── */}
+      <section
+        aria-labelledby="featured-answers-heading"
+        className="py-14 sm:py-16 bg-white"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">
+              Quick Answers
+            </p>
+            <h2
+              id="featured-answers-heading"
+              className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3"
+            >
+              Top Questions About UAE Car Lift
+            </h2>
+            <p className="text-slate-600 max-w-xl mx-auto text-sm">
+              Direct, clear answers to the most common questions about our service.
+            </p>
+          </div>
+
+          <dl className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            {featuredAnswers.map((item, index) => (
+              <Card
+                key={index}
+                className="border-blue-100 bg-gradient-to-br from-blue-50 to-white"
+              >
+                <CardContent className="p-6 pt-6">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shrink-0">
+                      <HelpCircle className="h-4 w-4 text-white" aria-hidden="true" />
+                    </div>
+                    <dt className="font-bold text-slate-900 text-base leading-snug">
+                      {item.question}
+                    </dt>
+                  </div>
+                  <dd className="text-slate-600 leading-relaxed text-sm pl-11">
+                    {item.answer}
+                  </dd>
+                </CardContent>
+              </Card>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ─── Full FAQ Accordion (with category filter) ─── */}
+      <FaqSection />
+
+      {/* ─── Topic Summary Grid ─── */}
+      <section
+        aria-labelledby="topics-heading"
+        className="py-14 sm:py-16 bg-slate-50"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2
+              id="topics-heading"
+              className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3"
+            >
+              FAQ Topics at a Glance
+            </h2>
+          </div>
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none" role="list">
+            {[
+              {
+                category: "Booking",
+                summary: "How to book, advance notice, one-way trips, app availability.",
+                count: FAQS.filter((f) => f.category === "Booking").length,
+              },
+              {
+                category: "Pricing",
+                summary: "Monthly rates, what's included, Salik tolls, payment methods.",
+                count: FAQS.filter((f) => f.category === "Pricing").length,
+              },
+              {
+                category: "Safety",
+                summary: "Driver verification, GPS tracking, insurance, emergency support.",
+                count: FAQS.filter((f) => f.category === "Safety").length,
+              },
+              {
+                category: "Routes & Timing",
+                summary: "Covered routes, departure times, evening returns, Fridays.",
+                count: FAQS.filter((f) => f.category === "Routes & Timing").length,
+              },
+              {
+                category: "Ladies & Families",
+                summary: "Ladies-only options, female drivers, children in car lifts.",
+                count: FAQS.filter((f) => f.category === "Ladies & Families").length,
+              },
+              {
+                category: "General",
+                summary: "Vehicle types, passenger count, dedicated drivers, holidays.",
+                count: FAQS.filter((f) => f.category === "General").length,
+              },
+            ].map((topic) => (
+              <li key={topic.category}>
+                <Card className="h-full hover:shadow-md transition-shadow duration-200">
+                  <CardContent className="p-5 pt-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-bold text-slate-900 text-base">{topic.category}</h3>
+                      <span className="text-xs bg-blue-100 text-blue-700 font-bold px-2 py-0.5 rounded-full">
+                        {topic.count} Q&amp;As
+                      </span>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">{topic.summary}</p>
+                  </CardContent>
+                </Card>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── Bottom CTA ─── */}
+      <section aria-label="Contact us" className="py-14 bg-blue-600">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
+            Didn&apos;t Find Your Answer?
+          </h2>
+          <p className="text-blue-100 mb-8 leading-relaxed">
+            Our team responds to WhatsApp messages within minutes during business
+            hours. Ask us anything about booking, routes, or pricing.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild variant="whatsapp" size="lg">
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat with Car Lift UAE on WhatsApp"
+              >
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                Ask on WhatsApp
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-white/10 border border-white/30 text-white hover:bg-white/20 backdrop-blur-sm"
+            >
+              <a href="/contact">View Contact Page</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

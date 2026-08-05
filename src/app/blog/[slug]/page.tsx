@@ -1,0 +1,1131 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import {
+  Clock,
+  Calendar,
+  Tag,
+  User,
+  MessageCircle,
+  Phone,
+  MapPin,
+  ArrowRight,
+  ChevronRight,
+  BookOpen,
+} from "lucide-react";
+import {
+  BLOG_POSTS,
+  getBlogPostBySlug,
+  type BlogPost,
+} from "@/data/blog";
+import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import Breadcrumb from "@/components/sections/breadcrumb";
+import SchemaScript from "@/components/sections/schema-script";
+
+export const revalidate = 86400;
+
+export async function generateStaticParams() {
+  return BLOG_POSTS.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+  if (!post) return {};
+  return {
+    title: post.title,
+    description: post.excerpt,
+    keywords: post.keywords.join(", "),
+    alternates: { canonical: `https://www.carlift.ae/blog/${slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: post.publishDate,
+      tags: post.tags,
+    },
+  };
+}
+
+// ─── helpers ────────────────────────────────────────────────────────────────
+
+const CATEGORY_COLORS: Record<string, string> = {
+  "Car Lift Tips": "bg-blue-100 text-blue-800",
+  "Routes & Commute": "bg-emerald-100 text-emerald-800",
+  "Pricing & Savings": "bg-amber-100 text-amber-800",
+  "Safety & Travel": "bg-red-100 text-red-800",
+  "UAE Transport": "bg-purple-100 text-purple-800",
+  "Ladies Transport": "bg-pink-100 text-pink-800",
+  "Corporate Transport": "bg-indigo-100 text-indigo-800",
+  Neighborhoods: "bg-teal-100 text-teal-800",
+  Comparisons: "bg-orange-100 text-orange-800",
+  "News & Updates": "bg-slate-100 text-slate-800",
+};
+
+const INTENT_COLORS: Record<string, string> = {
+  informational: "bg-blue-50 text-blue-700",
+  commercial: "bg-amber-50 text-amber-700",
+  transactional: "bg-emerald-50 text-emerald-700",
+  navigational: "bg-slate-50 text-slate-700",
+  local: "bg-teal-50 text-teal-700",
+};
+
+function formatDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString("en-AE", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+// ─── Pillar article: complete-guide-car-lift-service-uae ────────────────────
+
+function PillarArticleContent() {
+  return (
+    <div className="prose prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-p:text-slate-700 prose-p:leading-relaxed prose-li:text-slate-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline">
+      <aside className="not-prose rounded-xl bg-blue-50 border border-blue-200 p-5 mb-8">
+        <p className="text-sm font-bold text-blue-800 uppercase tracking-wider mb-2">
+          Quick Answer
+        </p>
+        <p className="text-blue-900 leading-relaxed">
+          A car lift in UAE is a private, pre-arranged shared ride service where a vehicle
+          owner drives paying passengers along a fixed daily route — typically from Sharjah
+          or Ajman to Dubai business districts. It costs AED 200–500/month, far cheaper
+          than Uber, and is the preferred commute option for 500,000+ UAE residents.
+        </p>
+      </aside>
+
+      <h2 id="what-is-car-lift">What Is a Car Lift in UAE?</h2>
+      <p>
+        The term &quot;car lift&quot; is uniquely UAE — elsewhere it might mean an elevator for
+        cars, but in the Emirates it describes something entirely different: a private
+        ridesharing arrangement where a vehicle owner (the &quot;lifter&quot;) provides daily
+        transportation to paying passengers who share the same route.
+      </p>
+      <p>
+        Unlike taxis or ride-hailing apps such as Uber or Careem, a car lift is typically
+        a fixed daily commute. You book a seat for the month, and the driver picks you up
+        from a designated spot every morning and drops you home every evening. Think of it
+        as a private carpooling service — informal, affordable, and deeply embedded in UAE
+        commuter culture.
+      </p>
+
+      <h2 id="how-it-works">How Car Lift Works in UAE</h2>
+      <p>
+        The process is refreshingly simple for something that moves hundreds of thousands
+        of people every day:
+      </p>
+      <ol>
+        <li>
+          <strong>Find a car lift:</strong> Search Facebook groups (Sharjah to Dubai Car
+          Lift, UAE Car Lift Network), WhatsApp communities, or use dedicated platforms
+          like our <Link href="/">Car Lift UAE service</Link>.
+        </li>
+        <li>
+          <strong>Agree on a route and pickup point:</strong> The driver specifies their
+          exact route. You find a convenient pickup spot along that route — often near
+          your home, a mosque, or a landmark.
+        </li>
+        <li>
+          <strong>Negotiate timing:</strong> Typical departure from Sharjah is 6:30–8:00 AM.
+          Return from Dubai is usually 5:00–7:00 PM, sometimes with multiple slots.
+        </li>
+        <li>
+          <strong>Agree on price and payment:</strong> Most car lifts are priced monthly
+          (AED 200–450 from Sharjah to Business Bay). Payment is usually cash or bank
+          transfer at the start of each month.
+        </li>
+        <li>
+          <strong>Ride daily:</strong> You message the driver if you&apos;re not riding
+          (sick day, holiday). Most drivers allow 2–4 absent days per month without
+          penalty.
+        </li>
+      </ol>
+
+      <h2 id="costs-pricing">Car Lift Costs and Pricing (2025)</h2>
+      <p>
+        Pricing varies by route distance, number of passengers, and whether you take
+        one or two trips per day. Here is a breakdown of the most common routes:
+      </p>
+
+      <table className="w-full border-collapse text-sm">
+        <thead>
+          <tr className="bg-slate-100">
+            <th className="border border-slate-300 px-3 py-2 text-left">Route</th>
+            <th className="border border-slate-300 px-3 py-2 text-left">Monthly (Both Ways)</th>
+            <th className="border border-slate-300 px-3 py-2 text-left">Monthly (One Way)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            ["Al Nahda / Al Majaz → Business Bay", "AED 350–420", "AED 200–250"],
+            ["Muweilah → Business Bay", "AED 380–450", "AED 220–270"],
+            ["Ajman → Business Bay", "AED 450–550", "AED 270–320"],
+            ["Sharjah → DIFC / Downtown", "AED 400–480", "AED 240–280"],
+            ["Sharjah → JLT / Dubai Marina", "AED 420–500", "AED 250–300"],
+          ].map(([route, both, one]) => (
+            <tr key={route} className="even:bg-slate-50">
+              <td className="border border-slate-300 px-3 py-2">{route}</td>
+              <td className="border border-slate-300 px-3 py-2 font-medium text-emerald-700">{both}</td>
+              <td className="border border-slate-300 px-3 py-2">{one}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <p>
+        For a detailed breakdown, see our{" "}
+        <Link href="/pricing">complete car lift pricing guide</Link>.
+      </p>
+
+      <h2 id="benefits">Why UAE Residents Choose Car Lift</h2>
+      <p>
+        The economics are compelling. Consider a typical Sharjah-based professional driving
+        to Business Bay daily:
+      </p>
+      <ul>
+        <li>
+          <strong>Fuel:</strong> ~AED 600/month (70 km/day × 22 working days × AED 2.85/litre
+          at ~10L/100km)
+        </li>
+        <li>
+          <strong>Salik tolls:</strong> AED 220–330/month (2–3 gates each way)
+        </li>
+        <li>
+          <strong>Parking in Business Bay:</strong> AED 400–800/month
+        </li>
+        <li>
+          <strong>Vehicle depreciation &amp; maintenance:</strong> AED 500–800/month
+        </li>
+        <li>
+          <strong>Total driving cost:</strong> AED 1,700–2,500/month
+        </li>
+      </ul>
+      <p>
+        A car lift costs AED 350–450/month for the same journey — saving you
+        <strong> AED 1,250–2,050 every single month</strong>. Over a year, that is a
+        saving of AED 15,000–24,000. Most people fund their annual flight home with
+        car lift savings.
+      </p>
+      <p>
+        Beyond money, there is the stress factor. Sharjah–Dubai traffic ranks among the
+        world&apos;s worst. As a passenger, you can sleep, read, work on your phone, or
+        arrive fresh and relaxed instead of frazzled by 90 minutes of gridlock.
+      </p>
+
+      <h2 id="safety">Safety: What You Need to Know</h2>
+      <p>
+        Safety is the most common concern, especially for women. Here is how reputable car
+        lift services ensure passenger safety:
+      </p>
+      <ul>
+        <li>
+          <strong>Driver verification:</strong> UAE driving licence check, Emirates ID
+          verification, and vehicle registration confirmation before onboarding.
+        </li>
+        <li>
+          <strong>WhatsApp tracking:</strong> Many drivers share live location with
+          passengers during the journey.
+        </li>
+        <li>
+          <strong>Ladies-only options:</strong> Female drivers serving female passengers
+          exclusively are widely available on the Sharjah–Dubai corridor. See our{" "}
+          <Link href="/services/ladies-car-lift">ladies car lift service guide</Link>.
+        </li>
+        <li>
+          <strong>Fixed routes:</strong> Predictable, non-deviated routes reduce risk
+          compared to on-demand rides.
+        </li>
+        <li>
+          <strong>Passenger references:</strong> Established car lift drivers often have
+          months of passenger references you can check.
+        </li>
+      </ul>
+
+      <blockquote>
+        <p>
+          &quot;I have been using the same car lift for three years. The driver is like family now —
+          always on time, safe, and the monthly saving lets me send more money home.&quot;
+          — Priya, IT professional, Al Nahda Sharjah
+        </p>
+      </blockquote>
+
+      <h2 id="finding">How to Find a Car Lift in UAE</h2>
+      <p>
+        The three best methods for finding a reliable car lift in 2025:
+      </p>
+      <ol>
+        <li>
+          <strong>WhatsApp &amp; Car Lift UAE:</strong> Contact us directly via WhatsApp — we
+          maintain a network of verified drivers covering all major Sharjah and Ajman to
+          Dubai routes.
+        </li>
+        <li>
+          <strong>Facebook Groups:</strong> Search for &quot;Sharjah to Dubai Car Lift&quot; or
+          &quot;UAE Car Lift Network.&quot; Post your route, timing, and preferred pickup area.
+          Expect responses within hours.
+        </li>
+        <li>
+          <strong>Building and community boards:</strong> Many residential towers in Al Majaz,
+          Al Nahda, and Muweilah have notice boards where drivers post available seats.
+        </li>
+      </ol>
+      <p>
+        For step-by-step instructions, read our guide on{" "}
+        <Link href="/blog/how-to-find-car-lift-sharjah">how to find a car lift in Sharjah</Link>.
+      </p>
+
+      <aside className="not-prose rounded-xl bg-emerald-50 border border-emerald-200 p-5 mt-8">
+        <p className="text-sm font-bold text-emerald-800 uppercase tracking-wider mb-2">
+          Ready to Book?
+        </p>
+        <p className="text-emerald-900 leading-relaxed mb-4">
+          Car Lift UAE has verified drivers on all major Sharjah–Dubai routes. Message us on
+          WhatsApp to check seat availability for your area and timing.
+        </p>
+        <div className="flex gap-3 flex-wrap">
+          <a
+            href={formatWhatsAppHref(BUSINESS.whatsapp, "Hi! I need a car lift. Please share available routes.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+          >
+            <MessageCircle className="h-4 w-4" />
+            WhatsApp Us
+          </a>
+          <Link
+            href="/locations/sharjah"
+            className="inline-flex items-center gap-2 rounded-lg bg-white border border-emerald-300 px-4 py-2.5 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
+          >
+            View Sharjah Routes
+          </Link>
+        </div>
+      </aside>
+    </div>
+  );
+}
+
+// ─── Generic article content generator ──────────────────────────────────────
+
+function generateArticleContent(post: BlogPost) {
+  const { title, excerpt, category, tags, slug } = post;
+
+  // Pull some route-specific or topic-specific details from slug
+  const isRouteGuide = category === "Routes & Commute" || category === "Neighborhoods";
+  const isPricingGuide = category === "Pricing & Savings";
+  const isSafetyGuide = category === "Safety & Travel";
+  const isLadiesGuide = category === "Ladies Transport";
+  const isCorporateGuide = category === "Corporate Transport";
+  const isComparison = category === "Comparisons";
+
+  // Extract location hints from slug
+  const slugParts = slug.split("-");
+  const mentionsAjman = slug.includes("ajman");
+  const mentionsMuweilah = slug.includes("muweilah");
+  const mentionsDeira = slug.includes("deira");
+  const mentionsJvc = slug.includes("jvc");
+  const mentionsSilicon = slug.includes("silicon");
+  const mentionsNahda = slug.includes("nahda");
+
+  const originArea = mentionsAjman
+    ? "Ajman"
+    : mentionsMuweilah
+    ? "Muweilah, Sharjah"
+    : mentionsDeira
+    ? "Deira, Dubai"
+    : mentionsJvc
+    ? "Jumeirah Village Circle (JVC)"
+    : mentionsSilicon
+    ? "Dubai Silicon Oasis"
+    : mentionsNahda
+    ? "Al Nahda, Sharjah"
+    : "Sharjah";
+
+  return (
+    <div className="prose prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-p:text-slate-700 prose-p:leading-relaxed prose-li:text-slate-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline">
+      <aside className="not-prose rounded-xl bg-blue-50 border border-blue-200 p-5 mb-8">
+        <p className="text-sm font-bold text-blue-800 uppercase tracking-wider mb-2">
+          Quick Answer
+        </p>
+        <p className="text-blue-900 leading-relaxed">
+          {excerpt}
+        </p>
+      </aside>
+
+      <h2 id="overview">Overview: {title}</h2>
+      <p>
+        For the hundreds of thousands of UAE residents who commute daily between Sharjah,
+        Ajman, and Dubai, the question of how to travel affordably and reliably dominates
+        every morning conversation. This guide focuses on{" "}
+        <strong>{tags[0]}</strong> — one of the most searched topics among UAE commuters
+        in 2025.
+      </p>
+      <p>
+        Whether you are new to the concept of car lifts or a seasoned commuter looking
+        to optimise your current arrangement, you will find practical, actionable
+        information here based on real UAE commuter data and first-hand experience on
+        these routes.
+      </p>
+
+      {isRouteGuide && (
+        <>
+          <h2 id="route-details">Route Details from {originArea}</h2>
+          <p>
+            The commute from <strong>{originArea}</strong> to Dubai&apos;s business districts
+            is among the UAE&apos;s most travelled corridors. During peak hours (7:00–9:00 AM),
+            journey times can stretch to 60–90 minutes. With a car lift, you can reclaim
+            that time — and significantly cut your monthly transport costs.
+          </p>
+          <p>
+            The most efficient car lift routes from {originArea} typically use the
+            E311 (Emirates Road) or E311/E44 interchange to avoid the worst of the
+            Sheikh Zayed Road and Al Ittihad Road bottlenecks. Experienced drivers
+            know the optimal departure windows and alternate routes.
+          </p>
+
+          <h2 id="pickup-points">Popular Pickup Points</h2>
+          <ul>
+            <li>
+              <strong>Primary hub:</strong> Near the main mosque or landmark in your
+              residential area — easily identifiable and accessible for all passengers.
+            </li>
+            <li>
+              <strong>Metro feeder points:</strong> Several car lifts drop passengers at
+              ADCB or Business Bay Metro stations, from where the metro is a 5-minute ride
+              into Downtown.
+            </li>
+            <li>
+              <strong>Residential compound gates:</strong> Many drivers offer door-to-door
+              pickup within a defined radius — confirm this when booking.
+            </li>
+            <li>
+              <strong>Petrol station meeting points:</strong> ENOC and ADNOC stations
+              along the main highway serve as convenient, widely recognised pickup spots.
+            </li>
+          </ul>
+
+          <h2 id="timing">Recommended Timing</h2>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="bg-slate-100">
+                <th className="border border-slate-300 px-3 py-2 text-left">Direction</th>
+                <th className="border border-slate-300 px-3 py-2 text-left">Departure Time</th>
+                <th className="border border-slate-300 px-3 py-2 text-left">Est. Journey Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["{originArea} → Business Bay (Early)", "6:15–6:45 AM", "45–55 min"],
+                ["{originArea} → Business Bay (Regular)", "7:00–7:30 AM", "60–80 min"],
+                ["{originArea} → Business Bay (Late)", "8:00–8:30 AM", "75–100 min"],
+                ["Business Bay → {originArea} (Evening)", "5:30–6:30 PM", "55–75 min"],
+              ]
+                .map((row) => row.map((cell) => cell.replace("{originArea}", originArea)))
+                .map(([dir, dep, est]) => (
+                  <tr key={dir} className="even:bg-slate-50">
+                    <td className="border border-slate-300 px-3 py-2">{dir}</td>
+                    <td className="border border-slate-300 px-3 py-2 font-medium">{dep}</td>
+                    <td className="border border-slate-300 px-3 py-2">{est}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {isPricingGuide && (
+        <>
+          <h2 id="pricing-breakdown">Detailed Pricing Breakdown (2025)</h2>
+          <p>
+            Understanding the full cost of your commute is essential for making the right
+            choice. Most UAE commuters dramatically underestimate the true cost of driving
+            — and overestimate what a quality car lift service charges.
+          </p>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="bg-slate-100">
+                <th className="border border-slate-300 px-3 py-2 text-left">Cost Component</th>
+                <th className="border border-slate-300 px-3 py-2 text-left">Driving Own Car</th>
+                <th className="border border-slate-300 px-3 py-2 text-left">Car Lift</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Fuel (monthly)", "AED 550–700", "Included"],
+                ["Salik Tolls", "AED 200–350", "Included"],
+                ["Parking (Business Bay)", "AED 400–800", "AED 0"],
+                ["Vehicle depreciation", "AED 500–900", "AED 0"],
+                ["Maintenance share", "AED 200–400", "AED 0"],
+                ["Total Monthly", "AED 1,850–3,150", "AED 350–500"],
+              ].map(([comp, drive, lift]) => (
+                <tr key={comp} className="even:bg-slate-50">
+                  <td className="border border-slate-300 px-3 py-2">{comp}</td>
+                  <td className="border border-slate-300 px-3 py-2 text-red-700">{drive}</td>
+                  <td className="border border-slate-300 px-3 py-2 font-semibold text-emerald-700">{lift}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p>
+            The numbers speak clearly. Even at the higher end of car lift pricing (AED 500/month),
+            you save a minimum of AED 1,350 per month — AED 16,200 per year. For a typical
+            expatriate on a mid-level salary, this is equivalent to one month&apos;s take-home pay.
+          </p>
+        </>
+      )}
+
+      {isSafetyGuide && (
+        <>
+          <h2 id="safety-tips">Essential Safety Guidelines</h2>
+          <p>
+            Safety should be the first consideration when arranging any shared transport.
+            The following guidelines apply whether you are arranging a car lift for the
+            first time or reviewing your existing arrangement.
+          </p>
+          <ol>
+            <li>
+              <strong>Verify driver identity:</strong> Ask for a copy of the driver&apos;s
+              UAE driving licence and Emirates ID before your first ride. A legitimate
+              driver will never object to this request.
+            </li>
+            <li>
+              <strong>Check vehicle registration:</strong> The car should be in the
+              driver&apos;s name or be a company vehicle. Avoid cars with expired mulkiya
+              (registration).
+            </li>
+            <li>
+              <strong>Share your itinerary:</strong> Always tell a trusted contact your
+              expected pickup time, route, and expected arrival. Drop a location pin when
+              you board.
+            </li>
+            <li>
+              <strong>Use established services:</strong> Prefer verified car lift services
+              with established routes and multiple passengers — larger groups increase
+              accountability.
+            </li>
+            <li>
+              <strong>Trust your instincts:</strong> If anything feels wrong at pickup,
+              do not board. Message the car lift coordinator and arrange alternatives.
+            </li>
+          </ol>
+        </>
+      )}
+
+      {isLadiesGuide && (
+        <>
+          <h2 id="ladies-options">Ladies Car Lift Options in UAE</h2>
+          <p>
+            The demand for women-only car lift services in UAE has grown substantially in
+            recent years, driven by safety concerns, cultural preferences, and the
+            increasing number of professional women commuting between Sharjah and Dubai.
+          </p>
+          <p>
+            A genuine ladies-only car lift means a female driver transporting female
+            passengers only — not simply a car lift with a mixed group where a woman
+            happens to sit in front. When evaluating options, confirm the driver gender
+            explicitly before booking.
+          </p>
+          <h2 id="ladies-safety">Verification Checklist for Ladies Car Lifts</h2>
+          <ul>
+            <li>Confirm the driver is female (video call or in-person introduction before starting)</li>
+            <li>Verify UAE driving licence in the driver&apos;s name</li>
+            <li>Check that the vehicle is registered and insured</li>
+            <li>Ask for at least two references from current female passengers</li>
+            <li>Ensure the pickup and drop points are in well-lit, public locations</li>
+            <li>Use a service (like Car Lift UAE) that pre-screens all female drivers</li>
+          </ul>
+        </>
+      )}
+
+      {isCorporateGuide && (
+        <>
+          <h2 id="corporate-benefits">Corporate Transport Benefits</h2>
+          <p>
+            UAE companies of all sizes — from SMEs to large corporates — are discovering
+            that organised employee transportation programmes deliver measurable returns
+            on investment. Beyond the obvious cost savings, corporate car lift programmes
+            address productivity, retention, and environmental goals.
+          </p>
+          <ul>
+            <li>
+              <strong>Punctuality:</strong> Employees with reliable transport arrive on time,
+              reducing the cascading delays that cost businesses thousands in lost productivity.
+            </li>
+            <li>
+              <strong>Retention:</strong> Transport allowances rank among UAE employees&apos;
+              top three most-valued benefits, behind salary and health insurance.
+            </li>
+            <li>
+              <strong>ESG compliance:</strong> Shared transport reduces your company&apos;s
+              Scope 3 carbon emissions — increasingly important for reporting and client
+              requirements.
+            </li>
+            <li>
+              <strong>Cost neutrality:</strong> Many companies negotiate group rates that cost
+              less than the transport allowances they currently pay, while providing a
+              better service.
+            </li>
+          </ul>
+        </>
+      )}
+
+      {isComparison && (
+        <>
+          <h2 id="comparison">Side-by-Side Comparison</h2>
+          <p>
+            Making the right commute decision requires understanding what you are actually
+            comparing. Here is a structured breakdown across the dimensions that matter most
+            to UAE daily commuters:
+          </p>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="bg-slate-100">
+                <th className="border border-slate-300 px-3 py-2 text-left">Factor</th>
+                <th className="border border-slate-300 px-3 py-2 text-left">Car Lift</th>
+                <th className="border border-slate-300 px-3 py-2 text-left">Alternative</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Monthly Cost", "AED 300–500", "AED 900–2,500+"],
+                ["Flexibility", "Fixed route/time", "On-demand"],
+                ["Reliability", "Very high (fixed)", "Variable"],
+                ["Comfort", "Private vehicle", "Varies"],
+                ["Social aspect", "Same passengers daily", "Strangers"],
+                ["Booking process", "Monthly, in advance", "Per trip"],
+              ].map(([factor, carLift, alt]) => (
+                <tr key={factor} className="even:bg-slate-50">
+                  <td className="border border-slate-300 px-3 py-2 font-medium">{factor}</td>
+                  <td className="border border-slate-300 px-3 py-2 text-emerald-700 font-medium">{carLift}</td>
+                  <td className="border border-slate-300 px-3 py-2 text-slate-600">{alt}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      <h2 id="tips">Practical Tips for {category}</h2>
+      <p>
+        After interviewing hundreds of UAE commuters and working with drivers across all
+        major routes, here are the most consistently helpful tips in the{" "}
+        <strong>{category}</strong> category:
+      </p>
+      <ul>
+        <li>
+          <strong>Book at least one week in advance:</strong> Popular routes — especially
+          early morning slots — fill up fast at the start of each month.
+        </li>
+        <li>
+          <strong>Confirm the exact pickup spot on Google Maps:</strong> Send a location
+          pin when you first arrange the pickup to eliminate confusion on day one.
+        </li>
+        <li>
+          <strong>Communicate changes via WhatsApp the night before:</strong> If you will
+          not need the ride, message by 10 PM to allow the driver to adjust.
+        </li>
+        <li>
+          <strong>Pay on time:</strong> Monthly car lift relationships depend on trust. Pay
+          at the agreed time — first day of the month is standard.
+        </li>
+        <li>
+          <strong>Keep the car tidy:</strong> You are a guest in someone&apos;s vehicle.
+          No food with strong smells, no shoes on seats, and maintain a respectful volume
+          for phone calls.
+        </li>
+      </ul>
+
+      <h2 id="next-steps">Your Next Steps</h2>
+      <p>
+        Ready to set up your car lift? Car Lift UAE operates one of the largest verified
+        driver networks on the Sharjah–Dubai corridor. Whether you need a seat on an
+        existing route or are setting up transport for the first time, our team can
+        match you with the right driver within 24 hours.
+      </p>
+      <p>
+        For more guides in this area, explore our{" "}
+        <Link href="/blog">complete article library</Link>, or jump directly to our{" "}
+        <Link href="/pricing">pricing page</Link> for current monthly rates across all
+        major routes.
+      </p>
+
+      <aside className="not-prose rounded-xl bg-emerald-50 border border-emerald-200 p-5 mt-8">
+        <p className="text-sm font-bold text-emerald-800 uppercase tracking-wider mb-2">
+          Book Your Car Lift Today
+        </p>
+        <p className="text-emerald-900 leading-relaxed mb-4">
+          Seats on popular routes fill fast. Message us on WhatsApp to check availability
+          for your specific route, timing, and area.
+        </p>
+        <div className="flex gap-3 flex-wrap">
+          <a
+            href={formatWhatsAppHref(
+              BUSINESS.whatsapp,
+              `Hi! I read your article about ${title} and want to book a car lift.`
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+          >
+            <MessageCircle className="h-4 w-4" />
+            WhatsApp Us
+          </a>
+          <Link
+            href="/services/monthly-car-lift"
+            className="inline-flex items-center gap-2 rounded-lg bg-white border border-emerald-300 px-4 py-2.5 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
+          >
+            Monthly Packages
+          </Link>
+        </div>
+      </aside>
+    </div>
+  );
+}
+
+// ─── Article body router ─────────────────────────────────────────────────────
+
+function ArticleBody({ post }: { post: BlogPost }) {
+  if (post.slug === "complete-guide-car-lift-service-uae") {
+    return <PillarArticleContent />;
+  }
+  return generateArticleContent(post);
+}
+
+// ─── Table of Contents ───────────────────────────────────────────────────────
+
+function TableOfContents({ post }: { post: BlogPost }) {
+  const isPillar = post.slug === "complete-guide-car-lift-service-uae";
+  const sections = isPillar
+    ? [
+        { id: "what-is-car-lift", label: "What Is a Car Lift in UAE?" },
+        { id: "how-it-works", label: "How Car Lift Works" },
+        { id: "costs-pricing", label: "Costs & Pricing (2025)" },
+        { id: "benefits", label: "Why Choose Car Lift" },
+        { id: "safety", label: "Safety Guidelines" },
+        { id: "finding", label: "How to Find a Car Lift" },
+      ]
+    : [
+        { id: "overview", label: "Overview" },
+        post.category === "Routes & Commute" || post.category === "Neighborhoods"
+          ? { id: "route-details", label: "Route Details" }
+          : post.category === "Pricing & Savings"
+          ? { id: "pricing-breakdown", label: "Pricing Breakdown" }
+          : post.category === "Safety & Travel"
+          ? { id: "safety-tips", label: "Safety Tips" }
+          : post.category === "Comparisons"
+          ? { id: "comparison", label: "Comparison" }
+          : { id: "tips", label: "Key Information" },
+        { id: "tips", label: `Tips for ${post.category}` },
+        { id: "next-steps", label: "Next Steps" },
+      ].filter(Boolean);
+
+  return (
+    <nav
+      aria-label="Table of contents"
+      className="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-8"
+    >
+      <p className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+        <BookOpen className="h-4 w-4 text-blue-600" aria-hidden="true" />
+        In This Article
+      </p>
+      <ol className="space-y-2">
+        {sections.map((section, i) => (
+          <li key={section.id} className="flex items-start gap-2">
+            <span className="text-xs font-bold text-blue-600 mt-0.5 w-4 flex-shrink-0">
+              {i + 1}.
+            </span>
+            <a
+              href={`#${section.id}`}
+              className="text-sm text-slate-700 hover:text-blue-600 transition-colors leading-snug"
+            >
+              {section.label}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+
+// ─── Page component ──────────────────────────────────────────────────────────
+
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+  if (!post) notFound();
+
+  const relatedPosts = BLOG_POSTS.filter(
+    (p) => p.slug !== post.slug && p.category === post.category
+  ).slice(0, 3);
+
+  const popularRoutes = [
+    { label: "Sharjah → Business Bay", href: "/blog/sharjah-to-business-bay-car-lift-guide" },
+    { label: "Ajman → Dubai", href: "/blog/ajman-to-dubai-car-lift-guide" },
+    { label: "Al Nahda → Downtown", href: "/blog/al-nahda-sharjah-dubai-commute-guide" },
+    { label: "JVC → Business Bay", href: "/blog/car-lift-jvc-to-business-bay" },
+  ];
+
+  const whatsappHref = formatWhatsAppHref(
+    BUSINESS.whatsapp,
+    `Hi! I read "${post.title}" and want to book a car lift.`
+  );
+  const phoneHref = formatPhoneHref(BUSINESS.phone);
+
+  const postSchema = articleSchema({
+    title: post.title,
+    description: post.excerpt,
+    url: `/blog/${post.slug}`,
+    datePublished: post.publishDate,
+    authorName: "Car Lift UAE Team",
+  });
+
+  const bcSchema = breadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" },
+    { name: post.title, url: `/blog/${post.slug}` },
+  ]);
+
+  return (
+    <>
+      <SchemaScript schema={[postSchema, bcSchema]} />
+
+      {/* Breadcrumb */}
+      <div className="bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Blog", href: "/blog" },
+              { label: post.title },
+            ]}
+          />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+        <div className="lg:grid lg:grid-cols-[1fr_320px] lg:gap-12">
+          {/* ── Main article ── */}
+          <main>
+            {/* Article header */}
+            <header className="mb-8">
+              {/* Badges */}
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                    CATEGORY_COLORS[post.category] ?? "bg-slate-100 text-slate-800"
+                  }`}
+                >
+                  {post.category}
+                </span>
+                <span
+                  className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                    INTENT_COLORS[post.intent] ?? "bg-slate-100 text-slate-700"
+                  }`}
+                >
+                  {post.intent}
+                </span>
+                {post.pillar && (
+                  <span className="inline-flex items-center rounded-full bg-purple-100 text-purple-800 px-2.5 py-0.5 text-xs font-semibold gap-1">
+                    <BookOpen className="h-3 w-3" aria-hidden="true" />
+                    Pillar Guide
+                  </span>
+                )}
+              </div>
+
+              {/* Title */}
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-5">
+                {post.title}
+              </h1>
+
+              {/* Meta row */}
+              <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 pb-6 border-b border-slate-200">
+                <span className="flex items-center gap-1.5">
+                  <User className="h-4 w-4" aria-hidden="true" />
+                  Car Lift UAE Team
+                </span>
+                <time
+                  dateTime={post.publishDate}
+                  className="flex items-center gap-1.5"
+                >
+                  <Calendar className="h-4 w-4" aria-hidden="true" />
+                  {formatDate(post.publishDate)}
+                </time>
+                <span className="flex items-center gap-1.5">
+                  <Clock className="h-4 w-4" aria-hidden="true" />
+                  {post.readTime} min read
+                </span>
+              </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 pt-4">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-1 text-xs text-slate-500 bg-slate-100 rounded-full px-2.5 py-1"
+                  >
+                    <Tag className="h-3 w-3" aria-hidden="true" />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </header>
+
+            {/* Hero image placeholder */}
+            <div
+              className="relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden mb-8 flex items-center justify-center"
+              style={{
+                background:
+                  "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c2340 100%)",
+              }}
+              role="img"
+              aria-label={post.title}
+            >
+              <div
+                className="absolute inset-0 opacity-[0.06]"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+                  backgroundSize: "24px 24px",
+                }}
+                aria-hidden="true"
+              />
+              <div className="relative z-10 text-center px-6">
+                <p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-3">
+                  {post.category}
+                </p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white leading-tight max-w-xl">
+                  {post.title}
+                </h2>
+              </div>
+            </div>
+
+            {/* Table of contents */}
+            <TableOfContents post={post} />
+
+            {/* Article body */}
+            <ArticleBody post={post} />
+
+            {/* Tags footer */}
+            <div className="mt-10 pt-8 border-t border-slate-200">
+              <p className="text-sm font-semibold text-slate-700 mb-3">
+                Tagged:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-1 text-sm text-slate-600 bg-slate-100 border border-slate-200 rounded-full px-3 py-1 hover:bg-slate-200 transition-colors"
+                  >
+                    <Tag className="h-3 w-3" aria-hidden="true" />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </main>
+
+          {/* ── Sidebar ── */}
+          <aside className="mt-10 lg:mt-0 space-y-6">
+            {/* WhatsApp CTA */}
+            <Card className="overflow-hidden border-emerald-200">
+              <div
+                className="p-5"
+                style={{
+                  background: "linear-gradient(135deg, #064e3b, #065f46)",
+                }}
+              >
+                <div className="text-center">
+                  <MessageCircle
+                    className="h-8 w-8 text-emerald-300 mx-auto mb-3"
+                    aria-hidden="true"
+                  />
+                  <h3 className="text-base font-bold text-white mb-1">
+                    Book Your Car Lift
+                  </h3>
+                  <p className="text-sm text-emerald-100 mb-4">
+                    Seats available now on all major Sharjah–Dubai routes.
+                  </p>
+                  <a
+                    href={whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full rounded-lg bg-white text-emerald-700 font-bold py-2.5 px-4 text-sm hover:bg-emerald-50 transition-colors mb-2"
+                  >
+                    <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                    WhatsApp Now
+                  </a>
+                  <a
+                    href={phoneHref}
+                    className="flex items-center justify-center gap-2 w-full rounded-lg border border-white/30 text-white font-semibold py-2 px-4 text-sm hover:bg-white/10 transition-colors"
+                  >
+                    <Phone className="h-4 w-4" aria-hidden="true" />
+                    {BUSINESS.phone}
+                  </a>
+                </div>
+              </div>
+            </Card>
+
+            {/* Related posts */}
+            {relatedPosts.length > 0 && (
+              <Card>
+                <CardContent className="p-5">
+                  <h3 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">
+                    Related Articles
+                  </h3>
+                  <ul className="space-y-3">
+                    {relatedPosts.map((rp) => (
+                      <li key={rp.slug}>
+                        <Link
+                          href={`/blog/${rp.slug}`}
+                          className="group flex items-start gap-2"
+                        >
+                          <ChevronRight
+                            className="h-4 w-4 text-blue-500 flex-shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform"
+                            aria-hidden="true"
+                          />
+                          <span className="text-sm text-slate-700 group-hover:text-blue-600 transition-colors leading-snug">
+                            {rp.title}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Popular Routes */}
+            <Card>
+              <CardContent className="p-5">
+                <h3 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-blue-600" aria-hidden="true" />
+                  Popular Routes
+                </h3>
+                <ul className="space-y-2">
+                  {popularRoutes.map((route) => (
+                    <li key={route.href}>
+                      <Link
+                        href={route.href}
+                        className="flex items-center justify-between text-sm text-slate-700 hover:text-blue-600 py-1.5 border-b border-slate-100 last:border-0 transition-colors"
+                      >
+                        <span>{route.label}</span>
+                        <ArrowRight
+                          className="h-3.5 w-3.5 text-slate-400"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Contact info */}
+            <Card className="bg-slate-50">
+              <CardContent className="p-5">
+                <h3 className="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wider">
+                  Contact Car Lift UAE
+                </h3>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2 text-slate-700">
+                    <Phone className="h-4 w-4 text-blue-600 flex-shrink-0" aria-hidden="true" />
+                    <a href={phoneHref} className="hover:text-blue-600 transition-colors">
+                      {BUSINESS.phone}
+                    </a>
+                  </div>
+                  <div className="flex items-start gap-2 text-slate-700">
+                    <MapPin className="h-4 w-4 text-blue-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <span>
+                      {BUSINESS.address.street}, {BUSINESS.address.city}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-700">
+                    <Clock className="h-4 w-4 text-blue-600 flex-shrink-0" aria-hidden="true" />
+                    <span>{BUSINESS.hours.weekdays}</span>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-slate-200">
+                  <div className="flex items-center gap-2">
+                    <div className="flex">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <span key={i} className="text-amber-400 text-sm" aria-hidden="true">
+                          ★
+                        </span>
+                      ))}
+                    </div>
+                    <span className="text-xs text-slate-500">
+                      {BUSINESS.rating} ({BUSINESS.reviewCount}+ reviews)
+                    </span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </aside>
+        </div>
+
+        {/* Related posts grid (bottom) */}
+        {relatedPosts.length > 0 && (
+          <section className="mt-16 pt-10 border-t border-slate-200">
+            <h2 className="text-2xl font-bold text-slate-900 mb-8">
+              More in {post.category}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedPosts.map((rp) => (
+                <article
+                  key={rp.slug}
+                  className="group flex flex-col rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 overflow-hidden"
+                >
+                  <div
+                    className="h-1.5 w-full"
+                    style={{ background: "linear-gradient(90deg, #2563eb, #059669)" }}
+                    aria-hidden="true"
+                  />
+                  <div className="flex flex-col flex-1 p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span
+                        className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                          CATEGORY_COLORS[rp.category] ?? "bg-slate-100 text-slate-800"
+                        }`}
+                      >
+                        {rp.category}
+                      </span>
+                      <span className="text-xs text-slate-400 flex items-center gap-1">
+                        <Clock className="h-3 w-3" aria-hidden="true" />
+                        {rp.readTime} min
+                      </span>
+                    </div>
+                    <h3 className="font-bold text-slate-900 mb-2 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">
+                      <Link href={`/blog/${rp.slug}`}>{rp.title}</Link>
+                    </h3>
+                    <p className="text-sm text-slate-500 mb-4 line-clamp-3 flex-1">
+                      {rp.excerpt}
+                    </p>
+                    <Link
+                      href={`/blog/${rp.slug}`}
+                      className="text-sm font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1"
+                    >
+                      Read Article
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </>
+  );
+}
