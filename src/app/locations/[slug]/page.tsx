@@ -870,6 +870,7 @@ export default async function LocationPage({
                     {/* Stars */}
                     <div
                       className="flex items-center gap-0.5 mb-3"
+                      role="img"
                       aria-label={`${t.rating} out of 5 stars`}
                     >
                       {Array.from({ length: 5 }).map((_, i) => (
@@ -1083,6 +1084,7 @@ export default async function LocationPage({
           <div className="flex items-center justify-center gap-2">
             <div
               className="flex items-center gap-0.5"
+              role="img"
               aria-label={`${BUSINESS.rating} out of 5 stars`}
             >
               {Array.from({ length: 5 }).map((_, i) => (

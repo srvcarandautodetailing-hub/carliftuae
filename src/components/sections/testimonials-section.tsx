@@ -190,7 +190,7 @@ export default function TestimonialsSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5"
           >
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-0.5" aria-label={`${BUSINESS.rating} out of 5 stars`}>
+              <div className="flex items-center gap-0.5" role="img" aria-label={`${BUSINESS.rating} out of 5 stars`}>
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}

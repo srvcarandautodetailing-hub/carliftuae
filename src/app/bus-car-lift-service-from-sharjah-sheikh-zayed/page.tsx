@@ -442,7 +442,7 @@ export default function BusCarLiftSharjahSheikhZayedPage() {
       {/* ── CTA ─────────────────────────────────────────────────────────── */}
       <section aria-label="Book car lift CTA" className="py-14 bg-blue-600">
         <div className="max-w-xl mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-0.5 mb-3" aria-label="4.9 out of 5 stars">
+          <div className="flex items-center justify-center gap-0.5 mb-3" role="img" aria-label="4.9 out of 5 stars">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
             ))}

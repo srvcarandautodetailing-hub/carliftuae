@@ -431,7 +431,7 @@ export default function CarLiftFromSharjahToBusinessBayPage() {
         style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c2340 100%)" }}
       >
         <div className="max-w-2xl mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-0.5 mb-4" aria-label="4.9 out of 5 stars">
+          <div className="flex items-center justify-center gap-0.5 mb-4" role="img" aria-label="4.9 out of 5 stars">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
             ))}
