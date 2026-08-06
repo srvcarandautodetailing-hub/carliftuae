@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "Terms of Service – Car Lift UAE",
   description:
     "Read the Car Lift UAE Terms of Service. Booking policies, cancellation rules, payment terms, passenger responsibilities, safety rules, and governing law.",
-  alternates: { canonical: "https://www.carlift.ae/terms" },
+  alternates: { canonical: "https://www.carliftuae.com/terms" },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Terms of Service – Car Lift UAE",
@@ -39,7 +39,7 @@ const sections = [
     content: (
       <>
         <p className="text-slate-600 leading-relaxed mb-4">
-          By accessing our website at carlift.ae, initiating a WhatsApp
+          By accessing our website at carliftuae.com, initiating a WhatsApp
           conversation with Car Lift UAE, or using any of our car lift services,
           you agree to be bound by these Terms of Service (&ldquo;Terms&rdquo;).
         </p>

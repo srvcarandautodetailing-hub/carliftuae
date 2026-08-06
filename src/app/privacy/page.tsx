@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy – Car Lift UAE",
   description:
     "Read the Car Lift UAE Privacy Policy. Learn how we collect, use, and protect your personal data including name, phone, location, and ride history.",
-  alternates: { canonical: "https://www.carlift.ae/privacy" },
+  alternates: { canonical: "https://www.carliftuae.com/privacy" },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Privacy Policy – Car Lift UAE",
@@ -363,7 +363,7 @@ const sections = [
     content: (
       <>
         <p className="text-slate-600 leading-relaxed mb-4">
-          Our website (carlift.ae) uses a minimal number of cookies to improve
+          Our website (carliftuae.com) uses a minimal number of cookies to improve
           your browsing experience and understand how visitors interact with our
           site:
         </p>

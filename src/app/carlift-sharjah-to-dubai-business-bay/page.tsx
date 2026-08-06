@@ -37,13 +37,13 @@ export const metadata: Metadata = {
   keywords:
     "carlift sharjah to dubai, car lift sharjah to dubai, carlift sharjah to business bay, car lift sharjah to business bay, sharjah to dubai car lift monthly, carlift uae sharjah dubai",
   alternates: {
-    canonical: "https://www.carlift.ae/carlift-sharjah-to-dubai-business-bay",
+    canonical: "https://www.carliftuae.com/carlift-sharjah-to-dubai-business-bay",
   },
   openGraph: {
     title: "Carlift Sharjah to Dubai – Business Bay, DIFC, JLT | Carlift UAE",
     description:
       "Daily carlift from Sharjah to all major Dubai destinations. Monthly packages from AED 300. Salik included, GPS-tracked, ladies option. Book via WhatsApp.",
-    images: [{ url: "https://www.carlift.ae/opengraph-image", width: 1200, height: 630, alt: "Carlift Sharjah to Dubai Business Bay" }],
+    images: [{ url: "https://www.carliftuae.com/opengraph-image", width: 1200, height: 630, alt: "Carlift Sharjah to Dubai Business Bay" }],
   },
 };
 

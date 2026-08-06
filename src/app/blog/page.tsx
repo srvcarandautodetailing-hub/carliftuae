@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Car Lift UAE Blog – Commute Tips, Routes & Transport Guide",
   description:
     "Expert guides on car lift service in UAE. Route guides, pricing tips, safety advice, ladies transport, corporate solutions. Sharjah to Dubai commute made easy.",
-  alternates: { canonical: "https://www.carlift.ae/blog" },
+  alternates: { canonical: "https://www.carliftuae.com/blog" },
 };
 
 export const revalidate = 3600;

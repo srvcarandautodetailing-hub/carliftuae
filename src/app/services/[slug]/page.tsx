@@ -87,7 +87,7 @@ export async function generateMetadata({
       service.price +
       " " +
       service.priceNote,
-    alternates: { canonical: `https://www.carlift.ae/services/${slug}` },
+    alternates: { canonical: `https://www.carliftuae.com/services/${slug}` },
     openGraph: {
       title: `${service.name} UAE – Reliable & Affordable Transport`,
       description: service.description,

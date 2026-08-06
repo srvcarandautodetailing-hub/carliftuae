@@ -44,7 +44,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.excerpt,
     keywords: post.keywords.join(", "),
-    alternates: { canonical: `https://www.carlift.ae/blog/${slug}` },
+    alternates: { canonical: `https://www.carliftuae.com/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -53,7 +53,7 @@ export async function generateMetadata({
       tags: post.tags,
       images: [
         {
-          url: `https://www.carlift.ae/og/blog/${slug}.jpg`,
+          url: `https://www.carliftuae.com/og/blog/${slug}.jpg`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -797,7 +797,7 @@ export default async function BlogPostPage({
     url: `/blog/${post.slug}`,
     datePublished: post.publishDate,
     authorName: "Car Lift UAE Team",
-    image: `https://www.carlift.ae/og/blog/${post.slug}.jpg`,
+    image: `https://www.carliftuae.com/og/blog/${post.slug}.jpg`,
   });
 
   const bcSchema = breadcrumbSchema([

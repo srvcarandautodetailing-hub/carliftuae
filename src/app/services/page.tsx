@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title: "Car Lift Services UAE – Daily, Monthly, Ladies, Corporate & More",
   description:
     "Explore all car lift services in UAE. Daily rides, monthly packages, ladies car lift, corporate transport, airport transfers and more.",
-  alternates: { canonical: "https://www.carlift.ae/services" },
+  alternates: { canonical: "https://www.carliftuae.com/services" },
   openGraph: {
     title: "Car Lift Services UAE – Daily, Monthly, Ladies, Corporate & More",
     description:

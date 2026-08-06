@@ -38,13 +38,13 @@ export const metadata: Metadata = {
   keywords:
     "car lift from sharjah to business bay, carlift from sharjah to business bay, car lift sharjah to business bay, sharjah to business bay car lift, sharjah business bay car lift price, monthly car lift sharjah to business bay",
   alternates: {
-    canonical: "https://www.carlift.ae/car-lift-from-sharjah-to-business-bay",
+    canonical: "https://www.carliftuae.com/car-lift-from-sharjah-to-business-bay",
   },
   openGraph: {
     title: "Car Lift from Sharjah to Business Bay – AED 300–420/month | Carlift UAE",
     description:
       "The complete guide to car lift from Sharjah to Business Bay. Pricing by area, departure times, pickup points, ladies option. Book via WhatsApp in seconds.",
-    images: [{ url: "https://www.carlift.ae/opengraph-image", width: 1200, height: 630, alt: "Car Lift from Sharjah to Business Bay" }],
+    images: [{ url: "https://www.carliftuae.com/opengraph-image", width: 1200, height: 630, alt: "Car Lift from Sharjah to Business Bay" }],
   },
 };
 

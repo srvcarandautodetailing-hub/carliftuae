@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Car Lift UAE Pricing – Transparent Monthly & Daily Rates",
   description:
     "Clear, transparent car lift prices in UAE. Monthly shared rides from AED 200/month. Sharjah to Business Bay from AED 350/month. Daily trips from AED 18/trip. Salik included. No hidden fees.",
-  alternates: { canonical: "https://www.carlift.ae/pricing" },
+  alternates: { canonical: "https://www.carliftuae.com/pricing" },
   openGraph: {
     title: "Car Lift UAE Pricing – Monthly from AED 200, Daily from AED 18",
     description:

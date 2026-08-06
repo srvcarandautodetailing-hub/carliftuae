@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Carlift UAE – Sharjah to Business Bay from AED 300/month. Salik included, GPS-tracked, verified drivers. Ladies car lift available. 4.9★ rated by 247+ riders. Book via WhatsApp +971 56 228 6455 in 60 seconds.",
   keywords:
     "carlift uae, car lift uae, carlift sharjah to business bay, car lift sharjah to business bay, car lift sharjah, car lift service uae, daily car lift sharjah, monthly car lift dubai, car lift ajman, ladies car lift uae, carlift service",
-  alternates: { canonical: "https://www.carlift.ae" },
+  alternates: { canonical: "https://www.carliftuae.com" },
   openGraph: {
     title: "Carlift UAE – Sharjah to Business Bay from AED 300/month | GPS-Tracked",
     description:

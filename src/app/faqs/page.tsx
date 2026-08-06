@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Car Lift UAE FAQs – All Your Questions Answered",
   description:
     "Get answers to every question about Car Lift UAE. How to book, pricing, safety, routes, timing, ladies-only options, drivers, vehicles, and more. 25+ questions answered.",
-  alternates: { canonical: "https://www.carlift.ae/faqs" },
+  alternates: { canonical: "https://www.carliftuae.com/faqs" },
   openGraph: {
     title: "Car Lift UAE FAQs – Booking, Pricing, Safety & Routes Explained",
     description:

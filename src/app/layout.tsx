@@ -13,7 +13,7 @@ const geistSans = Geist({
   display: "swap",
 });
 
-const BASE_URL = "https://www.carlift.ae";
+const BASE_URL = "https://www.carliftuae.com";
 
 export const metadata: Metadata = {
   title: {

@@ -3,7 +3,7 @@ import { LOCATIONS } from "@/data/locations";
 import { SERVICES } from "@/data/services";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/data/blog";
 
-const BASE_URL = "https://www.carlift.ae";
+const BASE_URL = "https://www.carliftuae.com";
 
 type ChangeFrequency =
   | "always"

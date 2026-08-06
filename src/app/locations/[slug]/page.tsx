@@ -53,14 +53,14 @@ export async function generateMetadata({
       ` Book monthly from AED ${location.monthlyPrice}. GPS tracked, verified drivers.`,
     keywords: location.keywords.join(", "),
     alternates: {
-      canonical: `https://www.carlift.ae/locations/${location.slug}`,
+      canonical: `https://www.carliftuae.com/locations/${location.slug}`,
     },
     openGraph: {
       title: `Car Lift ${location.name} to Business Bay – AED ${location.monthlyPrice}/month`,
       description: location.description,
       images: [
         {
-          url: `https://www.carlift.ae/opengraph-image`,
+          url: `https://www.carliftuae.com/opengraph-image`,
           width: 1200,
           height: 630,
           alt: `Car Lift from ${location.name} to Business Bay`,

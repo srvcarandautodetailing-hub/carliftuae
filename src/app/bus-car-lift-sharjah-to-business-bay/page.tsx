@@ -35,13 +35,13 @@ export const metadata: Metadata = {
   keywords:
     "bus car lift sharjah to business bay, sharjah to business bay bus timings, car lift service sharjah to business bay, shared car lift sharjah business bay, bus car lift uae",
   alternates: {
-    canonical: "https://www.carlift.ae/bus-car-lift-sharjah-to-business-bay",
+    canonical: "https://www.carliftuae.com/bus-car-lift-sharjah-to-business-bay",
   },
   openGraph: {
     title: "Bus Car Lift Sharjah to Business Bay – From AED 300/month",
     description:
       "Daily shared car lift from Sharjah to Business Bay. AC vehicle, GPS-tracked, Salik included. Morning timings 6:30 AM – 8:00 AM. Ladies option available.",
-    images: [{ url: "https://www.carlift.ae/opengraph-image", width: 1200, height: 630, alt: "Bus Car Lift Sharjah to Business Bay" }],
+    images: [{ url: "https://www.carliftuae.com/opengraph-image", width: 1200, height: 630, alt: "Bus Car Lift Sharjah to Business Bay" }],
   },
 };
 

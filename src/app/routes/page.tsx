@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "Car Lift Routes UAE – Sharjah, Dubai, Ajman & All Areas",
   description:
     "Browse all Car Lift UAE routes. Sharjah to Business Bay from AED 350/month, Ajman from AED 420/month, Dubai internal routes from AED 200/month. 50+ daily routes, morning & evening service.",
-  alternates: { canonical: "https://www.carlift.ae/routes" },
+  alternates: { canonical: "https://www.carliftuae.com/routes" },
   openGraph: {
     title: "Car Lift Routes UAE – Sharjah, Dubai, Ajman to Business Bay",
     description:

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "About Car Lift UAE – Trusted Since 2019",
   description:
     "Car Lift UAE has been connecting Sharjah and Ajman professionals to Dubai's Business Bay since 2019. Learn about our mission, story, team values, and why 500+ daily riders trust us.",
-  alternates: { canonical: "https://www.carlift.ae/about" },
+  alternates: { canonical: "https://www.carliftuae.com/about" },
   openGraph: {
     title: "About Car Lift UAE – Trusted Since 2019",
     description:

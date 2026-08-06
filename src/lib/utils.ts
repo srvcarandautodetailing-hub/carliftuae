@@ -33,7 +33,7 @@ export const BUSINESS = {
   phone: "+971 56 228 6455",
   whatsapp: "+971562286455",
   email: "info@carlift.ae",
-  website: "https://www.carlift.ae",
+  website: "https://www.carliftuae.com",
   address: {
     street: "Al Majaz Area",
     city: "Sharjah",

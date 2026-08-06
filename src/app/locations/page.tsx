@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "Car Lift Locations UAE – Sharjah, Dubai, Ajman & All Areas",
   description:
     "Car lift service across UAE. Find your nearest pickup area: Sharjah, Dubai, Business Bay, Ajman, Al Nahda, Al Qusais, JVC, JLT, Silicon Oasis and more.",
-  alternates: { canonical: "https://www.carlift.ae/locations" },
+  alternates: { canonical: "https://www.carliftuae.com/locations" },
   openGraph: {
     title: "Car Lift Locations UAE – Sharjah, Dubai, Ajman & All Areas",
     description:

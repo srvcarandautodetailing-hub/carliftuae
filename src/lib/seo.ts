@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.carlift.ae";
+const BASE_URL = "https://www.carliftuae.com";
 const SITE_NAME = "Car Lift UAE";
 const DEFAULT_DESCRIPTION =
   "Premium daily car lift service from Sharjah to Business Bay, Dubai. Safe, reliable, affordable shared rides with professional drivers. Book now from AED 200/month.";

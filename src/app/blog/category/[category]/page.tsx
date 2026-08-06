@@ -96,7 +96,7 @@ export async function generateMetadata({
       CATEGORY_DESCRIPTIONS[categoryName] ?? ""
     }`,
     alternates: {
-      canonical: `https://www.carlift.ae/blog/category/${categorySlug}`,
+      canonical: `https://www.carliftuae.com/blog/category/${categorySlug}`,
     },
   };
 }

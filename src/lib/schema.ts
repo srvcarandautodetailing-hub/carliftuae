@@ -1,6 +1,6 @@
 import { BUSINESS } from "./utils";
 
-const BASE_URL = "https://www.carlift.ae";
+const BASE_URL = "https://www.carliftuae.com";
 
 // Organization schema
 export function organizationSchema() {

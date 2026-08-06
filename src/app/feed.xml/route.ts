@@ -1,7 +1,7 @@
 import { BLOG_POSTS } from "@/data/blog";
 import { BUSINESS } from "@/lib/utils";
 
-const BASE_URL = "https://www.carlift.ae";
+const BASE_URL = "https://www.carliftuae.com";
 
 export const revalidate = 3600;
 

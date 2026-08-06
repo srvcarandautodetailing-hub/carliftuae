@@ -35,13 +35,13 @@ export const metadata: Metadata = {
   keywords:
     "bus car lift service sharjah sheikh zayed, car lift sharjah sheikh zayed road, sharjah to sheikh zayed road car lift, sharjah to difc car lift, sharjah to jlt car lift, sharjah to dubai marina car lift",
   alternates: {
-    canonical: "https://www.carlift.ae/bus-car-lift-service-from-sharjah-sheikh-zayed",
+    canonical: "https://www.carliftuae.com/bus-car-lift-service-from-sharjah-sheikh-zayed",
   },
   openGraph: {
     title: "Bus Car Lift from Sharjah via Sheikh Zayed Road – DIFC, Business Bay, JLT",
     description:
       "Daily shared car lift from Sharjah via SZR to Business Bay, DIFC, JLT, Dubai Marina, Media City. AED 300–450/month. Salik included.",
-    images: [{ url: "https://www.carlift.ae/opengraph-image", width: 1200, height: 630, alt: "Car Lift Sharjah Sheikh Zayed Road" }],
+    images: [{ url: "https://www.carliftuae.com/opengraph-image", width: 1200, height: 630, alt: "Car Lift Sharjah Sheikh Zayed Road" }],
   },
 };
 
