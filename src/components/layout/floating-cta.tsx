@@ -57,7 +57,7 @@ export function FloatingCTA() {
               href={formatWhatsAppHref(BUSINESS.whatsapp, "Hi, I want to book a car lift!")}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-2xl shadow-xl hover:bg-[#1ebe57] transition-colors text-sm font-semibold"
+              className="flex items-center gap-2 bg-[#15803d] text-white px-4 py-3 rounded-2xl shadow-xl hover:bg-[#166534] transition-colors text-sm font-semibold"
               aria-label="WhatsApp us"
             >
               <MessageCircle className="w-4 h-4" />
@@ -72,7 +72,7 @@ export function FloatingCTA() {
         onClick={() => setExpanded(!expanded)}
         className={cn(
           "w-14 h-14 rounded-2xl flex items-center justify-center shadow-2xl transition-all duration-300",
-          expanded ? "bg-slate-800 rotate-45" : "bg-[#25D366] hover:bg-[#1ebe57] whatsapp-pulse"
+          expanded ? "bg-slate-800 rotate-45" : "bg-[#15803d] hover:bg-[#166534] whatsapp-pulse"
         )}
         whileTap={{ scale: 0.95 }}
         aria-label={expanded ? "Close contact options" : "Open contact options"}

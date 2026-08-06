@@ -85,10 +85,10 @@ export function Footer() {
             </p>
 
             {/* Contact info */}
-            <div className="space-y-3">
+            <div className="space-y-1">
               <a
                 href={`tel:${BUSINESS.phone}`}
-                className="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors"
+                className="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors min-h-[44px]"
                 aria-label={`Call us at ${BUSINESS.phone}`}
               >
                 <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
@@ -96,7 +96,7 @@ export function Footer() {
               </a>
               <a
                 href={`mailto:${BUSINESS.email}`}
-                className="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors"
+                className="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors min-h-[44px]"
               >
                 <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 <span>{BUSINESS.email}</span>
@@ -115,7 +115,7 @@ export function Footer() {
               href={formatWhatsAppHref(BUSINESS.whatsapp, "Hi, I want to book a car lift!")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-[#25D366] text-white text-sm font-semibold rounded-xl hover:bg-[#1ebe57] transition-colors"
+              className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-[#15803d] text-white text-sm font-semibold rounded-xl hover:bg-[#166534] transition-colors"
               aria-label="Book via WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
@@ -150,17 +150,17 @@ export function Footer() {
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-slate-400">
               © {currentYear} Car Lift UAE. All rights reserved. Proudly serving Sharjah, Dubai & Ajman.
             </p>
             <div className="flex items-center gap-6">
-              <Link href="/privacy" className="text-sm text-slate-500 hover:text-white transition-colors">
+              <Link href="/privacy" className="text-sm text-slate-400 hover:text-white transition-colors">
                 Privacy
               </Link>
-              <Link href="/terms" className="text-sm text-slate-500 hover:text-white transition-colors">
+              <Link href="/terms" className="text-sm text-slate-400 hover:text-white transition-colors">
                 Terms
               </Link>
-              <Link href="/sitemap.xml" className="text-sm text-slate-500 hover:text-white transition-colors">
+              <Link href="/sitemap.xml" className="text-sm text-slate-400 hover:text-white transition-colors">
                 Sitemap
               </Link>
             </div>

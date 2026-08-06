@@ -15,7 +15,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-blue-600 underline-offset-4 hover:underline",
         cta: "bg-emerald-500 text-white hover:bg-emerald-600 shadow-lg hover:shadow-emerald-200 hover:-translate-y-0.5 font-bold",
-        whatsapp: "bg-[#25D366] text-white hover:bg-[#1ebe57] shadow-lg hover:shadow-green-200 hover:-translate-y-0.5 font-bold",
+        whatsapp: "bg-[#15803d] text-white hover:bg-[#166534] shadow-lg hover:shadow-green-200 hover:-translate-y-0.5 font-bold",
         dark: "bg-slate-900 text-white hover:bg-slate-800 shadow-lg hover:-translate-y-0.5",
       },
       size: {

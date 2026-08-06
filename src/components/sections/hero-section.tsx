@@ -19,9 +19,8 @@ import { Badge } from "@/components/ui/badge";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: {},
   visible: {
-    opacity: 1,
     transition: {
       staggerChildren: 0.12,
       delayChildren: 0.1,
@@ -132,15 +131,15 @@ export default function HeroSection() {
             </p>
           </motion.div>
 
-          {/* Description */}
-          <motion.div variants={itemVariants} className="max-w-2xl">
+          {/* Description — static (no JS animation) for LCP optimisation */}
+          <div className="max-w-2xl">
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
               Safe, reliable, and affordable shared rides.{" "}
               <span className="text-white font-semibold">From AED 350/month.</span>{" "}
               GPS tracked. Verified drivers.{" "}
               <span className="text-amber-400 font-semibold">4.9★ rated.</span>
             </p>
-          </motion.div>
+          </div>
 
           {/* CTA buttons */}
           <motion.div

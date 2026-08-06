@@ -154,9 +154,8 @@ export default function ServicesSection() {
                   <Link
                     href={`/services/${service.slug}`}
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors duration-200 group/link mt-auto"
-                    aria-label={`Learn more about ${service.name}`}
                   >
-                    Learn More
+                    Learn More<span className="sr-only"> about {service.name}</span>
                     <ArrowRight
                       className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1"
                       aria-hidden="true"
