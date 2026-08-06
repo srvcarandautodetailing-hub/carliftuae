@@ -41,8 +41,23 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // Favicon files — short TTL so browser picks up updates after deploy
       {
-        source: "/(.*)\\.(jpg|jpeg|png|gif|svg|ico|webp|avif)",
+        source: "/favicon.ico",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400, must-revalidate" }],
+      },
+      {
+        source: "/(favicon-:size\\.png|apple-touch-icon\\.png|android-chrome-:size\\.png)",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400, must-revalidate" }],
+      },
+      // Web manifests — no-cache so browsers always fetch the latest
+      {
+        source: "/(site\\.webmanifest|manifest\\.json)",
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
+      // All other images — long-lived immutable cache
+      {
+        source: "/(.*)\\.(jpg|jpeg|png|gif|svg|webp|avif)",
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {
