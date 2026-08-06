@@ -1,25 +1,76 @@
 {
   "name": "Car Lift UAE",
   "short_name": "Car Lift UAE",
-  "description": "Daily car lift from Sharjah to Business Bay & Dubai. From AED 300/month.",
+  "description": "Daily car lift from Sharjah to Business Bay & Dubai. From AED 300/month. GPS-tracked, verified drivers.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
+  "background_color": "#0f172a",
   "theme_color": "#2563eb",
-  "background_color": "#ffffff",
   "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "transportation",
+    "travel"
+  ],
   "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable any"
     },
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable any"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+      "name": "Book via WhatsApp",
+      "short_name": "Book Now",
+      "description": "Book a car lift via WhatsApp in 60 seconds",
+      "url": "https://wa.me/971562286455?text=Hi%2C%20I%20want%20to%20book%20a%20car%20lift!",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "View Pricing",
+      "short_name": "Pricing",
+      "description": "Car lift pricing from AED 300/month",
+      "url": "/pricing",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
 }

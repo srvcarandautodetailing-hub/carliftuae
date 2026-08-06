@@ -1,59 +1,46 @@
 {
   "name": "Car Lift UAE",
   "short_name": "Car Lift UAE",
-  "description": "Daily car lift service from Sharjah to Business Bay, Dubai. Book via WhatsApp.",
+  "description": "Daily car lift from Sharjah to Business Bay & Dubai. From AED 300/month. GPS-tracked, verified drivers.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0f172a",
   "theme_color": "#2563eb",
   "lang": "en",
-  "categories": ["transportation", "travel"],
+  "dir": "ltr",
+  "categories": [
+    "transportation",
+    "travel"
+  ],
   "icons": [
     {
-      "src": "/icons/icon-72x72.png",
-      "sizes": "72x72",
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
-      "src": "/icons/icon-96x96.png",
-      "sizes": "96x96",
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
-      "src": "/icons/icon-128x128.png",
-      "sizes": "128x128",
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
-      "src": "/icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/icons/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/icons/icon-192x192.png",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "/icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/icons/icon-512x512.png",
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
@@ -63,16 +50,27 @@
     {
       "name": "Book via WhatsApp",
       "short_name": "Book Now",
-      "description": "Book a car lift via WhatsApp",
-      "url": "https://wa.me/971501234567?text=Hi%2C%20I%20want%20to%20book%20a%20car%20lift!",
-      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+      "description": "Book a car lift via WhatsApp in 60 seconds",
+      "url": "https://wa.me/971562286455?text=Hi%2C%20I%20want%20to%20book%20a%20car%20lift!",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "View Pricing",
       "short_name": "Pricing",
-      "description": "See car lift pricing",
+      "description": "Car lift pricing from AED 300/month",
       "url": "/pricing",
-      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
-  ]
+  ],
+  "prefer_related_applications": false
 }
