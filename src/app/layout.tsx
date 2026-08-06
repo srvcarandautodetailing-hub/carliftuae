@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   keywords:
     "car lift uae, car lift sharjah, car lift sharjah to business bay, sharjah to business bay car lift, car lift service uae, daily car lift sharjah, monthly car lift dubai",
   metadataBase: new URL(BASE_URL),
-  alternates: { canonical: BASE_URL },
+  alternates: { canonical: `${BASE_URL}/` },
   manifest: "/site.webmanifest",
   icons: {
     icon: [
