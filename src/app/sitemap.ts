@@ -5,63 +5,69 @@ import { BLOG_POSTS, BLOG_CATEGORIES } from "@/data/blog";
 
 const BASE_URL = "https://www.carlift.ae";
 
-type ChangeFrequency = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
+type ChangeFrequency =
+  | "always"
+  | "hourly"
+  | "daily"
+  | "weekly"
+  | "monthly"
+  | "yearly"
+  | "never";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Fixed dates: use the site launch date for stable pages so crawlers
-  // can distinguish genuinely updated pages from unchanged ones.
-  const LAUNCH_DATE = "2025-01-01";
-  const LAST_UPDATED = "2026-08-05";
+  const LAUNCH_DATE   = "2025-01-01";
+  const CONTENT_DATE  = "2026-08-05"; // major GSC content added
+  const TODAY         = "2026-08-06"; // last technical update
 
-  // Static core pages
+  // ── Core pages ────────────────────────────────────────────────────────────
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
-      lastModified: LAST_UPDATED,
+      lastModified: TODAY,
       changeFrequency: "daily" as ChangeFrequency,
       priority: 1.0,
     },
     {
-      url: `${BASE_URL}/about`,
-      lastModified: LAUNCH_DATE,
-      changeFrequency: "monthly" as ChangeFrequency,
-      priority: 0.8,
-    },
-    {
       url: `${BASE_URL}/services`,
-      lastModified: LAST_UPDATED,
+      lastModified: CONTENT_DATE,
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/locations`,
-      lastModified: LAST_UPDATED,
+      lastModified: CONTENT_DATE,
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/routes`,
-      lastModified: LAST_UPDATED,
+      lastModified: CONTENT_DATE,
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/pricing`,
-      lastModified: LAST_UPDATED,
+      lastModified: CONTENT_DATE,
       changeFrequency: "weekly" as ChangeFrequency,
-      priority: 0.8,
+      priority: 0.85,
     },
     {
       url: `${BASE_URL}/faqs`,
-      lastModified: LAST_UPDATED,
+      lastModified: CONTENT_DATE,
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/blog`,
-      lastModified: LAST_UPDATED,
+      lastModified: TODAY,
       changeFrequency: "daily" as ChangeFrequency,
       priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/about`,
+      lastModified: LAUNCH_DATE,
+      changeFrequency: "monthly" as ChangeFrequency,
+      priority: 0.7,
     },
     {
       url: `${BASE_URL}/contact`,
@@ -73,50 +79,99 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/privacy`,
       lastModified: LAUNCH_DATE,
       changeFrequency: "yearly" as ChangeFrequency,
-      priority: 0.3,
+      priority: 0.2,
     },
     {
       url: `${BASE_URL}/terms`,
       lastModified: LAUNCH_DATE,
       changeFrequency: "yearly" as ChangeFrequency,
-      priority: 0.3,
+      priority: 0.2,
     },
   ];
 
-  // Location pages — high SEO value
+  // ── GSC recovery pages (old domain had rankings — highest crawl priority) ─
+  // These exact slugs are based on carliftuae.com queries with existing
+  // impressions/clicks. Priority set to 0.95 to signal indexing urgency.
+  const gscLandingPages: MetadataRoute.Sitemap = [
+    {
+      // Query: "car lift from sharjah to business bay" — pos 1.94, 6.45% CTR
+      url: `${BASE_URL}/car-lift-from-sharjah-to-business-bay`,
+      lastModified: CONTENT_DATE,
+      changeFrequency: "weekly" as ChangeFrequency,
+      priority: 0.95,
+    },
+    {
+      // Query: "carlift sharjah to dubai" — 386 impressions pos 10.76
+      url: `${BASE_URL}/carlift-sharjah-to-dubai-business-bay`,
+      lastModified: CONTENT_DATE,
+      changeFrequency: "weekly" as ChangeFrequency,
+      priority: 0.92,
+    },
+    {
+      // Query: "bus car lift sharjah to business bay" — 31 clicks pos 12.55
+      url: `${BASE_URL}/bus-car-lift-sharjah-to-business-bay`,
+      lastModified: CONTENT_DATE,
+      changeFrequency: "weekly" as ChangeFrequency,
+      priority: 0.92,
+    },
+    {
+      // Old domain rank: pos 8.55 via Sheikh Zayed Road corridor
+      url: `${BASE_URL}/bus-car-lift-service-from-sharjah-sheikh-zayed`,
+      lastModified: CONTENT_DATE,
+      changeFrequency: "weekly" as ChangeFrequency,
+      priority: 0.92,
+    },
+  ];
+
+  // ── Location pages ────────────────────────────────────────────────────────
   const locationPages: MetadataRoute.Sitemap = LOCATIONS.map((loc) => ({
     url: `${BASE_URL}/locations/${loc.slug}`,
-    lastModified: LAST_UPDATED,
+    lastModified: CONTENT_DATE,
     changeFrequency: "weekly" as ChangeFrequency,
-    priority: loc.slug === "sharjah" || loc.slug === "business-bay" ? 0.95 : 0.85,
+    // Sharjah & Business Bay are primary origin/destination — boost priority
+    priority:
+      loc.slug === "sharjah" || loc.slug === "business-bay"
+        ? 0.95
+        : loc.slug === "dubai" || loc.slug === "ajman"
+        ? 0.88
+        : 0.82,
   }));
 
-  // Service pages
+  // ── Service pages ─────────────────────────────────────────────────────────
   const servicePages: MetadataRoute.Sitemap = SERVICES.map((svc) => ({
     url: `${BASE_URL}/services/${svc.slug}`,
-    lastModified: LAST_UPDATED,
+    lastModified: CONTENT_DATE,
     changeFrequency: "weekly" as ChangeFrequency,
-    priority: 0.85,
+    // Daily/monthly/ladies are the top 3 commercial intent services
+    priority:
+      ["daily-car-lift", "monthly-car-lift", "ladies-car-lift"].includes(svc.slug)
+        ? 0.88
+        : 0.80,
   }));
 
-  // Blog posts — use each post's own publish date
+  // ── Blog posts ────────────────────────────────────────────────────────────
   const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: post.publishDate,
     changeFrequency: "monthly" as ChangeFrequency,
-    priority: post.featured ? 0.8 : 0.7,
+    priority: post.featured ? 0.78 : 0.65,
   }));
 
-  // Blog category pages
+  // ── Blog category pages ───────────────────────────────────────────────────
   const blogCategoryPages: MetadataRoute.Sitemap = BLOG_CATEGORIES.map((cat) => ({
-    url: `${BASE_URL}/blog/category/${cat.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`,
-    lastModified: LAST_UPDATED,
+    url: `${BASE_URL}/blog/category/${cat
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^a-z0-9-]/g, "")}`,
+    lastModified: TODAY,
     changeFrequency: "weekly" as ChangeFrequency,
-    priority: 0.6,
+    priority: 0.55,
   }));
 
+  // Priority order: homepage → GSC pages → locations → services → static → blog
   return [
     ...staticPages,
+    ...gscLandingPages,
     ...locationPages,
     ...servicePages,
     ...blogPages,

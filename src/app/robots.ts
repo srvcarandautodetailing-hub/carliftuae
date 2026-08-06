@@ -9,32 +9,20 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         disallow: [
-          "/_next/",
+          "/_next/static/",
           "/admin/",
-          "/*.json",
+          "/api/",
         ],
       },
-      // Allow AI crawlers for GEO/AEO
-      {
-        userAgent: "GPTBot",
-        allow: "/",
-      },
-      {
-        userAgent: "Google-Extended",
-        allow: "/",
-      },
-      {
-        userAgent: "anthropic-ai",
-        allow: "/",
-      },
-      {
-        userAgent: "PerplexityBot",
-        allow: "/",
-      },
-      {
-        userAgent: "Bingbot",
-        allow: "/",
-      },
+      // AI crawlers — allow all for GEO/AEO signal
+      { userAgent: "GPTBot",        allow: "/" },
+      { userAgent: "Google-Extended", allow: "/" },
+      { userAgent: "anthropic-ai",  allow: "/" },
+      { userAgent: "ClaudeBot",     allow: "/" },
+      { userAgent: "PerplexityBot", allow: "/" },
+      { userAgent: "Bingbot",       allow: "/" },
+      { userAgent: "Applebot",      allow: "/" },
+      { userAgent: "Amazonbot",     allow: "/" },
     ],
     sitemap: `${BASE_URL}/sitemap.xml`,
     host: BASE_URL,
