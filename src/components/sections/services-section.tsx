@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Car,
   CalendarCheck,
@@ -94,6 +95,39 @@ export default function ServicesSection() {
             car lift solution for every commuter in the UAE.
           </motion.p>
         </motion.div>
+
+        {/* Feature image strip */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+          {[
+            {
+              src: "/images/services/carlift-uae-professionals-interior.webp",
+              alt: "Professionals working on laptops inside a Car Lift UAE van during daily commute",
+            },
+            {
+              src: "/images/services/ladies-car-lift-interior-uae.webp",
+              alt: "Ladies-only car lift interior – safe and comfortable rides for women in UAE",
+            },
+            {
+              src: "/images/services/carlift-uae-airport-transfer-dubai.webp",
+              alt: "Car Lift UAE airport transfer service at Dubai International Airport",
+            },
+            {
+              src: "/images/services/carlift-uae-corporate-shuttle-service.webp",
+              alt: "Corporate car lift shuttle service – luxury executive transport UAE",
+            },
+          ].map(({ src, alt }) => (
+            <div key={src} className="relative h-40 sm:h-48 rounded-xl overflow-hidden shadow-sm">
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 640px) 50vw, 25vw"
+                quality={73}
+              />
+            </div>
+          ))}
+        </div>
 
         {/* Services grid */}
         <motion.div

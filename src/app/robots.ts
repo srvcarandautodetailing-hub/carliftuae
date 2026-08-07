@@ -10,6 +10,8 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/", "/admin/"],
       },
+      // Googlebot-Image: explicitly allow /images/ for image indexing
+      { userAgent: "Googlebot-Image", allow: "/images/" },
       // Allow all major AI/search crawlers explicitly
       { userAgent: "Googlebot",        allow: "/" },
       { userAgent: "Googlebot-Image",  allow: "/" },

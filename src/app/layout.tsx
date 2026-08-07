@@ -48,14 +48,7 @@ export const metadata: Metadata = {
     title: "Car Lift UAE – Daily Car Lift from Sharjah to Business Bay & Dubai",
     description:
       "Premium daily car lift service. Sharjah to Business Bay from AED 350/month. Safe, reliable, GPS tracked. 4.9★ rated by 247 customers.",
-    images: [
-      {
-        url: `${BASE_URL}/og/home.jpg`,
-        width: 1200,
-        height: 630,
-        alt: "Car Lift UAE - Daily Car Lift Service Sharjah to Dubai",
-      },
-    ],
+    // OG images are generated per-page via opengraph-image.tsx in each route folder
   },
   twitter: {
     card: "summary_large_image",

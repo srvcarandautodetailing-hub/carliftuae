@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   MessageCircle,
   MapPin,
@@ -62,6 +63,17 @@ export default function HeroSection() {
       aria-label="Car Lift UAE – Daily Car Lift Service from Sharjah to Dubai"
       className="relative min-h-screen flex items-center overflow-hidden bg-slate-900"
     >
+      {/* Background photo */}
+      <Image
+        src="/images/hero/carlift-uae-daily-commuters-interior.webp"
+        alt="Car lift UAE – daily commuters sharing a comfortable ride from Sharjah to Business Bay, Dubai"
+        fill
+        priority
+        quality={84}
+        sizes="100vw"
+        className="object-cover opacity-[0.13] select-none pointer-events-none"
+      />
+
       {/* Animated mesh gradient background */}
       <div
         className="absolute inset-0 hero-gradient hero-mesh"

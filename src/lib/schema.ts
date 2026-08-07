@@ -12,9 +12,9 @@ export function organizationSchema() {
     url: BASE_URL,
     logo: {
       "@type": "ImageObject",
-      url: `${BASE_URL}/images/logo.png`,
-      width: 200,
-      height: 60,
+      url: `${BASE_URL}/images/logos/carlift-uae-logo.png`,
+      width: 512,
+      height: 512,
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -210,7 +210,7 @@ export function articleSchema({
       name: BUSINESS.name,
       logo: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/images/logo.png`,
+        url: `${BASE_URL}/images/logos/carlift-uae-logo.png`,
       },
     },
     ...(image && {
