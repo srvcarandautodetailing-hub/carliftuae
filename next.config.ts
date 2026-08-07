@@ -89,6 +89,15 @@ const nextConfig: NextConfig = {
       // Common misspellings / alternate forms seen in queries
       { source: "/carlift-uae", destination: "/", permanent: true },
       { source: "/car-lift-near-me", destination: "/locations", permanent: true },
+      // WordPress legacy URLs — redirect to canonical equivalents (passes link equity)
+      { source: "/post-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/page-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/wp-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/feed", destination: "/feed.xml", permanent: true },
+      { source: "/wp-content/:path*", destination: "/", permanent: true },
+      { source: "/wp-admin/:path*", destination: "/", permanent: true },
+      { source: "/wp-login.php", destination: "/", permanent: true },
     ];
   },
 };

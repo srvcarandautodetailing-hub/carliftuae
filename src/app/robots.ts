@@ -8,23 +8,20 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: [
-          "/_next/static/",
-          "/admin/",
-          "/api/",
-        ],
+        disallow: ["/api/", "/admin/"],
       },
-      // AI crawlers — allow all for GEO/AEO signal
-      { userAgent: "GPTBot",        allow: "/" },
-      { userAgent: "Google-Extended", allow: "/" },
-      { userAgent: "anthropic-ai",  allow: "/" },
-      { userAgent: "ClaudeBot",     allow: "/" },
-      { userAgent: "PerplexityBot", allow: "/" },
-      { userAgent: "Bingbot",       allow: "/" },
-      { userAgent: "Applebot",      allow: "/" },
-      { userAgent: "Amazonbot",     allow: "/" },
+      // Allow all major AI/search crawlers explicitly
+      { userAgent: "Googlebot",        allow: "/" },
+      { userAgent: "Googlebot-Image",  allow: "/" },
+      { userAgent: "GPTBot",           allow: "/" },
+      { userAgent: "Google-Extended",  allow: "/" },
+      { userAgent: "anthropic-ai",     allow: "/" },
+      { userAgent: "ClaudeBot",        allow: "/" },
+      { userAgent: "PerplexityBot",    allow: "/" },
+      { userAgent: "Bingbot",          allow: "/" },
+      { userAgent: "Applebot",         allow: "/" },
+      { userAgent: "Amazonbot",        allow: "/" },
     ],
     sitemap: `${BASE_URL}/sitemap.xml`,
-    host: BASE_URL,
   };
 }
