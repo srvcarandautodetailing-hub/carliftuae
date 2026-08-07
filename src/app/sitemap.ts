@@ -16,8 +16,8 @@ type ChangeFrequency =
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const LAUNCH_DATE   = "2025-01-01";
-  const CONTENT_DATE  = "2026-08-05"; // major GSC content added
-  const TODAY         = "2026-08-06"; // last technical update
+  const CONTENT_DATE  = "2026-08-05";
+  const TODAY         = new Date().toISOString().split("T")[0]; // always current date
 
   // ── Core pages ────────────────────────────────────────────────────────────
   const staticPages: MetadataRoute.Sitemap = [

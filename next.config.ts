@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
       {
         source: "/(.*)",
         headers: [
+          { key: "X-Robots-Tag", value: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "origin-when-cross-origin" },
