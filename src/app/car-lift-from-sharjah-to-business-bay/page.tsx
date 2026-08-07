@@ -405,10 +405,10 @@ export default function CarLiftFromSharjahToBusinessBayPage() {
           <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">More Car Lift Information</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
+              { href: "/carlift-sharjah-to-dubai-business-bay", label: "Carlift Sharjah to Dubai", desc: "Dubai corridor routes & pricing" },
               { href: "/bus-car-lift-sharjah-to-business-bay", label: "Bus Car Lift Sharjah to Business Bay", desc: "Timings, pickup points" },
               { href: "/bus-car-lift-service-from-sharjah-sheikh-zayed", label: "Sharjah via Sheikh Zayed Road", desc: "SZR route – DIFC, JLT, Marina" },
               { href: "/locations/sharjah", label: "Sharjah Car Lift", desc: "All Sharjah areas & routes" },
-              { href: "/pricing", label: "Full Pricing Guide", desc: "Monthly, daily, ladies, school" },
             ].map(({ href, label, desc }) => (
               <li key={href}>
                 <Link href={href} className="group flex flex-col gap-2 p-5 border border-slate-200 hover:border-blue-300 rounded-2xl hover:shadow-md transition-all h-full bg-white">

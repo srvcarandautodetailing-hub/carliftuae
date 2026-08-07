@@ -1,7 +1,8 @@
 ﻿"use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { MessageCircle, MapPin, ArrowRight, Clock, Car } from "lucide-react";
+import { MessageCircle, MapPin, ArrowRight, Clock, Car, FileText } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ROUTE_PRICES, type RoutePrice } from "@/data/pricing";
@@ -364,6 +365,39 @@ export default function RouteSection() {
           All prices include Salik tolls. Monthly rates cover 6 days/week (Mon–Sat),
           both ways (morning pickup + evening drop-off). Prices subject to change based on route distance.
         </motion.p>
+
+        {/* In-depth route guide links — internal linking for SEO + user discovery */}
+        <motion.div
+          className="mt-10 border-t border-slate-200 pt-8"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <p className="text-sm font-semibold text-slate-700 text-center mb-4">
+            Read our in-depth route guides
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {[
+              { href: "/car-lift-from-sharjah-to-business-bay", label: "Car Lift: Sharjah → Business Bay", desc: "Most popular route guide" },
+              { href: "/carlift-sharjah-to-dubai-business-bay", label: "Carlift: Sharjah → Dubai", desc: "Full route & pricing details" },
+              { href: "/bus-car-lift-sharjah-to-business-bay", label: "Bus Car Lift: Sharjah → Bay", desc: "Shared shuttle guide" },
+              { href: "/bus-car-lift-service-from-sharjah-sheikh-zayed", label: "Sheikh Zayed Road Route", desc: "SZR corridor car lift" },
+            ].map(({ href, label, desc }) => (
+              <Link
+                key={href}
+                href={href}
+                className="flex items-start gap-3 p-3 rounded-xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all group"
+              >
+                <FileText className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0 group-hover:text-blue-600" aria-hidden="true" />
+                <div>
+                  <span className="text-sm font-medium text-slate-800 group-hover:text-blue-700 block leading-snug">{label}</span>
+                  <span className="text-xs text-slate-400 mt-0.5 block">{desc}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

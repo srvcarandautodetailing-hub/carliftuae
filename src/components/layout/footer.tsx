@@ -23,10 +23,16 @@ const FOOTER_LINKS = {
     { label: "JVC", href: "/locations/jvc" },
     { label: "Silicon Oasis", href: "/locations/silicon-oasis" },
   ],
+  "Popular Routes": [
+    { label: "Sharjah to Business Bay", href: "/car-lift-from-sharjah-to-business-bay" },
+    { label: "Carlift Sharjah to Dubai", href: "/carlift-sharjah-to-dubai-business-bay" },
+    { label: "Bus Car Lift Sharjah–Bay", href: "/bus-car-lift-sharjah-to-business-bay" },
+    { label: "Sharjah Sheikh Zayed Rd", href: "/bus-car-lift-service-from-sharjah-sheikh-zayed" },
+    { label: "All Routes", href: "/routes" },
+    { label: "Pricing", href: "/pricing" },
+  ],
   Company: [
     { label: "About Us", href: "/about" },
-    { label: "Routes", href: "/routes" },
-    { label: "Pricing", href: "/pricing" },
     { label: "FAQs", href: "/faqs" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
@@ -65,7 +71,7 @@ export function Footer() {
 
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
@@ -125,7 +131,7 @@ export function Footer() {
 
           {/* Link columns */}
           {Object.entries(FOOTER_LINKS).map(([section, links]) => (
-            <div key={section}>
+            <div key={section} className="lg:col-span-1">
               <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
                 {section}
               </h3>

@@ -452,11 +452,12 @@ export default function BusCarLiftSharjahToBusinessBayPage() {
       <section aria-label="Related car lift pages" className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Related Car Lift Services</h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 list-none" role="list">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
               { href: "/car-lift-from-sharjah-to-business-bay", label: "Car Lift from Sharjah to Business Bay", desc: "Full route guide, pricing, timings" },
+              { href: "/carlift-sharjah-to-dubai-business-bay", label: "Carlift Sharjah to Dubai", desc: "Dubai-wide routes & pricing" },
+              { href: "/bus-car-lift-service-from-sharjah-sheikh-zayed", label: "Sheikh Zayed Road Route", desc: "SZR corridor – DIFC, JLT, Marina" },
               { href: "/locations/business-bay", label: "Business Bay Car Lift", desc: "All routes into Business Bay" },
-              { href: "/services/ladies-car-lift", label: "Ladies Car Lift UAE", desc: "Female driver, ladies-only vehicle" },
             ].map(({ href, label, desc }) => (
               <li key={href}>
                 <Link href={href} className="group flex flex-col gap-2 p-5 border border-slate-200 hover:border-blue-300 rounded-2xl hover:shadow-md transition-all h-full">

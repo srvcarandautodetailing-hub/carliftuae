@@ -94,32 +94,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // impressions/clicks. Priority set to 0.95 to signal indexing urgency.
   const gscLandingPages: MetadataRoute.Sitemap = [
     {
-      // Query: "car lift from sharjah to business bay" — pos 1.94, 6.45% CTR
       url: `${BASE_URL}/car-lift-from-sharjah-to-business-bay`,
-      lastModified: CONTENT_DATE,
-      changeFrequency: "weekly" as ChangeFrequency,
-      priority: 0.95,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.98,
     },
     {
-      // Query: "carlift sharjah to dubai" — 386 impressions pos 10.76
       url: `${BASE_URL}/carlift-sharjah-to-dubai-business-bay`,
-      lastModified: CONTENT_DATE,
-      changeFrequency: "weekly" as ChangeFrequency,
-      priority: 0.92,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.96,
     },
     {
-      // Query: "bus car lift sharjah to business bay" — 31 clicks pos 12.55
       url: `${BASE_URL}/bus-car-lift-sharjah-to-business-bay`,
-      lastModified: CONTENT_DATE,
-      changeFrequency: "weekly" as ChangeFrequency,
-      priority: 0.92,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.96,
     },
     {
-      // Old domain rank: pos 8.55 via Sheikh Zayed Road corridor
       url: `${BASE_URL}/bus-car-lift-service-from-sharjah-sheikh-zayed`,
-      lastModified: CONTENT_DATE,
-      changeFrequency: "weekly" as ChangeFrequency,
-      priority: 0.92,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.96,
     },
   ];
 

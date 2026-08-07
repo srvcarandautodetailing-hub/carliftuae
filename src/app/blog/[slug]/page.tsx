@@ -665,6 +665,18 @@ function generateArticleContent(post: BlogPost) {
         major routes.
       </p>
 
+      {isRouteGuide && (
+        <div className="not-prose mt-6 mb-4">
+          <p className="text-sm font-semibold text-slate-700 mb-3">Popular route guides:</p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 list-none">
+            <li><Link href="/car-lift-from-sharjah-to-business-bay" className="text-sm text-blue-600 hover:underline">→ Car Lift from Sharjah to Business Bay</Link></li>
+            <li><Link href="/carlift-sharjah-to-dubai-business-bay" className="text-sm text-blue-600 hover:underline">→ Carlift Sharjah to Dubai Business Bay</Link></li>
+            <li><Link href="/bus-car-lift-sharjah-to-business-bay" className="text-sm text-blue-600 hover:underline">→ Bus Car Lift Sharjah to Business Bay</Link></li>
+            <li><Link href="/bus-car-lift-service-from-sharjah-sheikh-zayed" className="text-sm text-blue-600 hover:underline">→ Sharjah via Sheikh Zayed Road Route</Link></li>
+          </ul>
+        </div>
+      )}
+
       <aside className="not-prose rounded-xl bg-emerald-50 border border-emerald-200 p-5 mt-8">
         <p className="text-sm font-bold text-emerald-800 uppercase tracking-wider mb-2">
           Book Your Car Lift Today
