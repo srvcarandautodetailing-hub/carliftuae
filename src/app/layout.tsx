@@ -96,6 +96,11 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Car Lift UAE" />
+        {/* CookieHub consent manager — must be first, before any analytics */}
+        <Script src="https://cdn.cookiehub.eu/c2/869ed6c3.js" strategy="beforeInteractive" />
+        <Script id="cookiehub-init" strategy="beforeInteractive">
+          {`document.addEventListener("DOMContentLoaded",function(){window.cookiehub.load({});});`}
+        </Script>
         {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
