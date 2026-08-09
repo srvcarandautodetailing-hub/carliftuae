@@ -96,10 +96,36 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Car Lift UAE" />
-        {/* CookieHub consent manager — must be first, before any analytics */}
+        {/*
+          GA4 Consent Mode v2 — initialise dataLayer + set all consent to
+          "denied" BEFORE CookieHub loads. This tells GA4 to run in
+          cookieless/ping-only mode until the user explicitly accepts.
+        */}
+        <Script id="ga4-consent-default" strategy="beforeInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});`}
+        </Script>
+        {/* CookieHub — loads after consent defaults so it can update them */}
         <Script src="https://cdn.cookiehub.eu/c2/869ed6c3.js" strategy="beforeInteractive" />
         <Script id="cookiehub-init" strategy="beforeInteractive">
-          {`document.addEventListener("DOMContentLoaded",function(){window.cookiehub.load({});});`}
+          {`document.addEventListener("DOMContentLoaded",function(){
+  window.cookiehub.load({
+    onInitialise:function(){
+      if(this.hasConsented('analytics')){
+        gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
+      }
+    },
+    onAllow:function(cat){
+      if(cat==='analytics'){
+        gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
+      }
+    },
+    onRevoke:function(cat){
+      if(cat==='analytics'){
+        gtag('consent','update',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});
+      }
+    }
+  });
+});`}
         </Script>
         {/* JSON-LD Schema */}
         <script
@@ -125,13 +151,13 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingCTA />
-        {/* Google Analytics GA4 */}
+        {/* GA4 measurement script — dataLayer & consent defaults already set above */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-SB922V7RSD"
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
-          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SB922V7RSD');`}
+          {`gtag('js',new Date());gtag('config','G-SB922V7RSD',{'send_page_view':true});`}
         </Script>
       </body>
     </html>
