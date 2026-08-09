@@ -96,48 +96,12 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Car Lift UAE" />
-        {/*
-          GA4 Consent Mode v2 — raw <script> (not next/script) so it is
-          embedded directly in server-rendered HTML and executes synchronously
-          before ANY other script on the page, including gtag.js.
-        */}
+        {/* GA4 dataLayer bootstrap — inline so it runs before gtag.js */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});`,
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());`,
           }}
         />
-        {/* CookieHub consent manager — loads early via next/script */}
-        <Script src="https://cdn.cookiehub.eu/c2/869ed6c3.js" strategy="beforeInteractive" />
-        {/*
-          CookieHub init — safe wrapper handles both cases:
-          (a) DOMContentLoaded not yet fired → attach listener
-          (b) DOMContentLoaded already fired (fast network) → call directly
-        */}
-        <Script id="cookiehub-init" strategy="beforeInteractive">
-          {`(function(){
-  function _chLoad(){
-    window.cookiehub.load({
-      onInitialise:function(){
-        if(this.hasConsented('analytics')){
-          gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
-        }
-      },
-      onAllow:function(cat){
-        if(cat==='analytics'){
-          gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
-        }
-      },
-      onRevoke:function(cat){
-        if(cat==='analytics'){
-          gtag('consent','update',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});
-        }
-      }
-    });
-  }
-  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',_chLoad);}
-  else{_chLoad();}
-})();`}
-        </Script>
         {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
@@ -162,13 +126,13 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingCTA />
-        {/* GA4 measurement script — dataLayer & consent defaults already set above */}
+        {/* Google Analytics GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-SB922V7RSD"
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
-          {`gtag('js',new Date());gtag('config','G-SB922V7RSD',{'send_page_view':true});`}
+          {`gtag('config','G-SB922V7RSD');`}
         </Script>
       </body>
     </html>
