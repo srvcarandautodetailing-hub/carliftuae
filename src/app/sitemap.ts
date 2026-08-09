@@ -194,6 +194,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as ChangeFrequency,
       priority: 0.95,
     },
+    {
+      url: `${BASE_URL}/car-lift-dubai-to-abu-dhabi`,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.97,
+    },
   ];
 
   // Priority order: homepage → GSC pages → new local SEO → locations → services → static → blog

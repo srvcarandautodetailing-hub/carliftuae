@@ -109,4 +109,5 @@ export const ALL_SITE_URLS: string[] = [
   `${BASE_URL}/ladies-car-lift-sharjah-to-dubai`,
   `${BASE_URL}/car-lift-ajman-to-dubai`,
   `${BASE_URL}/carlift-sharjah-to-jlt`,
+  `${BASE_URL}/car-lift-dubai-to-abu-dhabi`,
 ];
