@@ -97,35 +97,46 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Car Lift UAE" />
         {/*
-          GA4 Consent Mode v2 — initialise dataLayer + set all consent to
-          "denied" BEFORE CookieHub loads. This tells GA4 to run in
-          cookieless/ping-only mode until the user explicitly accepts.
+          GA4 Consent Mode v2 — raw <script> (not next/script) so it is
+          embedded directly in server-rendered HTML and executes synchronously
+          before ANY other script on the page, including gtag.js.
         */}
-        <Script id="ga4-consent-default" strategy="beforeInteractive">
-          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});`}
-        </Script>
-        {/* CookieHub — loads after consent defaults so it can update them */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});`,
+          }}
+        />
+        {/* CookieHub consent manager — loads early via next/script */}
         <Script src="https://cdn.cookiehub.eu/c2/869ed6c3.js" strategy="beforeInteractive" />
+        {/*
+          CookieHub init — safe wrapper handles both cases:
+          (a) DOMContentLoaded not yet fired → attach listener
+          (b) DOMContentLoaded already fired (fast network) → call directly
+        */}
         <Script id="cookiehub-init" strategy="beforeInteractive">
-          {`document.addEventListener("DOMContentLoaded",function(){
-  window.cookiehub.load({
-    onInitialise:function(){
-      if(this.hasConsented('analytics')){
-        gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
+          {`(function(){
+  function _chLoad(){
+    window.cookiehub.load({
+      onInitialise:function(){
+        if(this.hasConsented('analytics')){
+          gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
+        }
+      },
+      onAllow:function(cat){
+        if(cat==='analytics'){
+          gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
+        }
+      },
+      onRevoke:function(cat){
+        if(cat==='analytics'){
+          gtag('consent','update',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});
+        }
       }
-    },
-    onAllow:function(cat){
-      if(cat==='analytics'){
-        gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
-      }
-    },
-    onRevoke:function(cat){
-      if(cat==='analytics'){
-        gtag('consent','update',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});
-      }
-    }
-  });
-});`}
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',_chLoad);}
+  else{_chLoad();}
+})();`}
         </Script>
         {/* JSON-LD Schema */}
         <script
