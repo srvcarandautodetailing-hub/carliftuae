@@ -44,6 +44,13 @@ export function localBusinessSchema(overrides?: Record<string, unknown>) {
     url: BASE_URL,
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
+    image: [
+      `${BASE_URL}/images/hero/carlift-uae-daily-commuters-interior.webp`,
+      `${BASE_URL}/images/hero/carlift-uae-route-dubai-skyline.webp`,
+      `${BASE_URL}/images/locations/sharjah/sharjah-car-lift-morning-pickup.webp`,
+      `${BASE_URL}/images/locations/business-bay/business-bay-car-lift-professionals.webp`,
+      `${BASE_URL}/images/services/carlift-uae-professionals-interior.webp`,
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: BUSINESS.address.street,
@@ -263,6 +270,40 @@ export function reviewSchema({
     itemReviewed: {
       "@type": "LocalBusiness",
       name: BUSINESS.name,
+    },
+  };
+}
+
+// Primary image of page — tells Google which image represents this page in SERP
+export function primaryImageOfPageSchema({
+  imageUrl,
+  pageUrl,
+  caption,
+  width = 1920,
+  height = 1080,
+}: {
+  imageUrl: string;
+  pageUrl: string;
+  caption: string;
+  width?: number;
+  height?: number;
+}) {
+  const absImage = imageUrl.startsWith("http") ? imageUrl : `${BASE_URL}${imageUrl}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${BASE_URL}${pageUrl}`,
+    url: `${BASE_URL}${pageUrl}`,
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      "@id": `${absImage}#primaryImage`,
+      url: absImage,
+      contentUrl: absImage,
+      caption,
+      width,
+      height,
+      license: `${BASE_URL}/`,
+      acquireLicensePage: `${BASE_URL}/contact`,
     },
   };
 }
