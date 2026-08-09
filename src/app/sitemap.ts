@@ -29,32 +29,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/services`,
-      lastModified: CONTENT_DATE,
-      changeFrequency: "weekly" as ChangeFrequency,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/locations`,
-      lastModified: CONTENT_DATE,
-      changeFrequency: "weekly" as ChangeFrequency,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/routes`,
-      lastModified: CONTENT_DATE,
-      changeFrequency: "weekly" as ChangeFrequency,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/pricing`,
-      lastModified: CONTENT_DATE,
-      changeFrequency: "weekly" as ChangeFrequency,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
       priority: 0.85,
     },
     {
       url: `${BASE_URL}/faqs`,
-      lastModified: CONTENT_DATE,
-      changeFrequency: "weekly" as ChangeFrequency,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
       priority: 0.8,
     },
     {
@@ -65,14 +65,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/about`,
-      lastModified: LAUNCH_DATE,
-      changeFrequency: "monthly" as ChangeFrequency,
+      lastModified: TODAY,
+      changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/contact`,
-      lastModified: LAUNCH_DATE,
-      changeFrequency: "monthly" as ChangeFrequency,
+      lastModified: TODAY,
+      changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.7,
     },
     {
@@ -122,9 +122,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Location pages ────────────────────────────────────────────────────────
   const locationPages: MetadataRoute.Sitemap = LOCATIONS.map((loc) => ({
     url: `${BASE_URL}/locations/${loc.slug}`,
-    lastModified: CONTENT_DATE,
-    changeFrequency: "weekly" as ChangeFrequency,
-    // Sharjah & Business Bay are primary origin/destination — boost priority
+    lastModified: TODAY,
+    changeFrequency: "daily" as ChangeFrequency,
     priority:
       loc.slug === "sharjah" || loc.slug === "business-bay"
         ? 0.95
@@ -136,9 +135,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Service pages ─────────────────────────────────────────────────────────
   const servicePages: MetadataRoute.Sitemap = SERVICES.map((svc) => ({
     url: `${BASE_URL}/services/${svc.slug}`,
-    lastModified: CONTENT_DATE,
-    changeFrequency: "weekly" as ChangeFrequency,
-    // Daily/monthly/ladies are the top 3 commercial intent services
+    lastModified: TODAY,
+    changeFrequency: "daily" as ChangeFrequency,
     priority:
       ["daily-car-lift", "monthly-car-lift", "ladies-car-lift"].includes(svc.slug)
         ? 0.88
@@ -148,8 +146,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Blog posts ────────────────────────────────────────────────────────────
   const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: post.publishDate,
-    changeFrequency: "monthly" as ChangeFrequency,
+    lastModified: TODAY,
+    changeFrequency: "weekly" as ChangeFrequency,
     priority: post.featured ? 0.78 : 0.65,
   }));
 
