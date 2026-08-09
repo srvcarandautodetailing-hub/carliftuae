@@ -102,4 +102,11 @@ export const ALL_SITE_URLS: string[] = [
   // ── Tier 7: legal ────────────────────────────────────────────────────────
   `${BASE_URL}/privacy`,
   `${BASE_URL}/terms`,
+
+  // ── Tier 8: new local SEO pages ──────────────────────────────────────────
+  `${BASE_URL}/monthly-pick-and-drop-service-sharjah`,
+  `${BASE_URL}/carlift-sharjah-to-difc`,
+  `${BASE_URL}/ladies-car-lift-sharjah-to-dubai`,
+  `${BASE_URL}/car-lift-ajman-to-dubai`,
+  `${BASE_URL}/carlift-sharjah-to-jlt`,
 ];

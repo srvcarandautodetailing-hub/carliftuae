@@ -162,10 +162,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.55,
   }));
 
-  // Priority order: homepage → GSC pages → locations → services → static → blog
+  // ── New local SEO pages ───────────────────────────────────────────────────
+  const newLocalSeoPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/monthly-pick-and-drop-service-sharjah`,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.96,
+    },
+    {
+      url: `${BASE_URL}/carlift-sharjah-to-difc`,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.96,
+    },
+    {
+      url: `${BASE_URL}/ladies-car-lift-sharjah-to-dubai`,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.95,
+    },
+    {
+      url: `${BASE_URL}/car-lift-ajman-to-dubai`,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.95,
+    },
+    {
+      url: `${BASE_URL}/carlift-sharjah-to-jlt`,
+      lastModified: TODAY,
+      changeFrequency: "daily" as ChangeFrequency,
+      priority: 0.95,
+    },
+  ];
+
+  // Priority order: homepage → GSC pages → new local SEO → locations → services → static → blog
   return [
     ...staticPages,
     ...gscLandingPages,
+    ...newLocalSeoPages,
     ...locationPages,
     ...servicePages,
     ...blogPages,
