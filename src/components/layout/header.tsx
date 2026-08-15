@@ -151,18 +151,20 @@ export function Header() {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
+          {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={`tel:${BUSINESS.phone}`}
               className={cn(
-                "flex items-center gap-2 text-sm font-medium transition-colors",
-                isScrolled ? "text-slate-700 hover:text-blue-600" : "text-white/90 hover:text-white"
+                "flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border-2 transition-all duration-200 min-h-[44px] active:scale-95",
+                isScrolled
+                  ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                  : "border-white/80 text-white hover:bg-white hover:text-blue-600"
               )}
-              aria-label={`Call ${BUSINESS.phone}`}
+              aria-label={`Call us at ${BUSINESS.phone}`}
             >
               <Phone className="w-4 h-4" />
-              <span>{BUSINESS.phone}</span>
+              <span>Call Now</span>
             </a>
             <Button
               variant="whatsapp"
@@ -180,6 +182,26 @@ export function Header() {
               </a>
             </Button>
           </div>
+
+          {/* Mobile phone CTA — always visible, never buried in menu */}
+          <a
+            href={`tel:${BUSINESS.phone}`}
+            className={cn(
+              "lg:hidden relative flex items-center justify-center w-11 h-11 rounded-full border-2 transition-all duration-200 active:scale-95",
+              isScrolled
+                ? "border-blue-600 text-blue-600 hover:bg-blue-50"
+                : "border-white text-white hover:bg-white/10"
+            )}
+            aria-label={`Call us at ${BUSINESS.phone}`}
+          >
+            <span
+              className={cn(
+                "absolute inset-0 rounded-full animate-ping opacity-25",
+                isScrolled ? "bg-blue-600" : "bg-white"
+              )}
+            />
+            <Phone className="w-5 h-5 relative" />
+          </a>
 
           {/* Mobile menu button */}
           <button
