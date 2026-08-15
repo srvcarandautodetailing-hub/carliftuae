@@ -125,6 +125,7 @@ export default function PricingPage() {
             </p>
           </div>
 
+          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 rounded-2xl">
           <div className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full text-sm" aria-label="Car lift route prices">
@@ -160,6 +161,7 @@ export default function PricingPage() {
                 Contact us for a confirmed booking.
               </p>
             </div>
+          </div>
           </div>
 
           {/* Custom quote CTA */}

@@ -154,7 +154,7 @@ export default function WhyChooseSection() {
 
         {/* Benefits grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
@@ -202,7 +202,7 @@ export default function WhyChooseSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <div className="inline-block glass rounded-2xl border border-white/10 px-8 py-6 max-w-2xl">
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-300 text-base leading-relaxed text-center sm:text-left">
               <span className="text-white font-semibold">
                 MJ Car Lift Service — confirmed inter-emirate routes
               </span>{" "}

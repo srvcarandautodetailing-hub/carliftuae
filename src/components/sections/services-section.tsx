@@ -116,11 +116,12 @@ export default function ServicesSection() {
               alt: "Corporate car lift shuttle service – luxury executive transport UAE",
             },
           ].map(({ src, alt }) => (
-            <div key={src} className="relative h-40 sm:h-48 rounded-xl overflow-hidden shadow-sm">
+            <div key={src} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
               <Image
                 src={src}
                 alt={alt}
                 fill
+                loading="lazy"
                 className="object-cover hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 640px) 50vw, 25vw"
                 quality={73}

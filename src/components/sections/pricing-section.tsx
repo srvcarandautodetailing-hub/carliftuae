@@ -45,8 +45,9 @@ function PricingCard({ route }: { route: RoutePrice }) {
     <motion.article
       variants={cardVariants}
       whileHover={{ scale: 1.025, y: -4 }}
+      whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
-      className="relative flex flex-col bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+      className="relative flex flex-col bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-shadow duration-300 hover:shadow-xl focus-within:shadow-xl focus-within:border-blue-300"
       aria-label={`${route.route} pricing`}
     >
       <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 rounded-t-2xl" aria-hidden="true" />
@@ -82,7 +83,7 @@ function PricingCard({ route }: { route: RoutePrice }) {
         <Button
           asChild
           variant="whatsapp"
-          size="default"
+          size="lg"
           className="w-full mt-auto"
         >
           <a

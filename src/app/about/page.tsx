@@ -450,6 +450,7 @@ export default function AboutPage() {
           </ul>
 
           {/* Cost comparison table */}
+          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 rounded-xl">
           <div className="mt-12 bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div className="bg-slate-800 px-6 py-4">
               <h3 className="text-white font-bold text-lg">
@@ -499,6 +500,7 @@ export default function AboutPage() {
                 You save <strong>AED 1,100+ every month</strong> by choosing Car Lift UAE over solo driving.
               </p>
             </div>
+          </div>
           </div>
         </div>
       </section>

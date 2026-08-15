@@ -38,7 +38,7 @@ export function Footer() {
       {/* Trust bar */}
       <div className="border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {TRUST_BADGES.map((badge) => (
               <div key={badge.label} className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-blue-600/20 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -99,7 +99,7 @@ export function Footer() {
               href={formatWhatsAppHref(BUSINESS.whatsapp, "Hi, I want to book a car lift!")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-[#15803d] text-white text-sm font-semibold rounded-xl hover:bg-[#166534] transition-colors"
+              className="inline-flex items-center gap-2 mt-6 px-5 py-3 min-h-[48px] bg-[#15803d] text-white text-sm font-semibold rounded-xl hover:bg-[#166534] transition-colors"
               aria-label="Book via WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
@@ -118,7 +118,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-slate-400 hover:text-white transition-colors"
+                      className="block py-2 text-sm text-slate-400 hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -138,13 +138,13 @@ export function Footer() {
               © {currentYear} MJ Car Lift Service. All rights reserved. Serving Dubai, Abu Dhabi, Sharjah &amp; Ajman.
             </p>
             <div className="flex items-center gap-6">
-              <Link href="/privacy" className="text-sm text-slate-400 hover:text-white transition-colors">
+              <Link href="/privacy" className="text-sm text-slate-400 hover:text-white transition-colors py-1 inline-block">
                 Privacy
               </Link>
-              <Link href="/terms" className="text-sm text-slate-400 hover:text-white transition-colors">
+              <Link href="/terms" className="text-sm text-slate-400 hover:text-white transition-colors py-1 inline-block">
                 Terms
               </Link>
-              <Link href="/sitemap.xml" className="text-sm text-slate-400 hover:text-white transition-colors">
+              <Link href="/sitemap.xml" className="text-sm text-slate-400 hover:text-white transition-colors py-1 inline-block">
                 Sitemap
               </Link>
             </div>

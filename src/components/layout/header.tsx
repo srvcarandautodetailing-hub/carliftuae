@@ -42,6 +42,14 @@ export function Header() {
     setOpenDropdown(null);
   }, [pathname]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && mobileOpen) setMobileOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileOpen]);
+
   return (
     <header
       className={cn(
@@ -177,7 +185,7 @@ export function Header() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={cn(
-              "lg:hidden p-2 rounded-xl transition-colors",
+              "lg:hidden p-3 rounded-xl transition-colors min-h-[48px] min-w-[48px]",
               isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-white hover:bg-white/10"
             )}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -197,6 +205,8 @@ export function Header() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
             className="lg:hidden bg-white border-t border-slate-100 overflow-hidden"
+            role="dialog"
+            aria-modal="true"
           >
             <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
               {NAV_ITEMS.map((item) => (
@@ -204,7 +214,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "block px-4 py-3 rounded-xl text-sm font-medium transition-colors",
+                      "block px-4 py-3.5 rounded-xl text-sm font-medium transition-colors",
                       pathname === item.href
                         ? "text-blue-600 bg-blue-50"
                         : "text-slate-700 hover:bg-slate-50"
@@ -218,7 +228,7 @@ export function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-3 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-slate-50 transition-colors"
+                          className="block px-3 py-2.5 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-slate-50 transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -230,7 +240,7 @@ export function Header() {
               <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
                 <a
                   href={`tel:${BUSINESS.phone}`}
-                  className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+                  className="flex items-center gap-2 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   {BUSINESS.phone}

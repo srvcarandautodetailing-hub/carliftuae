@@ -8,20 +8,20 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5",
+        default: "bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 active:scale-95",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-2 border-blue-600 bg-transparent text-blue-600 hover:bg-blue-50",
+        outline: "border-2 border-blue-600 bg-transparent text-blue-600 hover:bg-blue-50 active:scale-95",
         secondary: "bg-slate-100 text-slate-900 hover:bg-slate-200",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-blue-600 underline-offset-4 hover:underline",
-        cta: "bg-emerald-500 text-white hover:bg-emerald-600 shadow-lg hover:shadow-emerald-200 hover:-translate-y-0.5 font-bold",
-        whatsapp: "bg-[#15803d] text-white hover:bg-[#166534] shadow-lg hover:shadow-green-200 hover:-translate-y-0.5 font-bold",
+        cta: "bg-emerald-500 text-white hover:bg-emerald-600 shadow-lg hover:shadow-emerald-200 hover:-translate-y-0.5 font-bold active:scale-95",
+        whatsapp: "bg-[#15803d] text-white hover:bg-[#166534] shadow-lg hover:shadow-green-200 hover:-translate-y-0.5 font-bold active:scale-95",
         dark: "bg-slate-900 text-white hover:bg-slate-800 shadow-lg hover:-translate-y-0.5",
       },
       size: {
         default: "h-11 px-6 py-2",
         sm: "h-9 rounded-lg px-4",
-        lg: "h-13 rounded-xl px-8 text-base",
+        lg: "h-12 rounded-xl px-8 text-base",
         xl: "h-14 rounded-2xl px-10 text-lg",
         icon: "h-10 w-10",
       },

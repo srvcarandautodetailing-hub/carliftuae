@@ -107,7 +107,7 @@ export default function FaqSection() {
           className="mb-8"
         >
           <div
-            className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide"
+            className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"
             role="tablist"
             aria-label="FAQ categories"
           >
@@ -120,7 +120,7 @@ export default function FaqSection() {
                   aria-selected={isActive}
                   onClick={() => setActiveCategory(category)}
                   className={cn(
-                    "shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2",
+                    "shrink-0 rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2",
                     isActive
                       ? "bg-blue-600 text-white shadow-md shadow-blue-200"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"

@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { MessageCircle, Phone, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
@@ -23,6 +23,7 @@ const itemVariants = {
 };
 
 export default function CtaBanner() {
+  const shouldReduceMotion = useReducedMotion();
   const whatsappHref = formatWhatsAppHref(
     BUSINESS.whatsapp,
     "Hi! I'm ready to book a car lift. Please share available slots and pricing."
@@ -42,21 +43,21 @@ export default function CtaBanner() {
       <motion.div
         className="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-25 blur-3xl pointer-events-none"
         style={{ background: "radial-gradient(circle, #2563eb, transparent)" }}
-        animate={{ scale: [1, 1.15, 1], x: [0, 20, 0], y: [0, -15, 0] }}
+        animate={shouldReduceMotion ? {} : { scale: [1, 1.15, 1], x: [0, 20, 0], y: [0, -15, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden="true"
       />
       <motion.div
         className="absolute -bottom-20 -right-20 w-80 h-80 rounded-full opacity-20 blur-3xl pointer-events-none"
         style={{ background: "radial-gradient(circle, #10b981, transparent)" }}
-        animate={{ scale: [1, 1.2, 1], x: [0, -18, 0], y: [0, 12, 0] }}
+        animate={shouldReduceMotion ? {} : { scale: [1, 1.2, 1], x: [0, -18, 0], y: [0, 12, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         aria-hidden="true"
       />
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl pointer-events-none hidden sm:block"
         style={{ background: "radial-gradient(circle, #6366f1, transparent)" }}
-        animate={{ scale: [1, 1.08, 1] }}
+        animate={shouldReduceMotion ? {} : { scale: [1, 1.08, 1] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         aria-hidden="true"
       />

@@ -126,12 +126,12 @@ function RouteCard({ location }: { location: Location }) {
 
           {/* CTA links */}
           <div className="mt-auto flex gap-2">
-            <Button asChild variant="outline" size="sm" className="flex-1 text-xs">
+            <Button asChild variant="outline" size="sm" className="flex-1 text-xs min-h-[48px]">
               <Link href={`/locations/${location.slug}`}>
                 View Details
               </Link>
             </Button>
-            <Button asChild variant="whatsapp" size="sm" className="flex-1 text-xs">
+            <Button asChild variant="whatsapp" size="sm" className="flex-1 text-xs min-h-[48px]">
               <a
                 href={whatsappHref}
                 target="_blank"

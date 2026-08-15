@@ -19,7 +19,7 @@ export function FloatingCTA() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-20 right-4 sm:bottom-8 sm:right-6 z-50 flex flex-col items-end gap-3">
       {/* Scroll to top */}
       <AnimatePresence>
         {showScrollTop && (
@@ -28,7 +28,7 @@ export function FloatingCTA() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={scrollToTop}
-            className="w-10 h-10 bg-slate-800 text-white rounded-xl flex items-center justify-center hover:bg-slate-700 transition-colors shadow-lg"
+            className="w-11 h-11 bg-slate-800 text-white rounded-xl flex items-center justify-center hover:bg-slate-700 transition-colors shadow-lg"
             aria-label="Scroll to top"
           >
             <ChevronUp className="w-5 h-5" />
@@ -47,7 +47,7 @@ export function FloatingCTA() {
           >
             <a
               href={`tel:${BUSINESS.phone}`}
-              className="flex items-center gap-2 bg-blue-600 text-white px-4 py-3 rounded-2xl shadow-xl hover:bg-blue-700 transition-colors text-sm font-semibold"
+              className="flex items-center gap-2 bg-blue-600 text-white px-4 py-3 rounded-2xl shadow-xl hover:bg-blue-700 transition-colors text-sm font-semibold min-h-[48px]"
               aria-label="Call us now"
             >
               <Phone className="w-4 h-4" />
@@ -57,7 +57,7 @@ export function FloatingCTA() {
               href={formatWhatsAppHref(BUSINESS.whatsapp, "Hi, I want to book a car lift!")}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#15803d] text-white px-4 py-3 rounded-2xl shadow-xl hover:bg-[#166534] transition-colors text-sm font-semibold"
+              className="flex items-center gap-2 bg-[#15803d] text-white px-4 py-3 rounded-2xl shadow-xl hover:bg-[#166534] transition-colors text-sm font-semibold min-h-[48px]"
               aria-label="WhatsApp us"
             >
               <MessageCircle className="w-4 h-4" />
