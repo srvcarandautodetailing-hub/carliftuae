@@ -1,12 +1,10 @@
 ﻿"use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { MessageCircle, MapPin, ArrowRight, Clock, Car, FileText } from "lucide-react";
+import { MessageCircle, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ROUTE_PRICES, type RoutePrice } from "@/data/pricing";
-import { LOCATIONS } from "@/data/locations";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
 const containerVariants = {
@@ -31,23 +29,8 @@ const headingVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
 };
 
-// Match a route's "from" string to location data for time/distance
-function getLocationMeta(
-  from: string
-): { drivingTime: string; distance: string } | null {
-  const normalized = from.toLowerCase();
-  const match = LOCATIONS.find(
-    (loc) =>
-      normalized.includes(loc.name.toLowerCase()) ||
-      loc.name.toLowerCase().includes(normalized.split("(")[0].trim().toLowerCase())
-  );
-  return match
-    ? { drivingTime: match.drivingTime, distance: match.distance }
-    : null;
-}
-
 function buildWhatsAppMessage(route: RoutePrice): string {
-  return `Hi! I'm interested in the car lift from ${route.from} to ${route.to}. Monthly shared price is AED ${route.monthlyShared}. Please share more details.`;
+  return `Hi! I'm interested in a car lift on the ${route.route} route. Normal fare AED ${route.normal}. Please share more details.`;
 }
 
 // Desktop table row
@@ -58,7 +41,6 @@ function RouteTableRow({
   route: RoutePrice;
   index: number;
 }) {
-  const meta = getLocationMeta(route.from);
   const waHref = formatWhatsAppHref(BUSINESS.whatsapp, buildWhatsAppMessage(route));
   const isPopular = index === 0;
 
@@ -70,15 +52,9 @@ function RouteTableRow({
       {/* Route */}
       <td className="py-4 px-4 sm:px-6">
         <div className="flex items-center gap-2 flex-wrap">
-          <div className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-slate-400 flex-shrink-0" aria-hidden="true" />
-            <span className="font-semibold text-slate-900 text-sm">
-              {route.from}
-            </span>
-          </div>
-          <ArrowRight className="h-3.5 w-3.5 text-blue-500 flex-shrink-0" aria-hidden="true" />
-          <span className="font-semibold text-blue-700 text-sm">
-            {route.to}
+          <MapPin className="h-4 w-4 text-slate-400 flex-shrink-0" aria-hidden="true" />
+          <span className="font-semibold text-slate-900 text-sm">
+            {route.route}
           </span>
           {isPopular && (
             <Badge variant="default" className="text-[11px] px-2 py-0 ml-1">
@@ -86,37 +62,25 @@ function RouteTableRow({
             </Badge>
           )}
         </div>
-        {meta && (
-          <div className="flex items-center gap-3 mt-1.5 ml-6">
-            <span className="flex items-center gap-1 text-xs text-slate-500">
-              <Clock className="h-3 w-3" aria-hidden="true" />
-              {meta.drivingTime}
-            </span>
-            <span className="flex items-center gap-1 text-xs text-slate-500">
-              <Car className="h-3 w-3" aria-hidden="true" />
-              {meta.distance}
-            </span>
-          </div>
-        )}
       </td>
 
-      {/* Monthly shared */}
+      {/* Normal rate */}
       <td className="py-4 px-4 sm:px-6 text-center">
         <span className="text-lg font-extrabold text-blue-700">
-          AED {route.monthlyShared}
-        </span>
-        <span className="block text-xs text-slate-400 font-medium mt-0.5">
-          /month
-        </span>
-      </td>
-
-      {/* Daily rate */}
-      <td className="py-4 px-4 sm:px-6 text-center">
-        <span className="text-sm font-bold text-slate-700">
-          AED {route.dailyRate}
+          AED {route.normal}
         </span>
         <span className="block text-xs text-slate-400 font-medium mt-0.5">
           /trip
+        </span>
+      </td>
+
+      {/* Airport rate */}
+      <td className="py-4 px-4 sm:px-6 text-center">
+        <span className="text-sm font-bold text-slate-700">
+          AED {route.airport}
+        </span>
+        <span className="block text-xs text-slate-400 font-medium mt-0.5">
+          airport/trip
         </span>
       </td>
 
@@ -127,7 +91,7 @@ function RouteTableRow({
             href={waHref}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Book car lift from ${route.from} to ${route.to} via WhatsApp`}
+            aria-label={`Book car lift on ${route.route} via WhatsApp`}
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
             <span className="hidden sm:inline">Book Route</span>
@@ -147,7 +111,6 @@ function RouteMobileCard({
   route: RoutePrice;
   index: number;
 }) {
-  const meta = getLocationMeta(route.from);
   const waHref = formatWhatsAppHref(BUSINESS.whatsapp, buildWhatsAppMessage(route));
   const isPopular = index === 0;
 
@@ -159,21 +122,7 @@ function RouteMobileCard({
       {/* Route header */}
       <div className="flex items-start justify-between mb-3">
         <div>
-          <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="font-bold text-slate-900 text-sm">{route.from}</span>
-            <ArrowRight className="h-3 w-3 text-blue-500" aria-hidden="true" />
-            <span className="font-bold text-blue-700 text-sm">{route.to}</span>
-          </div>
-          {meta && (
-            <p className="text-xs text-slate-500 mt-1 flex items-center gap-2">
-              <span className="flex items-center gap-1">
-                <Clock className="h-3 w-3" aria-hidden="true" />
-                {meta.drivingTime}
-              </span>
-              <span>&middot;</span>
-              <span>{meta.distance}</span>
-            </p>
-          )}
+          <span className="font-bold text-slate-900 text-sm">{route.route}</span>
         </div>
         {isPopular && (
           <Badge variant="default" className="text-[11px] px-2 py-0 shrink-0">
@@ -186,18 +135,18 @@ function RouteMobileCard({
       <div className="flex items-center gap-4 mb-4">
         <div className="flex-1 bg-blue-50 rounded-lg px-3 py-2 text-center border border-blue-100">
           <span className="block text-xs text-blue-600 font-semibold mb-0.5">
-            Monthly
+            Normal
           </span>
           <span className="text-xl font-extrabold text-blue-700">
-            AED {route.monthlyShared}
+            AED {route.normal}
           </span>
         </div>
         <div className="flex-1 bg-slate-50 rounded-lg px-3 py-2 text-center border border-slate-100">
           <span className="block text-xs text-slate-500 font-semibold mb-0.5">
-            Daily
+            Airport
           </span>
           <span className="text-lg font-bold text-slate-700">
-            AED {route.dailyRate}
+            AED {route.airport}
           </span>
         </div>
       </div>
@@ -208,7 +157,7 @@ function RouteMobileCard({
           href={waHref}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Book car lift from ${route.from} to ${route.to} via WhatsApp`}
+          aria-label={`Book car lift on ${route.route} via WhatsApp`}
         >
           <MessageCircle className="h-4 w-4" aria-hidden="true" />
           Book This Route
@@ -223,6 +172,9 @@ export default function RouteSection() {
     BUSINESS.whatsapp,
     "Hi! I'd like to know more about car lift routes and pricing."
   );
+
+  // Show only unique bidirectional routes (deduplicate A→B and B→A)
+  const uniqueRoutes = ROUTE_PRICES.filter((_, i) => i % 2 === 0);
 
   return (
     <section
@@ -250,15 +202,14 @@ export default function RouteSection() {
             variants={headingVariants}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 mb-4"
           >
-            Popular Car Lift Routes
+            Car Lift Routes &amp; Fares
           </motion.h2>
 
           <motion.p
             variants={headingVariants}
             className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
           >
-            Transparent, fixed pricing on every route. No surge fees. Salik
-            included. Book your seat today.
+            Fixed fares per trip. No surge pricing. Both directions available on every route.
           </motion.p>
         </motion.div>
 
@@ -283,13 +234,13 @@ export default function RouteSection() {
                   scope="col"
                   className="py-4 px-4 sm:px-6 text-center text-sm font-semibold tracking-wide"
                 >
-                  Monthly (Shared)
+                  Normal Fare
                 </th>
                 <th
                   scope="col"
                   className="py-4 px-4 sm:px-6 text-center text-sm font-semibold tracking-wide"
                 >
-                  Daily Rate
+                  Airport Fare
                 </th>
                 <th
                   scope="col"
@@ -300,8 +251,8 @@ export default function RouteSection() {
               </tr>
             </thead>
             <tbody>
-              {ROUTE_PRICES.map((route, index) => (
-                <RouteTableRow key={`${route.from}-${route.to}`} route={route} index={index} />
+              {uniqueRoutes.map((route, index) => (
+                <RouteTableRow key={route.route} route={route} index={index} />
               ))}
             </tbody>
           </table>
@@ -315,9 +266,9 @@ export default function RouteSection() {
           viewport={{ once: true, margin: "-40px" }}
           variants={containerVariants}
         >
-          {ROUTE_PRICES.map((route, index) => (
+          {uniqueRoutes.map((route, index) => (
             <RouteMobileCard
-              key={`${route.from}-${route.to}-mobile`}
+              key={`${route.route}-mobile`}
               route={route}
               index={index}
             />
@@ -334,11 +285,10 @@ export default function RouteSection() {
         >
           <div>
             <p className="font-semibold text-slate-800 text-sm">
-              Don&apos;t see your route?
+              Ready to book?
             </p>
             <p className="text-sm text-slate-500 mt-0.5">
-              We cover 50+ routes across Sharjah, Dubai, and Ajman. WhatsApp us
-              for a custom quote.
+              Contact MJ Car Lift Service by phone or WhatsApp to confirm your seat.
             </p>
           </div>
           <Button asChild variant="whatsapp" size="default" className="shrink-0">
@@ -346,10 +296,10 @@ export default function RouteSection() {
               href={generalWaHref}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Ask for a custom car lift route via WhatsApp"
+              aria-label="Book a car lift via WhatsApp"
             >
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              Ask for Custom Route
+              Book via WhatsApp
             </a>
           </Button>
         </motion.div>
@@ -362,42 +312,8 @@ export default function RouteSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          All prices include Salik tolls. Monthly rates cover 6 days/week (Mon–Sat),
-          both ways (morning pickup + evening drop-off). Prices subject to change based on route distance.
+          All fares are per trip, one way. Airport fares apply for pickup/drop-off at airports. Both directions served on every route.
         </motion.p>
-
-        {/* In-depth route guide links — internal linking for SEO + user discovery */}
-        <motion.div
-          className="mt-10 border-t border-slate-200 pt-8"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <p className="text-sm font-semibold text-slate-700 text-center mb-4">
-            Read our in-depth route guides
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {[
-              { href: "/car-lift-from-sharjah-to-business-bay", label: "Car Lift: Sharjah → Business Bay", desc: "Most popular route guide" },
-              { href: "/carlift-sharjah-to-dubai-business-bay", label: "Carlift: Sharjah → Dubai", desc: "Full route & pricing details" },
-              { href: "/bus-car-lift-sharjah-to-business-bay", label: "Bus Car Lift: Sharjah → Bay", desc: "Shared shuttle guide" },
-              { href: "/bus-car-lift-service-from-sharjah-sheikh-zayed", label: "Sheikh Zayed Road Route", desc: "SZR corridor car lift" },
-            ].map(({ href, label, desc }) => (
-              <Link
-                key={href}
-                href={href}
-                className="flex items-start gap-3 p-3 rounded-xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all group"
-              >
-                <FileText className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0 group-hover:text-blue-600" aria-hidden="true" />
-                <div>
-                  <span className="text-sm font-medium text-slate-800 group-hover:text-blue-700 block leading-snug">{label}</span>
-                  <span className="text-xs text-slate-400 mt-0.5 block">{desc}</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

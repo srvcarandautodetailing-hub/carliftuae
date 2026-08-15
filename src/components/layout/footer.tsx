@@ -1,33 +1,15 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, MessageCircle, Star, Clock, Shield, CheckCircle } from "lucide-react";
+import { Phone, Mail, MessageCircle, Car, Clock, Shield, CheckCircle } from "lucide-react";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
 const FOOTER_LINKS = {
   Services: [
-    { label: "Daily Car Lift", href: "/services/daily-car-lift" },
-    { label: "Monthly Car Lift", href: "/services/monthly-car-lift" },
-    { label: "Ladies Car Lift", href: "/services/ladies-car-lift" },
-    { label: "Office Transport", href: "/services/office-transport" },
-    { label: "Corporate Transport", href: "/services/corporate-transport" },
+    { label: "Car Lift Service", href: "/services/car-lift-service" },
     { label: "Airport Transfer", href: "/services/airport-transfer" },
-    { label: "School Transport", href: "/services/school-transport" },
-    { label: "Private Car Lift", href: "/services/private-car-lift" },
+    { label: "All Services", href: "/services" },
   ],
-  Locations: [
-    { label: "Sharjah", href: "/locations/sharjah" },
-    { label: "Dubai", href: "/locations/dubai" },
-    { label: "Business Bay", href: "/locations/business-bay" },
-    { label: "Ajman", href: "/locations/ajman" },
-    { label: "Al Nahda", href: "/locations/al-nahda" },
-    { label: "Al Qusais", href: "/locations/al-qusais" },
-    { label: "JVC", href: "/locations/jvc" },
-    { label: "Silicon Oasis", href: "/locations/silicon-oasis" },
-  ],
-  "Popular Routes": [
-    { label: "Sharjah to Business Bay", href: "/car-lift-from-sharjah-to-business-bay" },
-    { label: "Carlift Sharjah to Dubai", href: "/carlift-sharjah-to-dubai-business-bay" },
-    { label: "Bus Car Lift Sharjah–Bay", href: "/bus-car-lift-sharjah-to-business-bay" },
-    { label: "Sharjah Sheikh Zayed Rd", href: "/bus-car-lift-service-from-sharjah-sheikh-zayed" },
+  Routes: [
+    { label: "Dubai ↔ Abu Dhabi", href: "/car-lift-dubai-to-abu-dhabi" },
     { label: "All Routes", href: "/routes" },
     { label: "Pricing", href: "/pricing" },
   ],
@@ -43,9 +25,9 @@ const FOOTER_LINKS = {
 
 const TRUST_BADGES = [
   { icon: Shield, label: "Verified Drivers" },
-  { icon: CheckCircle, label: "GPS Tracked" },
-  { icon: Star, label: "4.9★ Rating" },
-  { icon: Clock, label: "6 Days/Week" },
+  { icon: CheckCircle, label: "Fixed Pricing" },
+  { icon: Car, label: "AC Vehicles" },
+  { icon: Clock, label: "On-Time Service" },
 ];
 
 export function Footer() {
@@ -81,13 +63,12 @@ export function Footer() {
                 </svg>
               </div>
               <div>
-                <span className="font-bold text-lg text-white block leading-none">Car Lift UAE</span>
-                <span className="text-xs text-blue-400">Premium Shared Rides</span>
+                <span className="font-bold text-lg text-white block leading-none">MJ Car Lift Service</span>
+                <span className="text-xs text-blue-400">Dubai · Abu Dhabi · Sharjah · Ajman</span>
               </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
-              UAE&apos;s most trusted daily car lift service. Connecting Sharjah, Ajman, and Dubai
-              with safe, affordable, and reliable shared rides since 2019.
+              MJ Car Lift Service — reliable private car lift and carpool rides covering Dubai, Abu Dhabi, Sharjah, and Ajman.
             </p>
 
             {/* Contact info */}
@@ -108,11 +89,8 @@ export function Footer() {
                 <span>{BUSINESS.email}</span>
               </a>
               <div className="flex items-start gap-3 text-sm text-slate-400">
-                <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                <span>
-                  {BUSINESS.address.street}, {BUSINESS.address.city},{" "}
-                  {BUSINESS.address.country}
-                </span>
+                <Car className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>Dubai · Abu Dhabi · Sharjah · Ajman</span>
               </div>
             </div>
 
@@ -157,7 +135,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-slate-400">
-              © {currentYear} Car Lift UAE. All rights reserved. Proudly serving Sharjah, Dubai & Ajman.
+              © {currentYear} MJ Car Lift Service. All rights reserved. Serving Dubai, Abu Dhabi, Sharjah &amp; Ajman.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="text-sm text-slate-400 hover:text-white transition-colors">

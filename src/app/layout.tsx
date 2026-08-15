@@ -18,13 +18,13 @@ const BASE_URL = "https://www.carliftuae.com";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Car Lift UAE",
-    default: "Car Lift UAE – Daily Car Lift from Sharjah to Business Bay & Dubai",
+    template: "%s | MJ Car Lift Service",
+    default: "MJ Car Lift Service – Dubai, Abu Dhabi, Sharjah & Ajman",
   },
   description:
-    "Premium daily car lift service in UAE. Sharjah to Business Bay, Dubai, Ajman and beyond. Safe, reliable, affordable shared rides from AED 200/month. GPS tracked, verified drivers. Book now!",
+    "MJ Car Lift Service – reliable car lift and carpool rides on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi from AED 200. Abu Dhabi ↔ Sharjah from AED 280. Abu Dhabi ↔ Ajman from AED 300. Book by phone or WhatsApp.",
   keywords:
-    "car lift uae, car lift sharjah, car lift sharjah to business bay, sharjah to business bay car lift, car lift service uae, daily car lift sharjah, monthly car lift dubai",
+    "car lift uae, carpool uae, car lift dubai abu dhabi, car lift abu dhabi sharjah, car lift abu dhabi ajman, MJ car lift service, airport transfer uae",
   metadataBase: new URL(BASE_URL),
   alternates: { canonical: `${BASE_URL}/` },
   manifest: "/site.webmanifest?v=2",
@@ -37,18 +37,18 @@ export const metadata: Metadata = {
     apple: { url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" },
     shortcut: "/favicon.ico?v=2",
   },
-  authors: [{ name: "Car Lift UAE" }],
-  creator: "Car Lift UAE",
-  publisher: "Car Lift UAE",
+  authors: [{ name: "MJ Car Lift Service" }],
+  creator: "MJ Car Lift Service",
+  publisher: "MJ Car Lift Service",
   formatDetection: { telephone: true, email: true, address: true },
   openGraph: {
     type: "website",
     locale: "en_AE",
     url: BASE_URL,
-    siteName: "Car Lift UAE",
-    title: "Car Lift UAE – Daily Car Lift from Sharjah to Business Bay & Dubai",
+    siteName: "MJ Car Lift Service",
+    title: "MJ Car Lift Service – Dubai, Abu Dhabi, Sharjah & Ajman",
     description:
-      "Premium daily car lift service. Sharjah to Business Bay from AED 350/month. Safe, reliable, GPS tracked. 4.9★ rated by 247 customers.",
+      "Car lift and carpool service on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi from AED 200. Airport transfers available. Book by phone or WhatsApp.",
     // OG images are generated per-page via opengraph-image.tsx in each route folder
   },
   twitter: {
@@ -71,10 +71,8 @@ export const metadata: Metadata = {
     google: "fNl9S8ESdB8EQ-W225nsY9gpIittcqzOqqHSf55HqvI",
   },
   other: {
-    "geo.region": "AE-SH",
-    "geo.placename": "Sharjah, UAE",
-    "geo.position": "25.3573;55.3850",
-    ICBM: "25.3573, 55.3850",
+    "geo.region": "AE-AZ",
+    "geo.placename": "Abu Dhabi, UAE",
     "og:phone_number": BUSINESS.phone,
     "og:email": BUSINESS.email,
     "business:contact_data:country_name": "United Arab Emirates",
@@ -95,7 +93,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#2563eb" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Car Lift UAE" />
+        <meta name="apple-mobile-web-app-title" content="MJ Car Lift" />
         {/* GA4 dataLayer bootstrap — inline so it runs before gtag.js */}
         <script
           dangerouslySetInnerHTML={{

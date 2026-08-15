@@ -39,17 +39,17 @@ const itemVariants = {
 };
 
 const trustBadges = [
-  { icon: Star, label: "4.9★ Rated", color: "text-amber-400" },
-  { icon: Users, label: "247+ Reviews", color: "text-blue-400" },
-  { icon: Navigation, label: "GPS Tracked", color: "text-emerald-400" },
-  { icon: Calendar, label: "6 Days/Week", color: "text-violet-400" },
+  { icon: Star, label: "Fixed Fares", color: "text-amber-400" },
+  { icon: Navigation, label: "All Directions", color: "text-emerald-400" },
+  { icon: Calendar, label: "Daily Service", color: "text-violet-400" },
+  { icon: Users, label: "Shared & Private", color: "text-blue-400" },
 ];
 
 const stats = [
-  { icon: Car, value: "2,000+", label: "Rides Completed" },
-  { icon: Users, value: "500+", label: "Happy Riders" },
-  { icon: TrendingUp, value: "5+", label: "Years Experience" },
-  { icon: Route, value: "50+", label: "Active Routes" },
+  { icon: Car, value: "AED 200", label: "Dubai ↔ Abu Dhabi" },
+  { icon: Route, value: "AED 280", label: "Abu Dhabi ↔ Sharjah" },
+  { icon: TrendingUp, value: "AED 300", label: "Abu Dhabi ↔ Ajman" },
+  { icon: Users, value: "AED 250+", label: "Airport Transfers" },
 ];
 
 export default function HeroSection() {
@@ -60,13 +60,13 @@ export default function HeroSection() {
 
   return (
     <section
-      aria-label="Car Lift UAE – Daily Car Lift Service from Sharjah to Dubai"
+      aria-label="MJ Car Lift Service – Dubai, Abu Dhabi, Sharjah, Ajman"
       className="relative min-h-screen flex items-center overflow-hidden bg-slate-900"
     >
       {/* Background photo */}
       <Image
         src="/images/hero/carlift-uae-daily-commuters-interior.webp"
-        alt="Car lift UAE – daily commuters sharing a comfortable ride from Sharjah to Business Bay, Dubai"
+        alt="MJ Car Lift Service – comfortable shared car lift rides across UAE"
         fill
         priority
         quality={84}
@@ -119,7 +119,7 @@ export default function HeroSection() {
               </span>
               <MapPin className="h-3.5 w-3.5 text-blue-400" aria-hidden="true" />
               <span className="text-sm font-semibold text-white/90 tracking-wide">
-                Sharjah → Business Bay, Dubai
+                Dubai · Abu Dhabi · Sharjah · Ajman
               </span>
               <Badge variant="default" className="text-[11px] px-2 py-0">
                 Live
@@ -130,7 +130,7 @@ export default function HeroSection() {
           {/* Main heading */}
           <motion.div variants={itemVariants} className="max-w-4xl">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
-              Daily{" "}
+              MJ{" "}
               <span className="gradient-text">Car Lift</span>{" "}
               Service
             </h1>
@@ -139,17 +139,17 @@ export default function HeroSection() {
           {/* Sub-heading */}
           <motion.div variants={itemVariants}>
             <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-blue-300 tracking-wide">
-              Sharjah → Business Bay, Dubai
+              Dubai · Abu Dhabi · Sharjah · Ajman
             </p>
           </motion.div>
 
           {/* Description — static (no JS animation) for LCP optimisation */}
           <div className="max-w-2xl">
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              Safe, reliable, and affordable shared rides.{" "}
-              <span className="text-white font-semibold">From AED 350/month.</span>{" "}
-              GPS tracked. Verified drivers.{" "}
-              <span className="text-amber-400 font-semibold">4.9★ rated.</span>
+              Reliable car lift and carpool service on confirmed inter-emirate routes.{" "}
+              <span className="text-white font-semibold">From AED 200/trip.</span>{" "}
+              Air-conditioned vehicles.{" "}
+              <span className="text-amber-400 font-semibold">Book by phone or WhatsApp.</span>
             </p>
           </div>
 
@@ -228,9 +228,7 @@ export default function HeroSection() {
           {/* Social proof micro-copy */}
           <motion.div variants={itemVariants}>
             <p className="text-sm text-slate-500">
-              Join{" "}
-              <span className="text-slate-300 font-medium">500+ professionals</span>{" "}
-              already commuting smarter every day
+              Contact us to book your seat on any of our confirmed inter-emirate routes
             </p>
           </motion.div>
         </motion.div>

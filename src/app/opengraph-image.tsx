@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
-export const alt = "Car Lift UAE – Daily Car Lift from Sharjah to Business Bay";
+export const alt = "MJ Car Lift Service – Dubai, Abu Dhabi, Sharjah & Ajman";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -70,10 +70,10 @@ export default async function Image() {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ color: "#ffffff", fontSize: "28px", fontWeight: 800 }}>
-              Car Lift UAE
+              MJ Car Lift Service
             </span>
             <span style={{ color: "#60a5fa", fontSize: "16px" }}>
-              Daily Car Lift Service
+              Dubai · Abu Dhabi · Sharjah · Ajman
             </span>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default async function Image() {
             maxWidth: "900px",
           }}
         >
-          Sharjah → Business Bay
+          Car Lift & Carpool UAE
         </div>
 
         {/* Sub-heading */}
@@ -102,7 +102,7 @@ export default async function Image() {
             marginBottom: "40px",
           }}
         >
-          Safe, Reliable, Affordable Daily Car Lift
+          Dubai · Abu Dhabi · Sharjah · Ajman
         </div>
 
         {/* Stats row */}
@@ -117,10 +117,10 @@ export default async function Image() {
           }}
         >
           {[
-            { label: "From AED 350/mo", color: "#10b981" },
-            { label: "4.9★ Rated", color: "#f59e0b" },
-            { label: "GPS Tracked", color: "#60a5fa" },
-            { label: "247+ Riders", color: "#a78bfa" },
+            { label: "Dubai↔Abu Dhabi AED 200", color: "#10b981" },
+            { label: "Abu Dhabi↔Sharjah AED 280", color: "#f59e0b" },
+            { label: "Abu Dhabi↔Ajman AED 300", color: "#60a5fa" },
+            { label: "Airport Transfers Available", color: "#a78bfa" },
           ].map((stat) => (
             <div
               key={stat.label}

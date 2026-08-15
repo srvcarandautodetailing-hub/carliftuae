@@ -40,7 +40,7 @@ export function localBusinessSchema(overrides?: Record<string, unknown>) {
     "@id": `${BASE_URL}/#localbusiness`,
     name: BUSINESS.name,
     description:
-      "Premium daily car lift service in UAE. Reliable, safe, and affordable shared ride service from Sharjah to Business Bay, Dubai and all major locations.",
+      "MJ Car Lift Service – reliable car lift and carpool rides on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Sharjah, Abu Dhabi ↔ Ajman.",
     url: BASE_URL,
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
@@ -53,7 +53,6 @@ export function localBusinessSchema(overrides?: Record<string, unknown>) {
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: BUSINESS.address.street,
       addressLocality: BUSINESS.address.city,
       addressRegion: BUSINESS.address.state,
       addressCountry: "AE",
@@ -124,15 +123,10 @@ export function serviceSchema({
       name: BUSINESS.name,
       url: BASE_URL,
     },
-    areaServed: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: BUSINESS.coordinates.lat,
-        longitude: BUSINESS.coordinates.lng,
-      },
-      geoRadius: "50000",
-    },
+    areaServed: BUSINESS.serviceAreas.map((area) => ({
+      "@type": "City",
+      name: area,
+    })),
     ...(price && {
       offers: {
         "@type": "Offer",
@@ -188,7 +182,7 @@ export function articleSchema({
   url,
   datePublished,
   dateModified,
-  authorName = "Car Lift UAE Team",
+  authorName = "MJ Car Lift Service Team",
   image,
 }: {
   title: string;

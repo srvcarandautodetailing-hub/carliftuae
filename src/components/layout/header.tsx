@@ -15,28 +15,8 @@ const NAV_ITEMS = [
     label: "Services",
     href: "/services",
     children: [
-      { label: "Daily Car Lift", href: "/services/daily-car-lift" },
-      { label: "Monthly Car Lift", href: "/services/monthly-car-lift" },
-      { label: "Ladies Car Lift", href: "/services/ladies-car-lift" },
-      { label: "Office Transport", href: "/services/office-transport" },
-      { label: "Corporate Transport", href: "/services/corporate-transport" },
+      { label: "Car Lift Service", href: "/services/car-lift-service" },
       { label: "Airport Transfer", href: "/services/airport-transfer" },
-      { label: "School Transport", href: "/services/school-transport" },
-      { label: "Private Car Lift", href: "/services/private-car-lift" },
-    ],
-  },
-  {
-    label: "Locations",
-    href: "/locations",
-    children: [
-      { label: "Sharjah", href: "/locations/sharjah" },
-      { label: "Dubai", href: "/locations/dubai" },
-      { label: "Business Bay", href: "/locations/business-bay" },
-      { label: "Ajman", href: "/locations/ajman" },
-      { label: "Al Nahda", href: "/locations/al-nahda" },
-      { label: "Al Qusais", href: "/locations/al-qusais" },
-      { label: "JVC", href: "/locations/jvc" },
-      { label: "Silicon Oasis", href: "/locations/silicon-oasis" },
     ],
   },
   { label: "Routes", href: "/routes" },
@@ -77,7 +57,7 @@ export function Header() {
           <Link
             href="/"
             className="flex items-center gap-2 group"
-            aria-label="Car Lift UAE - Home"
+            aria-label="MJ Car Lift Service - Home"
           >
             <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center group-hover:bg-blue-700 transition-colors">
               <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
@@ -91,7 +71,7 @@ export function Header() {
                   isScrolled ? "text-slate-900" : "text-white"
                 )}
               >
-                Car Lift UAE
+                MJ Car Lift
               </span>
               <span
                 className={cn(
@@ -99,7 +79,7 @@ export function Header() {
                   isScrolled ? "text-blue-600" : "text-blue-300"
                 )}
               >
-                Sharjah → Business Bay
+                Dubai · Abu Dhabi · Sharjah
               </span>
             </div>
           </Link>

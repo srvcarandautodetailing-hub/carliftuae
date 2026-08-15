@@ -1,11 +1,10 @@
 ﻿"use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, MapPin } from "lucide-react";
+import { CheckCircle, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { PRICING_PLANS, type PricingPlan } from "@/data/pricing";
-import { BUSINESS, formatWhatsAppHref, cn } from "@/lib/utils";
+import { ROUTE_PRICES, type RoutePrice } from "@/data/pricing";
+import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,10 +28,17 @@ const cardVariants = {
   },
 };
 
-function PricingCard({ plan }: { plan: PricingPlan }) {
+// Deduplicate routes – show only the canonical direction (Dubai→Abu Dhabi, Abu Dhabi→Sharjah, Abu Dhabi→Ajman)
+const CANONICAL_ROUTES: RoutePrice[] = [
+  { route: "Dubai ↔ Abu Dhabi", normal: 200, airport: 250 },
+  { route: "Abu Dhabi ↔ Sharjah", normal: 280, airport: 300 },
+  { route: "Abu Dhabi ↔ Ajman", normal: 300, airport: 320 },
+];
+
+function PricingCard({ route }: { route: RoutePrice }) {
   const whatsappHref = formatWhatsAppHref(
     BUSINESS.whatsapp,
-    `Hi! I'm interested in the ${plan.name} package. Please share more details.`
+    `Hi! I'm interested in a car lift on the ${route.route} route. Please share more details.`
   );
 
   return (
@@ -40,78 +46,42 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
       variants={cardVariants}
       whileHover={{ scale: 1.025, y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
-      className={cn(
-        "relative flex flex-col bg-white rounded-2xl border shadow-sm overflow-hidden transition-shadow duration-300 hover:shadow-xl",
-        plan.highlight
-          ? "border-blue-500 ring-2 ring-blue-500/30 shadow-blue-100"
-          : "border-slate-200"
-      )}
-      aria-label={`${plan.name} pricing plan`}
+      className="relative flex flex-col bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+      aria-label={`${route.route} pricing`}
     >
-      {/* Most Popular ribbon */}
-      {plan.highlight && (
-        <div
-          className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 rounded-t-2xl"
-          aria-hidden="true"
-        />
-      )}
+      <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 rounded-t-2xl" aria-hidden="true" />
 
       <div className="flex flex-col flex-1 p-6 pt-7">
-        {/* Header row: name + badge */}
-        <div className="flex items-start justify-between gap-2 mb-4">
-          <h3 className="text-lg font-bold text-slate-900 leading-tight">
-            {plan.name}
-          </h3>
-          {plan.badge && (
-            <Badge
-              variant={plan.highlight ? "default" : "info"}
-              className="shrink-0 text-[11px] whitespace-nowrap"
-            >
-              {plan.badge}
-            </Badge>
-          )}
-        </div>
+        <h3 className="text-lg font-bold text-slate-900 leading-tight mb-5">
+          {route.route}
+        </h3>
 
-        {/* Price display */}
-        <div className="mb-2">
-          <div className="flex items-baseline gap-1">
-            <span className="text-3xl font-extrabold text-slate-900">
-              AED {plan.price.toLocaleString()}
+        <ul className="flex flex-col gap-3 mb-6 flex-1" role="list">
+          <li className="flex items-center gap-3">
+            <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" aria-hidden="true" />
+            <span className="text-sm text-slate-700">
+              Normal ride: <span className="font-bold text-slate-900">AED {route.normal}</span>
             </span>
-            <span className="text-sm font-medium text-slate-500">
-              /{plan.period}
+          </li>
+          <li className="flex items-center gap-3">
+            <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" aria-hidden="true" />
+            <span className="text-sm text-slate-700">
+              Airport transfer: <span className="font-bold text-slate-900">AED {route.airport}</span>
             </span>
-          </div>
-        </div>
-
-        {/* Route example */}
-        <div className="flex items-center gap-1.5 mb-4">
-          <MapPin className="h-3.5 w-3.5 text-blue-400 shrink-0" aria-hidden="true" />
-          <span className="text-xs text-slate-500 font-medium">{plan.routeExample}</span>
-        </div>
-
-        {/* Description */}
-        <p className="text-sm text-slate-600 leading-relaxed mb-5">
-          {plan.description}
-        </p>
-
-        {/* Feature list */}
-        <ul className="flex flex-col gap-2.5 mb-6 flex-1" role="list">
-          {plan.features.map((feature) => (
-            <li key={feature} className="flex items-start gap-2.5">
-              <CheckCircle
-                className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5"
-                aria-hidden="true"
-              />
-              <span className="text-sm text-slate-700 leading-snug">{feature}</span>
-            </li>
-          ))}
+          </li>
+          <li className="flex items-center gap-3">
+            <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" aria-hidden="true" />
+            <span className="text-sm text-slate-700">Air-conditioned vehicle</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" aria-hidden="true" />
+            <span className="text-sm text-slate-700">Book by phone or WhatsApp</span>
+          </li>
         </ul>
 
-        {/* CTA button */}
         <Button
           asChild
-          variant={plan.highlight ? "cta" : "default"}
+          variant="whatsapp"
           size="default"
           className="w-full mt-auto"
         >
@@ -119,9 +89,10 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${plan.ctaText} – ${plan.name}`}
+            aria-label={`Book ${route.route} car lift via WhatsApp`}
           >
-            {plan.ctaText}
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            Book This Route
           </a>
         </Button>
       </div>
@@ -130,6 +101,7 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
 }
 
 export default function PricingSection() {
+  void ROUTE_PRICES; // imported for reference – canonical display uses CANONICAL_ROUTES
   return (
     <section
       aria-labelledby="pricing-heading"
@@ -148,7 +120,7 @@ export default function PricingSection() {
             variants={headingVariants}
             className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3"
           >
-            Pricing Plans
+            Routes &amp; Pricing
           </motion.p>
 
           <motion.h2
@@ -163,20 +135,20 @@ export default function PricingSection() {
             variants={headingVariants}
             className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto"
           >
-            No hidden charges. Salik tolls included. Cancel anytime.
+            Fixed rates per trip. No hidden charges. Book by phone or WhatsApp.
           </motion.p>
         </motion.div>
 
         {/* Pricing cards grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-7"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-7"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={containerVariants}
         >
-          {PRICING_PLANS.map((plan) => (
-            <PricingCard key={plan.id} plan={plan} />
+          {CANONICAL_ROUTES.map((route) => (
+            <PricingCard key={route.route} route={route} />
           ))}
         </motion.div>
 
@@ -188,18 +160,17 @@ export default function PricingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          All prices are per person. Prices may vary slightly based on pickup
-          location.{" "}
+          Prices are per trip, one way. Contact us for group bookings or custom arrangements.{" "}
           <a
             href={formatWhatsAppHref(
               BUSINESS.whatsapp,
-              "Hi! I'd like to get a custom quote for a car lift."
+              "Hi! I'd like to book a car lift."
             )}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 font-semibold underline underline-offset-2 hover:text-blue-700 transition-colors"
           >
-            Get a custom quote
+            WhatsApp us now
           </a>
           .
         </motion.p>

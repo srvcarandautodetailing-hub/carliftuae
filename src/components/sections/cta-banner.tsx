@@ -111,10 +111,9 @@ export default function CtaBanner() {
             variants={itemVariants}
             className="text-lg sm:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Join{" "}
-            <span className="text-white font-semibold">500+ professionals</span>{" "}
-            who save time and money every day with a reliable, affordable car
-            lift service.
+            MJ Car Lift Service covers{" "}
+            <span className="text-white font-semibold">Dubai, Abu Dhabi, Sharjah &amp; Ajman</span>.{" "}
+            Fixed fares, air-conditioned vehicles, book by phone or WhatsApp.
           </motion.p>
 
           {/* CTA buttons */}
@@ -151,7 +150,7 @@ export default function CtaBanner() {
             </Button>
           </motion.div>
 
-          {/* Rating display */}
+          {/* Trust message */}
           <motion.div
             variants={itemVariants}
             className="flex items-center justify-center gap-2"
@@ -159,7 +158,7 @@ export default function CtaBanner() {
             <div
               className="flex items-center gap-0.5"
               role="img"
-              aria-label={`${BUSINESS.rating} out of 5 stars`}
+              aria-label="Fixed fares, air-conditioned vehicles, book by WhatsApp"
             >
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
@@ -170,9 +169,7 @@ export default function CtaBanner() {
               ))}
             </div>
             <p className="text-sm font-semibold text-white/80">
-              {BUSINESS.rating}&#9733; Rated by{" "}
-              <span className="text-white">{BUSINESS.reviewCount}+</span>{" "}
-              satisfied riders
+              Fixed fares · Air-conditioned vehicles · Book by WhatsApp
             </p>
           </motion.div>
         </motion.div>

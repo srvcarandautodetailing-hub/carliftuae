@@ -28,21 +28,21 @@ export function formatWhatsAppHref(phone: string, message?: string): string {
 }
 
 export const BUSINESS = {
-  name: "Car Lift UAE",
-  tagline: "Daily Car Lift Service – Sharjah to Dubai & Beyond",
+  name: "MJ Car Lift Service",
+  tagline: "Car Lift & Carpool Service – Dubai, Abu Dhabi, Sharjah & Ajman",
   phone: "+971 56 228 6455",
   whatsapp: "+971562286455",
   email: "info@carlift.ae",
   website: "https://www.carliftuae.com",
   address: {
-    street: "Al Majaz Area",
-    city: "Sharjah",
-    state: "Sharjah",
+    street: "UAE",
+    city: "Abu Dhabi",
+    state: "Abu Dhabi",
     country: "UAE",
   },
   coordinates: {
-    lat: 25.3573,
-    lng: 55.3850,
+    lat: 24.4539,
+    lng: 54.3773,
   },
   hours: {
     weekdays: "6:00 AM – 10:00 PM",
@@ -50,12 +50,7 @@ export const BUSINESS = {
     saturday: "6:00 AM – 10:00 PM",
   },
   rating: 4.9,
-  reviewCount: 247,
+  reviewCount: 150,
   foundedYear: 2019,
-  serviceAreas: [
-    "Sharjah", "Dubai", "Business Bay", "Ajman",
-    "Al Nahda", "Al Qusais", "Al Khan", "Al Majaz",
-    "Al Taawun", "Muweilah", "Al Qouz", "Dubai Marina",
-    "JVC", "JLT", "Deira", "Bur Dubai", "Silicon Oasis",
-  ],
+  serviceAreas: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
 } as const;

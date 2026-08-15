@@ -22,17 +22,17 @@ interface Benefit {
 const benefits: Benefit[] = [
   {
     icon: Shield,
-    title: "Save AED 600+/Month",
+    title: "Fixed Fares",
     description:
-      "Stop paying for fuel, parking, Salik, and car maintenance. Switch to a shared car lift and put AED 600–1,200 back in your pocket every month vs. driving yourself.",
+      "No surge pricing, no hidden fees. Dubai ↔ Abu Dhabi AED 200, Abu Dhabi ↔ Sharjah AED 280, Abu Dhabi ↔ Ajman AED 300. What you see is what you pay.",
     accentColor: "text-amber-400",
     bgColor: "bg-amber-400/10 border-amber-400/20",
   },
   {
     icon: MapPin,
-    title: "GPS Tracked Rides",
+    title: "Confirmed Routes",
     description:
-      "Every vehicle in our fleet broadcasts real-time GPS location. Share your live trip with family, stay informed of arrival times, and travel with complete peace of mind.",
+      "We operate on confirmed, regularly scheduled inter-emirate routes. Both directions served on every route — pick up or drop off at your preferred location.",
     accentColor: "text-blue-400",
     bgColor: "bg-blue-400/10 border-blue-400/20",
   },
@@ -40,31 +40,31 @@ const benefits: Benefit[] = [
     icon: CheckCircle,
     title: "Verified Drivers",
     description:
-      "All Car Lift UAE drivers undergo thorough background checks, Emirates ID verification, and driving record screening before they carry a single passenger.",
+      "All MJ Car Lift Service drivers are UAE-licensed professionals. Every driver is verified before they carry a single passenger.",
     accentColor: "text-emerald-400",
     bgColor: "bg-emerald-400/10 border-emerald-400/20",
   },
   {
     icon: Heart,
-    title: "Ladies-Only Options",
+    title: "Private & Shared Options",
     description:
-      "We offer exclusive ladies-only vehicles with optional female drivers. Designed for women professionals who prioritise safety, comfort, and privacy during their daily commute.",
+      "Choose a private ride for maximum comfort or a shared carpool to split the fare. Both options available on all confirmed routes.",
     accentColor: "text-rose-400",
     bgColor: "bg-rose-400/10 border-rose-400/20",
   },
   {
     icon: Home,
-    title: "Door-to-Door Service",
+    title: "Airport Transfers",
     description:
-      "Your driver picks you up from your building entrance and drops you at your office door. No more walking to metro stops or waiting at shared pickup zones.",
+      "Need to catch a flight? Airport transfers available on all confirmed routes at slightly higher fares. Book in advance to ensure availability.",
     accentColor: "text-violet-400",
     bgColor: "bg-violet-400/10 border-violet-400/20",
   },
   {
     icon: Zap,
-    title: "Salik Included",
+    title: "Easy Booking",
     description:
-      "Every package includes Salik toll charges. No surprise deductions, no end-of-month bills for road tolls. Your monthly rate is your total cost – full stop.",
+      "Book by phone or WhatsApp — no app required. Share your pickup location, destination, and timing and we will confirm your seat.",
     accentColor: "text-cyan-400",
     bgColor: "bg-cyan-400/10 border-cyan-400/20",
   },
@@ -132,7 +132,7 @@ export default function WhyChooseSection() {
             variants={headingVariants}
             className="text-blue-400 font-semibold text-sm uppercase tracking-widest mb-3"
           >
-            Why Car Lift UAE
+            Why MJ Car Lift Service
           </motion.p>
 
           <motion.h2
@@ -140,17 +140,15 @@ export default function WhyChooseSection() {
             variants={headingVariants}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-5 max-w-3xl mx-auto leading-tight"
           >
-            Why{" "}
-            <span className="gradient-text">500+ Professionals</span>{" "}
-            Choose Car Lift UAE
+            Why Choose{" "}
+            <span className="gradient-text">MJ Car Lift Service</span>
           </motion.h2>
 
           <motion.p
             variants={headingVariants}
             className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
           >
-            More than just a ride – a smarter way to commute across Sharjah,
-            Dubai, and Ajman every working day.
+            Reliable inter-emirate car lift and carpool service covering Dubai, Abu Dhabi, Sharjah, and Ajman.
           </motion.p>
         </motion.div>
 
@@ -206,10 +204,10 @@ export default function WhyChooseSection() {
           <div className="inline-block glass rounded-2xl border border-white/10 px-8 py-6 max-w-2xl">
             <p className="text-slate-300 text-base leading-relaxed">
               <span className="text-white font-semibold">
-                The average Car Lift UAE rider saves AED 700–1,200/month
+                MJ Car Lift Service — confirmed inter-emirate routes
               </span>{" "}
-              compared to driving – that&apos;s AED 8,400–14,400 per year back in
-              your pocket, plus hours of stress-free commute time.
+              with fixed fares, air-conditioned vehicles, and easy WhatsApp booking.
+              No app required.
             </p>
           </div>
         </motion.div>
