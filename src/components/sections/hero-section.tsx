@@ -127,21 +127,21 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Main heading */}
-          <motion.div variants={itemVariants} className="max-w-4xl">
+          {/* Main heading — static div so browser paints H1 immediately (LCP) */}
+          <div className="max-w-4xl">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
               MJ{" "}
               <span className="gradient-text">Car Lift</span>{" "}
               Service
             </h1>
-          </motion.div>
+          </div>
 
-          {/* Sub-heading */}
-          <motion.div variants={itemVariants}>
+          {/* Sub-heading — static for LCP */}
+          <div>
             <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-blue-300 tracking-wide">
               Dubai · Abu Dhabi · Sharjah · Ajman
             </p>
-          </motion.div>
+          </div>
 
           {/* Description — static (no JS animation) for LCP optimisation */}
           <div className="max-w-2xl">

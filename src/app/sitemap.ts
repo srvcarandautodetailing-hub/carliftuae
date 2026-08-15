@@ -89,35 +89,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // ── GSC recovery pages (old domain had rankings — highest crawl priority) ─
-  // These exact slugs are based on carliftuae.com queries with existing
-  // impressions/clicks. Priority set to 0.95 to signal indexing urgency.
-  const gscLandingPages: MetadataRoute.Sitemap = [
-    {
-      url: `${BASE_URL}/car-lift-from-sharjah-to-business-bay`,
-      lastModified: TODAY,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.98,
-    },
-    {
-      url: `${BASE_URL}/carlift-sharjah-to-dubai-business-bay`,
-      lastModified: TODAY,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.96,
-    },
-    {
-      url: `${BASE_URL}/bus-car-lift-sharjah-to-business-bay`,
-      lastModified: TODAY,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.96,
-    },
-    {
-      url: `${BASE_URL}/bus-car-lift-service-from-sharjah-sheikh-zayed`,
-      lastModified: TODAY,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.96,
-    },
-  ];
 
   // ── Location pages ────────────────────────────────────────────────────────
   const locationPages: MetadataRoute.Sitemap = LOCATIONS.map((loc) => ({
@@ -162,51 +133,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.55,
   }));
 
-  // ── New local SEO pages ───────────────────────────────────────────────────
-  const newLocalSeoPages: MetadataRoute.Sitemap = [
-    {
-      url: `${BASE_URL}/monthly-pick-and-drop-service-sharjah`,
-      lastModified: TODAY,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.96,
-    },
-    {
-      url: `${BASE_URL}/carlift-sharjah-to-difc`,
-      lastModified: TODAY,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.96,
-    },
-    {
-      url: `${BASE_URL}/ladies-car-lift-sharjah-to-dubai`,
-      lastModified: TODAY,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.95,
-    },
-    {
-      url: `${BASE_URL}/car-lift-ajman-to-dubai`,
-      lastModified: TODAY,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.95,
-    },
-    {
-      url: `${BASE_URL}/carlift-sharjah-to-jlt`,
-      lastModified: TODAY,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.95,
-    },
-    {
-      url: `${BASE_URL}/car-lift-dubai-to-abu-dhabi`,
-      lastModified: TODAY,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.97,
-    },
-  ];
 
-  // Priority order: homepage → GSC pages → new local SEO → locations → services → static → blog
   return [
     ...staticPages,
-    ...gscLandingPages,
-    ...newLocalSeoPages,
     ...locationPages,
     ...servicePages,
     ...blogPages,

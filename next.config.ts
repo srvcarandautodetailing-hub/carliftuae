@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 2592000, // 30 days
   },
   // Compression
   compress: true,
@@ -89,7 +90,18 @@ const nextConfig: NextConfig = {
       { source: "/carlift-sharjah-to-dubai-business-bay/", destination: "/carlift-sharjah-to-dubai-business-bay", permanent: true },
       // Common misspellings / alternate forms seen in queries
       { source: "/carlift-uae", destination: "/", permanent: true },
-      { source: "/car-lift-near-me", destination: "/locations", permanent: true },
+      { source: "/car-lift-near-me", destination: "/routes", permanent: true },
+      // Old Sharjah-to-Business-Bay pages — redirect to routes (preserves link equity)
+      { source: "/car-lift-from-sharjah-to-business-bay", destination: "/routes", permanent: true },
+      { source: "/carlift-sharjah-to-dubai-business-bay", destination: "/routes", permanent: true },
+      { source: "/bus-car-lift-sharjah-to-business-bay", destination: "/routes", permanent: true },
+      { source: "/bus-car-lift-service-from-sharjah-sheikh-zayed", destination: "/routes", permanent: true },
+      { source: "/monthly-pick-and-drop-service-sharjah", destination: "/routes", permanent: true },
+      { source: "/carlift-sharjah-to-difc", destination: "/routes", permanent: true },
+      { source: "/ladies-car-lift-sharjah-to-dubai", destination: "/routes", permanent: true },
+      { source: "/car-lift-ajman-to-dubai", destination: "/routes", permanent: true },
+      { source: "/carlift-sharjah-to-jlt", destination: "/routes", permanent: true },
+      { source: "/car-lift-dubai-to-abu-dhabi", destination: "/routes", permanent: true },
       // WordPress legacy URLs — redirect to canonical equivalents (passes link equity)
       { source: "/post-sitemap.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/page-sitemap.xml", destination: "/sitemap.xml", permanent: true },

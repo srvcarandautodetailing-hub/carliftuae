@@ -94,6 +94,9 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="MJ Car Lift" />
+        {/* Resource hints — preconnect reduces GA4 script latency */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         {/* GA4 dataLayer bootstrap — inline so it runs before gtag.js */}
         <script
           dangerouslySetInnerHTML={{

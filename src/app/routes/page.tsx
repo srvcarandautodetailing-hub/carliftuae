@@ -34,12 +34,21 @@ export const metadata: Metadata = {
 };
 
 const emirateLabels: Record<Location["emirate"], string> = {
+  "abu-dhabi": "Abu Dhabi Routes",
   sharjah: "Sharjah Routes",
   dubai: "Dubai Routes",
   ajman: "Ajman Routes",
 };
 
-const emirateOrder: Location["emirate"][] = ["sharjah", "ajman", "dubai"];
+// Per-emirate trip price for display
+const emirateTripPrice: Record<Location["emirate"], string> = {
+  dubai:       "AED 200",
+  "abu-dhabi": "From AED 200",
+  sharjah:     "AED 280",
+  ajman:       "AED 300",
+};
+
+const emirateOrder: Location["emirate"][] = ["dubai", "abu-dhabi", "sharjah", "ajman"];
 
 function RouteCard({ location }: { location: Location }) {
   const whatsappHref = formatWhatsAppHref(
@@ -92,9 +101,9 @@ function RouteCard({ location }: { location: Location }) {
             <li className="text-center bg-emerald-50 rounded-lg p-2">
               <DollarSign className="h-3.5 w-3.5 text-emerald-500 mx-auto mb-1" aria-hidden="true" />
               <p className="text-xs font-bold text-emerald-700 leading-none">
-                AED {location.monthlyPrice}
+                {emirateTripPrice[location.emirate]}
               </p>
-              <p className="text-[10px] text-emerald-600 mt-0.5">/month</p>
+              <p className="text-[10px] text-emerald-600 mt-0.5">/trip</p>
             </li>
           </ul>
 
@@ -140,14 +149,16 @@ function RouteCard({ location }: { location: Location }) {
 }
 
 export default function RoutesPage() {
-  const sharjahLocations = getLocationsByEmirate("sharjah");
-  const ajmanLocations = getLocationsByEmirate("ajman");
-  const dubaiLocations = getLocationsByEmirate("dubai");
+  const dubaiLocations    = getLocationsByEmirate("dubai");
+  const abuDhabiLocations = getLocationsByEmirate("abu-dhabi");
+  const sharjahLocations  = getLocationsByEmirate("sharjah");
+  const ajmanLocations    = getLocationsByEmirate("ajman");
 
   const locationsByEmirate: Record<Location["emirate"], Location[]> = {
-    sharjah: sharjahLocations,
-    ajman: ajmanLocations,
-    dubai: dubaiLocations,
+    dubai:       dubaiLocations,
+    "abu-dhabi": abuDhabiLocations,
+    sharjah:     sharjahLocations,
+    ajman:       ajmanLocations,
   };
 
   const primaryRoute = LOCATIONS.find((l) => l.slug === "sharjah");
@@ -258,7 +269,7 @@ export default function RoutesPage() {
                   {[
                     `Distance: ${primaryRoute.distance}`,
                     `Drive Time: ${primaryRoute.drivingTime}`,
-                    `Monthly Price: AED ${primaryRoute.monthlyPrice}/person`,
+                    `Per-Trip Price: AED 280/trip (Sharjah ↔ Abu Dhabi)`,
                     "Pickup: Al Majaz, Al Nahda, Al Taawun, Muweilah, Al Khan, Al Qasimia, Rolla",
                     "Departures: 6:30 AM, 7:00 AM, 7:30 AM, 8:00 AM",
                     "Evening Return: 5:00 PM, 5:30 PM, 6:00 PM, 6:30 PM",

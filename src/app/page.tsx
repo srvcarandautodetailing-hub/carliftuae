@@ -4,7 +4,6 @@ import ServicesSection from "@/components/sections/services-section";
 import WhyChooseSection from "@/components/sections/why-choose-section";
 import RouteSection from "@/components/sections/route-section";
 import PricingSection from "@/components/sections/pricing-section";
-import TestimonialsSection from "@/components/sections/testimonials-section";
 import FaqSection from "@/components/sections/faq-section";
 import CtaBanner from "@/components/sections/cta-banner";
 import SchemaScript from "@/components/sections/schema-script";
@@ -52,7 +51,6 @@ export default function HomePage() {
       <WhyChooseSection />
       <RouteSection />
       <PricingSection />
-      <TestimonialsSection />
       <FaqSection />
       <CtaBanner />
     </>

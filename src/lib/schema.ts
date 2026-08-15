@@ -23,12 +23,7 @@ export function organizationSchema() {
       areaServed: "AE",
       availableLanguage: ["English", "Arabic", "Hindi", "Urdu"],
     },
-    sameAs: [
-      "https://www.facebook.com/carliftUAE",
-      "https://www.instagram.com/carliftUAE",
-      "https://twitter.com/carliftUAE",
-      "https://g.co/carliftUAE",
-    ],
+    sameAs: [],
   };
 }
 
@@ -62,34 +57,7 @@ export function localBusinessSchema(overrides?: Record<string, unknown>) {
       latitude: BUSINESS.coordinates.lat,
       longitude: BUSINESS.coordinates.lng,
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-        opens: "06:00",
-        closes: "22:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Friday",
-        opens: "07:00",
-        closes: "22:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "06:00",
-        closes: "22:00",
-      },
-    ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: BUSINESS.rating,
-      reviewCount: BUSINESS.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    priceRange: "AED 200 – AED 500/month",
+    priceRange: "AED 200 – AED 320 per trip",
     currenciesAccepted: "AED",
     paymentAccepted: "Cash, Bank Transfer, WhatsApp Pay",
     areaServed: BUSINESS.serviceAreas.map((area) => ({
