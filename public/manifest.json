@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "Car Lift UAE",
   "short_name": "Car Lift UAE",
   "description": "Daily car lift from Sharjah to Business Bay & Dubai. From AED 300/month. GPS-tracked, verified drivers.",
@@ -51,7 +51,7 @@
       "name": "Book via WhatsApp",
       "short_name": "Book Now",
       "description": "Book a car lift via WhatsApp in 60 seconds",
-      "url": "https://wa.me/971562286455?text=Hi%2C%20I%20want%20to%20book%20a%20car%20lift!",
+      "url": "https://wa.me/971507255334?text=Hi%2C%20I%20want%20to%20book%20a%20car%20lift!",
       "icons": [
         {
           "src": "/android-chrome-192x192.png?v=2",

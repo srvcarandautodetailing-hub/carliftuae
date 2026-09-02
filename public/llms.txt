@@ -1,4 +1,4 @@
-# Car Lift UAE
+﻿# Car Lift UAE
 
 > Daily car lift and carpooling service in the UAE. Connecting Sharjah, Ajman, and Dubai with safe, reliable, GPS-tracked shared rides since 2019.
 
@@ -44,8 +44,8 @@
 
 ## Contact
 
-- WhatsApp: +971 56 228 6455
-- Phone: +971 56 228 6455
+- WhatsApp: +971 50 725 5334
+- Phone: +971 50 725 5334
 - Email: info@carlift.ae
 - Address: Sharjah, United Arab Emirates
-- Book now: https://wa.me/971562286455
+- Book now: https://wa.me/971507255334

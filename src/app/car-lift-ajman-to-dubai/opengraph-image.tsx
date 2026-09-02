@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 import { buildOgImageJsx } from "@/lib/og-image";
 
 export const runtime = "nodejs";
@@ -17,7 +17,7 @@ export default function Image() {
         { label: "AED 420/Month", color: "#10b981" },
         { label: "Business Bay", color: "#f59e0b" },
         { label: "GPS Tracked", color: "#60a5fa" },
-        { label: "+971 56 228 6455", color: "#a78bfa" },
+        { label: "+971 50 725 5334", color: "#a78bfa" },
       ],
     }),
     { ...size }
