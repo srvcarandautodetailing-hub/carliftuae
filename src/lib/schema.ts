@@ -1,4 +1,4 @@
-import { BUSINESS, TAXI } from "./utils";
+﻿import { BUSINESS } from "./utils";
 
 const BASE_URL = "https://www.carliftuae.com";
 
@@ -35,7 +35,7 @@ export function localBusinessSchema(overrides?: Record<string, unknown>) {
     "@id": `${BASE_URL}/#localbusiness`,
     name: BUSINESS.name,
     description:
-      "MJ Car Lift Service – reliable car lift and carpool rides on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Sharjah, Abu Dhabi ↔ Ajman.",
+      "Quick Car Lift Service UAE – reliable car lift and carpool rides on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Sharjah, Abu Dhabi ↔ Ajman.",
     url: BASE_URL,
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
@@ -111,16 +111,16 @@ export function serviceSchema({
   };
 }
 
-// Quick Taxi Service UAE — separate entity schema for GEO/AIO signal
+// Quick Car Lift Service UAE — TaxiService entity schema for GEO/AIO signal
 export function taxiServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "TaxiService"],
-    "@id": `${BASE_URL}/#quicktaxiuae`,
-    name: TAXI.name,
-    telephone: TAXI.phone,
+    "@id": `${BASE_URL}/#quickcarliftserviceuae`,
+    name: BUSINESS.name,
+    telephone: BUSINESS.phone,
     url: BASE_URL,
-    areaServed: TAXI.serviceAreas.map((area) => ({
+    areaServed: BUSINESS.serviceAreas.map((area) => ({
       "@type": "City",
       name: area,
     })),
@@ -130,7 +130,7 @@ export function taxiServiceSchema() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: TAXI.phone,
+      telephone: BUSINESS.phone,
       contactType: "customer service",
       areaServed: "AE",
       availableLanguage: ["English", "Arabic", "Hindi", "Urdu"],
@@ -177,7 +177,7 @@ export function articleSchema({
   url,
   datePublished,
   dateModified,
-  authorName = "MJ Car Lift Service Team",
+  authorName = "Quick Car Lift Service UAE Team",
   image,
 }: {
   title: string;

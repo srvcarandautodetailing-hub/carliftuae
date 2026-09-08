@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import {
@@ -40,7 +40,7 @@ const benefits: Benefit[] = [
     icon: CheckCircle,
     title: "Verified Drivers",
     description:
-      "All MJ Car Lift Service drivers are UAE-licensed professionals. Every driver is verified before they carry a single passenger.",
+      "All Quick Car Lift Service UAE drivers are UAE-licensed professionals. Every driver is verified before they carry a single passenger.",
     accentColor: "text-emerald-400",
     bgColor: "bg-emerald-400/10 border-emerald-400/20",
   },
@@ -132,7 +132,7 @@ export default function WhyChooseSection() {
             variants={headingVariants}
             className="text-blue-400 font-semibold text-sm uppercase tracking-widest mb-3"
           >
-            Why MJ Car Lift Service
+            Why Quick Car Lift Service UAE
           </motion.p>
 
           <motion.h2
@@ -141,7 +141,7 @@ export default function WhyChooseSection() {
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-5 max-w-3xl mx-auto leading-tight"
           >
             Why Choose{" "}
-            <span className="gradient-text">MJ Car Lift Service</span>
+            <span className="gradient-text">Quick Car Lift Service UAE</span>
           </motion.h2>
 
           <motion.p
@@ -204,7 +204,7 @@ export default function WhyChooseSection() {
           <div className="inline-block glass rounded-2xl border border-white/10 px-8 py-6 max-w-2xl">
             <p className="text-slate-300 text-base leading-relaxed text-center sm:text-left">
               <span className="text-white font-semibold">
-                MJ Car Lift Service — confirmed inter-emirate routes
+                Quick Car Lift Service UAE — confirmed inter-emirate routes
               </span>{" "}
               with fixed fares, air-conditioned vehicles, and easy WhatsApp booking.
               No app required.

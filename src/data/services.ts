@@ -1,4 +1,4 @@
-export interface Service {
+﻿export interface Service {
   slug: string;
   name: string;
   shortName: string;
@@ -21,7 +21,7 @@ export const SERVICES: Service[] = [
     description:
       "Private car lift and carpool service covering Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Sharjah, and Abu Dhabi ↔ Ajman. Book by phone or WhatsApp.",
     longDescription:
-      "MJ Car Lift Service provides reliable private car lift and carpool rides on confirmed inter-emirate routes. Whether you're travelling from Dubai to Abu Dhabi or from Sharjah to Abu Dhabi, we offer a comfortable, affordable ride. Contact us by phone or WhatsApp to book.",
+      "Quick Car Lift Service UAE provides reliable private car lift and carpool rides on confirmed inter-emirate routes. Whether you're travelling from Dubai to Abu Dhabi or from Sharjah to Abu Dhabi, we offer a comfortable, affordable ride. Contact us by phone or WhatsApp to book.",
     features: [
       "Dubai ↔ Abu Dhabi route",
       "Abu Dhabi ↔ Sharjah route",
@@ -43,10 +43,10 @@ export const SERVICES: Service[] = [
       {
         question: "How do I book a car lift?",
         answer:
-          "Contact MJ Car Lift Service by phone or WhatsApp using the number on this page. Share your pickup location, destination, and preferred timing and we will confirm your booking.",
+          "Contact Quick Car Lift Service UAE by phone or WhatsApp using the number on this page. Share your pickup location, destination, and preferred timing and we will confirm your booking.",
       },
       {
-        question: "What routes does MJ Car Lift Service cover?",
+        question: "What routes does Quick Car Lift Service UAE cover?",
         answer:
           "We cover Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Sharjah, and Abu Dhabi ↔ Ajman.",
       },
@@ -60,7 +60,7 @@ export const SERVICES: Service[] = [
     description:
       "Airport transfer service on all confirmed routes. Dubai ↔ Abu Dhabi from AED 250, Abu Dhabi ↔ Sharjah from AED 300, Abu Dhabi ↔ Ajman from AED 320.",
     longDescription:
-      "MJ Car Lift Service provides airport transfers on all confirmed routes at slightly higher rates than standard private rides. Book in advance by phone or WhatsApp to ensure availability for your flight.",
+      "Quick Car Lift Service UAE provides airport transfers on all confirmed routes at slightly higher rates than standard private rides. Book in advance by phone or WhatsApp to ensure availability for your flight.",
     features: [
       "Dubai ↔ Abu Dhabi airport transfer – AED 250",
       "Abu Dhabi ↔ Sharjah airport transfer – AED 300",
@@ -81,7 +81,7 @@ export const SERVICES: Service[] = [
       {
         question: "Do you provide airport transfers?",
         answer:
-          "Yes. MJ Car Lift Service provides airport transfers on all confirmed routes at slightly higher rates than normal private rides.",
+          "Yes. Quick Car Lift Service UAE provides airport transfers on all confirmed routes at slightly higher rates than normal private rides.",
       },
       {
         question: "How far in advance should I book an airport transfer?",

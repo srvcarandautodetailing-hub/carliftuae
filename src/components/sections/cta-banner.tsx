@@ -112,7 +112,7 @@ export default function CtaBanner() {
             variants={itemVariants}
             className="text-lg sm:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            MJ Car Lift Service covers{" "}
+            Quick Car Lift Service UAE covers{" "}
             <span className="text-white font-semibold">Dubai, Abu Dhabi, Sharjah &amp; Ajman</span>.{" "}
             Fixed fares, air-conditioned vehicles, book by phone or WhatsApp.
           </motion.p>

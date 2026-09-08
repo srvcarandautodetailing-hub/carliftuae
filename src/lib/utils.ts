@@ -27,18 +27,11 @@ export function formatWhatsAppHref(phone: string, message?: string): string {
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 
-export const TAXI = {
-  name: "Quick Taxi Service UAE",
+export const BUSINESS = {
+  name: "Quick Car Lift Service UAE",
+  tagline: "Quick Car Lift Service UAE – Dubai, Abu Dhabi, Sharjah & Ajman",
   phone: "+971 54 330 8261",
   whatsapp: "+971543308261",
-  serviceAreas: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "UAE"],
-} as const;
-
-export const BUSINESS = {
-  name: "MJ Car Lift Service",
-  tagline: "Car Lift & Carpool Service – Dubai, Abu Dhabi, Sharjah & Ajman",
-  phone: "+971 50 725 5334",
-  whatsapp: "+971507255334",
   email: "info@carlift.ae",
   website: "https://www.carliftuae.com",
   address: {

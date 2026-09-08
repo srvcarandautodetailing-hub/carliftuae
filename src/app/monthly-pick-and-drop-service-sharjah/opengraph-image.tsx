@@ -17,7 +17,7 @@ export default function Image() {
         { label: "AED 300/Month", color: "#10b981" },
         { label: "26 Days", color: "#f59e0b" },
         { label: "GPS Tracked", color: "#60a5fa" },
-        { label: "+971 50 725 5334", color: "#a78bfa" },
+        { label: "+971 54 330 8261", color: "#a78bfa" },
       ],
     }),
     { ...size }

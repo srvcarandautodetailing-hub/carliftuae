@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -60,13 +60,13 @@ export default function HeroSection() {
 
   return (
     <section
-      aria-label="MJ Car Lift Service – Dubai, Abu Dhabi, Sharjah, Ajman"
+      aria-label="Quick Car Lift Service UAE – Dubai, Abu Dhabi, Sharjah, Ajman"
       className="relative min-h-screen flex items-center overflow-hidden bg-slate-900"
     >
       {/* Background photo */}
       <Image
         src="/images/hero/carlift-uae-daily-commuters-interior.webp"
-        alt="MJ Car Lift Service – comfortable shared car lift rides across UAE"
+        alt="Quick Car Lift Service UAE – comfortable shared car lift rides across UAE"
         fill
         priority
         quality={84}

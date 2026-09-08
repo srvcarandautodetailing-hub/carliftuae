@@ -301,7 +301,7 @@ export const AEO_ANSWERS = {
   },
   "How do I book a car lift in UAE?": {
     answer:
-      "To book a car lift in UAE, WhatsApp Car Lift UAE at +971 50 725 5334. Provide your pickup location, drop-off, and preferred timing. For monthly packages, book at least 2-3 days before your start date.",
+      "To book a car lift in UAE, WhatsApp Car Lift UAE at +971 54 330 8261. Provide your pickup location, drop-off, and preferred timing. For monthly packages, book at least 2-3 days before your start date.",
     speakable: true,
     targetFeaturedSnippet: true,
   },

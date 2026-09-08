@@ -1,4 +1,4 @@
-export interface Location {
+﻿export interface Location {
   slug: string;
   name: string;
   emirate: "dubai" | "abu-dhabi" | "sharjah" | "ajman";
@@ -22,7 +22,7 @@ export const LOCATIONS: Location[] = [
     description:
       "Car lift service between Dubai and Abu Dhabi. Normal/private rides AED 200. Airport transfers AED 250.",
     longDescription:
-      "MJ Car Lift Service connects Dubai and Abu Dhabi in both directions. Whether you are travelling from Dubai to Abu Dhabi or returning, our car lift service offers comfortable, air-conditioned private rides at a fixed rate of AED 200 per trip. Airport transfers are available at AED 250.",
+      "Quick Car Lift Service UAE connects Dubai and Abu Dhabi in both directions. Whether you are travelling from Dubai to Abu Dhabi or returning, our car lift service offers comfortable, air-conditioned private rides at a fixed rate of AED 200 per trip. Airport transfers are available at AED 250.",
     keywords: [
       "car lift dubai abu dhabi",
       "car lift from dubai to abu dhabi",
@@ -54,7 +54,7 @@ export const LOCATIONS: Location[] = [
     description:
       "Car lift service from Abu Dhabi to Dubai, Sharjah, and Ajman. Rides from AED 200. Airport transfers available.",
     longDescription:
-      "Abu Dhabi is the hub for all MJ Car Lift Service routes. We provide car lift and carpool rides from Abu Dhabi to Dubai (AED 200), Abu Dhabi to Sharjah (AED 280), and Abu Dhabi to Ajman (AED 300). Airport transfers are also available on all routes at slightly higher rates.",
+      "Abu Dhabi is the hub for all Quick Car Lift Service UAE routes. We provide car lift and carpool rides from Abu Dhabi to Dubai (AED 200), Abu Dhabi to Sharjah (AED 280), and Abu Dhabi to Ajman (AED 300). Airport transfers are also available on all routes at slightly higher rates.",
     keywords: [
       "car lift abu dhabi",
       "car lift from abu dhabi to dubai",
@@ -73,7 +73,7 @@ export const LOCATIONS: Location[] = [
       {
         question: "What routes are available from Abu Dhabi?",
         answer:
-          "MJ Car Lift Service operates from Abu Dhabi to Dubai (AED 200), Abu Dhabi to Sharjah (AED 280), and Abu Dhabi to Ajman (AED 300).",
+          "Quick Car Lift Service UAE operates from Abu Dhabi to Dubai (AED 200), Abu Dhabi to Sharjah (AED 280), and Abu Dhabi to Ajman (AED 300).",
       },
       {
         question: "Are airport transfers available from Abu Dhabi?",
@@ -89,7 +89,7 @@ export const LOCATIONS: Location[] = [
     description:
       "Car lift service between Sharjah and Abu Dhabi. Normal/private rides AED 280. Airport transfers AED 300.",
     longDescription:
-      "MJ Car Lift Service connects Sharjah and Abu Dhabi in both directions. A normal/private car lift ride on this route costs AED 280. Airport transfers are available at AED 300.",
+      "Quick Car Lift Service UAE connects Sharjah and Abu Dhabi in both directions. A normal/private car lift ride on this route costs AED 280. Airport transfers are available at AED 300.",
     keywords: [
       "car lift sharjah abu dhabi",
       "car lift from sharjah to abu dhabi",
@@ -121,7 +121,7 @@ export const LOCATIONS: Location[] = [
     description:
       "Car lift service between Ajman and Abu Dhabi. Normal/private rides AED 300. Airport transfers AED 320.",
     longDescription:
-      "MJ Car Lift Service connects Ajman and Abu Dhabi in both directions. A normal/private car lift ride on this route costs AED 300. Airport transfers are available at AED 320.",
+      "Quick Car Lift Service UAE connects Ajman and Abu Dhabi in both directions. A normal/private car lift ride on this route costs AED 300. Airport transfers are available at AED 320.",
     keywords: [
       "car lift ajman abu dhabi",
       "car lift from ajman to abu dhabi",

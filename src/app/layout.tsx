@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -18,13 +18,13 @@ const BASE_URL = "https://www.carliftuae.com";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | MJ Car Lift Service",
-    default: "MJ Car Lift Service – Dubai, Abu Dhabi, Sharjah & Ajman",
+    template: "%s | Quick Car Lift Service UAE",
+    default: "Quick Car Lift Service UAE – Dubai, Abu Dhabi, Sharjah & Ajman",
   },
   description:
-    "MJ Car Lift Service – reliable car lift and carpool rides on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi from AED 200. Abu Dhabi ↔ Sharjah from AED 280. Abu Dhabi ↔ Ajman from AED 300. Book by phone or WhatsApp.",
+    "Quick Car Lift Service UAE – reliable car lift and carpool rides on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi from AED 200. Abu Dhabi ↔ Sharjah from AED 280. Abu Dhabi ↔ Ajman from AED 300. Book by phone or WhatsApp.",
   keywords:
-    "car lift uae, carpool uae, car lift dubai abu dhabi, car lift abu dhabi sharjah, car lift abu dhabi ajman, MJ car lift service, airport transfer uae",
+    "car lift uae, carpool uae, car lift dubai abu dhabi, car lift abu dhabi sharjah, car lift abu dhabi ajman, Quick Car Lift Service UAE, airport transfer uae",
   metadataBase: new URL(BASE_URL),
   alternates: { canonical: `${BASE_URL}/` },
   manifest: "/site.webmanifest?v=2",
@@ -37,16 +37,16 @@ export const metadata: Metadata = {
     apple: { url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" },
     shortcut: "/favicon.ico?v=2",
   },
-  authors: [{ name: "MJ Car Lift Service" }],
-  creator: "MJ Car Lift Service",
-  publisher: "MJ Car Lift Service",
+  authors: [{ name: "Quick Car Lift Service UAE" }],
+  creator: "Quick Car Lift Service UAE",
+  publisher: "Quick Car Lift Service UAE",
   formatDetection: { telephone: true, email: true, address: true },
   openGraph: {
     type: "website",
     locale: "en_AE",
     url: BASE_URL,
-    siteName: "MJ Car Lift Service",
-    title: "MJ Car Lift Service – Dubai, Abu Dhabi, Sharjah & Ajman",
+    siteName: "Quick Car Lift Service UAE",
+    title: "Quick Car Lift Service UAE – Dubai, Abu Dhabi, Sharjah & Ajman",
     description:
       "Car lift and carpool service on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi from AED 200. Airport transfers available. Book by phone or WhatsApp.",
     // OG images are generated per-page via opengraph-image.tsx in each route folder
@@ -93,7 +93,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#2563eb" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="MJ Car Lift" />
+        <meta name="apple-mobile-web-app-title" content="Quick Car Lift" />
         {/* Resource hints — preconnect reduces GA4 script latency */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />

@@ -1,6 +1,6 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Phone, Mail, MessageCircle, Car, Clock, Shield, CheckCircle } from "lucide-react";
-import { BUSINESS, TAXI, formatWhatsAppHref } from "@/lib/utils";
+import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
 const FOOTER_LINKS = {
   Services: [
@@ -63,12 +63,12 @@ export function Footer() {
                 </svg>
               </div>
               <div>
-                <span className="font-bold text-lg text-white block leading-none">MJ Car Lift Service</span>
+                <span className="font-bold text-lg text-white block leading-none">Quick Car Lift Service UAE</span>
                 <span className="text-xs text-blue-400">Dubai · Abu Dhabi · Sharjah · Ajman</span>
               </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
-              MJ Car Lift Service — reliable private car lift and carpool rides covering Dubai, Abu Dhabi, Sharjah, and Ajman.
+              Quick Car Lift Service UAE — reliable private car lift and carpool rides covering Dubai, Abu Dhabi, Sharjah, and Ajman.
             </p>
 
             {/* Contact info */}
@@ -106,30 +106,6 @@ export function Footer() {
               Book via WhatsApp
             </a>
 
-            {/* Quick Taxi Service UAE */}
-            <div className="mt-6 pt-5 border-t border-slate-700">
-              <p className="text-xs text-slate-500 uppercase tracking-widest mb-2 font-semibold">
-                Quick Taxi Service UAE
-              </p>
-              <a
-                href={`tel:${TAXI.phone}`}
-                className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors min-h-[44px]"
-                aria-label={`Call Quick Taxi Service UAE at ${TAXI.phone}`}
-              >
-                <Phone className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                <span>{TAXI.phone}</span>
-              </a>
-              <a
-                href={formatWhatsAppHref(TAXI.whatsapp, "Hi, I need a quick taxi in UAE!")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 mt-1 text-sm text-slate-400 hover:text-white transition-colors min-h-[44px]"
-                aria-label="WhatsApp Quick Taxi Service UAE"
-              >
-                <MessageCircle className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                <span>WhatsApp for Quick Taxi</span>
-              </a>
-            </div>
           </div>
 
           {/* Link columns */}
@@ -160,7 +136,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-slate-400">
-              © {currentYear} MJ Car Lift Service. All rights reserved. Serving Dubai, Abu Dhabi, Sharjah &amp; Ajman.
+              © {currentYear} Quick Car Lift Service UAE. All rights reserved. Serving Dubai, Abu Dhabi, Sharjah &amp; Ajman.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="text-sm text-slate-400 hover:text-white transition-colors py-1 inline-block">

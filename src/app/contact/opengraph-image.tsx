@@ -14,7 +14,7 @@ export default function Image() {
       subtitle: "WhatsApp us in 60 seconds and we'll match you with a verified driver on your route within 24 hours.",
       accentColor: "#15803d",
       stats: [
-        { label: "+971 50 725 5334", color: "#10b981" },
+        { label: "+971 54 330 8261", color: "#10b981" },
         { label: "60-sec Booking", color: "#f59e0b" },
         { label: "24-hr Response", color: "#60a5fa" },
         { label: "Sharjah · Dubai", color: "#a78bfa" },

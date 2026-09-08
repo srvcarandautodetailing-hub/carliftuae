@@ -32,18 +32,18 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift Dubai to Abu Dhabi – AED 650/mo | +971 50 725 5334",
+  title: "Car Lift Dubai to Abu Dhabi – AED 650/mo | +971 54 330 8261",
   description:
-    "Daily car lift from Dubai to Abu Dhabi from AED 650/month. Covers Khalifa City, Musaffah, ADNOC, Corniche & more. Salik included, GPS-tracked, 4.9★. WhatsApp +971 50 725 5334.",
+    "Daily car lift from Dubai to Abu Dhabi from AED 650/month. Covers Khalifa City, Musaffah, ADNOC, Corniche & more. Salik included, GPS-tracked, 4.9★. WhatsApp +971 54 330 8261.",
   keywords:
     "car lift dubai to abu dhabi, car lift from dubai to abu dhabi, carlift dubai abu dhabi, abu dhabi to dubai car lift, daily car lift dubai abu dhabi, monthly car lift dubai to abu dhabi, shared ride dubai to abu dhabi, pick and drop dubai abu dhabi",
   alternates: {
     canonical: "https://www.carliftuae.com/car-lift-dubai-to-abu-dhabi",
   },
   openGraph: {
-    title: "Car Lift Dubai to Abu Dhabi – AED 650/mo | +971 50 725 5334",
+    title: "Car Lift Dubai to Abu Dhabi – AED 650/mo | +971 54 330 8261",
     description:
-      "Daily car lift Dubai to Abu Dhabi from AED 650/month. Khalifa City, Musaffah, ADNOC, Corniche. Salik included, GPS-tracked. WhatsApp +971 50 725 5334.",
+      "Daily car lift Dubai to Abu Dhabi from AED 650/month. Khalifa City, Musaffah, ADNOC, Corniche. Salik included, GPS-tracked. WhatsApp +971 54 330 8261.",
   },
 };
 
@@ -86,7 +86,7 @@ const PAGE_FAQS = [
   {
     question: "Can companies book corporate car lift from Dubai to Abu Dhabi for staff?",
     answer:
-      "Yes. We offer dedicated corporate car lift packages for companies with staff commuting between Dubai and Abu Dhabi — flat monthly billing, priority booking, dedicated vehicle, HR reporting. Call or WhatsApp +971 50 725 5334 for a corporate quote.",
+      "Yes. We offer dedicated corporate car lift packages for companies with staff commuting between Dubai and Abu Dhabi — flat monthly billing, priority booking, dedicated vehicle, HR reporting. Call or WhatsApp +971 54 330 8261 for a corporate quote.",
   },
 ];
 

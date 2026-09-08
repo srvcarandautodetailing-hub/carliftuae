@@ -1,4 +1,4 @@
-export interface FAQ {
+﻿export interface FAQ {
   question: string;
   answer: string;
   category: string;
@@ -70,9 +70,9 @@ export const FAQS: FAQ[] = [
   // Routes
   {
     category: "Routes",
-    question: "What routes does MJ Car Lift Service cover?",
+    question: "What routes does Quick Car Lift Service UAE cover?",
     answer:
-      "MJ Car Lift Service covers three inter-emirate routes: Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Sharjah, and Abu Dhabi ↔ Ajman. Both directions are available on every route.",
+      "Quick Car Lift Service UAE covers three inter-emirate routes: Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Sharjah, and Abu Dhabi ↔ Ajman. Both directions are available on every route.",
   },
 
   // Airport Transfers
@@ -80,7 +80,7 @@ export const FAQS: FAQ[] = [
     category: "Airport Transfers",
     question: "Do you provide airport transfers?",
     answer:
-      "Yes. MJ Car Lift Service provides airport transfers on all confirmed routes at slightly higher rates than normal private rides.",
+      "Yes. Quick Car Lift Service UAE provides airport transfers on all confirmed routes at slightly higher rates than normal private rides.",
   },
 
   // Booking

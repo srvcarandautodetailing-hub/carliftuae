@@ -17,7 +17,7 @@ export default function Image() {
         { label: "From AED 350", color: "#10b981" },
         { label: "DIFC Drop-off", color: "#f59e0b" },
         { label: "GPS Tracked", color: "#60a5fa" },
-        { label: "+971 50 725 5334", color: "#a78bfa" },
+        { label: "+971 54 330 8261", color: "#a78bfa" },
       ],
     }),
     { ...size }

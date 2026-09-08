@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   MapPin,
@@ -162,7 +162,7 @@ const emirateSectionDesc: Record<Location["emirate"], string> = {
   dubai:
     "Connecting Dubai and Abu Dhabi in both directions. Fixed rate of AED 200/trip for normal rides; AED 250 for airport transfers.",
   "abu-dhabi":
-    "Abu Dhabi is the hub for all MJ Car Lift routes. Rides available to Dubai (AED 200), Sharjah (AED 280), and Ajman (AED 300).",
+    "Abu Dhabi is the hub for all Quick Car Lift routes. Rides available to Dubai (AED 200), Sharjah (AED 280), and Ajman (AED 300).",
   sharjah:
     "Connecting Sharjah and Abu Dhabi in both directions. Fixed rate of AED 280/trip for normal rides; AED 300 for airport transfers.",
   ajman:

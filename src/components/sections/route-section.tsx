@@ -288,7 +288,7 @@ export default function RouteSection() {
               Ready to book?
             </p>
             <p className="text-sm text-slate-500 mt-0.5">
-              Contact MJ Car Lift Service by phone or WhatsApp to confirm your seat.
+              Contact Quick Car Lift Service UAE by phone or WhatsApp to confirm your seat.
             </p>
           </div>
           <Button asChild variant="whatsapp" size="default" className="shrink-0">
