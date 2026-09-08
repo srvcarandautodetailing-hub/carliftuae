@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
 import { localBusinessSchema } from "@/lib/schema";
-import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
+import { BUSINESS, TAXI, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 import BookingForm from "./booking-form";
 
 export const revalidate = 86400;
@@ -381,6 +381,47 @@ export default function ContactPage() {
                 aria-label="Google Maps showing Sharjah UAE, base of Car Lift UAE operations"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Quick Taxi Service UAE ─── */}
+      <section aria-labelledby="quick-taxi-heading" className="py-14 sm:py-16 bg-amber-50 border-t border-amber-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <p className="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-2">
+              Partner Service
+            </p>
+            <h2
+              id="quick-taxi-heading"
+              className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3"
+            >
+              Quick Taxi Service UAE
+            </h2>
+            <p className="text-slate-600 max-w-xl mx-auto text-sm leading-relaxed">
+              Need an on-demand taxi anywhere in the UAE? Quick Taxi Service UAE covers Dubai,
+              Abu Dhabi, Sharjah, and Ajman — 24/7, fast response, reliable drivers.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href={formatPhoneHref(TAXI.phone)}
+              className="inline-flex items-center gap-3 px-7 py-4 min-h-[52px] bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-2xl transition-colors text-base shadow"
+              aria-label={`Call Quick Taxi Service UAE at ${TAXI.phone}`}
+            >
+              <Phone className="w-5 h-5" />
+              {TAXI.phone}
+            </a>
+            <a
+              href={formatWhatsAppHref(TAXI.whatsapp, "Hi, I need a quick taxi in UAE!")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-7 py-4 min-h-[52px] bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl transition-colors text-base shadow"
+              aria-label="WhatsApp Quick Taxi Service UAE"
+            >
+              <MessageCircle className="w-5 h-5" />
+              WhatsApp Quick Taxi
+            </a>
           </div>
         </div>
       </section>

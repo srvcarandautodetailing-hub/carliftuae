@@ -1,4 +1,4 @@
-import { BUSINESS } from "./utils";
+import { BUSINESS, TAXI } from "./utils";
 
 const BASE_URL = "https://www.carliftuae.com";
 
@@ -108,6 +108,33 @@ export function serviceSchema({
         },
       },
     }),
+  };
+}
+
+// Quick Taxi Service UAE — separate entity schema for GEO/AIO signal
+export function taxiServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "TaxiService"],
+    "@id": `${BASE_URL}/#quicktaxiuae`,
+    name: TAXI.name,
+    telephone: TAXI.phone,
+    url: BASE_URL,
+    areaServed: TAXI.serviceAreas.map((area) => ({
+      "@type": "City",
+      name: area,
+    })),
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "AE",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: TAXI.phone,
+      contactType: "customer service",
+      areaServed: "AE",
+      availableLanguage: ["English", "Arabic", "Hindi", "Urdu"],
+    },
   };
 }
 

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
+import { BUSINESS, TAXI, formatWhatsAppHref } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -277,6 +277,17 @@ export function Header() {
                     Book via WhatsApp
                   </a>
                 </Button>
+                <div className="mt-1 px-4 py-3 rounded-xl bg-amber-50 border border-amber-100">
+                  <p className="text-xs font-semibold text-amber-700 mb-1">Quick Taxi Service UAE</p>
+                  <a
+                    href={`tel:${TAXI.phone}`}
+                    className="flex items-center gap-2 text-sm font-medium text-amber-800 hover:text-amber-900 transition-colors"
+                    aria-label={`Call Quick Taxi Service UAE at ${TAXI.phone}`}
+                  >
+                    <Phone className="w-4 h-4" />
+                    {TAXI.phone}
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

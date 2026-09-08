@@ -5,7 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { FloatingCTA } from "@/components/layout/floating-cta";
-import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { organizationSchema, websiteSchema, taxiServiceSchema } from "@/lib/schema";
 import { BUSINESS } from "@/lib/utils";
 
 const geistSans = Geist({
@@ -110,6 +110,7 @@ export default function RootLayout({
             __html: JSON.stringify([
               organizationSchema(),
               websiteSchema(),
+              taxiServiceSchema(),
             ]),
           }}
         />

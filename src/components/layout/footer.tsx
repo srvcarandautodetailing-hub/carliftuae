@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, MessageCircle, Car, Clock, Shield, CheckCircle } from "lucide-react";
-import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
+import { BUSINESS, TAXI, formatWhatsAppHref } from "@/lib/utils";
 
 const FOOTER_LINKS = {
   Services: [
@@ -105,6 +105,31 @@ export function Footer() {
               <MessageCircle className="w-4 h-4" />
               Book via WhatsApp
             </a>
+
+            {/* Quick Taxi Service UAE */}
+            <div className="mt-6 pt-5 border-t border-slate-700">
+              <p className="text-xs text-slate-500 uppercase tracking-widest mb-2 font-semibold">
+                Quick Taxi Service UAE
+              </p>
+              <a
+                href={`tel:${TAXI.phone}`}
+                className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors min-h-[44px]"
+                aria-label={`Call Quick Taxi Service UAE at ${TAXI.phone}`}
+              >
+                <Phone className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                <span>{TAXI.phone}</span>
+              </a>
+              <a
+                href={formatWhatsAppHref(TAXI.whatsapp, "Hi, I need a quick taxi in UAE!")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 mt-1 text-sm text-slate-400 hover:text-white transition-colors min-h-[44px]"
+                aria-label="WhatsApp Quick Taxi Service UAE"
+              >
+                <MessageCircle className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                <span>WhatsApp for Quick Taxi</span>
+              </a>
+            </div>
           </div>
 
           {/* Link columns */}
