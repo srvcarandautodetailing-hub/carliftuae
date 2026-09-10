@@ -133,6 +133,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.55,
   }));
 
+  // ── Programmatic route pages ──────────────────────────────────────────────
+  const routeSlugs = [
+    // Hub pages – highest priority
+    { slug: "car-lift-dubai", priority: 0.92 },
+    { slug: "car-lift-sharjah", priority: 0.92 },
+    { slug: "car-lift-abu-dhabi", priority: 0.92 },
+    { slug: "car-lift-ajman", priority: 0.90 },
+    // High-traffic intercity routes
+    { slug: "car-lift-sharjah-to-dubai", priority: 0.90 },
+    { slug: "car-lift-dubai-to-sharjah", priority: 0.88 },
+    { slug: "car-lift-from-sharjah-to-abu-dhabi", priority: 0.87 },
+    { slug: "car-lift-sharjah-to-ajman", priority: 0.85 },
+    { slug: "car-lift-ajman-to-sharjah", priority: 0.85 },
+    { slug: "car-lift-dubai-to-ajman", priority: 0.85 },
+    // Area-specific Dubai routes
+    { slug: "car-lift-sharjah-to-al-barsha", priority: 0.83 },
+    { slug: "car-lift-sharjah-to-al-quoz", priority: 0.83 },
+    { slug: "car-lift-sharjah-to-jebel-ali", priority: 0.82 },
+    { slug: "car-lift-from-international-city", priority: 0.82 },
+    { slug: "car-lift-international-city-to-business-bay", priority: 0.81 },
+    { slug: "car-lift-silicon-oasis-to-business-bay", priority: 0.81 },
+    // Service-type pages
+    { slug: "carpool-dubai", priority: 0.82 },
+    { slug: "pick-and-drop-service", priority: 0.82 },
+    { slug: "pick-and-drop-service-dubai", priority: 0.80 },
+    { slug: "pick-and-drop-service-sharjah", priority: 0.80 },
+    { slug: "private-car-lift-dubai", priority: 0.80 },
+    { slug: "car-lift-dubai-monthly", priority: 0.80 },
+    { slug: "monthly-pick-and-drop-service-abu-dhabi", priority: 0.79 },
+    { slug: "ladies-car-lift-ajman-to-dubai", priority: 0.80 },
+    // Long-distance / intercity
+    { slug: "car-lift-sharjah-to-ras-al-khaimah", priority: 0.78 },
+    { slug: "car-lift-dubai-to-al-ain", priority: 0.78 },
+    { slug: "car-lift-umm-al-quwain", priority: 0.77 },
+  ];
+
+  const routePages: MetadataRoute.Sitemap = routeSlugs.map(({ slug, priority }) => ({
+    url: `${BASE_URL}/${slug}`,
+    lastModified: TODAY,
+    changeFrequency: "daily" as ChangeFrequency,
+    priority,
+  }));
 
   return [
     ...staticPages,
@@ -140,5 +182,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicePages,
     ...blogPages,
     ...blogCategoryPages,
+    ...routePages,
   ];
 }

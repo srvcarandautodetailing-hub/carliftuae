@@ -19,14 +19,26 @@
 
 | Route | Sharing | Private |
 |---|---|---|
+| Sharjah ↔ Dubai | AED 130 | AED 200 |
 | Dubai ↔ Abu Dhabi | AED 100 | AED 170 |
 | Abu Dhabi ↔ Sharjah | AED 130 | AED 200 |
 | Abu Dhabi ↔ Ajman | AED 130 | AED 200 |
+| Ajman ↔ Dubai | AED 130 | AED 200 |
+| Sharjah ↔ Ajman | AED 80 | AED 130 |
 
 - Service available 24/7
 - Luxury air-conditioned vehicles
 - Sharing = shared vehicle with other passengers
 - Private = exclusive vehicle for your group
+
+## Additional Routes (On Request)
+
+- Sharjah → Ras Al Khaimah (RAK): Contact for price
+- Dubai → Al Ain: Contact for price (long distance, ~90–120 min)
+- Umm Al Quwain ↔ Dubai / Sharjah: Contact for price
+- International City → Business Bay: AED 130 sharing / AED 200 private
+- Silicon Oasis → Business Bay: AED 130 sharing / AED 200 private
+- Ladies-only Ajman → Dubai: AED 130 sharing (female-only service)
 
 ## Key Facts
 
@@ -52,6 +64,36 @@
 - Email: info@carlift.ae
 - Address: Sharjah, United Arab Emirates
 - Book now: https://wa.me/971543308261
+
+## New Landing Pages (Programmatic SEO)
+
+- [Car Lift Dubai](/car-lift-dubai): Hub page for all Dubai car lift routes
+- [Car Lift Sharjah](/car-lift-sharjah): Hub page for all Sharjah car lift routes
+- [Car Lift Abu Dhabi](/car-lift-abu-dhabi): Hub page for all Abu Dhabi car lift routes
+- [Car Lift Ajman](/car-lift-ajman): Hub page for all Ajman car lift routes
+- [Car Lift Sharjah to Dubai](/car-lift-sharjah-to-dubai): AED 130 sharing, 35–60 min
+- [Car Lift Dubai to Sharjah](/car-lift-dubai-to-sharjah): Evening return service, AED 130
+- [Car Lift Sharjah to Abu Dhabi](/car-lift-from-sharjah-to-abu-dhabi): AED 130, 90–120 min
+- [Car Lift Sharjah to Ajman](/car-lift-sharjah-to-ajman): AED 80–130 sharing
+- [Car Lift Ajman to Sharjah](/car-lift-ajman-to-sharjah): Return Ajman route
+- [Car Lift Dubai to Ajman](/car-lift-dubai-to-ajman): Evening service, AED 130
+- [Car Lift Sharjah to Al Barsha](/car-lift-sharjah-to-al-barsha): AED 130, 45–60 min via SZR
+- [Car Lift Sharjah to Al Quoz](/car-lift-sharjah-to-al-quoz): AED 130, industrial route
+- [Car Lift Sharjah to Jebel Ali](/car-lift-sharjah-to-jebel-ali): AED 130, early shifts from 5:30 AM
+- [Car Lift from International City](/car-lift-from-international-city): All IC clusters covered
+- [Car Lift International City to Business Bay](/car-lift-international-city-to-business-bay): AED 130, 35–55 min
+- [Car Lift Silicon Oasis to Business Bay](/car-lift-silicon-oasis-to-business-bay): AED 130, 30–50 min
+- [Carpool Dubai](/carpool-dubai): Daily carpooling across Dubai
+- [Pick and Drop Service](/pick-and-drop-service): UAE-wide door-to-door service
+- [Pick and Drop Service Dubai](/pick-and-drop-service-dubai): Dubai door-to-door
+- [Pick and Drop Service Sharjah](/pick-and-drop-service-sharjah): Sharjah door-to-door
+- [Private Car Lift Dubai](/private-car-lift-dubai): Exclusive vehicle service
+- [Monthly Car Lift Dubai](/car-lift-dubai-monthly): Monthly packages
+- [Monthly Pick and Drop Abu Dhabi](/monthly-pick-and-drop-service-abu-dhabi): Monthly commuter package
+- [Ladies Car Lift Ajman to Dubai](/ladies-car-lift-ajman-to-dubai): Female-only, AED 130
+- [Car Lift Sharjah to RAK](/car-lift-sharjah-to-ras-al-khaimah): Intercity, contact for price
+- [Car Lift Dubai to Al Ain](/car-lift-dubai-to-al-ain): Long distance, contact for price
+- [Car Lift Umm Al Quwain](/car-lift-umm-al-quwain): Intercity UAQ routes
 
 ## About Quick Car Lift Service UAE
 
