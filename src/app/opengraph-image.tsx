@@ -118,8 +118,8 @@ export default async function Image() {
         >
           {[
             { label: "Dubai↔Abu Dhabi AED 200", color: "#10b981" },
-            { label: "Abu Dhabi↔Sharjah AED 280", color: "#f59e0b" },
-            { label: "Abu Dhabi↔Ajman AED 300", color: "#60a5fa" },
+            { label: "Abu Dhabi↔Sharjah AED 130 sharing", color: "#f59e0b" },
+            { label: "Abu Dhabi↔Ajman AED 130 sharing", color: "#60a5fa" },
             { label: "Airport Transfers Available", color: "#a78bfa" },
           ].map((stat) => (
             <div

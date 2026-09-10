@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,9 +59,9 @@ const emirateAirportPrice: Record<Emirate, number> = {
 
 const emirateNormalPriceDisplay: Record<Emirate, string> = {
   dubai:       "AED 200",
-  "abu-dhabi": "From AED 200",
-  sharjah:     "AED 280",
-  ajman:       "AED 300",
+  "abu-dhabi": "From AED 100 sharing",
+  sharjah:     "AED 130 sharing",
+  ajman:       "AED 130 sharing",
 };
 
 // Route label shown in hero / pills

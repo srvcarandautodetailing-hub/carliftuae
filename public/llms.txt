@@ -4,8 +4,8 @@
 
 ## Services
 
-- [Daily Car Lift](/services/daily-car-lift): Pay-per-trip shared rides from AED 25. No monthly commitment, book via WhatsApp the night before.
-- [Monthly Car Lift](/services/monthly-car-lift): Monthly packages from AED 300/month. Salik included, 6 days/week.
+- [Daily Car Lift](/services/daily-car-lift): Pay-per-trip shared rides from AED 100 sharing. No monthly commitment, book via WhatsApp the night before.
+- [Monthly Car Lift](/services/monthly-car-lift): Monthly packages from AED 130 sharing / AED 200 private. Salik included, 6 days/week.
 - [Ladies Car Lift](/services/ladies-car-lift): Female-only car lift with verified female drivers for privacy and safety.
 - [Office Transport](/services/office-transport): Corporate shuttle service for offices and businesses.
 - [Staff Transport](/services/staff-transport): Bulk staff transport packages for companies.

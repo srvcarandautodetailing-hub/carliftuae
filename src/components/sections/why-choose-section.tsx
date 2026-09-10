@@ -24,7 +24,7 @@ const benefits: Benefit[] = [
     icon: Shield,
     title: "Fixed Fares",
     description:
-      "No surge pricing, no hidden fees. Dubai ↔ Abu Dhabi AED 200, Abu Dhabi ↔ Sharjah AED 280, Abu Dhabi ↔ Ajman AED 300. What you see is what you pay.",
+      "No surge pricing, no hidden fees. Dubai ↔ Abu Dhabi AED 200, Abu Dhabi ↔ Sharjah AED 130 sharing, Abu Dhabi ↔ Ajman AED 130 sharing. What you see is what you pay.",
     accentColor: "text-amber-400",
     bgColor: "bg-amber-400/10 border-amber-400/20",
   },

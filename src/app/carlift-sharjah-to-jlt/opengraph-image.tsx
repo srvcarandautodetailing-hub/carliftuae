@@ -11,10 +11,10 @@ export default function Image() {
     buildOgImageJsx({
       badge: "Sharjah → JLT",
       title: "Carlift Sharjah to JLT Dubai",
-      subtitle: "From AED 380/month · Also Dubai Marina & JVC",
+      subtitle: "From AED 130 sharing / AED 200 private · Also Dubai Marina & JVC",
       accentColor: "#0891b2",
       stats: [
-        { label: "AED 380/Month", color: "#10b981" },
+        { label: "AED 130 Sharing / AED 200 Private", color: "#10b981" },
         { label: "JLT Drop-off", color: "#f59e0b" },
         { label: "GPS Tracked", color: "#60a5fa" },
         { label: "+971 54 330 8261", color: "#a78bfa" },

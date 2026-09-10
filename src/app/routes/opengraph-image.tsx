@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 import { buildOgImageJsx } from "@/lib/og-image";
 
 export const runtime = "nodejs";
@@ -10,7 +10,7 @@ export default function Image() {
   return new ImageResponse(
     buildOgImageJsx({
       badge: "Routes & Pricing",
-      title: "Sharjah → Business Bay from AED 300",
+      title: "Sharjah → Business Bay from AED 130 sharing",
       subtitle: "Fixed pricing on 50+ routes. Salik included. No surge fees. Morning pickup + evening drop.",
       accentColor: "#059669",
       stats: [

@@ -75,7 +75,7 @@ export const SERVICES: Service[] = [
       "airport transfer abu dhabi sharjah",
       "airport transfer abu dhabi ajman",
     ],
-    price: "From AED 250",
+    price: "From AED 170",
     priceNote: "per trip (one way)",
     faqs: [
       {

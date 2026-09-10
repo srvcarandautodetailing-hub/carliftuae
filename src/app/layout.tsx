@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Quick Car Lift Service UAE",
     title: "Quick Car Lift Service UAE – Dubai, Abu Dhabi, Sharjah & Ajman",
     description:
-      "Car lift and carpool service on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi from AED 200. Airport transfers available. Book by phone or WhatsApp.",
+      "Car lift and carpool service on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi from AED 100 sharing. Airport transfers available. Book by phone or WhatsApp.",
     // OG images are generated per-page via opengraph-image.tsx in each route folder
   },
   twitter: {

@@ -1,4 +1,4 @@
-export interface Testimonial {
+﻿export interface Testimonial {
   id: string;
   name: string;
   role: string;
@@ -73,7 +73,7 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "Al Taawun, Sharjah",
     rating: 5,
     review:
-      "Joining the car lift was the best financial decision of the year. My monthly commute cost dropped from AED 1,200 (fuel + parking + Salik) to just AED 350. The math speaks for itself!",
+      "Joining the car lift was the best financial decision of the year. My monthly commute cost dropped from AED 1,200 (fuel + parking + Salik) to just AED 130 sharing. The math speaks for itself!",
     date: "2025-06-15",
     verified: true,
   },

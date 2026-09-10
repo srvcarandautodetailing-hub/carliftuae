@@ -46,10 +46,10 @@ const trustBadges = [
 ];
 
 const stats = [
-  { icon: Car, value: "AED 200", label: "Dubai ↔ Abu Dhabi" },
-  { icon: Route, value: "AED 280", label: "Abu Dhabi ↔ Sharjah" },
-  { icon: TrendingUp, value: "AED 300", label: "Abu Dhabi ↔ Ajman" },
-  { icon: Users, value: "AED 250+", label: "Airport Transfers" },
+  { icon: Car, value: "AED 100", label: "Dubai ↔ Abu Dhabi Sharing" },
+  { icon: Route, value: "AED 170", label: "Dubai ↔ Abu Dhabi Private" },
+  { icon: TrendingUp, value: "AED 130", label: "Abu Dhabi ↔ Sharjah/Ajman Sharing" },
+  { icon: Users, value: "AED 200", label: "Abu Dhabi ↔ Sharjah/Ajman Private" },
 ];
 
 export default function HeroSection() {
@@ -147,8 +147,8 @@ export default function HeroSection() {
           <div className="max-w-2xl">
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
               Reliable car lift and carpool service on confirmed inter-emirate routes.{" "}
-              <span className="text-white font-semibold">From AED 200/trip.</span>{" "}
-              Air-conditioned vehicles.{" "}
+              <span className="text-white font-semibold">From AED 100 sharing / AED 170 private.</span>{" "}
+              Luxury air-conditioned vehicles. Available 24/7.{" "}
               <span className="text-amber-400 font-semibold">Book by phone or WhatsApp.</span>
             </p>
           </div>

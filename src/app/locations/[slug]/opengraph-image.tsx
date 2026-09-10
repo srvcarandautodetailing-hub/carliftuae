@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 import { buildOgImageJsx } from "@/lib/og-image";
 import { LOCATIONS } from "@/data/locations";
 
@@ -27,7 +27,7 @@ export default async function Image({
         { label: `From ${name}`, color: "#10b981" },
         { label: "4.9★ Rated", color: "#f59e0b" },
         { label: "GPS Tracked", color: "#60a5fa" },
-        { label: "From AED 300", color: "#a78bfa" },
+        { label: "From AED 130 sharing", color: "#a78bfa" },
       ],
     }),
     { ...size }

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -167,11 +167,11 @@ function PillarArticleContent() {
         </thead>
         <tbody>
           {[
-            ["Al Nahda / Al Majaz → Business Bay", "AED 350–420", "AED 200–250"],
-            ["Muweilah → Business Bay", "AED 380–450", "AED 220–270"],
-            ["Ajman → Business Bay", "AED 450–550", "AED 270–320"],
+            ["Al Nahda / Al Majaz → Business Bay", "AED 130 sharing–420", "AED 200–250"],
+            ["Muweilah → Business Bay", "AED 130 sharing–450", "AED 220–270"],
+            ["Ajman → Business Bay", "AED 130 sharing–550", "AED 270–320"],
             ["Sharjah → DIFC / Downtown", "AED 400–480", "AED 240–280"],
-            ["Sharjah → JLT / Dubai Marina", "AED 420–500", "AED 250–300"],
+            ["Sharjah → JLT / Dubai Marina", "AED 130 sharing–500", "AED 170–300"],
           ].map(([route, both, one]) => (
             <tr key={route} className="even:bg-slate-50">
               <td className="border border-slate-300 px-3 py-2">{route}</td>
@@ -211,7 +211,7 @@ function PillarArticleContent() {
         </li>
       </ul>
       <p>
-        A car lift costs AED 350–450/month for the same journey — saving you
+        A car lift costs AED 130 sharing–450/month for the same journey — saving you
         <strong> AED 1,250–2,050 every single month</strong>. Over a year, that is a
         saving of AED 15,000–24,000. Most people fund their annual flight home with
         car lift savings.
@@ -465,7 +465,7 @@ function generateArticleContent(post: BlogPost) {
                 ["Parking (Business Bay)", "AED 400–800", "AED 0"],
                 ["Vehicle depreciation", "AED 500–900", "AED 0"],
                 ["Maintenance share", "AED 200–400", "AED 0"],
-                ["Total Monthly", "AED 1,850–3,150", "AED 350–500"],
+                ["Total Monthly", "AED 1,850–3,150", "AED 130 sharing–500"],
               ].map(([comp, drive, lift]) => (
                 <tr key={comp} className="even:bg-slate-50">
                   <td className="border border-slate-300 px-3 py-2">{comp}</td>
@@ -596,7 +596,7 @@ function generateArticleContent(post: BlogPost) {
             </thead>
             <tbody>
               {[
-                ["Monthly Cost", "AED 300–500", "AED 900–2,500+"],
+                ["Monthly Cost", "AED 130 sharing–500", "AED 900–2,500+"],
                 ["Flexibility", "Fixed route/time", "On-demand"],
                 ["Reliability", "Very high (fixed)", "Variable"],
                 ["Comfort", "Private vehicle", "Varies"],

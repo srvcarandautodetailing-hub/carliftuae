@@ -11,10 +11,10 @@ export default function Image() {
     buildOgImageJsx({
       badge: "Dubai → Abu Dhabi",
       title: "Car Lift Dubai to Abu Dhabi",
-      subtitle: "From AED 650/month · E11 Route · Salik Included",
+      subtitle: "From AED 100 Sharing / AED 170 Privatenth · E11 Route · Salik Included",
       accentColor: "#d97706",
       stats: [
-        { label: "AED 650/Month", color: "#10b981" },
+        { label: "AED 170 private/Month", color: "#10b981" },
         { label: "Khalifa City", color: "#f59e0b" },
         { label: "GPS Tracked", color: "#60a5fa" },
         { label: "+971 54 330 8261", color: "#a78bfa" },

@@ -14,7 +14,7 @@ export default function Image() {
       subtitle: "Reliable daily car lift from Sharjah to Business Bay, Downtown and all Dubai areas. Book via WhatsApp.",
       accentColor: "#2563eb",
       stats: [
-        { label: "From AED 300", color: "#10b981" },
+        { label: "From AED 130 sharing", color: "#10b981" },
         { label: "GPS Tracked", color: "#f59e0b" },
         { label: "Verified Drivers", color: "#60a5fa" },
         { label: "4.9★ Rated", color: "#a78bfa" },

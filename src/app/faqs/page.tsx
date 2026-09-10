@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { MessageCircle, HelpCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -29,7 +29,7 @@ const featuredAnswers = [
   {
     question: "What is a car lift in UAE?",
     answer:
-      "A car lift in UAE is a daily shared ride service where a professional driver picks up multiple commuters along a route and drops them at a common destination — typically a business hub like Business Bay or DIFC. It is similar to carpooling but organized by a service provider with scheduled departure times, fixed pricing, and verified drivers. Car lift UAE services typically run Monday to Saturday and cost AED 200–AED 450/month.",
+      "A car lift in UAE is a daily shared ride service where a professional driver picks up multiple commuters along a route and drops them at a common destination — typically a business hub like Business Bay or DIFC. It is similar to carpooling but organized by a service provider with scheduled departure times, fixed pricing, and verified drivers. Car lift UAE services typically run Monday to Saturday and cost AED 200–AED 130 sharing/month.",
   },
   {
     question: "How does Car Lift UAE work?",
@@ -44,7 +44,7 @@ const featuredAnswers = [
   {
     question: "What is the cheapest car lift from Sharjah to Business Bay?",
     answer:
-      "Car Lift UAE offers the most affordable daily car lift from Sharjah to Business Bay starting at AED 300–AED 360/month for monthly shared packages depending on your exact pickup area. This compares to AED 1,200+ per month if you were to drive yourself (factoring in petrol, Salik tolls of AED 8 each way × 22 working days, and Business Bay parking fees).",
+      "Car Lift UAE offers the most affordable daily car lift from Sharjah to Business Bay starting at AED 130 sharing–AED 360/month for monthly shared packages depending on your exact pickup area. This compares to AED 1,200+ per month if you were to drive yourself (factoring in petrol, Salik tolls of AED 8 each way × 22 working days, and Business Bay parking fees).",
   },
 ];
 

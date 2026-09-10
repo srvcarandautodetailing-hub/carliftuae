@@ -20,9 +20,9 @@ export const LOCATIONS: Location[] = [
     name: "Dubai",
     emirate: "dubai",
     description:
-      "Car lift service between Dubai and Abu Dhabi. Normal/private rides AED 200. Airport transfers AED 250.",
+      "Car lift service between Dubai and Abu Dhabi. Normal/private rides AED 200. Airport transfers AED 170.",
     longDescription:
-      "Quick Car Lift Service UAE connects Dubai and Abu Dhabi in both directions. Whether you are travelling from Dubai to Abu Dhabi or returning, our car lift service offers comfortable, air-conditioned private rides at a fixed rate of AED 200 per trip. Airport transfers are available at AED 250.",
+      "Quick Car Lift Service UAE connects Dubai and Abu Dhabi in both directions. Whether you are travelling from Dubai to Abu Dhabi or returning, our car lift service offers comfortable, air-conditioned private rides at a fixed rate of AED 200 per trip. Airport transfers are available at AED 170.",
     keywords: [
       "car lift dubai abu dhabi",
       "car lift from dubai to abu dhabi",
@@ -43,7 +43,7 @@ export const LOCATIONS: Location[] = [
       },
       {
         question: "How much is an airport transfer from Dubai to Abu Dhabi?",
-        answer: "An airport transfer from Dubai to Abu Dhabi costs AED 250.",
+        answer: "An airport transfer from Dubai to Abu Dhabi costs AED 170.",
       },
     ],
   },
@@ -54,7 +54,7 @@ export const LOCATIONS: Location[] = [
     description:
       "Car lift service from Abu Dhabi to Dubai, Sharjah, and Ajman. Rides from AED 100 sharing. Airport transfers available.",
     longDescription:
-      "Abu Dhabi is the hub for all Quick Car Lift Service UAE routes. We provide car lift and carpool rides from Abu Dhabi to Dubai (AED 200), Abu Dhabi to Sharjah (AED 280), and Abu Dhabi to Ajman (AED 300). Airport transfers are also available on all routes at slightly higher rates.",
+      "Abu Dhabi is the hub for all Quick Car Lift Service UAE routes. We provide car lift and carpool rides from Abu Dhabi to Dubai (AED 200), Abu Dhabi to Sharjah (AED 130 sharing), and Abu Dhabi to Ajman (AED 130 sharing). Airport transfers are also available on all routes at slightly higher rates.",
     keywords: [
       "car lift abu dhabi",
       "car lift from abu dhabi to dubai",
@@ -73,12 +73,12 @@ export const LOCATIONS: Location[] = [
       {
         question: "What routes are available from Abu Dhabi?",
         answer:
-          "Quick Car Lift Service UAE operates from Abu Dhabi to Dubai (AED 200), Abu Dhabi to Sharjah (AED 280), and Abu Dhabi to Ajman (AED 300).",
+          "Quick Car Lift Service UAE operates from Abu Dhabi to Dubai (AED 200), Abu Dhabi to Sharjah (AED 130 sharing), and Abu Dhabi to Ajman (AED 130 sharing).",
       },
       {
         question: "Are airport transfers available from Abu Dhabi?",
         answer:
-          "Yes. Airport transfers from Abu Dhabi are available on all routes. Dubai route: AED 250. Sharjah route: AED 300. Ajman route: AED 320.",
+          "Yes. Airport transfers from Abu Dhabi are available on all routes. Dubai route: AED 170. Sharjah route: AED 130 sharing. Ajman route: AED 200.",
       },
     ],
   },
@@ -87,9 +87,9 @@ export const LOCATIONS: Location[] = [
     name: "Sharjah",
     emirate: "sharjah",
     description:
-      "Car lift service between Sharjah and Abu Dhabi. Normal/private rides AED 280. Airport transfers AED 300.",
+      "Car lift service between Sharjah and Abu Dhabi. Normal/private rides AED 130 sharing. Airport transfers AED 130 sharing.",
     longDescription:
-      "Quick Car Lift Service UAE connects Sharjah and Abu Dhabi in both directions. A normal/private car lift ride on this route costs AED 280. Airport transfers are available at AED 300.",
+      "Quick Car Lift Service UAE connects Sharjah and Abu Dhabi in both directions. A normal/private car lift ride on this route costs AED 130 sharing. Airport transfers are available at AED 130 sharing.",
     keywords: [
       "car lift sharjah abu dhabi",
       "car lift from sharjah to abu dhabi",
@@ -106,11 +106,11 @@ export const LOCATIONS: Location[] = [
     faqs: [
       {
         question: "How much is a car lift from Sharjah to Abu Dhabi?",
-        answer: "A car lift from Sharjah to Abu Dhabi costs AED 280 for a normal/private ride.",
+        answer: "A car lift from Sharjah to Abu Dhabi costs AED 130 sharing for a normal/private ride.",
       },
       {
         question: "How much is an airport transfer on the Sharjah–Abu Dhabi route?",
-        answer: "An airport transfer on the Sharjah–Abu Dhabi route costs AED 300.",
+        answer: "An airport transfer on the Sharjah–Abu Dhabi route costs AED 130 sharing.",
       },
     ],
   },
@@ -119,9 +119,9 @@ export const LOCATIONS: Location[] = [
     name: "Ajman",
     emirate: "ajman",
     description:
-      "Car lift service between Ajman and Abu Dhabi. Normal/private rides AED 300. Airport transfers AED 320.",
+      "Car lift service between Ajman and Abu Dhabi. Normal/private rides AED 130 sharing. Airport transfers AED 200.",
     longDescription:
-      "Quick Car Lift Service UAE connects Ajman and Abu Dhabi in both directions. A normal/private car lift ride on this route costs AED 300. Airport transfers are available at AED 320.",
+      "Quick Car Lift Service UAE connects Ajman and Abu Dhabi in both directions. A normal/private car lift ride on this route costs AED 130 sharing. Airport transfers are available at AED 200.",
     keywords: [
       "car lift ajman abu dhabi",
       "car lift from ajman to abu dhabi",
@@ -138,11 +138,11 @@ export const LOCATIONS: Location[] = [
     faqs: [
       {
         question: "How much is a car lift from Ajman to Abu Dhabi?",
-        answer: "A car lift from Ajman to Abu Dhabi costs AED 300 for a normal/private ride.",
+        answer: "A car lift from Ajman to Abu Dhabi costs AED 130 sharing for a normal/private ride.",
       },
       {
         question: "How much is an airport transfer on the Ajman–Abu Dhabi route?",
-        answer: "An airport transfer on the Ajman–Abu Dhabi route costs AED 320.",
+        answer: "An airport transfer on the Ajman–Abu Dhabi route costs AED 200.",
       },
     ],
   },

@@ -13,7 +13,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Contact Car Lift UAE – Book Your Ride Today",
   description:
-    "Contact Car Lift UAE to book your daily car lift. WhatsApp, phone, or email. Mon–Sat 6AM–10PM. Fastest response via WhatsApp +971 54 330 8261. Book monthly from AED 200.",
+    "Contact Car Lift UAE to book your daily car lift. WhatsApp, phone, or email. Mon–Sat 6AM–10PM. Fastest response via WhatsApp +971 54 330 8261. Book monthly from AED 100 sharing.",
   alternates: { canonical: "https://www.carliftuae.com/contact" },
   openGraph: {
     title: "Contact Car Lift UAE – Book Your Daily Car Lift",

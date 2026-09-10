@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 import { buildOgImageJsx } from "@/lib/og-image";
 
 export const runtime = "nodejs";
@@ -15,7 +15,7 @@ export default function Image() {
       accentColor: "#7c3aed",
       stats: [
         { label: "Fixed Timings", color: "#10b981" },
-        { label: "From AED 300", color: "#f59e0b" },
+        { label: "From AED 130 sharing", color: "#f59e0b" },
         { label: "6 Days/Week", color: "#60a5fa" },
         { label: "Salik Included", color: "#a78bfa" },
       ],

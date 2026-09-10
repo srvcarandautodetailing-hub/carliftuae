@@ -289,7 +289,7 @@ export const AEO_ANSWERS = {
   },
   "How much does car lift from Sharjah to Business Bay cost?": {
     answer:
-      "A monthly car lift from Sharjah to Business Bay costs between AED 300 and AED 400 per month depending on your pickup area. Daily rates are AED 25-35 per trip. This includes Salik tolls and both morning and evening rides.",
+      "A monthly car lift from Sharjah to Business Bay costs between AED 130 sharing and AED 400 per month depending on your pickup area. Daily rates are AED 100 sharing-35 per trip. This includes Salik tolls and both morning and evening rides.",
     speakable: true,
     targetFeaturedSnippet: true,
   },
