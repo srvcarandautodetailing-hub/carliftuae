@@ -28,11 +28,11 @@ const cardVariants = {
   },
 };
 
-// Deduplicate routes – show only the canonical direction (Dubai→Abu Dhabi, Abu Dhabi→Sharjah, Abu Dhabi→Ajman)
+// Canonical display routes with sharing/private pricing
 const CANONICAL_ROUTES: RoutePrice[] = [
-  { route: "Dubai ↔ Abu Dhabi", normal: 200, airport: 250 },
-  { route: "Abu Dhabi ↔ Sharjah", normal: 280, airport: 300 },
-  { route: "Abu Dhabi ↔ Ajman", normal: 300, airport: 320 },
+  { route: "Dubai ↔ Abu Dhabi", sharing: 100, private: 170 },
+  { route: "Abu Dhabi ↔ Sharjah", sharing: 130, private: 200 },
+  { route: "Abu Dhabi ↔ Ajman", sharing: 130, private: 200 },
 ];
 
 function PricingCard({ route }: { route: RoutePrice }) {
@@ -61,22 +61,22 @@ function PricingCard({ route }: { route: RoutePrice }) {
           <li className="flex items-center gap-3">
             <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" aria-hidden="true" />
             <span className="text-sm text-slate-700">
-              Normal ride: <span className="font-bold text-slate-900">AED {route.normal}</span>
+              Sharing: <span className="font-bold text-slate-900">AED {route.sharing}</span>
             </span>
           </li>
           <li className="flex items-center gap-3">
             <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" aria-hidden="true" />
             <span className="text-sm text-slate-700">
-              Airport transfer: <span className="font-bold text-slate-900">AED {route.airport}</span>
+              Private: <span className="font-bold text-slate-900">AED {route.private}</span>
             </span>
           </li>
           <li className="flex items-center gap-3">
             <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" aria-hidden="true" />
-            <span className="text-sm text-slate-700">Air-conditioned vehicle</span>
+            <span className="text-sm text-slate-700">Luxury air-conditioned vehicle</span>
           </li>
           <li className="flex items-center gap-3">
             <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" aria-hidden="true" />
-            <span className="text-sm text-slate-700">Book by phone or WhatsApp</span>
+            <span className="text-sm text-slate-700">Available 24/7 · Book via WhatsApp</span>
           </li>
         </ul>
 

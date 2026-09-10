@@ -52,7 +52,7 @@ export const LOCATIONS: Location[] = [
     name: "Abu Dhabi",
     emirate: "abu-dhabi",
     description:
-      "Car lift service from Abu Dhabi to Dubai, Sharjah, and Ajman. Rides from AED 200. Airport transfers available.",
+      "Car lift service from Abu Dhabi to Dubai, Sharjah, and Ajman. Rides from AED 100 sharing. Airport transfers available.",
     longDescription:
       "Abu Dhabi is the hub for all Quick Car Lift Service UAE routes. We provide car lift and carpool rides from Abu Dhabi to Dubai (AED 200), Abu Dhabi to Sharjah (AED 280), and Abu Dhabi to Ajman (AED 300). Airport transfers are also available on all routes at slightly higher rates.",
     keywords: [

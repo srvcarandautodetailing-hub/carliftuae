@@ -15,15 +15,18 @@
 - [Private Car Lift](/services/private-car-lift): Dedicated vehicle for one passenger group.
 - [Family Car Lift](/services/family-car-lift): Family-friendly shared transport.
 
-## Routes & Pricing
+## Routes & Pricing (per trip, one way)
 
-- Sharjah (Al Nahda) → Business Bay: AED 300/month
-- Sharjah (Al Khan, Al Majaz) → Business Bay: AED 330/month
-- Sharjah (Al Taawun, Rolla) → Business Bay: AED 350/month
-- Sharjah → DIFC / Downtown Dubai: AED 350/month
-- Sharjah → Dubai Marina / JLT: AED 380/month
-- Sharjah → Media City / Tecom: AED 380/month
-- Ajman → Dubai (Business Bay): AED 420/month
+| Route | Sharing | Private |
+|---|---|---|
+| Dubai ↔ Abu Dhabi | AED 100 | AED 170 |
+| Abu Dhabi ↔ Sharjah | AED 130 | AED 200 |
+| Abu Dhabi ↔ Ajman | AED 130 | AED 200 |
+
+- Service available 24/7
+- Luxury air-conditioned vehicles
+- Sharing = shared vehicle with other passengers
+- Private = exclusive vehicle for your group
 
 ## Key Facts
 

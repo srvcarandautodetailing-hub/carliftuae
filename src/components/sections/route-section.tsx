@@ -30,7 +30,7 @@ const headingVariants = {
 };
 
 function buildWhatsAppMessage(route: RoutePrice): string {
-  return `Hi! I'm interested in a car lift on the ${route.route} route. Normal fare AED ${route.normal}. Please share more details.`;
+  return `Hi! I'm interested in a car lift on the ${route.route} route. Sharing AED ${route.sharing} / Private AED ${route.private}. Please share more details.`;
 }
 
 // Desktop table row
@@ -64,23 +64,23 @@ function RouteTableRow({
         </div>
       </td>
 
-      {/* Normal rate */}
+      {/* Sharing rate */}
       <td className="py-4 px-4 sm:px-6 text-center">
         <span className="text-lg font-extrabold text-blue-700">
-          AED {route.normal}
+          AED {route.sharing}
         </span>
         <span className="block text-xs text-slate-400 font-medium mt-0.5">
-          /trip
+          sharing
         </span>
       </td>
 
-      {/* Airport rate */}
+      {/* Private rate */}
       <td className="py-4 px-4 sm:px-6 text-center">
         <span className="text-sm font-bold text-slate-700">
-          AED {route.airport}
+          AED {route.private}
         </span>
         <span className="block text-xs text-slate-400 font-medium mt-0.5">
-          airport/trip
+          private
         </span>
       </td>
 
@@ -135,18 +135,18 @@ function RouteMobileCard({
       <div className="flex items-center gap-4 mb-4">
         <div className="flex-1 bg-blue-50 rounded-lg px-3 py-2 text-center border border-blue-100">
           <span className="block text-xs text-blue-600 font-semibold mb-0.5">
-            Normal
+            Sharing
           </span>
           <span className="text-xl font-extrabold text-blue-700">
-            AED {route.normal}
+            AED {route.sharing}
           </span>
         </div>
         <div className="flex-1 bg-slate-50 rounded-lg px-3 py-2 text-center border border-slate-100">
           <span className="block text-xs text-slate-500 font-semibold mb-0.5">
-            Airport
+            Private
           </span>
           <span className="text-lg font-bold text-slate-700">
-            AED {route.airport}
+            AED {route.private}
           </span>
         </div>
       </div>
@@ -234,13 +234,13 @@ export default function RouteSection() {
                   scope="col"
                   className="py-4 px-4 sm:px-6 text-center text-sm font-semibold tracking-wide"
                 >
-                  Normal Fare
+                  Sharing
                 </th>
                 <th
                   scope="col"
                   className="py-4 px-4 sm:px-6 text-center text-sm font-semibold tracking-wide"
                 >
-                  Airport Fare
+                  Private
                 </th>
                 <th
                   scope="col"
@@ -312,7 +312,7 @@ export default function RouteSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          All fares are per trip, one way. Airport fares apply for pickup/drop-off at airports. Both directions served on every route.
+          All fares are per trip, one way. Sharing = shared vehicle · Private = exclusive vehicle. Both directions served on every route. Available 24/7.
         </motion.p>
       </div>
     </section>

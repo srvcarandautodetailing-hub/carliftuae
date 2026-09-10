@@ -1,8 +1,8 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 import { buildOgImageJsx } from "@/lib/og-image";
 
 export const runtime = "nodejs";
-export const alt = "Carlift Sharjah to Dubai – Daily Shared Rides from AED 300/month";
+export const alt = "Carlift Sharjah to Dubai – Daily Shared Rides from AED 130 sharing";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

@@ -15,7 +15,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Quick Car Lift Service UAE – Route Fares & Airport Transfer Prices",
   description:
-    "Clear, fixed car lift fares. Dubai ↔ Abu Dhabi AED 200 (normal) / AED 250 (airport). Abu Dhabi ↔ Sharjah AED 280 / AED 300. Abu Dhabi ↔ Ajman AED 300 / AED 320. No hidden fees.",
+    "Luxury car lift fares UAE. Dubai ↔ Abu Dhabi AED 100 sharing / AED 170 private. Abu Dhabi ↔ Sharjah AED 130 sharing / AED 200 private. Abu Dhabi ↔ Ajman AED 130 sharing / AED 200 private. Available 24/7.",
   alternates: { canonical: "https://www.carliftuae.com/pricing" },
   openGraph: {
     title: "Quick Car Lift Service UAE – Route Fares & Airport Transfer Prices",
@@ -92,10 +92,10 @@ export default function PricingPage() {
               <DollarSign className="h-5 w-5 text-white" aria-hidden="true" />
             </div>
             <p className="text-emerald-900 font-semibold text-sm sm:text-base">
-              <strong>Dubai ↔ Abu Dhabi from AED 200.</strong>{" "}
-              Abu Dhabi ↔ Sharjah from <strong>AED 280.</strong>{" "}
-              Abu Dhabi ↔ Ajman from <strong>AED 300.</strong>{" "}
-              Airport transfers slightly higher.
+              <strong>Dubai ↔ Abu Dhabi: AED 100 sharing / AED 170 private.</strong>{" "}
+              Abu Dhabi ↔ Sharjah: <strong>AED 130 sharing / AED 200 private.</strong>{" "}
+              Abu Dhabi ↔ Ajman: <strong>AED 130 sharing / AED 200 private.</strong>{" "}
+              Available 24/7 — luxury vehicles.
             </p>
           </div>
         </div>
@@ -132,8 +132,8 @@ export default function PricingPage() {
                 <thead>
                   <tr className="bg-slate-800 text-white">
                     <th className="text-left px-5 py-4 font-semibold">Route</th>
-                    <th className="text-right px-5 py-4 font-semibold">Normal Fare</th>
-                    <th className="text-right px-5 py-4 font-semibold">Airport Fare</th>
+                    <th className="text-right px-5 py-4 font-semibold">Sharing</th>
+                    <th className="text-right px-5 py-4 font-semibold">Private</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
@@ -144,10 +144,10 @@ export default function PricingPage() {
                     >
                       <td className="px-5 py-3.5 font-medium text-slate-800">{route.route}</td>
                       <td className="px-5 py-3.5 text-right font-bold text-emerald-600">
-                        AED {route.normal}
+                        AED {route.sharing}
                       </td>
                       <td className="px-5 py-3.5 text-right text-slate-700 font-medium">
-                        AED {route.airport}
+                        AED {route.private}
                       </td>
                     </tr>
                   ))}
@@ -157,8 +157,7 @@ export default function PricingPage() {
             <div className="px-5 py-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center gap-2">
               <Info className="h-4 w-4 text-slate-400 shrink-0 mt-0.5 sm:mt-0" aria-hidden="true" />
               <p className="text-xs text-slate-500 leading-relaxed">
-                All fares are per trip, one way. Airport fares apply for airport pickup or drop-off. Both directions served on every route.
-                Contact us for a confirmed booking.
+                All fares are per trip, one way. Sharing = shared luxury vehicle. Private = exclusive vehicle for your group. Both directions served on every route. Available 24/7.
               </p>
             </div>
           </div>

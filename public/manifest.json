@@ -62,7 +62,7 @@
     {
       "name": "View Pricing",
       "short_name": "Pricing",
-      "description": "Car lift pricing from AED 300/month",
+      "description": "Car lift pricing from AED 130 sharing",
       "url": "/pricing",
       "icons": [
         {

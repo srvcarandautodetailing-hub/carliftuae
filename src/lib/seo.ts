@@ -3,7 +3,7 @@
 const BASE_URL = "https://www.carliftuae.com";
 const SITE_NAME = "Quick Car Lift Service UAE";
 const DEFAULT_DESCRIPTION =
-  "Quick Car Lift Service UAE – reliable car lift and carpool rides on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi from AED 200. Abu Dhabi ↔ Sharjah from AED 280. Abu Dhabi ↔ Ajman from AED 300.";
+  "Quick Car Lift Service UAE – reliable car lift and carpool rides on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi from AED 100 sharing. Abu Dhabi ↔ Sharjah from AED 130 sharing. Abu Dhabi ↔ Ajman from AED 300.";
 
 export function buildMetadata({
   title,

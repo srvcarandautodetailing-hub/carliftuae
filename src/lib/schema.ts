@@ -57,7 +57,7 @@ export function localBusinessSchema(overrides?: Record<string, unknown>) {
       latitude: BUSINESS.coordinates.lat,
       longitude: BUSINESS.coordinates.lng,
     },
-    priceRange: "AED 200 – AED 320 per trip",
+    priceRange: "AED 100 – AED 200 per trip",
     currenciesAccepted: "AED",
     paymentAccepted: "Cash, Bank Transfer, WhatsApp Pay",
     areaServed: BUSINESS.serviceAreas.map((area) => ({

@@ -1,14 +1,14 @@
 export interface RoutePrice {
   route: string;
-  normal: number;
-  airport: number;
+  sharing: number;
+  private: number;
 }
 
 export const ROUTE_PRICES: RoutePrice[] = [
-  { route: "Dubai → Abu Dhabi", normal: 200, airport: 250 },
-  { route: "Abu Dhabi → Dubai", normal: 200, airport: 250 },
-  { route: "Abu Dhabi → Sharjah", normal: 280, airport: 300 },
-  { route: "Sharjah → Abu Dhabi", normal: 280, airport: 300 },
-  { route: "Abu Dhabi → Ajman", normal: 300, airport: 320 },
-  { route: "Ajman → Abu Dhabi", normal: 300, airport: 320 },
+  { route: "Dubai → Abu Dhabi", sharing: 100, private: 170 },
+  { route: "Abu Dhabi → Dubai", sharing: 100, private: 170 },
+  { route: "Abu Dhabi → Sharjah", sharing: 130, private: 200 },
+  { route: "Sharjah → Abu Dhabi", sharing: 130, private: 200 },
+  { route: "Abu Dhabi → Ajman", sharing: 130, private: 200 },
+  { route: "Ajman → Abu Dhabi", sharing: 130, private: 200 },
 ];
