@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Daily car lift from International City Dubai to Business Bay, Downtown, DIFC. AED 130 sharing / AED 200 private. WhatsApp +971 54 330 8261 to book.",
   keywords: "car lift international city to business bay, international city to business bay car lift, car lift from international city, international city dubai car lift",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-international-city-to-business-bay" },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
+  },
   openGraph: {
     title: "Car Lift International City to Business Bay – AED 130 Sharing | +971 54 330 8261",
     description: "Daily car lift from International City to Business Bay, Downtown Dubai, DIFC. AED 130 sharing / AED 200 private.",
@@ -46,6 +50,7 @@ export default function CarLiftICToBusinessBayPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift International City to Business Bay", url: "/car-lift-international-city-to-business-bay" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/car-lift-international-city-to-business-bay", caption: "Car lift from International City to Business Bay Dubai – daily commuter route via Al Khail Road" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -60,10 +65,10 @@ export default function CarLiftICToBusinessBayPage() {
               <div className="inline-flex items-center gap-2 bg-cyan-500/20 border border-cyan-400/30 rounded-full px-4 py-1.5 text-sm text-cyan-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />International City → Business Bay
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift International City to Business Bay – Daily Rides
               </h1>
-              <p className="text-cyan-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from all International City clusters to Business Bay, Downtown Dubai, and DIFC. AED 130 sharing / AED 200 private per trip.</p>
+              <p className="speakable-desc text-cyan-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from all International City clusters to Business Bay, Downtown Dubai, and DIFC. AED 130 sharing / AED 200 private per trip.</p>
               <p className="text-cyan-200/80 text-sm leading-relaxed mb-6 max-w-xl">35–55 minutes via Al Khail Road. Multiple morning and evening departures. All clusters covered.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[

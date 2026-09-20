@@ -24,6 +24,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -37,6 +38,10 @@ export const metadata: Metadata = {
     "car lift for ladies in sharjah, ladies car lift sharjah to dubai, ladies car lift sharjah, car lift for ladies in dubai, female car lift uae, ladies only car lift sharjah",
   alternates: {
     canonical: "https://www.carliftuae.com/ladies-car-lift-sharjah-to-dubai",
+  },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
   },
   openGraph: {
     title: "Ladies Car Lift Sharjah to Dubai – Female Driver | +971 54 330 8261",
@@ -129,6 +134,7 @@ export default function LadiesCarLiftSharjahToDubaiPage() {
       pageUrl: "/ladies-car-lift-sharjah-to-dubai",
       caption: "Ladies-only car lift interior UAE – safe women-only shared ride Sharjah to Dubai",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -157,10 +163,10 @@ export default function LadiesCarLiftSharjahToDubaiPage() {
                 <Shield className="h-4 w-4" aria-hidden="true" />
                 Ladies Only · Female Driver Option · AED 130 Sharing / AED 200 Private
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Ladies Car Lift<br className="hidden sm:block" /> Sharjah to Dubai
               </h1>
-              <p className="text-pink-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-pink-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 A safe, comfortable daily car lift exclusively for women commuting from Sharjah to Dubai.
                 Choose a verified female driver, or a ladies-only vehicle — GPS-tracked, Salik included.
               </p>

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Daily car lift from Sharjah to Abu Dhabi. AED 130 sharing / AED 200 private per trip. Al Nahda, Muweilah pickup. Mussafah, Khalifa City, MBZ City drop-off. Available 24/7. WhatsApp +971 54 330 8261.",
   keywords: "car lift from sharjah to abu dhabi, sharjah to abu dhabi car lift, car lift sharjah abu dhabi",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-from-sharjah-to-abu-dhabi" },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
+  },
   openGraph: {
     title: "Car Lift Sharjah to Abu Dhabi – AED 130 Sharing / AED 200 Private | +971 54 330 8261",
     description: "Daily car lift from Sharjah to Abu Dhabi. AED 130 sharing / AED 200 private. Mussafah, Khalifa City, MBZ City drop-off. 90–120 min journey.",
@@ -46,6 +50,7 @@ export default function CarLiftFromSharjahToAbuDhabiPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Sharjah to Abu Dhabi", url: "/car-lift-from-sharjah-to-abu-dhabi" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-daily-commuters-interior.webp", pageUrl: "/car-lift-from-sharjah-to-abu-dhabi", caption: "Car lift from Sharjah to Abu Dhabi – long-distance daily route via Sheikh Zayed Road through Dubai" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -60,10 +65,10 @@ export default function CarLiftFromSharjahToAbuDhabiPage() {
               <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full px-4 py-1.5 text-sm text-emerald-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />Sharjah → Abu Dhabi
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Sharjah to Abu Dhabi – Long-Distance Daily Route
               </h1>
-              <p className="text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Sharjah to all major Abu Dhabi areas. AED 130 sharing / AED 200 private. Early morning departures from 5:30 AM to match Abu Dhabi work shift times.</p>
+              <p className="speakable-desc text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Sharjah to all major Abu Dhabi areas. AED 130 sharing / AED 200 private. Early morning departures from 5:30 AM to match Abu Dhabi work shift times.</p>
               <p className="text-emerald-200/80 text-sm leading-relaxed mb-6 max-w-xl">90–120 minute journey via Sheikh Zayed Road through Dubai to Abu Dhabi. Monthly commuter packages available.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[

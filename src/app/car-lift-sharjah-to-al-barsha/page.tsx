@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Daily car lift from Sharjah to Al Barsha, Mall of Emirates area, and nearby districts. AED 130 sharing / AED 200 private per trip. WhatsApp +971 54 330 8261.",
   keywords: "car lift sharjah to al barsha, sharjah to al barsha car lift, car lift to al barsha, sharjah al barsha transport",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-sharjah-to-al-barsha" },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
+  },
   openGraph: {
     title: "Car Lift Sharjah to Al Barsha – AED 130 Sharing | Mall of Emirates | +971 54 330 8261",
     description: "Daily car lift from Sharjah to Al Barsha 1, 2, South, Mall of Emirates, Al Barsha Heights. AED 130 sharing / AED 200 private.",
@@ -46,6 +50,7 @@ export default function CarLiftSharjahToAlBarshaPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Sharjah to Al Barsha", url: "/car-lift-sharjah-to-al-barsha" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/car-lift-sharjah-to-al-barsha", caption: "Car lift from Sharjah to Al Barsha Dubai – daily commuter route via Sheikh Zayed Road to Mall of Emirates area" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -60,10 +65,10 @@ export default function CarLiftSharjahToAlBarshaPage() {
               <div className="inline-flex items-center gap-2 bg-violet-500/20 border border-violet-400/30 rounded-full px-4 py-1.5 text-sm text-violet-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />Sharjah → Al Barsha
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Sharjah to Al Barsha – Daily Commuter Rides
               </h1>
-              <p className="text-violet-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Sharjah to Al Barsha 1, 2, South, Mall of Emirates, and Al Barsha Heights (Tecom). AED 130 sharing / AED 200 private per trip.</p>
+              <p className="speakable-desc text-violet-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Sharjah to Al Barsha 1, 2, South, Mall of Emirates, and Al Barsha Heights (Tecom). AED 130 sharing / AED 200 private per trip.</p>
               <p className="text-violet-200/80 text-sm leading-relaxed mb-6 max-w-xl">45–60 minutes via Sheikh Zayed Road. Multiple morning departures and evening returns. Monthly packages available.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[

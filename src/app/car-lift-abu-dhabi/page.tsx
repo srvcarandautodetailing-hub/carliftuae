@@ -24,6 +24,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -37,6 +38,10 @@ export const metadata: Metadata = {
     "car lift abu dhabi, car lift abu dhabi monthly, car lift to abu dhabi, abu dhabi car lift, carpool abu dhabi, sharing taxi abu dhabi to dubai",
   alternates: {
     canonical: "https://www.carliftuae.com/car-lift-abu-dhabi",
+  },
+  other: {
+    "geo.region": "AE-AZ",
+    "geo.placename": "Abu Dhabi, UAE",
   },
   openGraph: {
     title: "Car Lift Abu Dhabi – AED 100 Sharing / AED 170 Private | All Routes | +971 54 330 8261",
@@ -126,6 +131,7 @@ export default function CarLiftAbuDhabiPage() {
       pageUrl: "/car-lift-abu-dhabi",
       caption: "Car lift Abu Dhabi – daily commuter rides from Abu Dhabi to Dubai, Sharjah and Ajman",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -154,10 +160,10 @@ export default function CarLiftAbuDhabiPage() {
                 <Car className="h-4 w-4" aria-hidden="true" />
                 Abu Dhabi Car Lift
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Abu Dhabi – Daily Rides to Dubai, Sharjah &amp; Ajman
               </h1>
-              <p className="text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Daily shared and private car lift from Abu Dhabi to Dubai, Sharjah, and Ajman. All major Abu Dhabi areas covered — Mussafah, Khalifa City, MBZ City.
               </p>
               <p className="text-emerald-200/80 text-sm leading-relaxed mb-6 max-w-xl">

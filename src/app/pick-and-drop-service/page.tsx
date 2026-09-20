@@ -24,6 +24,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -37,6 +38,10 @@ export const metadata: Metadata = {
     "pick and drop service, pick and drop service in dubai, pick and drop, pickup and drop, pick up service, pick up and drop service dubai, daily pick and drop service in dubai, pick and drop sharjah",
   alternates: {
     canonical: "https://www.carliftuae.com/pick-and-drop-service",
+  },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
   },
   openGraph: {
     title: "Pick and Drop Service UAE – Door-to-Door | AED 100+ | +971 54 330 8261",
@@ -118,6 +123,7 @@ export default function PickAndDropServicePage() {
       pageUrl: "/pick-and-drop-service",
       caption: "Pick and drop service UAE – door-to-door commuter transport across Dubai, Abu Dhabi, Sharjah and Ajman",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -146,10 +152,10 @@ export default function PickAndDropServicePage() {
                 <MapPin className="h-4 w-4" aria-hidden="true" />
                 Pick &amp; Drop UAE
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Pick and Drop Service UAE – Daily Commuter Rides
               </h1>
-              <p className="text-orange-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-orange-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Door-to-door pick and drop service for daily commuters across UAE. From your home to your office — across Dubai, Abu Dhabi, Sharjah, and Ajman.
               </p>
               <p className="text-orange-200/80 text-sm leading-relaxed mb-6 max-w-xl">

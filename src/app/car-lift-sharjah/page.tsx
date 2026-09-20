@@ -24,6 +24,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -37,6 +38,10 @@ export const metadata: Metadata = {
     "car lift sharjah, car lift in sharjah, sharjah car lift, monthly car lift sharjah, car lift services in sharjah, car lift sharjah to dubai",
   alternates: {
     canonical: "https://www.carliftuae.com/car-lift-sharjah",
+  },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
   },
   openGraph: {
     title: "Car Lift Sharjah – AED 130 Sharing / AED 200 Private | All Routes | +971 54 330 8261",
@@ -131,6 +136,7 @@ export default function CarLiftSharjahPage() {
       pageUrl: "/car-lift-sharjah",
       caption: "Car lift Sharjah – daily commuter pickups from Al Nahda, Muweilah, University City to Dubai and beyond",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -159,10 +165,10 @@ export default function CarLiftSharjahPage() {
                 <Car className="h-4 w-4" aria-hidden="true" />
                 Sharjah Car Lift
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Sharjah – Daily Car Lift Service from Sharjah UAE
               </h1>
-              <p className="text-violet-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-violet-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Daily shared and private car lift from all Sharjah areas to Dubai, Abu Dhabi, Ajman, and Jebel Ali. Multiple morning timings, guaranteed evening returns.
               </p>
               <p className="text-violet-200/80 text-sm leading-relaxed mb-6 max-w-xl">

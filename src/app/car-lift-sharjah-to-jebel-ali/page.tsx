@@ -24,6 +24,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -37,6 +38,10 @@ export const metadata: Metadata = {
     "sharjah to jebel ali car lift, car lift to jebel ali, car lift sharjah jebel ali, jebel ali car lift from sharjah, sharjah jebel ali transport, sharjah to jebel ali bus service car lift",
   alternates: {
     canonical: "https://www.carliftuae.com/car-lift-sharjah-to-jebel-ali",
+  },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
   },
   openGraph: {
     title: "Car Lift Sharjah to Jebel Ali – AED 130 Sharing | JAFZA & Dubai South | +971 54 330 8261",
@@ -140,6 +145,7 @@ export default function CarLiftSharjahToJebelAliPage() {
       pageUrl: "/car-lift-sharjah-to-jebel-ali",
       caption: "Car lift from Sharjah to Jebel Ali JAFZA – daily industrial commuter route via Sheikh Zayed Road",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -168,10 +174,10 @@ export default function CarLiftSharjahToJebelAliPage() {
                 <Car className="h-4 w-4" aria-hidden="true" />
                 Sharjah → Jebel Ali
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Sharjah to Jebel Ali – Daily JAFZA Commuter Service
               </h1>
-              <p className="text-amber-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-amber-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Daily car lift from all Sharjah areas to Jebel Ali Free Zone (JAFZA), Dubai South, and Port Jebel Ali. Early morning shifts covered from 5:30 AM.
               </p>
               <p className="text-amber-200/80 text-sm leading-relaxed mb-6 max-w-xl">

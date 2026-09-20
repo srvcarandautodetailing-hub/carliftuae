@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Daily car lift from Sharjah to Al Quoz Industrial and Residential areas, Dubai. AED 130 sharing / AED 200 private. Al Nahda, Muweilah pickup. Morning and evening timings. WhatsApp +971 54 330 8261.",
   keywords: "car lift sharjah to al quoz, sharjah to al quoz, car lift to al quoz, sharjah al quoz car lift, car lift sharjah al quoz",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-sharjah-to-al-quoz" },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
+  },
   openGraph: {
     title: "Car Lift Sharjah to Al Quoz Dubai – AED 130 Sharing | Workers & Professionals | +971 54 330 8261",
     description: "Daily car lift from Sharjah to Al Quoz Industrial and Residential areas. AED 130 sharing / AED 200 private.",
@@ -46,6 +50,7 @@ export default function CarLiftSharjahToAlQuozPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Sharjah to Al Quoz", url: "/car-lift-sharjah-to-al-quoz" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/locations/sharjah/sharjah-car-lift-morning-pickup.webp", pageUrl: "/car-lift-sharjah-to-al-quoz", caption: "Car lift from Sharjah to Al Quoz Dubai – industrial and residential route via Sheikh Zayed Road" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -60,10 +65,10 @@ export default function CarLiftSharjahToAlQuozPage() {
               <div className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/30 rounded-full px-4 py-1.5 text-sm text-orange-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />Sharjah → Al Quoz
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Sharjah to Al Quoz – Industrial &amp; Residential Area
               </h1>
-              <p className="text-orange-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Sharjah to Al Quoz Industrial (1–4) and Residential areas in Dubai. AED 130 sharing / AED 200 private per trip.</p>
+              <p className="speakable-desc text-orange-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Sharjah to Al Quoz Industrial (1–4) and Residential areas in Dubai. AED 130 sharing / AED 200 private per trip.</p>
               <p className="text-orange-200/80 text-sm leading-relaxed mb-6 max-w-xl">40–55 minutes from Al Nahda, Sharjah to Al Quoz via Sheikh Zayed Road. Early morning shifts from 6:30 AM.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[

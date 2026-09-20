@@ -24,6 +24,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -37,6 +38,10 @@ export const metadata: Metadata = {
     "car lift dubai, car lift services in dubai, car lift service, car lift in uae, carlift dubai, car lift dubai to abu dhabi",
   alternates: {
     canonical: "https://www.carliftuae.com/car-lift-dubai",
+  },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
   },
   openGraph: {
     title: "Car Lift Dubai – AED 100 Sharing / AED 170 Private | Sharjah, Ajman, Abu Dhabi | +971 54 330 8261",
@@ -139,6 +144,7 @@ export default function CarLiftDubaiPage() {
       pageUrl: "/car-lift-dubai",
       caption: "Car lift service Dubai – daily shared rides from Abu Dhabi, Sharjah and Ajman to all Dubai areas",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -167,10 +173,10 @@ export default function CarLiftDubaiPage() {
                 <Car className="h-4 w-4" aria-hidden="true" />
                 Dubai Car Lift Hub
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Dubai – Daily Shared &amp; Private Rides Across UAE
               </h1>
-              <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-blue-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Daily shared and private car lift covering all inter-emirate routes to Dubai. From Abu Dhabi, Sharjah, and Ajman — GPS-tracked, air-conditioned vehicles, 24/7 service.
               </p>
               <p className="text-blue-200/80 text-sm leading-relaxed mb-6 max-w-xl">

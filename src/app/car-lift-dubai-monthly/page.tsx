@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Monthly car lift packages for Dubai commuters. Fixed daily seat, no daily booking. Sharjah to Dubai, Ajman to Dubai, Abu Dhabi to Dubai. WhatsApp +971 54 330 8261 for your monthly rate.",
   keywords: "car lift dubai monthly, monthly car lift dubai, car lift dubai to abu dhabi monthly, monthly carlift, car lift monthly",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-dubai-monthly" },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
+  },
   openGraph: {
     title: "Car Lift Dubai Monthly – Fixed Daily Seat | Sharjah, Ajman, Abu Dhabi | +971 54 330 8261",
     description: "Monthly car lift packages for Dubai commuters. Fixed daily seat, guaranteed timing. WhatsApp for monthly rate.",
@@ -56,6 +60,7 @@ export default function CarLiftDubaiMonthlyPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Dubai Monthly", url: "/car-lift-dubai-monthly" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/services/carlift-uae-professionals-interior.webp", pageUrl: "/car-lift-dubai-monthly", caption: "Monthly car lift Dubai – professionals with guaranteed daily seat commuting to Dubai from Sharjah, Ajman, Abu Dhabi" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -71,10 +76,10 @@ export default function CarLiftDubaiMonthlyPage() {
                 <Car className="h-4 w-4" aria-hidden="true" />
                 Monthly Dubai Car Lift
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Dubai Monthly – Fixed Monthly Commuter Packages
               </h1>
-              <p className="text-indigo-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-indigo-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Get a guaranteed daily seat in a car lift to Dubai — no daily booking, fixed monthly rate. Sharjah, Ajman, and Abu Dhabi routes all available.
               </p>
               <p className="text-indigo-200/80 text-sm leading-relaxed mb-6 max-w-xl">Monday to Saturday service, no lock-in contract. WhatsApp us with your route and get a personalised monthly quote within the hour.</p>

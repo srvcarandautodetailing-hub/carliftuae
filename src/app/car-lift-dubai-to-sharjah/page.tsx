@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Car lift from Dubai to Sharjah. Return rides from Business Bay, DIFC, JLT to all Sharjah areas. AED 130 sharing / AED 200 private. Evening timings 5:00 PM–7:00 PM. WhatsApp +971 54 330 8261.",
   keywords: "dubai to sharjah car lift, car lift from dubai to sharjah, car lift dubai to sharjah, sharjah car lift from dubai",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-dubai-to-sharjah" },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
+  },
   openGraph: {
     title: "Car Lift Dubai to Sharjah – AED 130 Sharing / AED 200 Private | Evening | +971 54 330 8261",
     description: "Evening return car lift from Dubai to Sharjah. Business Bay, DIFC, JLT pickup. All Sharjah areas drop-off. AED 130 sharing / AED 200 private.",
@@ -45,6 +49,7 @@ export default function CarLiftDubaiToSharjahPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Dubai to Sharjah", url: "/car-lift-dubai-to-sharjah" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/car-lift-dubai-to-sharjah", caption: "Car lift from Dubai to Sharjah – evening return service from Business Bay and DIFC to Al Nahda and Muweilah" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -59,10 +64,10 @@ export default function CarLiftDubaiToSharjahPage() {
               <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-1.5 text-sm text-blue-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />Dubai → Sharjah
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Dubai to Sharjah – Evening Return Service
               </h1>
-              <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Evening return car lift from all major Dubai areas to Sharjah. Departures from 5:00 PM to 7:00 PM — perfect for office commuters heading home.</p>
+              <p className="speakable-desc text-blue-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Evening return car lift from all major Dubai areas to Sharjah. Departures from 5:00 PM to 7:00 PM — perfect for office commuters heading home.</p>
               <p className="text-blue-200/80 text-sm leading-relaxed mb-6 max-w-xl">AED 130 sharing / AED 200 private per trip. Business Bay, DIFC, JLT, Al Barsha pickup. All Sharjah areas drop-off.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[

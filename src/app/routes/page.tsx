@@ -454,6 +454,122 @@ export default function RoutesPage() {
         </div>
       </section>
 
+      {/* ─── Popular Direct Route Pages ─── */}
+      <section aria-labelledby="direct-routes-heading" className="py-16 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">
+              Intercity &amp; Local Routes
+            </p>
+            <h2
+              id="direct-routes-heading"
+              className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4"
+            >
+              Popular Car Lift Routes UAE
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Flat-fare daily car lift on confirmed routes. Sharing seats from AED 100/trip — WhatsApp to book your fixed daily seat.
+            </p>
+          </div>
+
+          {/* Intercity routes */}
+          <div className="mb-10">
+            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-amber-500 inline-block" />
+              Intercity Routes
+            </h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 list-none">
+              {[
+                { href: "/car-lift-sharjah-to-dubai", label: "Car Lift Sharjah → Dubai", price: "AED 130 sharing" },
+                { href: "/car-lift-dubai-to-sharjah", label: "Car Lift Dubai → Sharjah", price: "AED 130 sharing" },
+                { href: "/car-lift-dubai-to-abu-dhabi", label: "Car Lift Dubai → Abu Dhabi", price: "AED 100 sharing" },
+                { href: "/car-lift-abu-dhabi-to-dubai", label: "Car Lift Abu Dhabi → Dubai", price: "AED 100 sharing" },
+                { href: "/car-lift-from-sharjah-to-abu-dhabi", label: "Car Lift Sharjah → Abu Dhabi", price: "AED 130 sharing" },
+                { href: "/car-lift-sharjah-to-ajman", label: "Car Lift Sharjah → Ajman", price: "AED 130 sharing" },
+                { href: "/car-lift-ajman-to-sharjah", label: "Car Lift Ajman → Sharjah", price: "AED 130 sharing" },
+                { href: "/car-lift-dubai-to-ajman", label: "Car Lift Dubai → Ajman", price: "AED 130 sharing" },
+                { href: "/car-lift-sharjah-to-ras-al-khaimah", label: "Car Lift Sharjah → Ras Al Khaimah", price: "AED 150 sharing" },
+                { href: "/car-lift-dubai-to-al-ain", label: "Car Lift Dubai → Al Ain", price: "AED 150 sharing" },
+                { href: "/car-lift-umm-al-quwain", label: "Car Lift Umm Al Quwain", price: "AED 130 sharing" },
+              ].map(({ href, label, price }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="flex items-center justify-between gap-2 p-4 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition-all group"
+                  >
+                    <span className="font-semibold text-slate-800 group-hover:text-blue-700 text-sm">{label}</span>
+                    <span className="text-xs font-medium text-emerald-600 whitespace-nowrap">{price}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Area-specific Dubai routes */}
+          <div className="mb-10">
+            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />
+              Sharjah to Dubai Area Routes
+            </h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 list-none">
+              {[
+                { href: "/car-lift-sharjah-to-al-barsha", label: "Sharjah → Al Barsha", price: "AED 130 sharing" },
+                { href: "/car-lift-sharjah-to-al-quoz", label: "Sharjah → Al Quoz", price: "AED 130 sharing" },
+                { href: "/car-lift-sharjah-to-jebel-ali", label: "Sharjah → Jebel Ali / JAFZA", price: "AED 130 sharing" },
+                { href: "/car-lift-from-international-city", label: "International City Car Lift", price: "AED 100 sharing" },
+                { href: "/car-lift-international-city-to-business-bay", label: "International City → Business Bay", price: "AED 100 sharing" },
+                { href: "/car-lift-silicon-oasis-to-business-bay", label: "Silicon Oasis → Business Bay", price: "AED 100 sharing" },
+              ].map(({ href, label, price }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="flex items-center justify-between gap-2 p-4 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition-all group"
+                  >
+                    <span className="font-semibold text-slate-800 group-hover:text-blue-700 text-sm">{label}</span>
+                    <span className="text-xs font-medium text-emerald-600 whitespace-nowrap">{price}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Hub + service pages */}
+          <div>
+            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
+              Hub &amp; Service Pages
+            </h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 list-none">
+              {[
+                { href: "/car-lift-dubai", label: "Car Lift Dubai Hub", price: "All Dubai routes" },
+                { href: "/car-lift-sharjah", label: "Car Lift Sharjah Hub", price: "All Sharjah routes" },
+                { href: "/car-lift-abu-dhabi", label: "Car Lift Abu Dhabi Hub", price: "All Abu Dhabi routes" },
+                { href: "/car-lift-ajman", label: "Car Lift Ajman Hub", price: "All Ajman routes" },
+                { href: "/carpool-dubai", label: "Carpool Dubai", price: "Shared daily commute" },
+                { href: "/private-car-lift-dubai", label: "Private Car Lift Dubai", price: "AED 170 private" },
+                { href: "/car-lift-dubai-monthly", label: "Monthly Car Lift Dubai", price: "Monthly packages" },
+                { href: "/pick-and-drop-service", label: "Pick & Drop Service UAE", price: "All emirates" },
+                { href: "/pick-and-drop-service-dubai", label: "Pick & Drop Dubai", price: "Dubai routes" },
+                { href: "/pick-and-drop-service-sharjah", label: "Pick & Drop Sharjah", price: "Sharjah routes" },
+                { href: "/monthly-pick-and-drop-service-abu-dhabi", label: "Monthly Pick & Drop Abu Dhabi", price: "Abu Dhabi" },
+                { href: "/ladies-car-lift-ajman-to-dubai", label: "Ladies Car Lift Ajman → Dubai", price: "Ladies only" },
+                { href: "/ladies-car-lift-sharjah-to-dubai", label: "Ladies Car Lift Sharjah → Dubai", price: "Ladies only" },
+              ].map(({ href, label, price }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="flex items-center justify-between gap-2 p-4 rounded-xl border border-slate-200 hover:border-emerald-400 hover:shadow-sm transition-all group"
+                  >
+                    <span className="font-semibold text-slate-800 group-hover:text-emerald-700 text-sm">{label}</span>
+                    <span className="text-xs font-medium text-slate-500 whitespace-nowrap">{price}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* ─── Final CTA ─── */}
       <section aria-label="Book a route" className="py-14 bg-blue-600">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

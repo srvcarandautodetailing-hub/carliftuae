@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Reliable pick and drop service in Sharjah and from Sharjah to Dubai. Door-to-door commuter rides. AED 130 sharing / AED 200 private. WhatsApp +971 54 330 8261.",
   keywords: "pick and drop service sharjah, sharjah pick and drop, pick drop sharjah, door to door sharjah dubai, sharjah commuter service",
   alternates: { canonical: "https://www.carliftuae.com/pick-and-drop-service-sharjah" },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
+  },
   openGraph: {
     title: "Pick and Drop Service Sharjah – Door-to-Door | AED 130 | +971 54 330 8261",
     description: "Door-to-door pick and drop service from Sharjah. AED 130 sharing / AED 200 private. WhatsApp to book.",
@@ -55,6 +59,7 @@ export default function PickAndDropServiceSharjahPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Pick and Drop Service Sharjah", url: "/pick-and-drop-service-sharjah" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/locations/sharjah/sharjah-car-lift-morning-pickup.webp", pageUrl: "/pick-and-drop-service-sharjah", caption: "Pick and drop service Sharjah – door-to-door commuter rides from Sharjah to Dubai" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -69,10 +74,10 @@ export default function PickAndDropServiceSharjahPage() {
               <div className="inline-flex items-center gap-2 bg-violet-500/20 border border-violet-400/30 rounded-full px-4 py-1.5 text-sm text-violet-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />Sharjah → Dubai Door-to-Door
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Pick and Drop Service Sharjah – Door-to-Door Commuter Rides
               </h1>
-              <p className="text-violet-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Reliable door-to-door pick and drop service from Sharjah to Dubai and other UAE destinations. Pickup from your home in Sharjah, drop-off at your workplace. AED 130 sharing / AED 200 private.</p>
+              <p className="speakable-desc text-violet-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Reliable door-to-door pick and drop service from Sharjah to Dubai and other UAE destinations. Pickup from your home in Sharjah, drop-off at your workplace. AED 130 sharing / AED 200 private.</p>
               <p className="text-violet-200/80 text-sm leading-relaxed mb-6 max-w-xl">Multiple morning departures from 6:30 AM. Evening return service available. Monthly packages with reserved seating.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key service stats">
                 {[

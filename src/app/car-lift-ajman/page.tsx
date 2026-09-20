@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Car lift service from Ajman to Dubai, Sharjah, and Abu Dhabi. AED 130 sharing / AED 200 private. Al Nuaimiya, Al Rashidiya, Al Hamidiya pickup. Available 24/7. WhatsApp +971 54 330 8261.",
   keywords: "car lift ajman, car lift from ajman, car lift ajman to dubai, car lift ajman to sharjah, ajman car lift service, car lift in ajman",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-ajman" },
+  other: {
+    "geo.region": "AE-AJ",
+    "geo.placename": "Ajman, UAE",
+  },
   openGraph: {
     title: "Car Lift Ajman – AED 130 Sharing / AED 200 Private | All Routes | +971 54 330 8261",
     description: "Car lift from Ajman to Dubai, Sharjah, Abu Dhabi. AED 130 sharing / AED 200 private. All Ajman areas covered. 24/7.",
@@ -47,6 +51,7 @@ export default function CarLiftAjmanPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Ajman", url: "/car-lift-ajman" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-boarding-sunset-dubai.webp", pageUrl: "/car-lift-ajman", caption: "Car lift Ajman – daily rides to Dubai, Abu Dhabi and Sharjah from all Ajman areas" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -62,10 +67,10 @@ export default function CarLiftAjmanPage() {
                 <Car className="h-4 w-4" aria-hidden="true" />
                 Ajman Car Lift Hub
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Ajman – Daily Car Lift from Ajman to Dubai &amp; Abu Dhabi
               </h1>
-              <p className="text-rose-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-rose-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Daily shared and private car lift from all Ajman areas to Dubai, Abu Dhabi, Sharjah, and Jebel Ali. Ladies-only option available.
               </p>
               <p className="text-rose-200/80 text-sm leading-relaxed mb-6 max-w-xl">AED 130 sharing / AED 200 private per trip. Monthly packages also available at fixed rates.</p>

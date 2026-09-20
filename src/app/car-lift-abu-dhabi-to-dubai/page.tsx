@@ -25,6 +25,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -38,6 +39,10 @@ export const metadata: Metadata = {
     "car lift abu dhabi to dubai, abu dhabi to dubai car lift, sharing taxi from abu dhabi to dubai, carpool abu dhabi to dubai, abu dhabi dubai car lift monthly, pick and drop abu dhabi to dubai",
   alternates: {
     canonical: "https://www.carliftuae.com/car-lift-abu-dhabi-to-dubai",
+  },
+  other: {
+    "geo.region": "AE-AZ",
+    "geo.placename": "Abu Dhabi, UAE",
   },
   openGraph: {
     title: "Car Lift Abu Dhabi to Dubai – AED 100 Sharing / AED 170 Private | +971 54 330 8261",
@@ -198,6 +203,7 @@ export default function CarLiftAbuDhabiToDubaiPage() {
       pageUrl: "/car-lift-abu-dhabi-to-dubai",
       caption: "Car lift on Sheikh Zayed Road E11 — daily Abu Dhabi to Dubai commute",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -235,11 +241,11 @@ export default function CarLiftAbuDhabiToDubaiPage() {
               </div>
               <h1
                 id="hero-heading"
-                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4"
+                className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4"
               >
                 Car Lift Abu Dhabi to<br className="hidden sm:block" /> Dubai – Daily Commute
               </h1>
-              <p className="text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Daily shared and private car lift from Khalifa City, Mussafah, MBZ City, Baniyas,
                 and all Abu Dhabi areas to Business Bay, DIFC, JLT, Downtown Dubai, and more.
                 Via E11 Sheikh Zayed Road — Salik included.

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Daily car lift from Sharjah to Ajman and return. Al Nahda, Al Taawun, Muweilah pickup. Al Nuaimiya, Al Rashidiya Ajman drop-off. Quick Car Lift Service UAE. WhatsApp +971 54 330 8261.",
   keywords: "car lift sharjah to ajman, car lift from sharjah to ajman, sharjah ajman car lift, sharjah to ajman transport",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-sharjah-to-ajman" },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
+  },
   openGraph: {
     title: "Car Lift Sharjah to Ajman – Sharing & Private | +971 54 330 8261",
     description: "Daily car lift from Sharjah to Ajman. Al Nahda, Muweilah pickup. Al Nuaimiya, Al Rashidiya drop-off. 25–40 min journey.",
@@ -46,6 +50,7 @@ export default function CarLiftSharjahToAjmanPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Sharjah to Ajman", url: "/car-lift-sharjah-to-ajman" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/locations/sharjah/sharjah-car-lift-morning-pickup.webp", pageUrl: "/car-lift-sharjah-to-ajman", caption: "Car lift from Sharjah to Ajman – short route daily commuter service between the two emirates" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -60,10 +65,10 @@ export default function CarLiftSharjahToAjmanPage() {
               <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/30 rounded-full px-4 py-1.5 text-sm text-amber-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />Sharjah → Ajman
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Sharjah to Ajman – Daily Short-Route Commute
               </h1>
-              <p className="text-amber-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Sharjah to Ajman — just 25–40 minutes between the two emirates. Morning and evening timings, sharing and private options.</p>
+              <p className="speakable-desc text-amber-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Sharjah to Ajman — just 25–40 minutes between the two emirates. Morning and evening timings, sharing and private options.</p>
               <p className="text-amber-200/80 text-sm leading-relaxed mb-6 max-w-xl">WhatsApp +971 54 330 8261 for current pricing on Sharjah to Ajman sharing and private options.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[

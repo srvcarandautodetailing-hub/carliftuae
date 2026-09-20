@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Book a private car lift in Dubai – entire vehicle for you and your group only. No strangers. AED 170 private from Dubai to Abu Dhabi. AED 200 from Sharjah or Ajman to Dubai. WhatsApp +971 54 330 8261.",
   keywords: "private car lift dubai, private carlift, private car lift uae, private car lift sharjah dubai",
   alternates: { canonical: "https://www.carliftuae.com/private-car-lift-dubai" },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
+  },
   openGraph: {
     title: "Private Car Lift Dubai – AED 170 Exclusive | No Sharing | 24/7 | +971 54 330 8261",
     description: "Exclusive private car lift in Dubai. Entire vehicle for you and your group. AED 170 from Abu Dhabi, AED 200 from Sharjah/Ajman. 24/7.",
@@ -47,6 +51,7 @@ export default function PrivateCarLiftDubaiPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Private Car Lift Dubai", url: "/private-car-lift-dubai" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/services/carlift-uae-professionals-interior.webp", pageUrl: "/private-car-lift-dubai", caption: "Private car lift Dubai – exclusive vehicle for professionals, no sharing, direct door-to-door routes" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -62,10 +67,10 @@ export default function PrivateCarLiftDubaiPage() {
                 <Shield className="h-4 w-4" aria-hidden="true" />
                 Private Car Lift Dubai
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Private Car Lift Dubai – Exclusive Rides, No Strangers
               </h1>
-              <p className="text-slate-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-slate-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Entire vehicle exclusively for you and your group. No strangers, no stops for other passengers. Direct door-to-door private car lift across all UAE routes.
               </p>
               <p className="text-slate-300/80 text-sm leading-relaxed mb-6 max-w-xl">AED 170 private from Abu Dhabi to Dubai. AED 200 private from Sharjah or Ajman to Dubai. 24/7 including overnight.</p>

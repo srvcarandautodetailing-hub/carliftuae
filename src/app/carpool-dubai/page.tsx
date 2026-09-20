@@ -24,6 +24,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -37,6 +38,10 @@ export const metadata: Metadata = {
     "carpool dubai, car pool dubai, carpooling dubai, carpool dubai to abu dhabi, carpool uae, car pooling, carpool near me",
   alternates: {
     canonical: "https://www.carliftuae.com/carpool-dubai",
+  },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
   },
   openGraph: {
     title: "Carpool Dubai – Shared Rides from AED 100 | Dubai to Abu Dhabi Carpool | +971 54 330 8261",
@@ -121,6 +126,7 @@ export default function CarpoolDubaiPage() {
       pageUrl: "/carpool-dubai",
       caption: "Carpool Dubai – shared rides for daily commuters across UAE inter-emirate routes",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -149,10 +155,10 @@ export default function CarpoolDubaiPage() {
                 <Users className="h-4 w-4" aria-hidden="true" />
                 Carpool Dubai
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Carpool Dubai – Shared Car Lift &amp; Carpooling UAE
               </h1>
-              <p className="text-teal-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-teal-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Organised carpool rides across all UAE inter-emirate routes. Share a clean, air-conditioned vehicle with fellow professionals and save up to 70% compared to driving solo.
               </p>
               <p className="text-teal-200/80 text-sm leading-relaxed mb-6 max-w-xl">

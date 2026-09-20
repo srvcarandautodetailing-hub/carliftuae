@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Daily pick and drop service in Dubai. From Sharjah, Ajman, Abu Dhabi to any Dubai area. AED 100 sharing per trip. Book via WhatsApp +971 54 330 8261.",
   keywords: "pick and drop service in dubai, pick up and drop service dubai, pick and drop service dubai, daily pick and drop service in dubai, car pick up service dubai, car pick up dubai",
   alternates: { canonical: "https://www.carliftuae.com/pick-and-drop-service-dubai" },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
+  },
   openGraph: {
     title: "Pick and Drop Service Dubai – Daily Rides | AED 100+ | +971 54 330 8261",
     description: "Daily door-to-door pick and drop service in Dubai. AED 100+ per trip. From Sharjah, Ajman, Abu Dhabi. WhatsApp +971 54 330 8261.",
@@ -41,6 +45,7 @@ export default function PickAndDropServiceDubaiPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Pick and Drop Service Dubai", url: "/pick-and-drop-service-dubai" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/locations/business-bay/business-bay-car-lift-professionals.webp", pageUrl: "/pick-and-drop-service-dubai", caption: "Pick and drop service Dubai – daily door-to-door transport to Business Bay and all Dubai areas" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -56,10 +61,10 @@ export default function PickAndDropServiceDubaiPage() {
                 <MapPin className="h-4 w-4" aria-hidden="true" />
                 Pick &amp; Drop Dubai
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Pick and Drop Service Dubai – Daily Door-to-Door Transport
               </h1>
-              <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-blue-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Door-to-door daily pick and drop service across all Dubai areas. From Sharjah, Ajman, and Abu Dhabi — confirmed in 60 minutes via WhatsApp.
               </p>
               <p className="text-blue-200/80 text-sm leading-relaxed mb-6 max-w-xl">Abu Dhabi to Dubai: AED 100 sharing / AED 170 private. Sharjah/Ajman to Dubai: AED 130 sharing / AED 200 private. Monthly packages also available.</p>

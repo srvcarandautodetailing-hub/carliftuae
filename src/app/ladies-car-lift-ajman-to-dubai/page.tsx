@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Safe, reliable ladies car lift from Ajman to Dubai. Female-only shared rides with verified drivers. AED 130 sharing per trip. WhatsApp +971 54 330 8261 to book.",
   keywords: "ladies car lift ajman to dubai, female car lift ajman dubai, women car lift ajman, ladies taxi ajman dubai, ladies transport ajman",
   alternates: { canonical: "https://www.carliftuae.com/ladies-car-lift-ajman-to-dubai" },
+  other: {
+    "geo.region": "AE-AJ",
+    "geo.placename": "Ajman, UAE",
+  },
   openGraph: {
     title: "Ladies Car Lift Ajman to Dubai – Female-Only Service | AED 130 | +971 54 330 8261",
     description: "Safe female-only car lift from Ajman to Dubai. AED 130 sharing. Verified drivers. Morning and evening service.",
@@ -55,6 +59,7 @@ export default function LadiesCarLiftAjmanToDubaiPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Ladies Car Lift Ajman to Dubai", url: "/ladies-car-lift-ajman-to-dubai" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/ladies-car-lift-ajman-to-dubai", caption: "Ladies car lift from Ajman to Dubai – female-only safe commuter service" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -69,10 +74,10 @@ export default function LadiesCarLiftAjmanToDubaiPage() {
               <div className="inline-flex items-center gap-2 bg-pink-500/20 border border-pink-400/30 rounded-full px-4 py-1.5 text-sm text-pink-300 font-semibold mb-5">
                 <Users className="h-4 w-4" aria-hidden="true" />Ladies Only · Ajman → Dubai
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Ladies Car Lift Ajman to Dubai – Safe Female-Only Service
               </h1>
-              <p className="text-pink-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Dedicated ladies car lift from Ajman to Dubai. Female-only shared rides with verified professional drivers. AED 130 sharing per trip. Safe, punctual, and comfortable.</p>
+              <p className="speakable-desc text-pink-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Dedicated ladies car lift from Ajman to Dubai. Female-only shared rides with verified professional drivers. AED 130 sharing per trip. Safe, punctual, and comfortable.</p>
               <p className="text-pink-200/80 text-sm leading-relaxed mb-6 max-w-xl">40–60 minutes from Ajman to Dubai via Emirates Road. Morning departures from 7:00 AM. Monthly packages available.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key service stats">
                 {[

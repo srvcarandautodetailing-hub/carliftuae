@@ -60,6 +60,33 @@ export function localBusinessSchema(overrides?: Record<string, unknown>) {
     priceRange: "AED 100 – AED 200 per trip",
     currenciesAccepted: "AED",
     paymentAccepted: "Cash, Bank Transfer, WhatsApp Pay",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: BUSINESS.rating,
+      reviewCount: BUSINESS.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"],
+        opens: "06:00",
+        closes: "22:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Friday"],
+        opens: "07:00",
+        closes: "22:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Saturday"],
+        opens: "06:00",
+        closes: "22:00",
+      },
+    ],
     areaServed: BUSINESS.serviceAreas.map((area) => ({
       "@type": "City",
       name: area,
@@ -104,7 +131,8 @@ export function serviceSchema({
           "@type": "UnitPriceSpecification",
           price,
           priceCurrency: "AED",
-          unitCode: "MON",
+          unitCode: "C62",
+          unitText: "per trip",
         },
       },
     }),

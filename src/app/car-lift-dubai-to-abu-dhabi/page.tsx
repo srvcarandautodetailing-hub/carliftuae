@@ -26,6 +26,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -39,6 +40,10 @@ export const metadata: Metadata = {
     "car lift dubai to abu dhabi, car lift from dubai to abu dhabi, carlift dubai abu dhabi, daily car lift dubai abu dhabi, monthly car lift dubai to abu dhabi, shared ride dubai to abu dhabi, pick and drop dubai abu dhabi",
   alternates: {
     canonical: "https://www.carliftuae.com/car-lift-dubai-to-abu-dhabi",
+  },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
   },
   openGraph: {
     title: "Car Lift Dubai to Abu Dhabi – AED 100 Sharing / AED 170 Private | +971 54 330 8261",
@@ -201,6 +206,7 @@ export default function CarLiftDubaiToAbuDhabiPage() {
       pageUrl: "/car-lift-dubai-to-abu-dhabi",
       caption: "Car lift on Sheikh Zayed Road E11 — daily Dubai to Abu Dhabi commute",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -238,11 +244,11 @@ export default function CarLiftDubaiToAbuDhabiPage() {
               </div>
               <h1
                 id="hero-heading"
-                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4"
+                className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4"
               >
                 Car Lift Dubai to<br className="hidden sm:block" /> Abu Dhabi – Daily
               </h1>
-              <p className="text-amber-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-amber-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Daily shared car lift from all major Dubai areas to Khalifa City, Musaffah, ADNOC,
                 Abu Dhabi Corniche, Al Reem Island, Yas Island, and more. Via E11 Sheikh Zayed Road
                 — the fastest Dubai–Abu Dhabi route.

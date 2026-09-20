@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Daily car lift from Sharjah to Ras Al Khaimah (RAK). Comfortable intercity ride-sharing via Emirates Road. Book via WhatsApp +971 54 330 8261 for price and availability.",
   keywords: "car lift sharjah to ras al khaimah, sharjah to rak car lift, car lift to rak, sharjah rak transport, ras al khaimah car lift",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-sharjah-to-ras-al-khaimah" },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
+  },
   openGraph: {
     title: "Car Lift Sharjah to Ras Al Khaimah – Daily Intercity Rides | +971 54 330 8261",
     description: "Daily car lift from Sharjah to Ras Al Khaimah via Emirates Road. Comfortable intercity service. WhatsApp for price & availability.",
@@ -46,6 +50,7 @@ export default function CarLiftSharjahToRakPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Sharjah to Ras Al Khaimah", url: "/car-lift-sharjah-to-ras-al-khaimah" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/car-lift-sharjah-to-ras-al-khaimah", caption: "Car lift from Sharjah to Ras Al Khaimah – intercity commuter route via Emirates Road E611" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -60,10 +65,10 @@ export default function CarLiftSharjahToRakPage() {
               <div className="inline-flex items-center gap-2 bg-teal-500/20 border border-teal-400/30 rounded-full px-4 py-1.5 text-sm text-teal-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />Sharjah → Ras Al Khaimah
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Sharjah to Ras Al Khaimah – Intercity Daily Rides
               </h1>
-              <p className="text-teal-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily intercity car lift from Sharjah to Ras Al Khaimah. Comfortable shared and private rides via Emirates Road (E611). Serving RAK City, Al Nakheel, Al Hamra, and industrial zones.</p>
+              <p className="speakable-desc text-teal-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily intercity car lift from Sharjah to Ras Al Khaimah. Comfortable shared and private rides via Emirates Road (E611). Serving RAK City, Al Nakheel, Al Hamra, and industrial zones.</p>
               <p className="text-teal-200/80 text-sm leading-relaxed mb-6 max-w-xl">75–100 minutes from Al Nahda, Sharjah to RAK. Morning departures from 6:30 AM. WhatsApp for pricing and seat availability.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[

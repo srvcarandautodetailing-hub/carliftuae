@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Daily car lift service from Umm Al Quwain to Dubai and Sharjah. Comfortable intercity rides. Contact for pricing and availability. WhatsApp +971 54 330 8261.",
   keywords: "car lift umm al quwain, umm al quwain car lift, car lift uaq dubai, umm al quwain to dubai, uaq to dubai car lift",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-umm-al-quwain" },
+  other: {
+    "geo.region": "AE-AJ",
+    "geo.placename": "Ajman, UAE",
+  },
   openGraph: {
     title: "Car Lift Umm Al Quwain – Daily Rides to Dubai & Sharjah | +971 54 330 8261",
     description: "Daily car lift from Umm Al Quwain to Dubai and Sharjah. Intercity commuter service. WhatsApp for pricing.",
@@ -46,6 +50,7 @@ export default function CarLiftUmmAlQuwainPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Umm Al Quwain", url: "/car-lift-umm-al-quwain" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/car-lift-umm-al-quwain", caption: "Car lift Umm Al Quwain to Dubai and Sharjah – intercity commuter service via Emirates Road" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -60,10 +65,10 @@ export default function CarLiftUmmAlQuwainPage() {
               <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full px-4 py-1.5 text-sm text-emerald-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />Umm Al Quwain → Dubai & Sharjah
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Umm Al Quwain – Daily Intercity Rides to Dubai &amp; Sharjah
               </h1>
-              <p className="text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Umm Al Quwain (UAQ) to Dubai and Sharjah. Comfortable intercity rides via Emirates Road for UAQ City, Al Salamah, and Free Trade Zone residents.</p>
+              <p className="speakable-desc text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Umm Al Quwain (UAQ) to Dubai and Sharjah. Comfortable intercity rides via Emirates Road for UAQ City, Al Salamah, and Free Trade Zone residents.</p>
               <p className="text-emerald-200/80 text-sm leading-relaxed mb-6 max-w-xl">60–90 minutes from UAQ to Dubai. Early morning departures. WhatsApp for pricing and seat availability.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[

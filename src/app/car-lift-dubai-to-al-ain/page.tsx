@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema } from "@/lib/schema";
+import { localBusinessSchema, faqSchema, breadcrumbSchema, serviceSchema, primaryImageOfPageSchema, speakableSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Long distance car lift from Dubai to Al Ain. Private and shared intercity rides via E66 Dubai-Al Ain Road. Contact for price and availability. WhatsApp +971 54 330 8261.",
   keywords: "car lift dubai to al ain, dubai to al ain car lift, car lift to al ain, dubai al ain transport, al ain car lift service",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-dubai-to-al-ain" },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
+  },
   openGraph: {
     title: "Car Lift Dubai to Al Ain – Long Distance Intercity | Contact for Price | +971 54 330 8261",
     description: "Long distance intercity car lift from Dubai to Al Ain via E66. Contact for price and availability. WhatsApp +971 54 330 8261.",
@@ -46,6 +50,7 @@ export default function CarLiftDubaiToAlAinPage() {
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Dubai to Al Ain", url: "/car-lift-dubai-to-al-ain" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/car-lift-dubai-to-al-ain", caption: "Car lift from Dubai to Al Ain – long distance intercity route via E66 Dubai-Al Ain Road" }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -60,10 +65,10 @@ export default function CarLiftDubaiToAlAinPage() {
               <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/30 rounded-full px-4 py-1.5 text-sm text-amber-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />Dubai → Al Ain
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Dubai to Al Ain – Long Distance Intercity Rides
               </h1>
-              <p className="text-amber-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Long-distance car lift from Dubai to Al Ain City, Al Jimi, Zakher, and industrial areas. Sharing and private vehicle options available via E66 Dubai-Al Ain Road.</p>
+              <p className="speakable-desc text-amber-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Long-distance car lift from Dubai to Al Ain City, Al Jimi, Zakher, and industrial areas. Sharing and private vehicle options available via E66 Dubai-Al Ain Road.</p>
               <p className="text-amber-200/80 text-sm leading-relaxed mb-6 max-w-xl">90–120 minutes from Dubai. Early morning departures. Contact for pricing and seat availability.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[

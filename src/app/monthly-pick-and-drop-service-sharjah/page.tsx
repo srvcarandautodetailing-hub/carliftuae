@@ -25,6 +25,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -38,6 +39,10 @@ export const metadata: Metadata = {
     "monthly pick and drop service sharjah, monthly pick and drop service from sharjah to dubai, monthly pick and drop service in sharjah, pick and drop sharjah dubai monthly, monthly car lift sharjah",
   alternates: {
     canonical: "https://www.carliftuae.com/monthly-pick-and-drop-service-sharjah",
+  },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
   },
   openGraph: {
     title: "Monthly Pick and Drop Service Sharjah to Dubai – AED 130 Sharing / AED 200 Private | +971 54 330 8261",
@@ -132,6 +137,7 @@ export default function MonthlyPickAndDropServiceSharjahPage() {
       pageUrl: "/monthly-pick-and-drop-service-sharjah",
       caption: "Monthly pick and drop service Sharjah to Dubai – Car Lift UAE morning pickup",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -160,10 +166,10 @@ export default function MonthlyPickAndDropServiceSharjahPage() {
                 <Calendar className="h-4 w-4" aria-hidden="true" />
                 AED 130 Sharing / AED 200 Private · 26 Days · Salik Included
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Monthly Pick &amp; Drop Service<br className="hidden sm:block" /> Sharjah to Dubai
               </h1>
-              <p className="text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Tired of paying AED 1,200+/month driving yourself to Dubai? Switch to a monthly pick and drop
                 subscription from AED 130 sharing / AED 200 private — morning pickup, evening return, Salik included, zero hassle.
               </p>

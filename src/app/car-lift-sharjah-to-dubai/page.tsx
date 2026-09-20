@@ -24,6 +24,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -37,6 +38,10 @@ export const metadata: Metadata = {
     "car lift sharjah to dubai, carlift sharjah to dubai, sharjah dubai car lift, car lift from sharjah to dubai",
   alternates: {
     canonical: "https://www.carliftuae.com/car-lift-sharjah-to-dubai",
+  },
+  other: {
+    "geo.region": "AE-SH",
+    "geo.placename": "Sharjah, UAE",
   },
   openGraph: {
     title: "Car Lift Sharjah to Dubai – AED 130 Sharing / AED 200 Private | 24/7 | +971 54 330 8261",
@@ -135,6 +140,7 @@ export default function CarLiftSharjahToDubaiPage() {
       pageUrl: "/car-lift-sharjah-to-dubai",
       caption: "Car lift from Sharjah to Dubai – morning pickup from Al Nahda and Muweilah to Business Bay and DIFC",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -163,10 +169,10 @@ export default function CarLiftSharjahToDubaiPage() {
                 <Car className="h-4 w-4" aria-hidden="true" />
                 Sharjah → Dubai
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Sharjah to Dubai – Daily Shared &amp; Private Rides
               </h1>
-              <p className="text-blue-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-blue-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Daily shared and private car lift from all major Sharjah areas to Business Bay, DIFC, JLT, and every Dubai district. Morning and evening timings.
               </p>
               <p className="text-blue-200/80 text-sm leading-relaxed mb-6 max-w-xl">

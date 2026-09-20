@@ -24,6 +24,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   primaryImageOfPageSchema,
+  speakableSchema,
 } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 
@@ -37,6 +38,10 @@ export const metadata: Metadata = {
     "car lift from international city, car lift international city, car lift service from international city, car lift from international city to business bay, car lift international city to business bay",
   alternates: {
     canonical: "https://www.carliftuae.com/car-lift-from-international-city",
+  },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai, UAE",
   },
   openGraph: {
     title: "Car Lift International City Dubai – Business Bay, DIFC, Downtown | +971 54 330 8261",
@@ -129,6 +134,7 @@ export default function CarLiftFromInternationalCityPage() {
       pageUrl: "/car-lift-from-international-city",
       caption: "Car lift from International City Dubai – daily rides from all IC phases to Business Bay and DIFC",
     }),
+    speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
   return (
@@ -149,10 +155,10 @@ export default function CarLiftFromInternationalCityPage() {
                 <Car className="h-4 w-4" aria-hidden="true" />
                 International City → Dubai
               </div>
-              <h1 id="hero-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift from International City Dubai – Daily Rides to All Areas
               </h1>
-              <p className="text-cyan-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
+              <p className="speakable-desc text-cyan-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Daily car lift from all International City phases (Dragon Mart, Al Warsan) to Business Bay, DIFC, Downtown Dubai, JLT, and more via Al Khail Road.
               </p>
               <p className="text-cyan-200/80 text-sm leading-relaxed mb-6 max-w-xl">
