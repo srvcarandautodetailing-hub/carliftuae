@@ -71,38 +71,25 @@ const nextConfig: NextConfig = {
   // SEO redirects
   async redirects() {
     return [
-      // Existing
+      // Generic legacy paths
       { source: "/home", destination: "/", permanent: true },
       { source: "/car-lift-service", destination: "/services", permanent: true },
-      { source: "/car-lift-sharjah-to-dubai", destination: "/routes", permanent: true },
-      // Old carliftuae.com → carlift.ae (301 passes link equity)
       { source: "/contact-us", destination: "/contact", permanent: true },
       { source: "/contact-us/", destination: "/contact", permanent: true },
       { source: "/privacy-policy-carl-ift-uae-from-sharjah", destination: "/privacy", permanent: true },
       { source: "/privacy-policy-carl-ift-uae-from-sharjah/", destination: "/privacy", permanent: true },
-      // Old SZR page variant → new page
+      // Old SZR variant URL → canonical page
       { source: "/car-lift-from-sharjah-to-business-bay-sheikh-zayed-road", destination: "/bus-car-lift-service-from-sharjah-sheikh-zayed", permanent: true },
       { source: "/car-lift-from-sharjah-to-business-bay-sheikh-zayed-road/", destination: "/bus-car-lift-service-from-sharjah-sheikh-zayed", permanent: true },
-      // Trailing-slash normalisation for new pages
+      // Trailing-slash normalisation
       { source: "/bus-car-lift-sharjah-to-business-bay/", destination: "/bus-car-lift-sharjah-to-business-bay", permanent: true },
       { source: "/car-lift-from-sharjah-to-business-bay/", destination: "/car-lift-from-sharjah-to-business-bay", permanent: true },
       { source: "/bus-car-lift-service-from-sharjah-sheikh-zayed/", destination: "/bus-car-lift-service-from-sharjah-sheikh-zayed", permanent: true },
       { source: "/carlift-sharjah-to-dubai-business-bay/", destination: "/carlift-sharjah-to-dubai-business-bay", permanent: true },
-      // Common misspellings / alternate forms seen in queries
+      // Common misspellings
       { source: "/carlift-uae", destination: "/", permanent: true },
       { source: "/car-lift-near-me", destination: "/routes", permanent: true },
-      // Old Sharjah-to-Business-Bay pages — redirect to routes (preserves link equity)
-      { source: "/car-lift-from-sharjah-to-business-bay", destination: "/routes", permanent: true },
-      { source: "/carlift-sharjah-to-dubai-business-bay", destination: "/routes", permanent: true },
-      { source: "/bus-car-lift-sharjah-to-business-bay", destination: "/routes", permanent: true },
-      { source: "/bus-car-lift-service-from-sharjah-sheikh-zayed", destination: "/routes", permanent: true },
-      { source: "/monthly-pick-and-drop-service-sharjah", destination: "/routes", permanent: true },
-      { source: "/carlift-sharjah-to-difc", destination: "/routes", permanent: true },
-      { source: "/ladies-car-lift-sharjah-to-dubai", destination: "/routes", permanent: true },
-      { source: "/car-lift-ajman-to-dubai", destination: "/routes", permanent: true },
-      { source: "/carlift-sharjah-to-jlt", destination: "/routes", permanent: true },
-      { source: "/car-lift-dubai-to-abu-dhabi", destination: "/routes", permanent: true },
-      // WordPress legacy URLs — redirect to canonical equivalents (passes link equity)
+      // WordPress legacy URLs
       { source: "/post-sitemap.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/page-sitemap.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
