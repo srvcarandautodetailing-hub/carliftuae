@@ -141,6 +141,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: "car-lift-abu-dhabi", priority: 0.92 },
     { slug: "car-lift-ajman", priority: 0.90 },
     // High-traffic intercity routes
+    { slug: "car-lift-dubai-to-abu-dhabi", priority: 0.92 },
+    { slug: "car-lift-abu-dhabi-to-dubai", priority: 0.90 },
     { slug: "car-lift-sharjah-to-dubai", priority: 0.90 },
     { slug: "car-lift-dubai-to-sharjah", priority: 0.88 },
     { slug: "car-lift-from-sharjah-to-abu-dhabi", priority: 0.87 },
