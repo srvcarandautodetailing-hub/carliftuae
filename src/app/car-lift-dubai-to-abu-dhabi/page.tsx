@@ -192,7 +192,7 @@ export default function CarLiftDubaiToAbuDhabiPage() {
     serviceSchema({
       name: "Car Lift Dubai to Abu Dhabi",
       description:
-        "Daily car lift from Dubai to Abu Dhabi covering Khalifa City, Musaffah, ADNOC, Corniche, and all major Abu Dhabi areas. Monthly packages from AED 100 Sharing / AED 170 Privatenth via E11. Salik included, GPS-tracked.",
+        "Daily car lift from Dubai to Abu Dhabi. AED 100 sharing / AED 170 private per trip. Khalifa City, Musaffah, ADNOC, Corniche. Via E11 Sheikh Zayed Road. Salik included, GPS-tracked.",
       url: "/car-lift-dubai-to-abu-dhabi",
       price: "650",
     }),
