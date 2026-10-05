@@ -31,9 +31,9 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift Abu Dhabi – AED 100 Sharing / AED 170 Private | All Routes | +971 54 330 8261",
+  title: "Car Lift Abu Dhabi – AED 100 Sharing / AED 180 Private | All Routes | +971 54 330 8261",
   description:
-    "Car lift service to/from Abu Dhabi. Dubai ↔ Abu Dhabi AED 100 sharing / AED 170 private. Sharjah ↔ Abu Dhabi AED 130 sharing / AED 200 private. Ajman ↔ Abu Dhabi AED 130 sharing / AED 200 private. 24/7.",
+    "Car lift service to/from Abu Dhabi. Dubai ↔ Abu Dhabi AED 100 sharing / AED 180 private. Sharjah ↔ Abu Dhabi AED 130 sharing / AED 200 private. Ajman ↔ Abu Dhabi AED 140 sharing / AED 220 private. 24/7.",
   keywords:
     "car lift abu dhabi, car lift abu dhabi monthly, car lift to abu dhabi, abu dhabi car lift, carpool abu dhabi, sharing taxi abu dhabi to dubai",
   alternates: {
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     "geo.placename": "Abu Dhabi, UAE",
   },
   openGraph: {
-    title: "Car Lift Abu Dhabi – AED 100 Sharing / AED 170 Private | All Routes | +971 54 330 8261",
+    title: "Car Lift Abu Dhabi – AED 100 Sharing / AED 180 Private | All Routes | +971 54 330 8261",
     description:
-      "Car lift to/from Abu Dhabi. Dubai route AED 100 sharing / AED 170 private. Sharjah & Ajman routes AED 130 sharing / AED 200 private. 24/7.",
+      "Car lift to/from Abu Dhabi. Dubai route AED 100 sharing / AED 180 private. Sharjah route AED 130 sharing / AED 200 private. Ajman route AED 140 sharing / AED 220 private. 24/7.",
   },
 };
 
@@ -54,7 +54,7 @@ const PAGE_FAQS = [
   {
     question: "How much is a car lift from Abu Dhabi to Dubai?",
     answer:
-      "AED 100 sharing / AED 170 private per one-way trip. This covers all pickup points in Abu Dhabi to any major Dubai destination — Business Bay, DIFC, JLT, and more.",
+      "AED 100 sharing / AED 180 private per one-way trip. This covers all pickup points in Abu Dhabi to any major Dubai destination — Business Bay, DIFC, JLT, and more.",
   },
   {
     question: "Is there a car lift from Sharjah to Abu Dhabi?",
@@ -79,7 +79,7 @@ const PAGE_FAQS = [
   {
     question: "Is there a car lift from Abu Dhabi to Ajman?",
     answer:
-      "Yes. Abu Dhabi to Ajman is AED 130 sharing / AED 200 private per trip. The route goes via Dubai and Emirates Road (E311). Contact via WhatsApp to arrange.",
+      "Yes. Abu Dhabi to Ajman is AED 140 sharing / AED 220 private per trip. The route goes via Dubai and Emirates Road (E311). Contact via WhatsApp to arrange.",
   },
 ];
 
@@ -100,9 +100,9 @@ const TIMINGS = [
 ];
 
 const ROUTES_TABLE = [
-  { route: "Dubai ↔ Abu Dhabi", sharing: "AED 100", private: "AED 170" },
+  { route: "Dubai ↔ Abu Dhabi", sharing: "AED 100", private: "AED 180" },
   { route: "Sharjah ↔ Abu Dhabi", sharing: "AED 130", private: "AED 200" },
-  { route: "Ajman ↔ Abu Dhabi", sharing: "AED 130", private: "AED 200" },
+  { route: "Ajman ↔ Abu Dhabi", sharing: "AED 140", private: "AED 220" },
 ];
 
 export default function CarLiftAbuDhabiPage() {
@@ -117,7 +117,7 @@ export default function CarLiftAbuDhabiPage() {
     serviceSchema({
       name: "Car Lift Abu Dhabi",
       description:
-        "Daily car lift to and from Abu Dhabi. Dubai to Abu Dhabi AED 100 sharing / AED 170 private. Sharjah and Ajman routes AED 130 sharing / AED 200 private. 24/7 service.",
+        "Daily car lift to and from Abu Dhabi. Dubai to Abu Dhabi AED 100 sharing / AED 180 private. Sharjah route AED 130 sharing / AED 200 private. Ajman route AED 140 sharing / AED 220 private. 24/7 service.",
       url: "/car-lift-abu-dhabi",
       price: "100",
     }),
@@ -167,12 +167,12 @@ export default function CarLiftAbuDhabiPage() {
                 Daily shared and private car lift from Abu Dhabi to Dubai, Sharjah, and Ajman. All major Abu Dhabi areas covered — Mussafah, Khalifa City, MBZ City.
               </p>
               <p className="text-emerald-200/80 text-sm leading-relaxed mb-6 max-w-xl">
-                Abu Dhabi to Dubai: AED 100 sharing / AED 170 private. Sharjah and Ajman routes: AED 130 sharing / AED 200 private per trip.
+                Abu Dhabi to Dubai: AED 100 sharing / AED 180 private. Sharjah route: AED 130 sharing / AED 200 private. Ajman route: AED 140 sharing / AED 220 private per trip.
               </p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[
                   { icon: DollarSign, label: "AED 100 Sharing", sub: "Dubai route" },
-                  { icon: DollarSign, label: "AED 170 Private", sub: "Dubai route" },
+                  { icon: DollarSign, label: "AED 180 Private", sub: "Dubai route" },
                   { icon: Car, label: "3 Routes", sub: "Dubai, Sharjah, Ajman" },
                   { icon: Clock, label: "24/7", sub: "Available" },
                 ].map(({ icon: Icon, label, sub }) => (
@@ -320,7 +320,7 @@ export default function CarLiftAbuDhabiPage() {
           <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Related Car Lift Services</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
-              { href: "/car-lift-dubai-to-abu-dhabi", label: "Car Lift Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 170 private" },
+              { href: "/car-lift-dubai-to-abu-dhabi", label: "Car Lift Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 180 private" },
               { href: "/car-lift-from-sharjah-to-abu-dhabi", label: "Car Lift Sharjah to Abu Dhabi", desc: "AED 130 sharing / AED 200 private" },
               { href: "/car-lift-abu-dhabi-monthly", label: "Monthly Car Lift Abu Dhabi", desc: "Fixed monthly rate, guaranteed seat" },
               { href: "/pricing", label: "Full Pricing Guide", desc: "All UAE routes and prices" },

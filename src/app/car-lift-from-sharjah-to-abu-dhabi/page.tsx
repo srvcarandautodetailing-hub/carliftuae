@@ -162,7 +162,7 @@ export default function CarLiftFromSharjahToAbuDhabiPage() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
               { href: "/car-lift-abu-dhabi", label: "Car Lift Abu Dhabi Hub", desc: "All Abu Dhabi routes" },
-              { href: "/car-lift-dubai-to-abu-dhabi", label: "Car Lift Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 170 private" },
+              { href: "/car-lift-dubai-to-abu-dhabi", label: "Car Lift Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 180 private" },
               { href: "/car-lift-sharjah", label: "Car Lift Sharjah Hub", desc: "All Sharjah routes" },
               { href: "/pricing", label: "Full Pricing Guide", desc: "All UAE route prices" },
             ].map(({ href, label, desc }) => (

@@ -44,24 +44,24 @@ export async function generateStaticParams() {
 type Emirate = "dubai" | "abu-dhabi" | "sharjah" | "ajman";
 
 const emirateNormalPrice: Record<Emirate, number> = {
-  dubai:       200,
+  dubai:       180,
   "abu-dhabi": 200,
-  sharjah:     280,
-  ajman:       300,
+  sharjah:     200,
+  ajman:       220,
 };
 
 const emirateAirportPrice: Record<Emirate, number> = {
-  dubai:       250,
+  dubai:       180,
   "abu-dhabi": 250,
-  sharjah:     300,
-  ajman:       320,
+  sharjah:     200,
+  ajman:       220,
 };
 
 const emirateNormalPriceDisplay: Record<Emirate, string> = {
-  dubai:       "AED 200",
+  dubai:       "AED 100 sharing / AED 180 private",
   "abu-dhabi": "From AED 100 sharing",
-  sharjah:     "AED 130 sharing",
-  ajman:       "AED 130 sharing",
+  sharjah:     "AED 130 sharing / AED 200 private",
+  ajman:       "AED 140 sharing / AED 220 private",
 };
 
 // Route label shown in hero / pills

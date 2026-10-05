@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const PAGE_FAQS = [
   { question: "What car lift services are available from Ajman?", answer: "Quick Car Lift Service UAE offers daily shared and private rides from all Ajman areas to Dubai (Business Bay, DIFC, JLT), Abu Dhabi, Sharjah, and Jebel Ali. Ladies-only car lift also available on request." },
   { question: "How much is a car lift from Ajman to Dubai?", answer: "AED 130 sharing / AED 200 private per trip from central Ajman to Dubai Business Bay, DIFC, or JLT. Ajman Corniche and farther areas may vary — WhatsApp your location for an exact price." },
-  { question: "Is there a car lift from Ajman to Abu Dhabi?", answer: "Yes. Ajman to Abu Dhabi is AED 130 sharing / AED 200 private per trip. The route travels via Sharjah and Dubai (E311 Emirates Road) to Abu Dhabi. Journey time is approximately 2–2.5 hours." },
+  { question: "Is there a car lift from Ajman to Abu Dhabi?", answer: "Yes. Ajman to Abu Dhabi is AED 140 sharing / AED 220 private per trip. The route travels via Sharjah and Dubai (E311 Emirates Road) to Abu Dhabi. Journey time is approximately 2–2.5 hours." },
   { question: "Which areas in Ajman can be picked up?", answer: "We cover Al Nuaimiya, Al Rashidiya, Al Hamidiya, Al Rawdah, Al Jurf, Emirates City, Ajman Corniche, Al Rumailah, and other Ajman areas. WhatsApp your building name and we confirm pickup." },
   { question: "How long is the journey from Ajman to Dubai?", answer: "25–40 minutes from central Ajman to Sharjah border, then 30–45 more minutes to Business Bay Dubai. Total: 55–80 minutes depending on traffic. The 6:30 AM departure is typically 55–65 minutes." },
   { question: "Is there a ladies-only car lift from Ajman?", answer: "Yes. A ladies-only car lift is available from Ajman to Dubai and within Ajman. Female driver or ladies-only vehicle available on request at the same price. WhatsApp to arrange." },
@@ -37,7 +37,7 @@ const PAGE_FAQS = [
 const PICKUP_AREAS = ["Al Nuaimiya", "Al Rashidiya", "Al Hamidiya", "Al Rawdah", "Al Jurf", "Emirates City", "Ajman Corniche", "Ajman City Centre area", "Al Rumailah"];
 const ROUTES = [
   { route: "Ajman → Dubai", sharing: "AED 130", private: "AED 200" },
-  { route: "Ajman → Abu Dhabi", sharing: "AED 130", private: "AED 200" },
+  { route: "Ajman → Abu Dhabi", sharing: "AED 140", private: "AED 220" },
   { route: "Ajman → Jebel Ali", sharing: "AED 130", private: "AED 200" },
   { route: "Ajman → Sharjah", sharing: "Contact", private: "Contact" },
 ];

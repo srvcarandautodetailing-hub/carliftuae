@@ -546,7 +546,7 @@ export default function RoutesPage() {
                 { href: "/car-lift-abu-dhabi", label: "Car Lift Abu Dhabi Hub", price: "All Abu Dhabi routes" },
                 { href: "/car-lift-ajman", label: "Car Lift Ajman Hub", price: "All Ajman routes" },
                 { href: "/carpool-dubai", label: "Carpool Dubai", price: "Shared daily commute" },
-                { href: "/private-car-lift-dubai", label: "Private Car Lift Dubai", price: "AED 170 private" },
+                { href: "/private-car-lift-dubai", label: "Private Car Lift Dubai", price: "AED 180 private" },
                 { href: "/car-lift-dubai-monthly", label: "Monthly Car Lift Dubai", price: "Monthly packages" },
                 { href: "/pick-and-drop-service", label: "Pick & Drop Service UAE", price: "All emirates" },
                 { href: "/pick-and-drop-service-dubai", label: "Pick & Drop Dubai", price: "Dubai routes" },

@@ -30,9 +30,11 @@ const cardVariants = {
 
 // Canonical display routes with sharing/private pricing
 const CANONICAL_ROUTES: RoutePrice[] = [
-  { route: "Dubai ↔ Abu Dhabi", sharing: 100, private: 170 },
+  { route: "Dubai ↔ Abu Dhabi", sharing: 100, private: 180 },
   { route: "Abu Dhabi ↔ Sharjah", sharing: 130, private: 200 },
-  { route: "Abu Dhabi ↔ Ajman", sharing: 130, private: 200 },
+  { route: "Abu Dhabi ↔ Ajman", sharing: 140, private: 220 },
+  { route: "Abu Dhabi ↔ Ras Al Khaimah", sharing: 170, private: 350 },
+  { route: "Abu Dhabi ↔ Al Ain", sharing: 120, private: 200 },
 ];
 
 function PricingCard({ route }: { route: RoutePrice }) {

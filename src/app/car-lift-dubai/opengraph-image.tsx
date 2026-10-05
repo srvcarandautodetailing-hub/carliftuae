@@ -11,7 +11,7 @@ export default function Image() {
     buildOgImageJsx({
       badge: "Dubai → UAE Routes",
       title: "Car Lift Dubai – All Routes",
-      subtitle: "AED 100 sharing / AED 170 private · Abu Dhabi, Sharjah, Ajman · 24/7",
+      subtitle: "AED 100 sharing / AED 180 private · Abu Dhabi, Sharjah, Ajman · 24/7",
       accentColor: "#1d4ed8",
       stats: [
         { label: "AED 100 Sharing (Abu Dhabi)", color: "#10b981" },
