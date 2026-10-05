@@ -106,6 +106,24 @@ export function Footer() {
               Book via WhatsApp
             </a>
 
+            {/* Trusted partner — dofollow branded backlink */}
+            <div className="mt-6 rounded-xl border border-slate-800 bg-slate-800/40 p-4 max-w-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                Trusted Partner
+              </p>
+              <a
+                href="https://www.quickcarliftservice.com/"
+                target="_blank"
+                rel="noopener"
+                className="text-sm font-semibold text-white hover:text-blue-400 transition-colors"
+              >
+                Quick Car Lift Service
+              </a>
+              <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                Reliable daily, monthly &amp; corporate car lift and transportation services based in Abu Dhabi, serving Abu Dhabi, Dubai, Ajman and Al Ain.
+              </p>
+            </div>
+
           </div>
 
           {/* Link columns */}
