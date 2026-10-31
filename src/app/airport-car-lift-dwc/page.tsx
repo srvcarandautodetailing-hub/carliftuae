@@ -34,7 +34,7 @@ export default function AirportDWCPage() {
       { name: "Airport Car Lift", url: "/airport-car-lift" },
       { name: "DWC Airport Car Lift", url: "/airport-car-lift-dwc" },
     ]),
-    primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-easy-booking-dubai.webp", pageUrl: "/airport-car-lift-dwc", caption: "DWC Airport car lift – pre-booked private pickup at Al Maktoum International Airport, Dubai South" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-lexus-es-rear-quick-car-lift-uae.webp", pageUrl: "/airport-car-lift-dwc", caption: "DWC Airport car lift – pre-booked private pickup at Al Maktoum International Airport, Dubai South" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
   return (

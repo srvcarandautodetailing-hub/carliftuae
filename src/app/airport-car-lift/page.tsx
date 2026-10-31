@@ -96,7 +96,7 @@ const AIRPORT_FLEET = FLEET_PHOTOS.filter((f) =>
     ]),
     ...imageObjectSchema(AIRPORT_FLEET),
     primaryImageOfPageSchema({
-      imageUrl: "/images/hero/carlift-uae-easy-booking-dubai.webp",
+      imageUrl: "/images/fleet/car-lift-dubai-lexus-es-front-quick-car-lift-uae.webp",
       pageUrl: "/airport-car-lift",
       caption: "Airport car lift UAE – pre-booked private pickup and drop-off at DXB, DWC, AUH and Sharjah Airport",
     }),

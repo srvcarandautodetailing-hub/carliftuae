@@ -34,7 +34,7 @@ export default function AirportDXBPage() {
       { name: "Airport Car Lift", url: "/airport-car-lift" },
       { name: "DXB Airport Car Lift", url: "/airport-car-lift-dubai-dxb" },
     ]),
-    primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/airport-car-lift-dubai-dxb", caption: "DXB Airport car lift – pre-booked private pickup at Dubai International Airport Terminals 1, 2 and 3" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-lexus-es-front-quick-car-lift-uae.webp", pageUrl: "/airport-car-lift-dubai-dxb", caption: "DXB Airport car lift – pre-booked private pickup at Dubai International Airport Terminals 1, 2 and 3" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
   return (

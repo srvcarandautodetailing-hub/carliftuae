@@ -49,7 +49,7 @@ export default function CarLiftDubaiToAjmanPage() {
     serviceSchema({ name: "Car Lift Dubai to Ajman", description: "Daily car lift from Dubai to Ajman. Evening return service from Deira, Bur Dubai, Al Qusais. AED 130 sharing / AED 200 private per trip.", url: "/car-lift-dubai-to-ajman", price: "130" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Dubai to Ajman", url: "/car-lift-dubai-to-ajman" }]),
-    primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/car-lift-dubai-to-ajman", caption: "Car lift from Dubai to Ajman – evening return service via Emirates Road" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-honda-civic-white-rear-quick-car-lift-uae.webp", pageUrl: "/car-lift-dubai-to-ajman", caption: "Car lift from Dubai to Ajman – evening return service via Emirates Road" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 

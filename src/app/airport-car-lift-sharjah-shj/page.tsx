@@ -34,7 +34,7 @@ export default function AirportSHJPage() {
       { name: "Airport Car Lift", url: "/airport-car-lift" },
       { name: "Sharjah Airport Car Lift", url: "/airport-car-lift-sharjah-shj" },
     ]),
-    primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-daily-commuters-interior.webp", pageUrl: "/airport-car-lift-sharjah-shj", caption: "Sharjah Airport car lift – pickup and drop-off at Sharjah International Airport (SHJ) only" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-lexus-es-side-quick-car-lift-uae.webp", pageUrl: "/airport-car-lift-sharjah-shj", caption: "Sharjah Airport car lift – pickup and drop-off at Sharjah International Airport (SHJ) only" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
   return (

@@ -131,7 +131,7 @@ export default function CarpoolDubaiPage() {
       { name: "Carpool Dubai", url: "/carpool-dubai" },
     ]),
     primaryImageOfPageSchema({
-      imageUrl: "/images/hero/carlift-uae-daily-commuters-interior.webp",
+      imageUrl: "/images/fleet/car-lift-dubai-honda-civic-white-rear-quick-car-lift-uae.webp",
       pageUrl: "/carpool-dubai",
       caption: "Carpool Dubai – shared rides for daily commuters across UAE inter-emirate routes",
     }),

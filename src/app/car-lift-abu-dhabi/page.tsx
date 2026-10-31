@@ -125,7 +125,7 @@ const ABUDHABI_FLEET = FLEET_PHOTOS.filter((f) =>
     ]),
     ...imageObjectSchema(ABUDHABI_FLEET),
     primaryImageOfPageSchema({
-      imageUrl: "/images/hero/carlift-uae-daily-commuters-interior.webp",
+      imageUrl: "/images/fleet/car-lift-abu-dhabi-kia-k5-quick-car-lift-uae.webp",
       pageUrl: "/car-lift-abu-dhabi",
       caption: "Car lift Abu Dhabi – daily commuter rides from Abu Dhabi to Dubai and Ajman",
     }),

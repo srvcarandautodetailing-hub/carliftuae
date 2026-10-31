@@ -49,7 +49,7 @@ export default function CarLiftAjmanPage() {
     serviceSchema({ name: "Car Lift Ajman", description: "Daily car lift from Ajman to Dubai and Abu Dhabi. AED 130 sharing / AED 200 private. All Ajman areas covered.", url: "/car-lift-ajman", price: "130" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Ajman", url: "/car-lift-ajman" }]),
-    primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-boarding-sunset-dubai.webp", pageUrl: "/car-lift-ajman", caption: "Car lift Ajman – daily rides to Dubai and Abu Dhabi from all Ajman areas" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-honda-civic-silver-quick-car-lift-uae.webp", pageUrl: "/car-lift-ajman", caption: "Car lift Ajman – daily rides to Dubai and Abu Dhabi from all Ajman areas" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 

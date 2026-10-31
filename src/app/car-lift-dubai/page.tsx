@@ -146,7 +146,7 @@ const DUBAI_FLEET = FLEET_PHOTOS.filter((f) =>
     ]),
     ...imageObjectSchema(DUBAI_FLEET),
     primaryImageOfPageSchema({
-      imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp",
+      imageUrl: "/images/fleet/car-lift-dubai-lexus-es-front-quick-car-lift-uae.webp",
       pageUrl: "/car-lift-dubai",
       caption: "Car lift service Dubai – daily shared rides from Abu Dhabi and Ajman to all Dubai areas",
     }),

@@ -42,7 +42,7 @@ export default function HomePage() {
           breadcrumbSchema([{ name: "Home", url: "/" }]),
           ...imageObjectSchema(FLEET_PHOTOS),
           primaryImageOfPageSchema({
-            imageUrl: "/images/hero/carlift-uae-daily-commuters-interior.webp",
+            imageUrl: "/images/fleet/car-lift-dubai-lexus-es-front-quick-car-lift-uae.webp",
             pageUrl: "/",
             caption: "Quick Car Lift Service UAE – comfortable inter-emirate car lift rides across Dubai, Abu Dhabi and Ajman",
             width: 1920,

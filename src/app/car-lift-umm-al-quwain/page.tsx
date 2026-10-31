@@ -48,7 +48,7 @@ export default function CarLiftUmmAlQuwainPage() {
     serviceSchema({ name: "Car Lift Umm Al Quwain", description: "Daily intercity car lift from Umm Al Quwain to Dubai. Contact for pricing and availability.", url: "/car-lift-umm-al-quwain", price: "130" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Umm Al Quwain", url: "/car-lift-umm-al-quwain" }]),
-    primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/car-lift-umm-al-quwain", caption: "Car lift Umm Al Quwain to Dubai – intercity commuter service via Emirates Road" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-honda-civic-silver-quick-car-lift-uae.webp", pageUrl: "/car-lift-umm-al-quwain", caption: "Car lift Umm Al Quwain to Dubai – intercity commuter service via Emirates Road" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 

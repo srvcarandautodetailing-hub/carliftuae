@@ -49,7 +49,7 @@ export default function CarLiftDubaiToAlAinPage() {
     serviceSchema({ name: "Car Lift Dubai to Al Ain", description: "Long-distance intercity car lift from Dubai to Al Ain via E66. Sharing and private options available. Contact for pricing.", url: "/car-lift-dubai-to-al-ain", price: "200" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Dubai to Al Ain", url: "/car-lift-dubai-to-al-ain" }]),
-    primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/car-lift-dubai-to-al-ain", caption: "Car lift from Dubai to Al Ain – long distance intercity route via E66 Dubai-Al Ain Road" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-white-suv-quick-car-lift-uae.webp", pageUrl: "/car-lift-dubai-to-al-ain", caption: "Car lift from Dubai to Al Ain – long distance intercity route via E66 Dubai-Al Ain Road" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 

@@ -58,7 +58,7 @@ export default function LadiesCarLiftAjmanToDubaiPage() {
     serviceSchema({ name: "Ladies Car Lift Ajman to Dubai", description: "Female-only car lift from Ajman to Dubai. Safe, comfortable shared rides with verified drivers. AED 130 sharing per trip.", url: "/ladies-car-lift-ajman-to-dubai", price: "130" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Ladies Car Lift Ajman to Dubai", url: "/ladies-car-lift-ajman-to-dubai" }]),
-    primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp", pageUrl: "/ladies-car-lift-ajman-to-dubai", caption: "Ladies car lift from Ajman to Dubai – female-only safe commuter service" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-honda-civic-silver-quick-car-lift-uae.webp", pageUrl: "/ladies-car-lift-ajman-to-dubai", caption: "Ladies car lift from Ajman to Dubai – female-only safe commuter service" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 

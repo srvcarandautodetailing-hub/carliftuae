@@ -50,7 +50,7 @@ export default function PrivateCarLiftDubaiPage() {
     serviceSchema({ name: "Private Car Lift Dubai", description: "Exclusive private car lift in Dubai. Entire vehicle for your group only. AED 180 from Abu Dhabi, AED 200 from Ajman. 24/7 availability.", url: "/private-car-lift-dubai", price: "180" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Private Car Lift Dubai", url: "/private-car-lift-dubai" }]),
-    primaryImageOfPageSchema({ imageUrl: "/images/services/carlift-uae-professionals-interior.webp", pageUrl: "/private-car-lift-dubai", caption: "Private car lift Dubai – exclusive vehicle for professionals, no sharing, direct door-to-door routes" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-lexus-es-front-quick-car-lift-uae.webp", pageUrl: "/private-car-lift-dubai", caption: "Private car lift Dubai – exclusive vehicle for professionals, no sharing, direct door-to-door routes" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 

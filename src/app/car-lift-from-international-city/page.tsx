@@ -130,7 +130,7 @@ export default function CarLiftFromInternationalCityPage() {
       { name: "Car Lift from International City", url: "/car-lift-from-international-city" },
     ]),
     primaryImageOfPageSchema({
-      imageUrl: "/images/hero/carlift-uae-daily-commuters-interior.webp",
+      imageUrl: "/images/fleet/car-lift-dubai-toyota-camry-quick-car-lift-uae.webp",
       pageUrl: "/car-lift-from-international-city",
       caption: "Car lift from International City Dubai – daily rides from all IC phases to Business Bay and DIFC",
     }),

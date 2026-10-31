@@ -127,7 +127,7 @@ export default function CarLiftAjmanToDubaiPage() {
       { name: "Car Lift Ajman to Dubai", url: "/car-lift-ajman-to-dubai" },
     ]),
     primaryImageOfPageSchema({
-      imageUrl: "/images/hero/carlift-uae-route-dubai-skyline.webp",
+      imageUrl: "/images/fleet/car-lift-dubai-toyota-camry-quick-car-lift-uae.webp",
       pageUrl: "/car-lift-ajman-to-dubai",
       caption: "Car lift pickup from Ajman – daily morning departure to Dubai Business Bay",
     }),

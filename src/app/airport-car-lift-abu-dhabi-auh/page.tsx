@@ -34,7 +34,7 @@ export default function AirportAUHPage() {
       { name: "Airport Car Lift", url: "/airport-car-lift" },
       { name: "AUH Airport Car Lift", url: "/airport-car-lift-abu-dhabi-auh" },
     ]),
-    primaryImageOfPageSchema({ imageUrl: "/images/hero/carlift-uae-boarding-sunset-dubai.webp", pageUrl: "/airport-car-lift-abu-dhabi-auh", caption: "AUH Airport car lift – pre-booked private pickup at Zayed International Airport Terminal A" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-abu-dhabi-kia-k5-quick-car-lift-uae.webp", pageUrl: "/airport-car-lift-abu-dhabi-auh", caption: "AUH Airport car lift – pre-booked private pickup at Zayed International Airport Terminal A" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
   return (

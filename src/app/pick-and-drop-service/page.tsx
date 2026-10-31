@@ -118,7 +118,7 @@ export default function PickAndDropServicePage() {
       { name: "Pick and Drop Service", url: "/pick-and-drop-service" },
     ]),
     primaryImageOfPageSchema({
-      imageUrl: "/images/hero/carlift-uae-boarding-sunset-dubai.webp",
+      imageUrl: "/images/fleet/car-lift-dubai-toyota-camry-quick-car-lift-uae.webp",
       pageUrl: "/pick-and-drop-service",
       caption: "Pick and drop service UAE – door-to-door commuter transport across Dubai, Abu Dhabi and Ajman",
     }),

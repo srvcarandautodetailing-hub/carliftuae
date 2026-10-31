@@ -43,7 +43,7 @@ export default function PickAndDropServiceDubaiPage() {
     serviceSchema({ name: "Pick and Drop Service Dubai", description: "Daily door-to-door pick and drop service in Dubai from AED 100 per trip. From Ajman and Abu Dhabi to any Dubai area.", url: "/pick-and-drop-service-dubai", price: "100" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Pick and Drop Service Dubai", url: "/pick-and-drop-service-dubai" }]),
-    primaryImageOfPageSchema({ imageUrl: "/images/locations/business-bay/business-bay-car-lift-professionals.webp", pageUrl: "/pick-and-drop-service-dubai", caption: "Pick and drop service Dubai – daily door-to-door transport to Business Bay and all Dubai areas" }),
+    primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-white-suv-quick-car-lift-uae.webp", pageUrl: "/pick-and-drop-service-dubai", caption: "Pick and drop service Dubai – daily door-to-door transport to Business Bay and all Dubai areas" }),
     speakableSchema([".speakable-heading", ".speakable-desc"]),
   ];
 
