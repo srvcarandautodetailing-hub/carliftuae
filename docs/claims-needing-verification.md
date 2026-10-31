@@ -5,12 +5,9 @@ Owner: confirm / correct / remove each one. Last review: 2026-10-31.
 
 ## 🔴 HIGH PRIORITY
 
-### 1. Named testimonials (src/data/testimonials.ts) — 8 reviews
-People named with detailed personal stories, e.g.:
-- "Ahmed Al Mansouri, Financial Analyst, Al Majaz Sharjah" — "using for 14 months… saved over AED 8,000 in fuel and parking"
-- "Priya Nair, Marketing Manager, Al Nahda" — ladies car lift story
-- "Mohammed Rashid, IT Engineer, Muweilah" — "Best decision…"
-- 5 more (Sarah Thompson, etc.), all dated July 2025, all marked "verified: true"
+### 1. Named testimonials (src/data/testimonials.ts) — 2 reviews remain
+~~8 reviews~~ → **6 REMOVED 2026-10-31** per owner directive (full Sharjah scrub): Ahmed Al Mansouri (Al Majaz Sharjah), Priya Nair (Al Nahda Sharjah), Mohammed Rashid (Muweilah Sharjah), Fatima Al Zaabi (Al Khan Sharjah), Ravi Kumar (Al Taawun Sharjah), Hana Al Qasimi ("I live in Sharjah…"). Remaining 2 (Sarah Thompson — Silicon Oasis Dubai; Omar Siddiqui — Ajman):
+- Detailed personal stories, dated June 2025, marked "verified: true"
 
 **Are these real customers?** If not, they must be removed — fabricated reviews are an honesty/policy violation. Alternatives: remove the section, or replace with a "Review us on Google" link.
 
