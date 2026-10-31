@@ -38,7 +38,7 @@ export const AIRPORTS: AirportInfo[] = [
       {
         question: "How much is a car lift from DXB to Abu Dhabi?",
         answer:
-          "A private car lift from DXB to Abu Dhabi is AED 180 per trip. For exact pricing to other destinations, WhatsApp us your drop-off location.",
+          "A private car lift from DXB to Abu Dhabi is AED 230 per trip. For exact pricing to other destinations, WhatsApp us your drop-off location.",
       },
       {
         question: "How do I find my driver at DXB?",
@@ -116,7 +116,7 @@ export const AIRPORTS: AirportInfo[] = [
       {
         question: "How much is a car lift from AUH to Dubai?",
         answer:
-          "A private car lift from AUH to Dubai is AED 180 per trip. WhatsApp us your exact Dubai drop-off for confirmation.",
+          "A private car lift from AUH to Dubai is AED 230 per trip. WhatsApp us your exact Dubai drop-off for confirmation.",
       },
       {
         question: "Can I get a shared ride from AUH airport?",

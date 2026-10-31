@@ -11,8 +11,8 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Private Car Lift Dubai – AED 180",
-  description: "Private car lift Dubai – entire vehicle, no sharing. AED 180 Dubai–Abu Dhabi, AED 200 Ajman–Dubai. WhatsApp +971 54 330 8261.",
+  title: "Private Car Lift Dubai – AED 200",
+  description: "Private car lift Dubai – entire vehicle, no sharing. AED 200 Dubai–Abu Dhabi, AED 250 Ajman–Dubai. WhatsApp +971 54 330 8261.",
   keywords: "private car lift dubai, private carlift, private car lift uae, private car lift ajman dubai",
   alternates: { canonical: "https://www.carliftuae.com/private-car-lift-dubai" },
   other: {
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     "geo.placename": "Dubai, UAE",
   },
   openGraph: {
-    title: "Private Car Lift Dubai – AED 180 | +971 54 330 8261",
-    description: "Exclusive private car lift in Dubai. Entire vehicle for you and your group. AED 180 from Abu Dhabi, AED 200 from Ajman. 24/7.",
+    title: "Private Car Lift Dubai – AED 200 | +971 54 330 8261",
+    description: "Exclusive private car lift in Dubai. Entire vehicle for you and your group. AED 200 from Abu Dhabi, AED 250 from Ajman. 24/7.",
   },
 };
 
@@ -47,7 +47,7 @@ export default function PrivateCarLiftDubaiPage() {
   const phoneHref = formatPhoneHref(BUSINESS.phone);
   const schemas = [
     localBusinessSchema(),
-    serviceSchema({ name: "Private Car Lift Dubai", description: "Exclusive private car lift in Dubai. Entire vehicle for your group only. AED 180 from Abu Dhabi, AED 200 from Ajman. 24/7 availability.", url: "/private-car-lift-dubai", price: "180" }),
+    serviceSchema({ name: "Private Car Lift Dubai", description: "Exclusive private car lift in Dubai. Entire vehicle for your group only. AED 200 from Abu Dhabi, AED 250 from Ajman. 24/7 availability.", url: "/private-car-lift-dubai", price: "200" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Private Car Lift Dubai", url: "/private-car-lift-dubai" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-lexus-es-front-quick-car-lift-uae.webp", pageUrl: "/private-car-lift-dubai", caption: "Private car lift Dubai – exclusive vehicle for professionals, no sharing, direct door-to-door routes" }),
@@ -76,7 +76,7 @@ export default function PrivateCarLiftDubaiPage() {
               <p className="text-slate-300/80 text-sm leading-relaxed mb-6 max-w-xl">AED 200 private from Abu Dhabi to Dubai. AED 200 private from Ajman to Dubai. 24/7 including overnight.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Private car lift stats">
                 {[
-                  { icon: DollarSign, label: "AED 180+", sub: "Private rate" },
+                  { icon: DollarSign, label: "AED 200+", sub: "Private rate" },
                   { icon: Shield, label: "Exclusive", sub: "Vehicle" },
                   { icon: Users, label: "No Strangers", sub: "Your group only" },
                   { icon: Clock, label: "24/7", sub: "Available" },

@@ -96,7 +96,7 @@ const PAGE_FAQS = [
   {
     question: "Sharing or private — which Dubai to Abu Dhabi car lift is better value?",
     answer:
-      "Sharing at AED 100 per trip is the best value for solo commuters — you share with fellow professionals on the same corridor. Private at AED 180 per trip gives you the whole car for your group or family, with flexible pickup timing. Both include all E11 Salik tolls.",
+      "Sharing at AED 100 per trip is the best value for solo commuters — you share with fellow professionals on the same corridor. Private at AED 200 per trip gives you the whole car for your group or family, with flexible pickup timing. Both include all E11 Salik tolls.",
   },
   {
     question: "Do you pick up from Dubai airports for the Abu Dhabi car lift?",
@@ -250,7 +250,7 @@ export default function CarLiftDubaiToAbuDhabiPage() {
             <div className="flex-1">
               <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/30 rounded-full px-4 py-1.5 text-sm text-amber-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />
-                AED 100 Sharing / AED 180 Private per Trip · E11 Route · Salik Included
+                AED 100 Sharing / AED 200 Private per Trip · E11 Route · Salik Included
               </div>
               <h1
                 id="hero-heading"
@@ -366,7 +366,7 @@ export default function CarLiftDubaiToAbuDhabiPage() {
             </div>
             <div className="bg-white border-2 border-slate-200 rounded-2xl p-5">
               <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Private</p>
-              <p className="text-3xl font-extrabold text-slate-800">AED 180</p>
+              <p className="text-3xl font-extrabold text-slate-800">AED 200</p>
               <p className="text-xs text-slate-500 mt-1">per trip, whole car</p>
             </div>
           </div>

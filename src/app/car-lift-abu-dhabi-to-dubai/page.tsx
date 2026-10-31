@@ -237,7 +237,7 @@ export default function CarLiftAbuDhabiToDubaiPage() {
             <div className="flex-1">
               <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full px-4 py-1.5 text-sm text-emerald-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />
-                AED 100 Sharing / AED 180 Private per Trip · E11 Route · Salik Included
+                AED 100 Sharing / AED 200 Private per Trip · E11 Route · Salik Included
               </div>
               <h1
                 id="hero-heading"

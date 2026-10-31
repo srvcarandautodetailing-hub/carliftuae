@@ -28,7 +28,7 @@ const trustBadges = [
 
 const stats = [
   { icon: Car, value: "AED 100", label: "Dubai ↔ Abu Dhabi Sharing" },
-  { icon: Route, value: "AED 180", label: "Dubai ↔ Abu Dhabi Private" },
+  { icon: Route, value: "AED 200", label: "Dubai ↔ Abu Dhabi Private" },
   { icon: TrendingUp, value: "AED 140", label: "Abu Dhabi ↔ Ajman Sharing" },
   { icon: Users, value: "AED 250", label: "Abu Dhabi ↔ Ajman Private" },
 ];

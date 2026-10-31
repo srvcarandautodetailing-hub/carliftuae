@@ -40,7 +40,7 @@ const POPULAR_ROUTES: { from: string; to: string; href: string; price: number; t
   { from: "Dubai",    to: "Abu Dhabi", href: "/locations/dubai",     price: 100, time: "1.5–2 hrs" },
   { from: "Abu Dhabi", to: "Dubai",    href: "/locations/abu-dhabi", price: 100, time: "1.5–2 hrs" },
   { from: "Ajman",    to: "Dubai",     href: "/locations/ajman",     price: 130, time: "1–1.5 hrs" },
-  { from: "Airport",  to: "All UAE",   href: "/airport-car-lift",    price: 180, time: "Varies" },
+  { from: "Airport",  to: "All UAE",   href: "/airport-car-lift",    price: 230, time: "Varies" },
 ];
 
 const emirateBadgeStyle: Record<Location["emirate"], string> = {

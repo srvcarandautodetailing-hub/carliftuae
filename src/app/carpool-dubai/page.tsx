@@ -89,7 +89,7 @@ const PAGE_FAQS = [
   {
     question: "Carpool or private car lift — which should I choose?",
     answer:
-      "Carpool (AED 100 sharing Dubai–Abu Dhabi) is the most economical for solo daily commuters — you share with fellow professionals. A private car lift (AED 180) gives you the whole vehicle with flexible timing, ideal for groups, families or airport trips.",
+      "Carpool (AED 100 sharing Dubai–Abu Dhabi) is the most economical for solo daily commuters — you share with fellow professionals. A private car lift (AED 200) gives you the whole vehicle with flexible timing, ideal for groups, families or airport trips.",
   },
 ];
 

@@ -191,7 +191,7 @@ const DUBAI_FLEET = FLEET_PHOTOS.filter((f) =>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[
                   { icon: DollarSign, label: "AED 100 Sharing", sub: "Abu Dhabi route" },
-                  { icon: DollarSign, label: "AED 180 Private", sub: "Abu Dhabi route" },
+                  { icon: DollarSign, label: "AED 200 Private", sub: "Abu Dhabi route" },
                   { icon: Clock, label: "24/7 Service", sub: "All days" },
                   { icon: Star, label: "4.9★ Rated", sub: "150+ riders" },
                 ].map(({ icon: Icon, label, sub }) => (

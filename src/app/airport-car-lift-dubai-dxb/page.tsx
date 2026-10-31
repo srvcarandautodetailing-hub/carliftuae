@@ -27,7 +27,7 @@ export default function AirportDXBPage() {
   const PAGE_FAQS = airport.faqs;
   const schemas = [
     localBusinessSchema(),
-    serviceSchema({ name: "DXB Airport Car Lift", description: "Pre-booked private car lift at Dubai International Airport (DXB) – Terminals 1, 2 & 3 pickup and drop-off.", url: "/airport-car-lift-dubai-dxb", price: "180" }),
+    serviceSchema({ name: "DXB Airport Car Lift", description: "Pre-booked private car lift at Dubai International Airport (DXB) – Terminals 1, 2 & 3 pickup and drop-off.", url: "/airport-car-lift-dubai-dxb", price: "230" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([
       { name: "Home", url: "/" },

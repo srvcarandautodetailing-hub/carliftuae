@@ -27,7 +27,7 @@ export default function AirportAUHPage() {
   const PAGE_FAQS = airport.faqs;
   const schemas = [
     localBusinessSchema(),
-    serviceSchema({ name: "AUH Airport Car Lift", description: "Pre-booked private car lift at Zayed International Airport (AUH), Abu Dhabi – Terminal A pickup and drop-off.", url: "/airport-car-lift-abu-dhabi-auh", price: "180" }),
+    serviceSchema({ name: "AUH Airport Car Lift", description: "Pre-booked private car lift at Zayed International Airport (AUH), Abu Dhabi – Terminal A pickup and drop-off.", url: "/airport-car-lift-abu-dhabi-auh", price: "230" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([
       { name: "Home", url: "/" },
