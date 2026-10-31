@@ -66,7 +66,7 @@ const PAGE_FAQS = [
   {
     question: "What are the airport car lift fares?",
     answer:
-      "Fares are fixed per trip with no surge pricing — for example, DXB to Abu Dhabi is AED 200 private. WhatsApp us your exact pickup and drop-off for a fixed quote.",
+      "Fares are fixed per trip with no surge pricing — for example, DXB to Abu Dhabi is AED 230 private. WhatsApp us your exact pickup and drop-off for a fixed quote.",
   },
 ];
 

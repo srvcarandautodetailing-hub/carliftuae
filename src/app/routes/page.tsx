@@ -528,7 +528,7 @@ export default function RoutesPage() {
                 { href: "/airport-car-lift-dwc", label: "DWC – Al Maktoum International", price: "Pickup & drop-off" },
                 { href: "/airport-car-lift-abu-dhabi-auh", label: "AUH – Abu Dhabi International", price: "Pickup & drop-off" },
                 { href: "/airport-car-lift-sharjah-shj", label: "SHJ – Sharjah Airport", price: "Pickup & drop-off" },
-                { href: "/services/airport-transfer", label: "Airport Transfer Service", price: "From AED 180" },
+                { href: "/services/airport-transfer", label: "Airport Transfer Service", price: "From AED 230" },
               ].map(({ href, label, price }) => (
                 <li key={href}>
                   <Link

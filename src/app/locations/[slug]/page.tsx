@@ -44,15 +44,15 @@ export async function generateStaticParams() {
 type Emirate = "dubai" | "abu-dhabi" | "ajman";
 
 const emirateNormalPrice: Record<Emirate, number> = {
-  dubai:       180,
+  dubai:       230,
   "abu-dhabi": 200,
-  ajman:       220,
+  ajman:       280,
 };
 
 const emirateAirportPrice: Record<Emirate, number> = {
-  dubai:       180,
-  "abu-dhabi": 250,
-  ajman:       220,
+  dubai:       230,
+  "abu-dhabi": 230,
+  ajman:       280,
 };
 
 const emirateNormalPriceDisplay: Record<Emirate, string> = {
