@@ -67,24 +67,21 @@ export function localBusinessSchema(overrides?: Record<string, unknown>) {
       bestRating: 5,
       worstRating: 1,
     },
+    // 24-hour service — owner-confirmed 2026-10-31.
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"],
-        opens: "06:00",
-        closes: "22:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Friday"],
-        opens: "07:00",
-        closes: "22:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Saturday"],
-        opens: "06:00",
-        closes: "22:00",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "00:00",
+        closes: "23:59",
       },
     ],
     areaServed: BUSINESS.serviceAreas.map((area) => ({

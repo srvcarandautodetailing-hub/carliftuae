@@ -65,20 +65,20 @@ export default function ServicesSection() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
           {[
             {
-              src: "/images/services/carlift-uae-professionals-interior.webp",
-              alt: "Professionals working on laptops inside a Car Lift UAE vehicle during daily commute",
+              src: "/images/fleet/car-lift-dubai-toyota-camry-quick-car-lift-uae.webp",
+              alt: "Toyota Camry from our car lift fleet in Dubai – daily car lift UAE",
             },
             {
-              src: "/images/services/ladies-car-lift-interior-uae.webp",
-              alt: "Ladies-only car lift interior – safe and comfortable rides for women in UAE",
+              src: "/images/fleet/car-lift-dubai-honda-civic-silver-quick-car-lift-uae.webp",
+              alt: "Honda Civic from our car lift fleet – comfortable daily rides UAE",
             },
             {
-              src: "/images/services/carlift-uae-airport-transfer-dubai.webp",
-              alt: "Car Lift UAE airport transfer service at Dubai International Airport",
+              src: "/images/fleet/car-lift-dubai-lexus-es-front-quick-car-lift-uae.webp",
+              alt: "Lexus ES from our fleet – airport transfer car lift Dubai",
             },
             {
-              src: "/images/services/carlift-uae-corporate-shuttle-service.webp",
-              alt: "Corporate car lift shuttle service – executive transport UAE",
+              src: "/images/fleet/car-lift-dubai-lexus-es-side-quick-car-lift-uae.webp",
+              alt: "Lexus ES executive car lift – premium daily transport UAE",
             },
           ].map(({ src, alt }) => (
             <div
