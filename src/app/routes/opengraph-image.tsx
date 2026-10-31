@@ -1,8 +1,8 @@
-﻿import { ImageResponse } from "next/og";
+import { ImageResponse } from "next/og";
 import { buildOgImageJsx } from "@/lib/og-image";
 
 export const runtime = "nodejs";
-export const alt = "Car Lift UAE Routes – Sharjah to Business Bay, Dubai, Ajman & More";
+export const alt = "Car Lift UAE Routes – Dubai, Abu Dhabi, Ajman & Airports";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -10,7 +10,7 @@ export default function Image() {
   return new ImageResponse(
     buildOgImageJsx({
       badge: "Routes & Pricing",
-      title: "Sharjah → Business Bay from AED 130 sharing",
+      title: "Dubai ↔ Abu Dhabi from AED 100 sharing",
       subtitle: "Fixed pricing on 50+ routes. Salik included. No surge fees. Morning pickup + evening drop.",
       accentColor: "#059669",
       stats: [

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -18,13 +18,13 @@ const BASE_URL = "https://www.carliftuae.com";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Quick Car Lift Service UAE",
-    default: "Quick Car Lift Service UAE – Dubai, Abu Dhabi, Sharjah & Ajman",
+    template: "%s | Quick Car Lift UAE",
+    default: "Quick Car Lift Service UAE – Dubai, Abu Dhabi & Ajman",
   },
   description:
-    "Quick Car Lift Service UAE – luxury car lift available 24/7. Dubai ↔ Abu Dhabi AED 100 sharing / AED 180 private. Abu Dhabi ↔ Sharjah AED 130 sharing / AED 200 private. Abu Dhabi ↔ Ajman AED 140 sharing / AED 220 private. Book by phone or WhatsApp.",
+    "Daily car lift UAE: Dubai ↔ Abu Dhabi AED 100 sharing / AED 180 private. Abu Dhabi ↔ Ajman AED 140 / AED 220. 24/7. WhatsApp +971 54 330 8261.",
   keywords:
-    "car lift uae, carpool uae, car lift dubai abu dhabi, car lift abu dhabi sharjah, car lift abu dhabi ajman, Quick Car Lift Service UAE, airport transfer uae",
+    "car lift uae, carpool uae, car lift dubai abu dhabi, car lift abu dhabi ajman, Quick Car Lift Service UAE, airport transfer uae, airport car lift dubai",
   metadataBase: new URL(BASE_URL),
   alternates: { canonical: `${BASE_URL}/` },
   manifest: "/site.webmanifest?v=2",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     locale: "en_AE",
     url: BASE_URL,
     siteName: "Quick Car Lift Service UAE",
-    title: "Quick Car Lift Service UAE – Dubai, Abu Dhabi, Sharjah & Ajman",
+    title: "Quick Car Lift Service UAE – Dubai, Abu Dhabi & Ajman",
     description:
       "Car lift and carpool service on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi from AED 100 sharing. Airport transfers available. Book by phone or WhatsApp.",
     // OG images are generated per-page via opengraph-image.tsx in each route folder

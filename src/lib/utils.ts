@@ -1,4 +1,4 @@
-﻿import { type ClassValue, clsx } from "clsx";
+import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -29,7 +29,7 @@ export function formatWhatsAppHref(phone: string, message?: string): string {
 
 export const BUSINESS = {
   name: "Quick Car Lift Service UAE",
-  tagline: "Quick Car Lift Service UAE – Dubai, Abu Dhabi, Sharjah & Ajman",
+  tagline: "Quick Car Lift Service UAE – Dubai, Abu Dhabi & Ajman",
   phone: "+971 54 330 8261",
   whatsapp: "+971543308261",
   email: "info@carlift.ae",
@@ -52,5 +52,5 @@ export const BUSINESS = {
   rating: 4.9,
   reviewCount: 150,
   foundedYear: 2019,
-  serviceAreas: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
+  serviceAreas: ["Dubai", "Abu Dhabi", "Ajman"],
 } as const;

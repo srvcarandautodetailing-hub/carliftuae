@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -98,8 +98,8 @@ function PillarArticleContent() {
         </p>
         <p className="text-blue-900 leading-relaxed">
           A car lift in UAE is a private, pre-arranged shared ride service where a vehicle
-          owner drives paying passengers along a fixed daily route — typically from Sharjah
-          or Ajman to Dubai business districts. It costs AED 200–500/month, far cheaper
+          owner drives paying passengers along a fixed daily route — typically from Ajman
+          to Dubai business districts, or between Dubai and Abu Dhabi. It costs AED 200–500/month, far cheaper
           than Uber, and is the preferred commute option for 500,000+ UAE residents.
         </p>
       </aside>
@@ -126,7 +126,7 @@ function PillarArticleContent() {
       </p>
       <ol>
         <li>
-          <strong>Find a car lift:</strong> Search Facebook groups (Sharjah to Dubai Car
+          <strong>Find a car lift:</strong> Search Facebook groups (Ajman to Dubai Car
           Lift, UAE Car Lift Network), WhatsApp communities, or use dedicated platforms
           like our <Link href="/">Car Lift UAE service</Link>.
         </li>
@@ -136,12 +136,12 @@ function PillarArticleContent() {
           your home, a mosque, or a landmark.
         </li>
         <li>
-          <strong>Negotiate timing:</strong> Typical departure from Sharjah is 6:30–8:00 AM.
+          <strong>Negotiate timing:</strong> Typical departure is 6:30–8:00 AM.
           Return from Dubai is usually 5:00–7:00 PM, sometimes with multiple slots.
         </li>
         <li>
           <strong>Agree on price and payment:</strong> Most car lifts are priced monthly
-          (AED 200–450 from Sharjah to Business Bay). Payment is usually cash or bank
+          (AED 200–450 from Ajman to Business Bay). Payment is usually cash or bank
           transfer at the start of each month.
         </li>
         <li>
@@ -167,11 +167,11 @@ function PillarArticleContent() {
         </thead>
         <tbody>
           {[
-            ["Al Nahda / Al Majaz → Business Bay", "AED 130 sharing–420", "AED 200–250"],
-            ["Muweilah → Business Bay", "AED 130 sharing–450", "AED 220–270"],
+            ["Ajman (Al Nuaimiya) → Business Bay", "AED 130 sharing–420", "AED 200–250"],
+            ["Ajman (Al Rashidiya) → Business Bay", "AED 130 sharing–450", "AED 220–270"],
             ["Ajman → Business Bay", "AED 130 sharing–550", "AED 270–320"],
-            ["Sharjah → DIFC / Downtown", "AED 400–480", "AED 240–280"],
-            ["Sharjah → JLT / Dubai Marina", "AED 130 sharing–500", "AED 170–300"],
+            ["Ajman → DIFC / Downtown", "AED 400–480", "AED 240–280"],
+            ["Ajman → JLT / Dubai Marina", "AED 130 sharing–500", "AED 170–300"],
           ].map(([route, both, one]) => (
             <tr key={route} className="even:bg-slate-50">
               <td className="border border-slate-300 px-3 py-2">{route}</td>
@@ -189,7 +189,7 @@ function PillarArticleContent() {
 
       <h2 id="benefits">Why UAE Residents Choose Car Lift</h2>
       <p>
-        The economics are compelling. Consider a typical Sharjah-based professional driving
+        The economics are compelling. Consider a typical Ajman-based professional driving
         to Business Bay daily:
       </p>
       <ul>
@@ -217,8 +217,8 @@ function PillarArticleContent() {
         car lift savings.
       </p>
       <p>
-        Beyond money, there is the stress factor. Sharjah–Dubai traffic ranks among the
-        world&apos;s worst. As a passenger, you can sleep, read, work on your phone, or
+        Beyond money, there is the stress factor. The Ajman–Dubai commute ranks among the
+        UAE&apos;s most congested corridors. As a passenger, you can sleep, read, work on your phone, or
         arrive fresh and relaxed instead of frazzled by 90 minutes of gridlock.
       </p>
 
@@ -238,8 +238,8 @@ function PillarArticleContent() {
         </li>
         <li>
           <strong>Ladies-only options:</strong> Female drivers serving female passengers
-          exclusively are widely available on the Sharjah–Dubai corridor. See our{" "}
-          <Link href="/services/ladies-car-lift">ladies car lift service guide</Link>.
+          exclusively are widely available on the Ajman–Dubai corridor. See our{" "}
+          <Link href="/ladies-car-lift-ajman-to-dubai">ladies car lift service</Link>.
         </li>
         <li>
           <strong>Fixed routes:</strong> Predictable, non-deviated routes reduce risk
@@ -255,7 +255,7 @@ function PillarArticleContent() {
         <p>
           &quot;I have been using the same car lift for three years. The driver is like family now —
           always on time, safe, and the monthly saving lets me send more money home.&quot;
-          — Priya, IT professional, Al Nahda Sharjah
+          — Priya, IT professional, Ajman
         </p>
       </blockquote>
 
@@ -266,22 +266,22 @@ function PillarArticleContent() {
       <ol>
         <li>
           <strong>WhatsApp &amp; Car Lift UAE:</strong> Contact us directly via WhatsApp — we
-          maintain a network of verified drivers covering all major Sharjah and Ajman to
-          Dubai routes.
+          maintain a network of verified drivers covering all major Ajman to
+          Dubai and Dubai to Abu Dhabi routes.
         </li>
         <li>
-          <strong>Facebook Groups:</strong> Search for &quot;Sharjah to Dubai Car Lift&quot; or
+          <strong>Facebook Groups:</strong> Search for &quot;Ajman to Dubai Car Lift&quot; or
           &quot;UAE Car Lift Network.&quot; Post your route, timing, and preferred pickup area.
           Expect responses within hours.
         </li>
         <li>
-          <strong>Building and community boards:</strong> Many residential towers in Al Majaz,
-          Al Nahda, and Muweilah have notice boards where drivers post available seats.
+          <strong>Building and community boards:</strong> Many residential towers in Ajman (Al Nuaimiya, Al Rashidiya) have notice boards
+          where drivers post available seats.
         </li>
       </ol>
       <p>
-        For step-by-step instructions, read our guide on{" "}
-        <Link href="/blog/how-to-find-car-lift-sharjah">how to find a car lift in Sharjah</Link>.
+        For step-by-step help, <Link href="/contact">contact us</Link> and we will match
+        you with a verified driver on your route.
       </p>
 
       <aside className="not-prose rounded-xl bg-emerald-50 border border-emerald-200 p-5 mt-8">
@@ -289,8 +289,8 @@ function PillarArticleContent() {
           Ready to Book?
         </p>
         <p className="text-emerald-900 leading-relaxed mb-4">
-          Car Lift UAE has verified drivers on all major Sharjah–Dubai routes. Message us on
-          WhatsApp to check seat availability for your area and timing.
+          Car Lift UAE has verified drivers on all major Ajman–Dubai and Dubai–Abu Dhabi
+          routes. Message us on WhatsApp to check seat availability for your area and timing.
         </p>
         <div className="flex gap-3 flex-wrap">
           <a
@@ -303,10 +303,10 @@ function PillarArticleContent() {
             WhatsApp Us
           </a>
           <Link
-            href="/locations/sharjah"
+            href="/routes"
             className="inline-flex items-center gap-2 rounded-lg bg-white border border-emerald-300 px-4 py-2.5 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
           >
-            View Sharjah Routes
+            View All Routes
           </Link>
         </div>
       </aside>
@@ -330,25 +330,19 @@ function generateArticleContent(post: BlogPost) {
   // Extract location hints from slug
   const slugParts = slug.split("-");
   const mentionsAjman = slug.includes("ajman");
-  const mentionsMuweilah = slug.includes("muweilah");
   const mentionsDeira = slug.includes("deira");
   const mentionsJvc = slug.includes("jvc");
   const mentionsSilicon = slug.includes("silicon");
-  const mentionsNahda = slug.includes("nahda");
 
   const originArea = mentionsAjman
     ? "Ajman"
-    : mentionsMuweilah
-    ? "Muweilah, Sharjah"
     : mentionsDeira
     ? "Deira, Dubai"
     : mentionsJvc
     ? "Jumeirah Village Circle (JVC)"
     : mentionsSilicon
     ? "Dubai Silicon Oasis"
-    : mentionsNahda
-    ? "Al Nahda, Sharjah"
-    : "Sharjah";
+    : "Ajman";
 
   return (
     <div className="prose prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-p:text-slate-700 prose-p:leading-relaxed prose-li:text-slate-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline">
@@ -363,8 +357,8 @@ function generateArticleContent(post: BlogPost) {
 
       <h2 id="overview">Overview: {title}</h2>
       <p>
-        For the hundreds of thousands of UAE residents who commute daily between Sharjah,
-        Ajman, and Dubai, the question of how to travel affordably and reliably dominates
+        For the hundreds of thousands of UAE residents who commute daily between Ajman
+        and Dubai, or Dubai and Abu Dhabi, the question of how to travel affordably and reliably dominates
         every morning conversation. This guide focuses on{" "}
         <strong>{tags[0]}</strong> — one of the most searched topics among UAE commuters
         in 2025.
@@ -526,7 +520,7 @@ function generateArticleContent(post: BlogPost) {
           <p>
             The demand for women-only car lift services in UAE has grown substantially in
             recent years, driven by safety concerns, cultural preferences, and the
-            increasing number of professional women commuting between Sharjah and Dubai.
+            increasing number of professional women commuting between Ajman and Dubai.
           </p>
           <p>
             A genuine ladies-only car lift means a female driver transporting female
@@ -647,7 +641,7 @@ function generateArticleContent(post: BlogPost) {
       <h2 id="next-steps">Your Next Steps</h2>
       <p>
         Ready to set up your car lift? Car Lift UAE operates one of the largest verified
-        driver networks on the Sharjah–Dubai corridor. Whether you need a seat on an
+        driver networks on the Ajman–Dubai corridor. Whether you need a seat on an
         existing route or are setting up transport for the first time, our team can
         match you with the right driver within 24 hours.
       </p>
@@ -662,10 +656,10 @@ function generateArticleContent(post: BlogPost) {
         <div className="not-prose mt-6 mb-4">
           <p className="text-sm font-semibold text-slate-700 mb-3">Popular route guides:</p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 list-none">
-            <li><Link href="/car-lift-from-sharjah-to-business-bay" className="text-sm text-blue-600 hover:underline">→ Car Lift from Sharjah to Business Bay</Link></li>
-            <li><Link href="/carlift-sharjah-to-dubai-business-bay" className="text-sm text-blue-600 hover:underline">→ Carlift Sharjah to Dubai Business Bay</Link></li>
-            <li><Link href="/bus-car-lift-sharjah-to-business-bay" className="text-sm text-blue-600 hover:underline">→ Bus Car Lift Sharjah to Business Bay</Link></li>
-            <li><Link href="/bus-car-lift-service-from-sharjah-sheikh-zayed" className="text-sm text-blue-600 hover:underline">→ Sharjah via Sheikh Zayed Road Route</Link></li>
+            <li><Link href="/car-lift-ajman-to-dubai" className="text-sm text-blue-600 hover:underline">→ Car Lift Ajman to Dubai</Link></li>
+            <li><Link href="/car-lift-dubai-to-abu-dhabi" className="text-sm text-blue-600 hover:underline">→ Car Lift Dubai to Abu Dhabi</Link></li>
+            <li><Link href="/car-lift-abu-dhabi-to-dubai" className="text-sm text-blue-600 hover:underline">→ Car Lift Abu Dhabi to Dubai</Link></li>
+            <li><Link href="/airport-car-lift/" className="text-sm text-blue-600 hover:underline">→ Airport Car Lift (DXB, DWC, AUH, SHJ)</Link></li>
           </ul>
         </div>
       )}
@@ -692,10 +686,10 @@ function generateArticleContent(post: BlogPost) {
             WhatsApp Us
           </a>
           <Link
-            href="/services/monthly-car-lift"
+            href="/pricing"
             className="inline-flex items-center gap-2 rounded-lg bg-white border border-emerald-300 px-4 py-2.5 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
           >
-            Monthly Packages
+            View Pricing
           </Link>
         </div>
       </aside>
@@ -784,10 +778,10 @@ export default async function BlogPostPage({
   ).slice(0, 3);
 
   const popularRoutes = [
-    { label: "Sharjah → Business Bay", href: "/blog/sharjah-to-business-bay-car-lift-guide" },
     { label: "Ajman → Dubai", href: "/blog/ajman-to-dubai-car-lift-guide" },
-    { label: "Al Nahda → Downtown", href: "/blog/al-nahda-sharjah-dubai-commute-guide" },
     { label: "JVC → Business Bay", href: "/blog/car-lift-jvc-to-business-bay" },
+    { label: "Deira → Business Bay", href: "/blog/deira-to-business-bay-car-lift" },
+    { label: "Airport Car Lift", href: "/airport-car-lift/" },
   ];
 
   const whatsappHref = formatWhatsAppHref(
@@ -969,7 +963,7 @@ export default async function BlogPostPage({
                     Book Your Car Lift
                   </h3>
                   <p className="text-sm text-emerald-100 mb-4">
-                    Seats available now on all major Sharjah–Dubai routes.
+                    Seats available now on all major Ajman–Dubai and Dubai–Abu Dhabi routes.
                   </p>
                   <a
                     href={whatsappHref}

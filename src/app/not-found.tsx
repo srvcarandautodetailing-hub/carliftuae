@@ -1,14 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Home, Search, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
+export const metadata: Metadata = {
+  title: "Page Not Found",
+  robots: { index: false, follow: false },
+};
+
 export default function NotFound() {
   const quickLinks = [
-    { label: "Car Lift Sharjah", href: "/locations/sharjah" },
-    { label: "Business Bay", href: "/locations/business-bay" },
-    { label: "Monthly Package", href: "/services/monthly-car-lift" },
-    { label: "Ladies Car Lift", href: "/services/ladies-car-lift" },
+    { label: "Car Lift Dubai", href: "/car-lift-dubai" },
+    { label: "Airport Car Lift", href: "/airport-car-lift" },
+    { label: "Daily Car Lift Dubai", href: "/daily-car-lift-dubai" },
+    { label: "Ladies Car Lift", href: "/ladies-car-lift-ajman-to-dubai" },
     { label: "Pricing", href: "/pricing" },
     { label: "Contact Us", href: "/contact" },
   ];

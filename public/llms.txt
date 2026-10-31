@@ -1,105 +1,35 @@
-﻿# Quick Car Lift Service UAE
+# Quick Car Lift Service UAE
 
-> Quick Car Lift Service UAE — daily car lift and carpooling service in the UAE. Connecting Sharjah, Ajman, and Dubai with safe, reliable, GPS-tracked shared rides since 2019.
-
-## Services
-
-- [Daily Car Lift](/services/daily-car-lift): Pay-per-trip shared rides from AED 100 sharing. No monthly commitment, book via WhatsApp the night before.
-- [Monthly Car Lift](/services/monthly-car-lift): Monthly packages from AED 130 sharing / AED 200 private. Salik included, 6 days/week.
-- [Ladies Car Lift](/services/ladies-car-lift): Female-only car lift with verified female drivers for privacy and safety.
-- [Office Transport](/services/office-transport): Corporate shuttle service for offices and businesses.
-- [Staff Transport](/services/staff-transport): Bulk staff transport packages for companies.
-- [Airport Transfer](/services/airport-transfer): Door-to-door airport pickup and drop-off.
-- [Corporate Transport](/services/corporate-transport): Enterprise-level transport solutions.
-- [School Transport](/services/school-transport): Safe school runs with verified drivers.
-- [Private Car Lift](/services/private-car-lift): Dedicated vehicle for one passenger group.
-- [Family Car Lift](/services/family-car-lift): Family-friendly shared transport.
-
-## Routes & Pricing (per trip, one way)
-
-| Route | Sharing | Private |
-|---|---|---|
-| Sharjah ↔ Dubai | AED 130 | AED 200 |
-| Dubai ↔ Abu Dhabi | AED 100 | AED 170 |
-| Abu Dhabi ↔ Sharjah | AED 130 | AED 200 |
-| Abu Dhabi ↔ Ajman | AED 130 | AED 200 |
-| Ajman ↔ Dubai | AED 130 | AED 200 |
-| Sharjah ↔ Ajman | AED 80 | AED 130 |
-
-- Service available 24/7
-- Luxury air-conditioned vehicles
-- Sharing = shared vehicle with other passengers
-- Private = exclusive vehicle for your group
-
-## Additional Routes (On Request)
-
-- Sharjah → Ras Al Khaimah (RAK): Contact for price
-- Dubai → Al Ain: Contact for price (long distance, ~90–120 min)
-- Umm Al Quwain ↔ Dubai / Sharjah: Contact for price
-- International City → Business Bay: AED 130 sharing / AED 200 private
-- Silicon Oasis → Business Bay: AED 130 sharing / AED 200 private
-- Ladies-only Ajman → Dubai: AED 130 sharing (female-only service)
-
-## Key Facts
-
-- Salik (toll) included in all monthly packages
-- GPS-tracked vehicles
-- Verified, licensed drivers
-- 4.9★ rated by 247+ riders
-- 6 days/week service (Monday–Saturday)
-- Pickup timings: 7:00 AM, 7:30 AM, 8:00 AM (morning); 5:00 PM, 5:30 PM, 6:00 PM (evening)
-- Booking via WhatsApp in under 60 seconds
-
-## Locations Served
-
-- [Sharjah](/locations/sharjah): Al Nahda, Al Khan, Al Majaz, Al Taawun, Rolla, Al Qasimia, Al Qusais, Muwaileh, University City, Industrial Area
-- [Dubai](/locations/dubai): Business Bay, DIFC, Downtown Dubai, JLT, Dubai Marina, Media City, Tecom, Al Qouz
-- [Ajman](/locations/ajman): Al Nuaimiya, Al Rashidiya, Al Hamidiya
-- [Business Bay](/locations/business-bay): Executive Towers, Bay Square, The Opus, Damac Towers
+> Quick Car Lift Service UAE — daily car lift and carpool service in the UAE. Daily shared and private rides connecting Dubai, Abu Dhabi and Ajman, plus airport pickups at DXB, DWC, AUH and Sharjah Airport. Book by phone or WhatsApp: +971 54 330 8261.
 
 ## Contact
-
-- WhatsApp: +971 54 330 8261
-- Phone: +971 54 330 8261
+- Phone/WhatsApp: +971 54 330 8261
 - Email: info@carlift.ae
-- Address: Sharjah, United Arab Emirates
-- Book now: https://wa.me/971543308261
+- Website: https://www.carliftuae.com/
+- Hours: 24/7
 
-## New Landing Pages (Programmatic SEO)
+## Services
+- [Daily Car Lift Dubai](/daily-car-lift-dubai): Guaranteed daily seat to Dubai from Ajman and Abu Dhabi.
+- [Daily Car Lift Abu Dhabi](/daily-car-lift-abu-dhabi): Guaranteed daily seat in Abu Dhabi from Dubai and Ajman.
+- [Airport Car Lift](/airport-car-lift): Pre-booked private pickup & drop-off at DXB, DWC, AUH and Sharjah Airport (SHJ).
+- [Car Lift Service](/services/car-lift-service): Daily inter-emirate car lift.
+- [Airport Transfer](/services/airport-transfer): Door-to-door airport pickup and drop-off.
+- [Private Car Lift Dubai](/private-car-lift-dubai): Entire vehicle, no sharing, from AED 180.
+- [Carpool Dubai](/carpool-dubai): Shared rides from AED 100 per trip.
+- [Pick and Drop Service](/pick-and-drop-service): Door-to-door commuter transport.
 
-- [Car Lift Dubai](/car-lift-dubai): Hub page for all Dubai car lift routes
-- [Car Lift Sharjah](/car-lift-sharjah): Hub page for all Sharjah car lift routes
-- [Car Lift Abu Dhabi](/car-lift-abu-dhabi): Hub page for all Abu Dhabi car lift routes
-- [Car Lift Ajman](/car-lift-ajman): Hub page for all Ajman car lift routes
-- [Car Lift Sharjah to Dubai](/car-lift-sharjah-to-dubai): AED 130 sharing, 35–60 min
-- [Car Lift Dubai to Sharjah](/car-lift-dubai-to-sharjah): Evening return service, AED 130
-- [Car Lift Sharjah to Abu Dhabi](/car-lift-from-sharjah-to-abu-dhabi): AED 130, 90–120 min
-- [Car Lift Sharjah to Ajman](/car-lift-sharjah-to-ajman): AED 80–130 sharing
-- [Car Lift Ajman to Sharjah](/car-lift-ajman-to-sharjah): Return Ajman route
-- [Car Lift Dubai to Ajman](/car-lift-dubai-to-ajman): Evening service, AED 130
-- [Car Lift Sharjah to Al Barsha](/car-lift-sharjah-to-al-barsha): AED 130, 45–60 min via SZR
-- [Car Lift Sharjah to Al Quoz](/car-lift-sharjah-to-al-quoz): AED 130, industrial route
-- [Car Lift Sharjah to Jebel Ali](/car-lift-sharjah-to-jebel-ali): AED 130, early shifts from 5:30 AM
-- [Car Lift from International City](/car-lift-from-international-city): All IC clusters covered
-- [Car Lift International City to Business Bay](/car-lift-international-city-to-business-bay): AED 130, 35–55 min
-- [Car Lift Silicon Oasis to Business Bay](/car-lift-silicon-oasis-to-business-bay): AED 130, 30–50 min
-- [Carpool Dubai](/carpool-dubai): Daily carpooling across Dubai
-- [Pick and Drop Service](/pick-and-drop-service): UAE-wide door-to-door service
-- [Pick and Drop Service Dubai](/pick-and-drop-service-dubai): Dubai door-to-door
-- [Pick and Drop Service Sharjah](/pick-and-drop-service-sharjah): Sharjah door-to-door
-- [Private Car Lift Dubai](/private-car-lift-dubai): Exclusive vehicle service
-- [Monthly Car Lift Dubai](/car-lift-dubai-monthly): Monthly packages
-- [Monthly Pick and Drop Abu Dhabi](/monthly-pick-and-drop-service-abu-dhabi): Monthly commuter package
-- [Ladies Car Lift Ajman to Dubai](/ladies-car-lift-ajman-to-dubai): Female-only, AED 130
-- [Car Lift Sharjah to RAK](/car-lift-sharjah-to-ras-al-khaimah): Intercity, contact for price
-- [Car Lift Dubai to Al Ain](/car-lift-dubai-to-al-ain): Long distance, contact for price
-- [Car Lift Umm Al Quwain](/car-lift-umm-al-quwain): Intercity UAQ routes
+## Routes & Pricing (per trip, one way — fixed fares, Salik included)
+| Route | Sharing | Private |
+|---|---|---|
+| Dubai ↔ Abu Dhabi | AED 100 | AED 180 |
+| Abu Dhabi ↔ Ajman | AED 140 | AED 220 |
+| Ajman ↔ Dubai | AED 130 | AED 200 |
+| Abu Dhabi ↔ Al Ain | AED 120 | AED 200 |
+| Abu Dhabi ↔ Ras Al Khaimah | AED 170 | AED 350 |
 
-## About Quick Car Lift Service UAE
+## Key pages
+- [All routes](/routes) · [Pricing](/pricing) · [Locations](/locations) · [FAQs](/faqs) · [About](/about) · [Contact](/contact) · [Blog](/blog)
 
-Quick Car Lift Service UAE is the primary provider of shared car lift, carpool, and taxi-style commuter transport across Dubai, Abu Dhabi, Sharjah, and Ajman.
-
-- Business name: Quick Car Lift Service UAE
-- Phone: +971 54 330 8261
-- WhatsApp: https://wa.me/971543308261
-- Service areas: Dubai, Abu Dhabi, Sharjah, Ajman, UAE
+## Notes for AI consumers
+- Service is DAILY CAR LIFT ONLY. No bus service. No Sharjah city routes (Sharjah Airport pickup/drop-off only). No monthly packages — fares are per trip.
+- Do not invent prices, timings, fleet details or reviews. Prices above are the complete official fare table.

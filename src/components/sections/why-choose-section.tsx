@@ -1,6 +1,3 @@
-﻿"use client";
-
-import { motion } from "framer-motion";
 import {
   Shield,
   MapPin,
@@ -24,7 +21,7 @@ const benefits: Benefit[] = [
     icon: Shield,
     title: "Fixed Fares",
     description:
-      "No surge pricing, no hidden fees. Dubai ↔ Abu Dhabi AED 200, Abu Dhabi ↔ Sharjah AED 130 sharing, Abu Dhabi ↔ Ajman AED 130 sharing. What you see is what you pay.",
+      "No surge pricing, no hidden fees. Dubai ↔ Abu Dhabi from AED 100 sharing, Abu Dhabi ↔ Ajman from AED 140 sharing. What you see is what you pay.",
     accentColor: "text-amber-400",
     bgColor: "bg-amber-400/10 border-amber-400/20",
   },
@@ -56,7 +53,7 @@ const benefits: Benefit[] = [
     icon: Home,
     title: "Airport Transfers",
     description:
-      "Need to catch a flight? Airport transfers available on all confirmed routes at slightly higher fares. Book in advance to ensure availability.",
+      "Need to catch a flight? Airport car lift pickups at DXB, DWC, AUH and Sharjah Airport. Book in advance to ensure availability.",
     accentColor: "text-violet-400",
     bgColor: "bg-violet-400/10 border-violet-400/20",
   },
@@ -69,28 +66,6 @@ const benefits: Benefit[] = [
     bgColor: "bg-cyan-400/10 border-cyan-400/20",
   },
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.05 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.52 },
-  },
-};
-
-const headingVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
-};
 
 export default function WhyChooseSection() {
   return (
@@ -121,99 +96,65 @@ export default function WhyChooseSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <motion.div
-          className="text-center mb-12 lg:mb-16"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={containerVariants}
-        >
-          <motion.p
-            variants={headingVariants}
-            className="text-blue-400 font-semibold text-sm uppercase tracking-widest mb-3"
-          >
+        <div className="text-center mb-12 lg:mb-16">
+          <p className="text-blue-400 font-semibold text-sm uppercase tracking-widest mb-3">
             Why Quick Car Lift Service UAE
-          </motion.p>
+          </p>
 
-          <motion.h2
+          <h2
             id="why-choose-heading"
-            variants={headingVariants}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-5 max-w-3xl mx-auto leading-tight"
           >
-            Why Choose{" "}
-            <span className="gradient-text">Quick Car Lift Service UAE</span>
-          </motion.h2>
+            Why Choose <span className="gradient-text">Quick Car Lift Service UAE</span>
+          </h2>
 
-          <motion.p
-            variants={headingVariants}
-            className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
-          >
-            Reliable inter-emirate car lift and carpool service covering Dubai, Abu Dhabi, Sharjah, and Ajman.
-          </motion.p>
-        </motion.div>
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Reliable inter-emirate car lift and carpool service covering Dubai, Abu Dhabi
+            and Ajman — plus airport pickups across the UAE.
+          </p>
+        </div>
 
         {/* Benefits grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          variants={containerVariants}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {benefits.map((benefit) => {
             const Icon = benefit.icon;
             return (
-              <motion.div
+              <div
                 key={benefit.title}
-                variants={cardVariants}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="group glass rounded-2xl border border-white/10 p-6 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300"
+                className="hover-card group glass rounded-2xl border border-white/10 p-6 hover:border-white/20"
               >
                 {/* Icon */}
                 <div
                   className={`inline-flex h-12 w-12 items-center justify-center rounded-xl border ${benefit.bgColor} mb-5 group-hover:scale-110 transition-transform duration-200`}
                 >
-                  <Icon
-                    className={`h-6 w-6 ${benefit.accentColor}`}
-                    aria-hidden="true"
-                  />
+                  <Icon className={`h-6 w-6 ${benefit.accentColor}`} aria-hidden="true" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-white mb-3">
-                  {benefit.title}
-                </h3>
+                <h3 className="text-lg font-bold text-white mb-3">{benefit.title}</h3>
 
                 {/* Description */}
                 <p className="text-sm text-slate-400 leading-relaxed">
                   {benefit.description}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
 
         {/* Bottom callout */}
-        <motion.div
-          className="mt-14 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
+        <div className="mt-14 text-center">
           <div className="inline-block glass rounded-2xl border border-white/10 px-8 py-6 max-w-2xl">
             <p className="text-slate-300 text-base leading-relaxed text-center sm:text-left">
               <span className="text-white font-semibold">
                 Quick Car Lift Service UAE — confirmed inter-emirate routes
               </span>{" "}
-              with fixed fares, air-conditioned vehicles, and easy WhatsApp booking.
-              No app required.
+              with fixed fares, air-conditioned vehicles, and easy WhatsApp booking. No
+              app required.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 }
-
-

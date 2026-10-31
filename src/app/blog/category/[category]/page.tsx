@@ -56,23 +56,23 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 const CATEGORY_DESCRIPTIONS: Record<string, string> = {
   "Car Lift Tips":
-    "Everything you need to know about using car lift services in UAE — how to find one, book it, and make the most of your shared ride.",
+    "How to find, book and make the most of your UAE car lift ride.",
   "Routes & Commute":
-    "In-depth route guides for UAE's most popular car lift corridors, from Sharjah to Business Bay and beyond.",
+    "Route guides for UAE's top car lift corridors.",
   "Pricing & Savings":
-    "Transparent pricing breakdowns and money-saving strategies to help you get the best value from your UAE car lift.",
+    "Transparent pricing and money-saving tips for UAE car lifts.",
   "Safety & Travel":
-    "Essential safety guidelines and travel tips for car lift passengers in UAE.",
+    "Safety guidelines and travel tips for car lift passengers.",
   "UAE Transport":
-    "Broader perspectives on public and private transport in UAE — trends, infrastructure, and commuter insights.",
+    "Trends and insights on UAE public and private transport.",
   "Ladies Transport":
-    "Dedicated guides for women seeking safe, verified ladies-only car lift services in UAE.",
+    "Guides for safe, verified ladies-only car lift in UAE.",
   "Corporate Transport":
-    "How UAE businesses are leveraging corporate car lift programmes to boost productivity and cut costs.",
+    "How UAE businesses use car lift to cut costs.",
   Neighborhoods:
-    "Hyper-local commute guides for specific UAE neighbourhoods — your suburb's best car lift options.",
+    "Hyper-local car lift guides for UAE neighbourhoods.",
   Comparisons:
-    "Honest, data-driven comparisons of car lifts against alternative UAE transport modes.",
+    "Car lift vs alternatives — honest comparisons.",
   "News & Updates":
     "The latest news, changes, and developments in UAE's car lift and transport landscape.",
 };

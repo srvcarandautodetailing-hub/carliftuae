@@ -18,9 +18,9 @@ import SchemaScript from "@/components/sections/schema-script";
 import CtaBanner from "@/components/sections/cta-banner";
 
 export const metadata: Metadata = {
-  title: "Car Lift UAE Blog – Commute Tips, Routes & Transport Guide",
+  title: "Car Lift UAE Blog – Tips & Guides",
   description:
-    "Expert guides on car lift service in UAE. Route guides, pricing tips, safety advice, ladies transport, corporate solutions. Sharjah to Dubai commute made easy.",
+    "Car lift UAE guides: route info, pricing tips, safety advice & commuter news from Quick Car Lift Service UAE.",
   alternates: { canonical: "https://www.carliftuae.com/blog" },
 };
 

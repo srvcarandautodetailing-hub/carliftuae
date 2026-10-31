@@ -11,7 +11,7 @@ export default function Image() {
     buildOgImageJsx({
       badge: "Blog & Guides",
       title: "UAE Car Lift Insights",
-      subtitle: "Expert guides on commuting, pricing, routes and transport tips from Sharjah, Dubai and Ajman.",
+      subtitle: "Expert guides on commuting, pricing, routes and transport tips from Ajman, Dubai and Abu Dhabi.",
       stats: [
         { label: "Route Guides", color: "#10b981" },
         { label: "Pricing Tips", color: "#f59e0b" },

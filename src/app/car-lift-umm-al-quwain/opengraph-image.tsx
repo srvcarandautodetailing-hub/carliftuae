@@ -2,14 +2,14 @@ import { ImageResponse } from "next/og";
 import { buildOgImageJsx } from "@/lib/og-image";
 
 export const runtime = "nodejs";
-export const alt = "Car Lift Umm Al Quwain – Daily Rides to Dubai & Sharjah";
+export const alt = "Car Lift Umm Al Quwain – Daily Rides to Dubai";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function Image() {
   return new ImageResponse(
     buildOgImageJsx({
-      badge: "Umm Al Quwain → Dubai & Sharjah",
+      badge: "Umm Al Quwain → Dubai",
       title: "Car Lift Umm Al Quwain",
       subtitle: "Daily intercity rides · UAQ City · Free Trade Zone · 60–90 min to Dubai",
       accentColor: "#047857",

@@ -12,6 +12,8 @@ import {
   FileText,
 } from "lucide-react";
 import Breadcrumb from "@/components/sections/breadcrumb";
+import SchemaScript from "@/components/sections/schema-script";
+import { breadcrumbSchema } from "@/lib/schema";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -442,6 +444,14 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
+      <SchemaScript
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Privacy Policy", url: "/privacy" },
+          ]),
+        ]}
+      />
       {/* ─── Page Hero ─── */}
       <section
         aria-labelledby="privacy-hero-heading"

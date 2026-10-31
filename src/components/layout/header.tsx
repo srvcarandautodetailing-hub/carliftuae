@@ -1,9 +1,8 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
@@ -20,6 +19,7 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Routes", href: "/routes" },
+  { label: "Airports", href: "/airport-car-lift" },
   { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -33,6 +33,7 @@ export function Header() {
 
   useEffect(() => {
     const handler = () => setIsScrolled(window.scrollY > 20);
+    handler();
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
@@ -64,11 +65,11 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2 group min-h-[48px]"
             aria-label="Quick Car Lift Service UAE - Home"
           >
-            <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center group-hover:bg-blue-700 transition-colors">
-              <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
+            <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center group-hover:bg-blue-700 transition-colors shrink-0">
+              <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5" aria-hidden="true">
                 <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
               </svg>
             </div>
@@ -87,7 +88,7 @@ export function Header() {
                   isScrolled ? "text-blue-600" : "text-blue-300"
                 )}
               >
-                Dubai · Abu Dhabi · Sharjah
+                Dubai · Abu Dhabi · Ajman
               </span>
             </div>
           </Link>
@@ -104,7 +105,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                    "flex items-center gap-1 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 min-h-[44px]",
                     isScrolled
                       ? pathname === item.href
                         ? "text-blue-600 bg-blue-50"
@@ -114,38 +115,39 @@ export function Header() {
                       : "text-white/90 hover:text-white hover:bg-white/10"
                   )}
                   aria-current={pathname === item.href ? "page" : undefined}
+                  aria-haspopup={item.children ? "true" : undefined}
+                  aria-expanded={item.children ? openDropdown === item.label : undefined}
                 >
                   {item.label}
                   {item.children && (
-                    <ChevronDown className="w-3.5 h-3.5 opacity-70" />
+                    <ChevronDown className="w-3.5 h-3.5 opacity-70" aria-hidden="true" />
                   )}
                 </Link>
 
-                {/* Dropdown */}
+                {/* Dropdown — CSS transition */}
                 {item.children && (
-                  <AnimatePresence>
-                    {openDropdown === item.label && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 8 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-1 w-56 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden"
-                      >
-                        <div className="p-2">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              className="flex items-center px-3 py-2 text-sm text-slate-700 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
+                  <div
+                    className={cn(
+                      "absolute top-full left-0 mt-1 w-56 origin-top transition-all duration-150",
+                      openDropdown === item.label
+                        ? "opacity-100 translate-y-0 pointer-events-auto"
+                        : "opacity-0 -translate-y-1 pointer-events-none"
                     )}
-                  </AnimatePresence>
+                  >
+                    <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+                      <div className="p-2">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="flex items-center px-3 py-3 text-sm text-slate-700 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-colors min-h-[44px]"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 )}
               </div>
             ))}
@@ -156,38 +158,34 @@ export function Header() {
             <a
               href={`tel:${BUSINESS.phone}`}
               className={cn(
-                "flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border-2 transition-all duration-200 min-h-[44px] active:scale-95",
+                "flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border-2 transition-colors duration-200 min-h-[44px]",
                 isScrolled
                   ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
                   : "border-white/80 text-white hover:bg-white hover:text-blue-600"
               )}
               aria-label={`Call us at ${BUSINESS.phone}`}
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4" aria-hidden="true" />
               <span>Call Now</span>
             </a>
-            <Button
-              variant="whatsapp"
-              size="sm"
-              asChild
-            >
+            <Button variant="whatsapp" size="sm" asChild>
               <a
                 href={formatWhatsAppHref(BUSINESS.whatsapp, "Hi, I want to book a car lift!")}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Book via WhatsApp"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" aria-hidden="true" />
                 Book Now
               </a>
             </Button>
           </div>
 
-          {/* Mobile phone CTA — always visible, never buried in menu */}
+          {/* Mobile phone CTA — always visible */}
           <a
             href={`tel:${BUSINESS.phone}`}
             className={cn(
-              "lg:hidden relative flex items-center justify-center w-11 h-11 rounded-full border-2 transition-all duration-200 active:scale-95",
+              "lg:hidden relative flex items-center justify-center w-11 h-11 rounded-full border-2 transition-colors duration-200",
               isScrolled
                 ? "border-blue-600 text-blue-600 hover:bg-blue-50"
                 : "border-white text-white hover:bg-white/10"
@@ -199,15 +197,16 @@ export function Header() {
                 "absolute inset-0 rounded-full animate-ping opacity-25",
                 isScrolled ? "bg-blue-600" : "bg-white"
               )}
+              aria-hidden="true"
             />
-            <Phone className="w-5 h-5 relative" />
+            <Phone className="w-5 h-5 relative" aria-hidden="true" />
           </a>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={cn(
-              "lg:hidden p-3 rounded-xl transition-colors min-h-[48px] min-w-[48px]",
+              "lg:hidden p-3 rounded-xl transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center",
               isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-white hover:bg-white/10"
             )}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -218,70 +217,73 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="lg:hidden bg-white border-t border-slate-100 overflow-hidden"
-            role="dialog"
-            aria-modal="true"
-          >
-            <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-              {NAV_ITEMS.map((item) => (
-                <div key={item.label}>
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "block px-4 py-3.5 rounded-xl text-sm font-medium transition-colors",
-                      pathname === item.href
-                        ? "text-blue-600 bg-blue-50"
-                        : "text-slate-700 hover:bg-slate-50"
-                    )}
-                  >
-                    {item.label}
-                  </Link>
-                  {item.children && (
-                    <div className="ml-4 mt-1 space-y-1 border-l-2 border-slate-100 pl-3">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="block px-3 py-2.5 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-slate-50 transition-colors"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-              <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
-                <a
-                  href={`tel:${BUSINESS.phone}`}
-                  className="flex items-center gap-2 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  {BUSINESS.phone}
-                </a>
-                <Button variant="whatsapp" asChild className="w-full">
-                  <a
-                    href={formatWhatsAppHref(BUSINESS.whatsapp, "Hi, I want to book a car lift!")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    Book via WhatsApp
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </motion.div>
+      {/* Mobile menu — CSS grid-rows transition */}
+      <div
+        className={cn(
+          "lg:hidden grid transition-all duration-200 ease-out bg-white border-slate-100",
+          mobileOpen ? "grid-rows-[1fr] opacity-100 border-t" : "grid-rows-[0fr] opacity-0"
         )}
-      </AnimatePresence>
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!mobileOpen}
+        inert={!mobileOpen}
+      >
+        <div className="overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
+            {NAV_ITEMS.map((item) => (
+              <div key={item.label}>
+                <Link
+                  href={item.href}
+                  tabIndex={mobileOpen ? 0 : -1}
+                  className={cn(
+                    "flex items-center px-4 py-3.5 rounded-xl text-sm font-medium transition-colors min-h-[48px]",
+                    pathname === item.href
+                      ? "text-blue-600 bg-blue-50"
+                      : "text-slate-700 hover:bg-slate-50"
+                  )}
+                >
+                  {item.label}
+                </Link>
+                {item.children && (
+                  <div className="ml-4 mt-1 space-y-1 border-l-2 border-slate-100 pl-3">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        tabIndex={mobileOpen ? 0 : -1}
+                        className="flex items-center px-3 py-3 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-slate-50 transition-colors min-h-[48px]"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
+              <a
+                href={`tel:${BUSINESS.phone}`}
+                tabIndex={mobileOpen ? 0 : -1}
+                className="flex items-center gap-2 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors min-h-[48px]"
+              >
+                <Phone className="w-4 h-4" aria-hidden="true" />
+                {BUSINESS.phone}
+              </a>
+              <Button variant="whatsapp" asChild className="w-full min-h-[52px]">
+                <a
+                  href={formatWhatsAppHref(BUSINESS.whatsapp, "Hi, I want to book a car lift!")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabIndex={mobileOpen ? 0 : -1}
+                >
+                  <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                  Book via WhatsApp
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

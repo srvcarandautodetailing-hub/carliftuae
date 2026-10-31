@@ -1,19 +1,19 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { MessageCircle, Phone, Mail, Clock, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import SchemaScript from "@/components/sections/schema-script";
-import { localBusinessSchema } from "@/lib/schema";
+import { localBusinessSchema, breadcrumbSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 import BookingForm from "./booking-form";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Contact Car Lift UAE – Book Your Ride Today",
+  title: "Contact Car Lift UAE – Book Today",
   description:
-    "Contact Car Lift UAE to book your daily car lift. WhatsApp, phone, or email. Mon–Sat 6AM–10PM. Fastest response via WhatsApp +971 54 330 8261. Book monthly from AED 100 sharing.",
+    "Contact Quick Car Lift Service UAE. WhatsApp or call +971 54 330 8261, email info@carlift.ae. Available 24/7.",
   alternates: { canonical: "https://www.carliftuae.com/contact" },
   openGraph: {
     title: "Contact Car Lift UAE – Book Your Daily Car Lift",
@@ -93,7 +93,7 @@ const contactMethods = [
 export default function ContactPage() {
   return (
     <>
-      <SchemaScript schema={localBusinessSchema()} />
+      <SchemaScript schema={[localBusinessSchema(), breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Contact", url: "/contact" }])]} />
 
       {/* ─── Page Hero ─── */}
       <section
@@ -257,9 +257,9 @@ export default function ContactPage() {
                 {[
                   "No app download required",
                   "Seat confirmed within 60 minutes",
-                  "Monthly packages start any day",
+                  "Daily seats start any day",
                   "Cancel anytime — no lock-in",
-                  "Pay monthly via cash or transfer",
+                  "Pay per trip via cash or transfer",
                 ].map((point) => (
                   <li key={point} className="flex items-center gap-2.5 text-sm text-slate-700">
                     <span
@@ -317,11 +317,11 @@ export default function ContactPage() {
                 id="location-heading"
                 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight"
               >
-                Based in Sharjah, Serving All UAE
+                Based in Abu Dhabi, Serving All UAE
               </h2>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Car Lift UAE is headquartered in the heart of Sharjah, at Al Majaz
-                — perfectly positioned to serve all Sharjah, Ajman, and Dubai
+                Car Lift UAE is based in Abu Dhabi
+                — perfectly positioned to serve Dubai, Abu Dhabi, Ajman and all UAE airports
                 routes. We operate across the entire UAE.
               </p>
 
@@ -367,18 +367,18 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            {/* Google Maps embed — Sharjah */}
+            {/* Google Maps embed — Abu Dhabi */}
             <div className="w-full rounded-2xl overflow-hidden border border-slate-200 shadow-md aspect-video">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57946.01963374025!2d55.35044155!3d25.34634155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f4b9d6a1fd1%3A0x7d84c17e7f0c5c1a!2sSharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1699000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110838.99988241483!2d54.3773!3d24.4539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e440f723ef2b9%3A0xc7cc5c69e52b1c0!2sAbu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1699000000000"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Car Lift UAE location in Sharjah, UAE"
-                aria-label="Google Maps showing Sharjah UAE, base of Car Lift UAE operations"
+                title="Car Lift UAE location in Abu Dhabi, UAE"
+                aria-label="Google Maps showing Abu Dhabi UAE, base of Car Lift UAE operations"
               />
             </div>
           </div>

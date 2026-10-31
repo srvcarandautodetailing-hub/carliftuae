@@ -1,20 +1,20 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { MessageCircle, HelpCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import FaqSection from "@/components/sections/faq-section";
 import SchemaScript from "@/components/sections/schema-script";
-import { faqSchema } from "@/lib/schema";
+import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 import { FAQS, FAQ_CATEGORIES } from "@/data/faqs";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift UAE FAQs – All Your Questions Answered",
+  title: "Car Lift UAE FAQs – Answered",
   description:
-    "Get answers to every question about Car Lift UAE. How to book, pricing, safety, routes, timing, ladies-only options, drivers, vehicles, and more. 25+ questions answered.",
+    "Car lift UAE FAQs: booking, pricing, pickup areas, safety & timings answered. Or WhatsApp +971 54 330 8261.",
   alternates: { canonical: "https://www.carliftuae.com/faqs" },
   openGraph: {
     title: "Car Lift UAE FAQs – Booking, Pricing, Safety & Routes Explained",
@@ -34,7 +34,7 @@ const featuredAnswers = [
   {
     question: "How does Car Lift UAE work?",
     answer:
-      "Car Lift UAE works in 3 simple steps: (1) WhatsApp us your pickup location, destination, and preferred timing. (2) We confirm your seat and share the driver details. (3) Your driver picks you up at the agreed time daily. Monthly riders get a fixed seat, fixed driver, and fixed time — no need to re-book each day. Payment is monthly via cash, bank transfer, or WhatsApp Pay.",
+      "Car Lift UAE works in 3 simple steps: (1) WhatsApp us your pickup location, destination, and preferred timing. (2) We confirm your seat and share the driver details. (3) Your driver picks you up at the agreed time daily. Daily riders get a fixed seat, fixed driver, and fixed time — no need to re-book each day. Payment is per trip via cash, bank transfer, or WhatsApp Pay.",
   },
   {
     question: "Is car lift safe in UAE?",
@@ -42,9 +42,9 @@ const featuredAnswers = [
       "Yes. Car Lift UAE operates a fully safe and verified service. All drivers are UAE-licensed with valid UAE driving licenses and undergo background checks before joining. Every vehicle in the fleet carries comprehensive insurance, is GPS-tracked in real time, and is less than 5 years old. Female passengers can request ladies-only car lift vehicles with a female driver. Our service is rated 4.9 stars by 247+ verified riders.",
   },
   {
-    question: "What is the cheapest car lift from Sharjah to Business Bay?",
+    question: "What is the cheapest car lift from Ajman to Business Bay?",
     answer:
-      "Car Lift UAE offers the most affordable daily car lift from Sharjah to Business Bay starting at AED 130 sharing–AED 360/month for monthly shared packages depending on your exact pickup area. This compares to AED 1,200+ per month if you were to drive yourself (factoring in petrol, Salik tolls of AED 8 each way × 22 working days, and Business Bay parking fees).",
+      "Car Lift UAE offers daily car lift from Ajman to Business Bay at AED 130 sharing per trip. Fares are fixed per trip with no surge pricing — WhatsApp +971 54 330 8261 for your exact quote.",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function FaqsPage() {
 
   return (
     <>
-      <SchemaScript schema={faqSchema(FAQS)} />
+      <SchemaScript schema={[faqSchema(FAQS), breadcrumbSchema([{ name: "Home", url: "/" }, { name: "FAQs", url: "/faqs" }])]} />
 
       {/* ─── Page Hero ─── */}
       <section
@@ -181,7 +181,7 @@ export default function FaqsPage() {
               },
               {
                 category: "Pricing",
-                summary: "Monthly rates, what's included, Salik tolls, payment methods.",
+                summary: "Per-trip rates, what's included, Salik tolls, payment methods.",
                 count: FAQS.filter((f) => f.category === "Pricing").length,
               },
               {

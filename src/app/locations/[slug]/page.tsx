@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,34 +41,30 @@ export async function generateStaticParams() {
 
 // ─── Per-emirate pricing ─────────────────────────────────────────────────────
 
-type Emirate = "dubai" | "abu-dhabi" | "sharjah" | "ajman";
+type Emirate = "dubai" | "abu-dhabi" | "ajman";
 
 const emirateNormalPrice: Record<Emirate, number> = {
   dubai:       180,
   "abu-dhabi": 200,
-  sharjah:     200,
   ajman:       220,
 };
 
 const emirateAirportPrice: Record<Emirate, number> = {
   dubai:       180,
   "abu-dhabi": 250,
-  sharjah:     200,
   ajman:       220,
 };
 
 const emirateNormalPriceDisplay: Record<Emirate, string> = {
   dubai:       "AED 100 sharing / AED 180 private",
   "abu-dhabi": "From AED 100 sharing",
-  sharjah:     "AED 130 sharing / AED 200 private",
   ajman:       "AED 140 sharing / AED 220 private",
 };
 
 // Route label shown in hero / pills
 const emirateRouteLabel: Record<Emirate, string> = {
   dubai:       "Dubai ↔ Abu Dhabi",
-  "abu-dhabi": "Abu Dhabi ↔ All Emirates",
-  sharjah:     "Sharjah ↔ Abu Dhabi",
+  "abu-dhabi": "Abu Dhabi ↔ Dubai / Ajman",
   ajman:       "Ajman ↔ Abu Dhabi",
 };
 
@@ -82,10 +78,8 @@ export async function generateMetadata({
   if (!location) return {};
   const tripPrice = emirateNormalPriceDisplay[location.emirate as Emirate];
   return {
-    title: `Car Lift ${location.name} – ${emirateRouteLabel[location.emirate as Emirate]} | Car Lift UAE`,
-    description:
-      location.description +
-      ` Per-trip pricing from ${tripPrice}. GPS tracked, verified drivers.`,
+    title: `Car Lift ${location.name} – Daily Service`,
+    description: location.description.slice(0, 150),
     keywords: location.keywords.join(", "),
     alternates: {
       canonical: `https://www.carliftuae.com/locations/${location.slug}`,
@@ -121,33 +115,27 @@ const GENERIC_FAQS = FAQS.filter((f) =>
 
 const emirateBadgeClass: Record<Emirate, string> = {
   "abu-dhabi": "bg-amber-100 text-amber-700",
-  sharjah:     "bg-blue-100 text-blue-700",
   dubai:       "bg-emerald-100 text-emerald-700",
   ajman:       "bg-purple-100 text-purple-700",
 };
 
 const emirateLabel: Record<Emirate, string> = {
   "abu-dhabi": "Abu Dhabi",
-  sharjah:     "Sharjah",
   dubai:       "Dubai",
   ajman:       "Ajman",
 };
 
 const emirateHeroImage: Record<Emirate, { src: string; alt: string }> = {
   "abu-dhabi": {
-    src: "/images/locations/sharjah/sharjah-car-lift-morning-pickup.webp",
-    alt: "Abu Dhabi car lift service – inter-emirate rides to Dubai, Sharjah and Ajman",
-  },
-  sharjah: {
-    src: "/images/locations/sharjah/sharjah-car-lift-morning-pickup.webp",
-    alt: "Morning car lift pickup in Sharjah – daily commuters heading to Abu Dhabi",
+    src: "/images/hero/carlift-uae-route-dubai-skyline.webp",
+    alt: "Abu Dhabi car lift service – inter-emirate rides to Dubai and Ajman",
   },
   dubai: {
     src: "/images/locations/business-bay/business-bay-car-lift-professionals.webp",
     alt: "Dubai car lift service – comfortable rides between Dubai and Abu Dhabi",
   },
   ajman: {
-    src: "/images/locations/sharjah/sharjah-car-lift-morning-pickup.webp",
+    src: "/images/hero/carlift-uae-boarding-sunset-dubai.webp",
     alt: "Daily car lift pickup service in Ajman – shared rides to Abu Dhabi",
   },
 };

@@ -11,8 +11,8 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Ladies Car Lift Ajman to Dubai – Female-Only Service | AED 130 | +971 54 330 8261",
-  description: "Safe, reliable ladies car lift from Ajman to Dubai. Female-only shared rides with verified drivers. AED 130 sharing per trip. WhatsApp +971 54 330 8261 to book.",
+  title: "Ladies Car Lift Ajman to Dubai",
+  description: "Ladies-only car lift Ajman → Dubai. Female-only shared rides, AED 130 per trip. WhatsApp +971 54 330 8261.",
   keywords: "ladies car lift ajman to dubai, female car lift ajman dubai, women car lift ajman, ladies taxi ajman dubai, ladies transport ajman",
   alternates: { canonical: "https://www.carliftuae.com/ladies-car-lift-ajman-to-dubai" },
   other: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "geo.placename": "Ajman, UAE",
   },
   openGraph: {
-    title: "Ladies Car Lift Ajman to Dubai – Female-Only Service | AED 130 | +971 54 330 8261",
+    title: "Ladies Car Lift Ajman to Dubai – AED 130 | +971 54 330 8261",
     description: "Safe female-only car lift from Ajman to Dubai. AED 130 sharing. Verified drivers. Morning and evening service.",
   },
 };
@@ -31,7 +31,7 @@ const PAGE_FAQS = [
   { question: "Which Ajman areas are covered for ladies car lift?", answer: "We pick up from Al Nuaimia, Al Rashidiya, Al Jurf, Emirates City, Al Rumailah, and Al Mowaihat in Ajman. Additional pickup points can be arranged — WhatsApp to discuss your location." },
   { question: "Which Dubai areas do you drop off at for ladies car lift?", answer: "Drop-off points include Deira, Bur Dubai, Al Qusais, Al Nahda (Dubai), Business Bay, Downtown Dubai, and JLT/Marina area. Confirm your workplace or destination when booking." },
   { question: "What time does the ladies car lift from Ajman to Dubai depart?", answer: "Morning departures from Ajman: 7:00 AM, 7:30 AM, 8:00 AM. Evening return from Dubai: 5:30 PM, 6:00 PM, 6:30 PM." },
-  { question: "Can I book a monthly ladies car lift from Ajman to Dubai?", answer: "Yes. Monthly reserved-seat packages are available for the Ajman–Dubai ladies car lift. WhatsApp +971 54 330 8261 with your route, timing, and start date to arrange a monthly subscription." },
+  { question: "Can I reserve a daily ladies seat from Ajman to Dubai?", answer: "Yes. Daily reserved seats are available for the Ajman–Dubai ladies car lift. WhatsApp +971 54 330 8261 with your route, timing, and start date to reserve your seat." },
 ];
 
 const PICKUP_AREAS = ["Al Nuaimia Ajman", "Al Rashidiya Ajman", "Al Jurf", "Emirates City", "Al Rumailah", "Al Mowaihat"];
@@ -78,7 +78,7 @@ export default function LadiesCarLiftAjmanToDubaiPage() {
                 Ladies Car Lift Ajman to Dubai – Safe Female-Only Service
               </h1>
               <p className="speakable-desc text-pink-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Dedicated ladies car lift from Ajman to Dubai. Female-only shared rides with verified professional drivers. AED 130 sharing per trip. Safe, punctual, and comfortable.</p>
-              <p className="text-pink-200/80 text-sm leading-relaxed mb-6 max-w-xl">40–60 minutes from Ajman to Dubai via Emirates Road. Morning departures from 7:00 AM. Monthly packages available.</p>
+              <p className="text-pink-200/80 text-sm leading-relaxed mb-6 max-w-xl">40–60 minutes from Ajman to Dubai via Emirates Road. Morning departures from 7:00 AM. Daily seats available.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key service stats">
                 {[
                   { icon: DollarSign, label: "AED 130 Sharing", sub: "Per trip" },
@@ -188,7 +188,7 @@ export default function LadiesCarLiftAjmanToDubaiPage() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
               { href: "/car-lift-ajman", label: "Car Lift Ajman Hub", desc: "All Ajman routes" },
-              { href: "/car-lift-ajman-to-sharjah", label: "Car Lift Ajman to Sharjah", desc: "Ajman–Sharjah route" },
+              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 130 sharing / AED 200 private" },
               { href: "/car-lift-dubai-to-ajman", label: "Car Lift Dubai to Ajman", desc: "Evening return service" },
               { href: "/car-lift-dubai", label: "Car Lift Dubai Hub", desc: "All Dubai routes" },
             ].map(({ href, label, desc }) => (

@@ -114,7 +114,7 @@ export default function BookingForm() {
             name="fromLocation"
             type="text"
             required
-            placeholder="e.g. Al Majaz, Sharjah"
+            placeholder="e.g. Al Nuaimiya, Ajman"
             value={form.fromLocation}
             onChange={handleChange}
             className={inputClass}
@@ -174,7 +174,7 @@ export default function BookingForm() {
           id="booking-message"
           name="message"
           rows={3}
-          placeholder="e.g. Ladies-only preference, monthly package, specific landmarks..."
+          placeholder="e.g. Ladies-only preference, daily seat, specific landmarks..."
           value={form.message}
           onChange={handleChange}
           className={inputClass + " resize-none"}

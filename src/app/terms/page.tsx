@@ -13,6 +13,8 @@ import {
   Gavel,
 } from "lucide-react";
 import Breadcrumb from "@/components/sections/breadcrumb";
+import SchemaScript from "@/components/sections/schema-script";
+import { breadcrumbSchema } from "@/lib/schema";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -70,7 +72,7 @@ const sections = [
         </p>
         <ul className="space-y-2 mb-4">
           {[
-            "Daily and monthly shared car lift rides between residential areas and business districts",
+            "Daily shared car lift rides between residential areas and business districts",
             "Ladies-only car lift services with optional female drivers",
             "Family and school transport services",
             "Corporate and staff transport solutions for businesses",
@@ -108,7 +110,7 @@ const sections = [
           {[
             "All bookings must be made via WhatsApp or our website contact form.",
             "Daily car lift bookings must be confirmed by 9:00 PM the previous evening.",
-            "Monthly packages are confirmed upon receipt of payment.",
+            "Daily seat reservations are confirmed upon receipt of payment.",
             "Car Lift UAE reserves the right to refuse bookings at its sole discretion.",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
@@ -125,9 +127,9 @@ const sections = [
           {[
             "Daily bookings cancelled before 10:00 PM the night before are fully refunded or credited.",
             "Daily bookings cancelled after 10:00 PM may incur a cancellation fee of up to 50% of the trip cost.",
-            "Monthly package cancellations must be submitted in writing (WhatsApp or email) at least 5 business days before the next billing period.",
-            "Cancellations within 5 days of the billing period will be processed from the following month.",
-            "If you cancel a monthly package mid-month, no pro-rated refund is issued (see Section 4 – Payment Terms).",
+            "Seat reservation cancellations must be submitted in writing (WhatsApp or email) at least 24 hours before the next reserved day.",
+            "Cancellations made after 10:00 PM the night before are non-refundable.",
+            "If you cancel a reserved seat period after it has commenced, no pro-rated refund is issued (see Section 4 – Payment Terms).",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
               <span className="w-2 h-2 rounded-full bg-amber-500 mt-2 shrink-0" />
@@ -162,20 +164,20 @@ const sections = [
         <ul className="space-y-3 mb-4">
           {[
             {
-              heading: "Monthly Packages",
-              text: "Monthly car lift packages are payable in advance on or before the 1st of each month. Service will not commence or continue until payment is received.",
+              heading: "Daily Seat Reservations",
+              text: "Daily seat reservations are payable in advance. Service will not commence until payment is received.",
             },
             {
               heading: "Daily Bookings",
               text: "Daily car lift fees are payable at the time of booking or as instructed by our team.",
             },
             {
-              heading: "No Mid-Month Refunds",
-              text: "Once a monthly package has commenced (i.e., rides have begun in the billing month), no refund will be issued for unused days or rides — regardless of absence, travel, or cancellation.",
+              heading: "No Refunds for Unused Reserved Days",
+              text: "Once a reserved seat period has commenced, no refund will be issued for unused days or rides — regardless of absence, travel, or cancellation.",
             },
             {
-              heading: "Freeze Policy",
-              text: "You may pause your monthly package for up to 7 days per month with 48 hours' notice. Frozen days will be added to your next billing cycle.",
+              heading: "Pause Policy",
+              text: "You may pause your daily seat reservation with 48 hours' notice.",
             },
             {
               heading: "Accepted Payment Methods",
@@ -298,7 +300,7 @@ const sections = [
           {[
             "Car Lift UAE is not liable for delays caused by traffic, accidents, road closures, or other circumstances beyond our control.",
             "Car Lift UAE is not liable for loss of earnings, missed appointments, or consequential losses resulting from a delayed or cancelled ride.",
-            "Our liability for any single incident is limited to the value of the ride fare or monthly package fee paid for the relevant billing period.",
+            "Our liability for any single incident is limited to the value of the ride fare paid for the relevant trip or reservation period.",
             "Car Lift UAE is not responsible for personal injury or property damage where the passenger has acted in violation of these Terms, UAE traffic law, or instructions given by the driver.",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
@@ -376,7 +378,7 @@ const sections = [
             },
             {
               step: "Step 4",
-              text: "Unresolved disputes will be subject to the jurisdiction of the courts of Sharjah, UAE, in accordance with UAE law.",
+              text: "Unresolved disputes will be subject to the jurisdiction of the courts of Abu Dhabi, UAE, in accordance with UAE law.",
             },
           ].map(({ step, text }) => (
             <li key={step} className="flex items-start gap-3">
@@ -440,17 +442,17 @@ const sections = [
         <p className="text-slate-600 leading-relaxed mb-4">
           These Terms of Service are governed by and construed in accordance
           with the laws of the United Arab Emirates, specifically the laws of
-          the Emirate of Sharjah.
+          the Emirate of Abu Dhabi.
         </p>
         <ul className="space-y-3 mb-4">
           {[
             {
               heading: "Jurisdiction",
-              text: "Any disputes arising from or relating to these Terms shall be subject to the exclusive jurisdiction of the courts of Sharjah, UAE.",
+              text: "Any disputes arising from or relating to these Terms shall be subject to the exclusive jurisdiction of the courts of Abu Dhabi, UAE.",
             },
             {
               heading: "UAE Transport Regulations",
-              text: "Our services are provided in compliance with applicable UAE Federal transport regulations and Sharjah transport authority guidelines.",
+              text: "Our services are provided in compliance with applicable UAE Federal transport regulations and Abu Dhabi transport authority guidelines.",
             },
             {
               heading: "UAE Consumer Protection",
@@ -492,6 +494,14 @@ const sections = [
 export default function TermsPage() {
   return (
     <>
+      <SchemaScript
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Terms of Service", url: "/terms" },
+          ]),
+        ]}
+      />
       {/* ─── Page Hero ─── */}
       <section
         aria-labelledby="terms-hero-heading"
@@ -601,7 +611,7 @@ export default function TermsPage() {
             <p className="text-slate-600 text-sm leading-relaxed">
               These Terms of Service were last updated in{" "}
               <strong className="text-slate-800">January 2025</strong> and are
-              governed by the laws of the Emirate of Sharjah, UAE. For any
+              governed by the laws of the Emirate of Abu Dhabi, UAE. For any
               questions about these Terms, please contact us at{" "}
               <a
                 href="mailto:info@carlift.ae"

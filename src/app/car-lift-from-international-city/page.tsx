@@ -31,9 +31,9 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift International City Dubai – Business Bay, DIFC, Downtown | +971 54 330 8261",
+  title: "Car Lift International City – Dubai",
   description:
-    "Daily car lift from International City (Dragon Mart area) to Business Bay, DIFC, Downtown Dubai, JLT, and more. All phases covered. Book via WhatsApp +971 54 330 8261.",
+    "Daily car lift International City (Dragon Mart) → Business Bay, DIFC, Downtown. WhatsApp +971 54 330 8261.",
   keywords:
     "car lift from international city, car lift international city, car lift service from international city, car lift from international city to business bay, car lift international city to business bay",
   alternates: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "geo.placename": "Dubai, UAE",
   },
   openGraph: {
-    title: "Car Lift International City Dubai – Business Bay, DIFC, Downtown | +971 54 330 8261",
+    title: "Car Lift International City | +971 54 330 8261",
     description:
       "Daily car lift from International City all phases to Business Bay, DIFC, Downtown Dubai. 35–55 min via Al Khail Road.",
   },
@@ -72,9 +72,9 @@ const PAGE_FAQS = [
       "Yes. DIFC is nearby to Business Bay and is covered on the same route. Just confirm your specific gate or tower when booking.",
   },
   {
-    question: "Can I book a monthly car lift from International City?",
+    question: "Can I get a guaranteed daily seat from International City?",
     answer:
-      "Yes. Monthly packages are available for regular commuters from International City. WhatsApp +971 54 330 8261 with your daily pickup and destination to get a monthly quote.",
+      "Yes. Regular commuters from International City can reserve a guaranteed daily seat — no need to book each morning. WhatsApp +971 54 330 8261 with your daily pickup and destination.",
   },
   {
     question: "Is there a car lift from International City to Al Quoz?",

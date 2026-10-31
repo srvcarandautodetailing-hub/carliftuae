@@ -31,9 +31,9 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Carpool Dubai – Shared Rides from AED 100 | Dubai to Abu Dhabi Carpool | +971 54 330 8261",
+  title: "Carpool Dubai – Shared Rides AED 100",
   description:
-    "Carpool service in Dubai. Shared rides from AED 100 per trip. Dubai ↔ Abu Dhabi, Sharjah ↔ Dubai, Ajman ↔ Dubai. GPS-tracked, air-conditioned vehicles. WhatsApp +971 54 330 8261.",
+    "Carpool Dubai: shared rides from AED 100 per trip. Dubai ↔ Abu Dhabi carpool daily. WhatsApp +971 54 330 8261.",
   keywords:
     "carpool dubai, car pool dubai, carpooling dubai, carpool dubai to abu dhabi, carpool uae, car pooling, carpool near me",
   alternates: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "geo.placename": "Dubai, UAE",
   },
   openGraph: {
-    title: "Carpool Dubai – Shared Rides from AED 100 | Dubai to Abu Dhabi Carpool | +971 54 330 8261",
+    title: "Carpool Dubai – Shared Rides AED 100 | +971 54 330 8261",
     description:
       "Organised carpool service in Dubai from AED 100 sharing per trip. All inter-emirate routes. GPS-tracked, verified drivers.",
   },
@@ -59,7 +59,7 @@ const PAGE_FAQS = [
   {
     question: "How much does carpooling cost in Dubai?",
     answer:
-      "Carpool pricing in Dubai starts from AED 100 per trip sharing (Abu Dhabi to Dubai). Sharjah to Dubai carpool is AED 130 sharing per trip. Ajman to Dubai sharing is also AED 130 per trip. Monthly packages are available at reduced per-trip rates.",
+      "Carpool pricing in Dubai starts from AED 100 per trip sharing (Dubai to Abu Dhabi). Ajman to Dubai carpool is AED 130 sharing per trip. Fares are fixed per trip — no surge pricing."
   },
   {
     question: "Is carpooling legal in UAE?",
@@ -74,18 +74,27 @@ const PAGE_FAQS = [
   {
     question: "What routes does the Dubai carpool service cover?",
     answer:
-      "We cover: Dubai ↔ Abu Dhabi (AED 100 sharing / AED 180 private), Sharjah ↔ Dubai (AED 130 sharing / AED 200 private), and Ajman ↔ Dubai (AED 130 sharing / AED 200 private). All routes serve both directions.",
+      "We cover: Dubai ↔ Abu Dhabi (AED 100 sharing / AED 180 private) and Ajman ↔ Dubai (AED 130 sharing / AED 200 private). All routes serve both directions.",
   },
   {
     question: "Are carpool vehicles air-conditioned in UAE?",
     answer:
       "Yes. All Quick Car Lift Service UAE vehicles are luxury, air-conditioned cars and vans. No public-bus-style transport — you travel in comfort with a small group of fellow professionals.",
   },
+  {
+    question: "Is there a daily carpool from Dubai to Abu Dhabi?",
+    answer:
+      "Yes. Our Dubai to Abu Dhabi carpool runs every working day with morning departures from Dubai and evening returns from Abu Dhabi. AED 100 sharing per trip, all E11 Salik tolls included. WhatsApp +971 54 330 8261 to reserve your seat.",
+  },
+  {
+    question: "Carpool or private car lift — which should I choose?",
+    answer:
+      "Carpool (AED 100 sharing Dubai–Abu Dhabi) is the most economical for solo daily commuters — you share with fellow professionals. A private car lift (AED 180) gives you the whole vehicle with flexible timing, ideal for groups, families or airport trips.",
+  },
 ];
 
 const ROUTES = [
   { route: "Dubai ↔ Abu Dhabi", sharing: "AED 100", private: "AED 180" },
-  { route: "Sharjah ↔ Dubai", sharing: "AED 130", private: "AED 200" },
   { route: "Ajman ↔ Dubai", sharing: "AED 130", private: "AED 200" },
 ];
 
@@ -97,7 +106,7 @@ const BENEFITS = [
   "Fixed timings, no waiting",
   "Up to 4 passengers per ride",
   "WhatsApp booking in 60 seconds",
-  "Monthly packages available",
+  "Fixed per-trip fares",
 ];
 
 export default function CarpoolDubaiPage() {
@@ -112,7 +121,7 @@ export default function CarpoolDubaiPage() {
     serviceSchema({
       name: "Carpool Dubai",
       description:
-        "Organised carpool service in Dubai. Shared rides from AED 100 per trip. All inter-emirate routes — Dubai to Abu Dhabi, Sharjah to Dubai, Ajman to Dubai. GPS-tracked, verified drivers.",
+        "Organised carpool service in Dubai. Shared rides from AED 100 per trip. All inter-emirate routes — Dubai to Abu Dhabi and Ajman to Dubai. GPS-tracked, verified drivers.",
       url: "/carpool-dubai",
       price: "100",
     }),
@@ -159,10 +168,10 @@ export default function CarpoolDubaiPage() {
                 Carpool Dubai – Shared Car Lift &amp; Carpooling UAE
               </h1>
               <p className="speakable-desc text-teal-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
-                Organised carpool rides across all UAE inter-emirate routes. Share a clean, air-conditioned vehicle with fellow professionals and save up to 70% compared to driving solo.
+                Organised carpool rides across the UAE — including the busy Dubai to Abu Dhabi carpool corridor. Share a clean, air-conditioned vehicle with fellow professionals on your route and save up to 70% compared to driving solo.
               </p>
               <p className="text-teal-200/80 text-sm leading-relaxed mb-6 max-w-xl">
-                From AED 100 sharing per trip. All routes covered: Dubai ↔ Abu Dhabi, Sharjah ↔ Dubai, Ajman ↔ Dubai. Verified drivers, GPS tracking.
+                From AED 100 sharing per trip. All routes covered: Dubai ↔ Abu Dhabi and Ajman ↔ Dubai. Verified drivers, GPS tracking.
               </p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key carpool stats">
                 {[
@@ -284,7 +293,7 @@ export default function CarpoolDubaiPage() {
             {[
               { href: "/car-lift-dubai", label: "Car Lift Dubai", desc: "All Dubai routes hub page" },
               { href: "/car-lift-dubai-to-abu-dhabi", label: "Car Lift Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 180 private" },
-              { href: "/car-lift-sharjah-to-dubai", label: "Car Lift Sharjah to Dubai", desc: "AED 130 sharing / AED 200 private" },
+              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 130 sharing / AED 200 private" },
               { href: "/private-car-lift-dubai", label: "Private Car Lift Dubai", desc: "Exclusive vehicle, no strangers" },
             ].map(({ href, label, desc }) => (
               <li key={href}>

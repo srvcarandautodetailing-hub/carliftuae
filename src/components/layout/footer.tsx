@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Phone, Mail, MessageCircle, Car, Clock, Shield, CheckCircle } from "lucide-react";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
@@ -10,6 +10,8 @@ const FOOTER_LINKS = {
   ],
   Routes: [
     { label: "Dubai ↔ Abu Dhabi", href: "/car-lift-dubai-to-abu-dhabi" },
+    { label: "Ajman → Dubai", href: "/car-lift-ajman-to-dubai" },
+    { label: "Airport Car Lift", href: "/airport-car-lift" },
     { label: "All Routes", href: "/routes" },
     { label: "Pricing", href: "/pricing" },
   ],
@@ -64,11 +66,11 @@ export function Footer() {
               </div>
               <div>
                 <span className="font-bold text-lg text-white block leading-none">Quick Car Lift Service UAE</span>
-                <span className="text-xs text-blue-400">Dubai · Abu Dhabi · Sharjah · Ajman</span>
+                <span className="text-xs text-blue-400">Dubai · Abu Dhabi · Ajman</span>
               </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
-              Quick Car Lift Service UAE — reliable private car lift and carpool rides covering Dubai, Abu Dhabi, Sharjah, and Ajman.
+              Quick Car Lift Service UAE — reliable private car lift and carpool rides covering Dubai, Abu Dhabi and Ajman, plus airport pickups across the UAE.
             </p>
 
             {/* Contact info */}
@@ -90,7 +92,7 @@ export function Footer() {
               </a>
               <div className="flex items-start gap-3 text-sm text-slate-400">
                 <Car className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                <span>Dubai · Abu Dhabi · Sharjah · Ajman</span>
+                <span>Dubai · Abu Dhabi · Ajman</span>
               </div>
             </div>
 
@@ -120,7 +122,7 @@ export function Footer() {
                 Quick Car Lift Service
               </a>
               <p className="text-xs text-slate-500 leading-relaxed mt-1">
-                Reliable daily, monthly &amp; corporate car lift and transportation services based in Abu Dhabi, serving Abu Dhabi, Dubai, Ajman and Al Ain.
+                Reliable daily &amp; corporate car lift and transportation services based in Abu Dhabi, serving Abu Dhabi, Dubai, Ajman and Al Ain.
               </p>
             </div>
 
@@ -154,7 +156,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-slate-400">
-              © {currentYear} Quick Car Lift Service UAE. All rights reserved. Serving Dubai, Abu Dhabi, Sharjah &amp; Ajman.
+              © {currentYear} Quick Car Lift Service UAE. All rights reserved. Serving Dubai, Abu Dhabi &amp; Ajman.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="text-sm text-slate-400 hover:text-white transition-colors py-1 inline-block">

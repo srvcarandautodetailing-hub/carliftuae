@@ -11,11 +11,11 @@ export default function Image() {
     buildOgImageJsx({
       badge: "Dubai → UAE Routes",
       title: "Car Lift Dubai – All Routes",
-      subtitle: "AED 100 sharing / AED 180 private · Abu Dhabi, Sharjah, Ajman · 24/7",
+      subtitle: "AED 100 sharing / AED 180 private · Abu Dhabi, Ajman · 24/7",
       accentColor: "#1d4ed8",
       stats: [
         { label: "AED 100 Sharing (Abu Dhabi)", color: "#10b981" },
-        { label: "AED 130 Sharing (Sharjah/Ajman)", color: "#f59e0b" },
+        { label: "AED 130 Sharing (Ajman)", color: "#f59e0b" },
         { label: "24/7 Service", color: "#60a5fa" },
         { label: "+971 54 330 8261", color: "#a78bfa" },
       ],

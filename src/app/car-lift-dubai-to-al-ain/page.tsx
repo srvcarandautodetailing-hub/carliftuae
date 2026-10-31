@@ -11,8 +11,8 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift Dubai to Al Ain – Long Distance Intercity | Contact for Price | +971 54 330 8261",
-  description: "Long distance car lift from Dubai to Al Ain. Private and shared intercity rides via E66 Dubai-Al Ain Road. Contact for price and availability. WhatsApp +971 54 330 8261.",
+  title: "Car Lift Dubai to Al Ain – AED 200",
+  description: "Long-distance car lift Dubai → Al Ain. Private & shared intercity rides. Contact for price. WhatsApp +971 54 330 8261.",
   keywords: "car lift dubai to al ain, dubai to al ain car lift, car lift to al ain, dubai al ain transport, al ain car lift service",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-dubai-to-al-ain" },
   other: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "geo.placename": "Dubai, UAE",
   },
   openGraph: {
-    title: "Car Lift Dubai to Al Ain – Long Distance Intercity | Contact for Price | +971 54 330 8261",
+    title: "Car Lift Dubai to Al Ain – Long Distance | +971 54 330 8261",
     description: "Long distance intercity car lift from Dubai to Al Ain via E66. Contact for price and availability. WhatsApp +971 54 330 8261.",
   },
 };
@@ -163,7 +163,7 @@ export default function CarLiftDubaiToAlAinPage() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
               { href: "/car-lift-abu-dhabi", label: "Car Lift Abu Dhabi Hub", desc: "All Abu Dhabi routes" },
-              { href: "/car-lift-from-sharjah-to-abu-dhabi", label: "Car Lift Sharjah to Abu Dhabi", desc: "Intercity SHJ–AD" },
+              { href: "/car-lift-abu-dhabi-to-dubai", label: "Car Lift Abu Dhabi to Dubai", desc: "AED 100 sharing / AED 180 private" },
               { href: "/car-lift-dubai", label: "Car Lift Dubai Hub", desc: "All Dubai routes" },
               { href: "/private-car-lift-dubai", label: "Private Car Lift Dubai", desc: "Private vehicle service" },
             ].map(({ href, label, desc }) => (

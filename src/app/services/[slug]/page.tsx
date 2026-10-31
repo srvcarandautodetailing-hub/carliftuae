@@ -23,7 +23,7 @@ import { Badge } from "@/components/ui/badge";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import CtaBanner from "@/components/sections/cta-banner";
 import SchemaScript from "@/components/sections/schema-script";
-import { serviceSchema, faqSchema } from "@/lib/schema";
+import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/schema";
 import { SERVICES, getServiceBySlug } from "@/data/services";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
@@ -57,7 +57,7 @@ const HOW_IT_WORKS = [
     step: 3,
     title: "Get Your Pickup Point",
     description:
-      "We'll assign you the nearest pickup point. Monthly riders get a fixed spot — just show up on time.",
+      "We'll assign you the nearest pickup point. Daily riders get a fixed spot — just show up on time.",
   },
   {
     step: 4,
@@ -80,13 +80,8 @@ export async function generateMetadata({
   const service = getServiceBySlug(slug);
   if (!service) return {};
   return {
-    title: `${service.name} UAE – Reliable & Affordable Transport`,
-    description:
-      service.description +
-      " Book now from " +
-      service.price +
-      " " +
-      service.priceNote,
+    title: `${service.name} UAE`,
+    description: service.description.slice(0, 150),
     alternates: { canonical: `https://www.carliftuae.com/services/${slug}` },
     openGraph: {
       title: `${service.name} UAE – Reliable & Affordable Transport`,
@@ -126,6 +121,11 @@ export default async function ServicePage({
       price: service.price,
     }),
     ...(service.faqs.length > 0 ? [faqSchema(service.faqs)] : []),
+    breadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "Services", url: "/services" },
+      { name: service.name, url: `/services/${slug}` },
+    ]),
   ];
 
   return (

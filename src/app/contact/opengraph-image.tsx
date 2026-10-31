@@ -1,4 +1,4 @@
-﻿import { ImageResponse } from "next/og";
+import { ImageResponse } from "next/og";
 import { buildOgImageJsx } from "@/lib/og-image";
 
 export const runtime = "nodejs";
@@ -17,7 +17,7 @@ export default function Image() {
         { label: "+971 54 330 8261", color: "#10b981" },
         { label: "60-sec Booking", color: "#f59e0b" },
         { label: "24-hr Response", color: "#60a5fa" },
-        { label: "Sharjah · Dubai", color: "#a78bfa" },
+        { label: "Abu Dhabi · Dubai", color: "#a78bfa" },
       ],
     }),
     { ...size }

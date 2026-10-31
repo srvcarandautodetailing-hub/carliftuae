@@ -1,7 +1,7 @@
-﻿import { ImageResponse } from "next/og";
+import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
-export const alt = "Quick Car Lift Service UAE – Dubai, Abu Dhabi, Sharjah & Ajman";
+export const alt = "Quick Car Lift Service UAE – Dubai, Abu Dhabi & Ajman";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -73,7 +73,7 @@ export default async function Image() {
               Quick Car Lift Service UAE
             </span>
             <span style={{ color: "#60a5fa", fontSize: "16px" }}>
-              Dubai · Abu Dhabi · Sharjah · Ajman
+              Dubai · Abu Dhabi · Ajman
             </span>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default async function Image() {
             marginBottom: "40px",
           }}
         >
-          Dubai · Abu Dhabi · Sharjah · Ajman
+          Dubai · Abu Dhabi · Ajman
         </div>
 
         {/* Stats row */}
@@ -118,7 +118,7 @@ export default async function Image() {
         >
           {[
             { label: "Dubai↔Abu Dhabi AED 200", color: "#10b981" },
-            { label: "Abu Dhabi↔Sharjah AED 130 sharing", color: "#f59e0b" },
+            { label: "Abu Dhabi↔Ajman AED 140 sharing", color: "#f59e0b" },
             { label: "Abu Dhabi↔Ajman AED 130 sharing", color: "#60a5fa" },
             { label: "Airport Transfers Available", color: "#a78bfa" },
           ].map((stat) => (

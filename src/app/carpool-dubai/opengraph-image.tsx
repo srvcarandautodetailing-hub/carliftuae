@@ -15,7 +15,7 @@ export default function Image() {
       accentColor: "#0d9488",
       stats: [
         { label: "AED 100 from (Abu Dhabi)", color: "#10b981" },
-        { label: "AED 130 from (Sharjah/Ajman)", color: "#f59e0b" },
+        { label: "AED 130 from (Ajman)", color: "#f59e0b" },
         { label: "4 Passengers Max", color: "#60a5fa" },
         { label: "+971 54 330 8261", color: "#a78bfa" },
       ],

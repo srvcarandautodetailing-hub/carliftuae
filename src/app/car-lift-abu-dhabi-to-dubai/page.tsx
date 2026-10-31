@@ -32,11 +32,11 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift Abu Dhabi to Dubai – AED 100 Sharing / AED 180 Private | +971 54 330 8261",
+  title: "Car Lift Abu Dhabi to Dubai – AED 100",
   description:
-    "Daily car lift from Abu Dhabi to Dubai from AED 100 sharing / AED 180 private per trip. Khalifa City, Mussafah, MBZ City pickup. Business Bay, DIFC, JLT drop-off. Salik included. WhatsApp +971 54 330 8261.",
+    "Daily car lift Abu Dhabi → Dubai from AED 100 sharing / AED 180 private. Khalifa City, Mussafah, MBZ pickup. WhatsApp +971 54 330 8261.",
   keywords:
-    "car lift abu dhabi to dubai, abu dhabi to dubai car lift, sharing taxi from abu dhabi to dubai, carpool abu dhabi to dubai, abu dhabi dubai car lift monthly, pick and drop abu dhabi to dubai",
+    "car lift abu dhabi to dubai, abu dhabi to dubai car lift, sharing taxi from abu dhabi to dubai, carpool abu dhabi to dubai, pick and drop abu dhabi to dubai",
   alternates: {
     canonical: "https://www.carliftuae.com/car-lift-abu-dhabi-to-dubai",
   },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     "geo.placename": "Abu Dhabi, UAE",
   },
   openGraph: {
-    title: "Car Lift Abu Dhabi to Dubai – AED 100 Sharing / AED 180 Private | +971 54 330 8261",
+    title: "Car Lift Abu Dhabi to Dubai – AED 100 | +971 54 330 8261",
     description:
       "Daily car lift from Abu Dhabi to Dubai – AED 100 sharing / AED 180 private per trip. Khalifa City, Mussafah, MBZ pickup. Business Bay, DIFC, JLT drop-off. Salik included.",
   },
@@ -83,9 +83,9 @@ const PAGE_FAQS = [
       "Yes. A ladies-only car lift from Abu Dhabi to Dubai is available — either a verified female driver or a ladies-only vehicle with all female passengers. The same per-trip price applies. WhatsApp +971 54 330 8261 to arrange the ladies option when booking.",
   },
   {
-    question: "Can I book a monthly car lift from Abu Dhabi to Dubai?",
+    question: "Can I get a guaranteed daily seat from Abu Dhabi to Dubai?",
     answer:
-      "Yes. Monthly commuter packages provide a guaranteed daily seat Monday to Saturday — no need to book each morning. Contact Quick Car Lift Service UAE on WhatsApp with your Abu Dhabi pickup area and Dubai destination for a personalised monthly quote.",
+      "Yes. Our daily car lift gives you a guaranteed seat every working day — no need to book each morning. Contact Quick Car Lift Service UAE on WhatsApp with your Abu Dhabi pickup area and Dubai destination to reserve your seat.",
   },
   {
     question: "What route does the Abu Dhabi to Dubai car lift take?",
@@ -168,7 +168,7 @@ const SERVICES = [
   {
     icon: Briefcase,
     title: "Corporate Staff Transport",
-    desc: "Dedicated vehicles for Abu Dhabi companies with Dubai offices. Monthly billing, priority booking.",
+    desc: "Dedicated vehicles for Abu Dhabi companies with Dubai offices. Simple billing, priority booking.",
   },
   {
     icon: Building2,
@@ -246,9 +246,7 @@ export default function CarLiftAbuDhabiToDubaiPage() {
                 Car Lift Abu Dhabi to<br className="hidden sm:block" /> Dubai – Daily Commute
               </h1>
               <p className="speakable-desc text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
-                Daily shared and private car lift from Khalifa City, Mussafah, MBZ City, Baniyas,
-                and all Abu Dhabi areas to Business Bay, DIFC, JLT, Downtown Dubai, and more.
-                Via E11 Sheikh Zayed Road — Salik included.
+                Car lift from Abu Dhabi to Dubai costs <strong className="text-white">AED 100 sharing</strong> or <strong className="text-white">AED 180 private</strong> per trip. Daily departures from Khalifa City, Mussafah, MBZ City, Baniyas and all Abu Dhabi areas to Business Bay, DIFC, JLT and Downtown Dubai — via E11 Sheikh Zayed Road with Salik included.
               </p>
               <p className="text-emerald-200/80 text-sm leading-relaxed mb-6 max-w-xl">
                 Driving from Abu Dhabi to Dubai costs AED 4,100+/month in fuel, Salik, and Dubai
@@ -376,7 +374,7 @@ export default function CarLiftAbuDhabiToDubaiPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <p className="text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-3">
-              Real Monthly Savings
+              Real Commuter Savings
             </p>
             <h2
               id="cost-heading"
@@ -694,12 +692,12 @@ export default function CarLiftAbuDhabiToDubaiPage() {
                 desc: "All Abu Dhabi routes & pricing",
               },
               {
-                href: "/car-lift-from-sharjah-to-abu-dhabi",
-                label: "Car Lift Sharjah to Abu Dhabi",
-                desc: "AED 130 sharing / AED 200 private",
+                href: "/airport-car-lift-abu-dhabi-auh",
+                label: "AUH Airport Car Lift",
+                desc: "Abu Dhabi airport pickup & drop-off",
               },
               {
-                href: "/ladies-car-lift-sharjah-to-dubai",
+                href: "/ladies-car-lift-ajman-to-dubai",
                 label: "Ladies Car Lift",
                 desc: "Female driver, ladies-only option",
               },

@@ -22,10 +22,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Core pages ────────────────────────────────────────────────────────────
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: `${BASE_URL}/`,
+      url: `${BASE_URL}`,
       lastModified: TODAY,
       changeFrequency: "daily" as ChangeFrequency,
       priority: 1.0,
+      images: [
+        `${BASE_URL}/images/fleet/car-lift-dubai-toyota-camry-quick-car-lift-uae.webp`,
+        `${BASE_URL}/images/fleet/car-lift-dubai-honda-civic-silver-quick-car-lift-uae.webp`,
+        `${BASE_URL}/images/fleet/car-lift-dubai-honda-civic-white-rear-quick-car-lift-uae.webp`,
+        `${BASE_URL}/images/fleet/car-lift-dubai-lexus-es-front-quick-car-lift-uae.webp`,
+        `${BASE_URL}/images/fleet/car-lift-dubai-lexus-es-side-quick-car-lift-uae.webp`,
+        `${BASE_URL}/images/fleet/car-lift-dubai-lexus-es-rear-quick-car-lift-uae.webp`,
+        `${BASE_URL}/images/fleet/car-lift-abu-dhabi-kia-k5-quick-car-lift-uae.webp`,
+        `${BASE_URL}/images/fleet/car-lift-dubai-white-suv-quick-car-lift-uae.webp`,
+      ],
     },
     {
       url: `${BASE_URL}/services`,
@@ -68,6 +78,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: TODAY,
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.7,
+      images: [
+        `${BASE_URL}/images/fleet/car-lift-dubai-lexus-es-front-quick-car-lift-uae.webp`,
+        `${BASE_URL}/images/fleet/car-lift-dubai-toyota-camry-quick-car-lift-uae.webp`,
+        `${BASE_URL}/images/fleet/car-lift-abu-dhabi-kia-k5-quick-car-lift-uae.webp`,
+        `${BASE_URL}/images/fleet/car-lift-dubai-white-suv-quick-car-lift-uae.webp`,
+      ],
     },
     {
       url: `${BASE_URL}/contact`,
@@ -96,7 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: TODAY,
     changeFrequency: "daily" as ChangeFrequency,
     priority:
-      loc.slug === "sharjah" || loc.slug === "business-bay"
+      loc.slug === "business-bay"
         ? 0.95
         : loc.slug === "dubai" || loc.slug === "ajman"
         ? 0.88
@@ -109,7 +125,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: TODAY,
     changeFrequency: "daily" as ChangeFrequency,
     priority:
-      ["daily-car-lift", "monthly-car-lift", "ladies-car-lift"].includes(svc.slug)
+      ["daily-car-lift", "ladies-car-lift"].includes(svc.slug)
         ? 0.88
         : 0.80,
   }));
@@ -137,45 +153,67 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routeSlugs = [
     // Hub pages – highest priority
     { slug: "car-lift-dubai", priority: 0.92 },
-    { slug: "car-lift-sharjah", priority: 0.92 },
     { slug: "car-lift-abu-dhabi", priority: 0.92 },
     { slug: "car-lift-ajman", priority: 0.90 },
     // High-traffic intercity routes
     { slug: "car-lift-dubai-to-abu-dhabi", priority: 0.92 },
     { slug: "car-lift-abu-dhabi-to-dubai", priority: 0.90 },
-    { slug: "car-lift-sharjah-to-dubai", priority: 0.90 },
-    { slug: "car-lift-dubai-to-sharjah", priority: 0.88 },
-    { slug: "car-lift-from-sharjah-to-abu-dhabi", priority: 0.87 },
-    { slug: "car-lift-sharjah-to-ajman", priority: 0.85 },
-    { slug: "car-lift-ajman-to-sharjah", priority: 0.85 },
+    { slug: "car-lift-ajman-to-dubai", priority: 0.88 },
     { slug: "car-lift-dubai-to-ajman", priority: 0.85 },
     // Area-specific Dubai routes
-    { slug: "car-lift-sharjah-to-al-barsha", priority: 0.83 },
-    { slug: "car-lift-sharjah-to-al-quoz", priority: 0.83 },
-    { slug: "car-lift-sharjah-to-jebel-ali", priority: 0.82 },
     { slug: "car-lift-from-international-city", priority: 0.82 },
-    { slug: "car-lift-international-city-to-business-bay", priority: 0.81 },
-    { slug: "car-lift-silicon-oasis-to-business-bay", priority: 0.81 },
+    // Airport car lift pages
+    { slug: "airport-car-lift", priority: 0.90 },
+    { slug: "airport-car-lift-dubai-dxb", priority: 0.88 },
+    { slug: "airport-car-lift-dwc", priority: 0.85 },
+    { slug: "airport-car-lift-abu-dhabi-auh", priority: 0.88 },
+    { slug: "airport-car-lift-sharjah-shj", priority: 0.82 },
+    { slug: "airport-car-lift-ras-al-khaimah-rkt", priority: 0.78 },
+    { slug: "airport-car-lift-fujairah-fjr", priority: 0.78 },
     // Service-type pages
     { slug: "carpool-dubai", priority: 0.82 },
     { slug: "pick-and-drop-service", priority: 0.82 },
     { slug: "pick-and-drop-service-dubai", priority: 0.80 },
-    { slug: "pick-and-drop-service-sharjah", priority: 0.80 },
     { slug: "private-car-lift-dubai", priority: 0.80 },
-    { slug: "car-lift-dubai-monthly", priority: 0.80 },
-    { slug: "monthly-pick-and-drop-service-abu-dhabi", priority: 0.79 },
+    { slug: "daily-car-lift-dubai", priority: 0.82 },
+    { slug: "daily-car-lift-abu-dhabi", priority: 0.82 },
     { slug: "ladies-car-lift-ajman-to-dubai", priority: 0.80 },
     // Long-distance / intercity
-    { slug: "car-lift-sharjah-to-ras-al-khaimah", priority: 0.78 },
     { slug: "car-lift-dubai-to-al-ain", priority: 0.78 },
     { slug: "car-lift-umm-al-quwain", priority: 0.77 },
   ];
+
+  const ROUTE_FLEET_IMAGES: Record<string, string[]> = {
+    "car-lift-dubai": [
+      `${BASE_URL}/images/fleet/car-lift-dubai-toyota-camry-quick-car-lift-uae.webp`,
+      `${BASE_URL}/images/fleet/car-lift-dubai-honda-civic-silver-quick-car-lift-uae.webp`,
+      `${BASE_URL}/images/fleet/car-lift-dubai-honda-civic-white-rear-quick-car-lift-uae.webp`,
+      `${BASE_URL}/images/fleet/car-lift-dubai-white-suv-quick-car-lift-uae.webp`,
+    ],
+    "car-lift-abu-dhabi": [
+      `${BASE_URL}/images/fleet/car-lift-abu-dhabi-kia-k5-quick-car-lift-uae.webp`,
+      `${BASE_URL}/images/fleet/car-lift-dubai-lexus-es-front-quick-car-lift-uae.webp`,
+    ],
+    "airport-car-lift": [
+      `${BASE_URL}/images/fleet/car-lift-dubai-lexus-es-side-quick-car-lift-uae.webp`,
+      `${BASE_URL}/images/fleet/car-lift-dubai-lexus-es-rear-quick-car-lift-uae.webp`,
+    ],
+    "daily-car-lift-dubai": [
+      `${BASE_URL}/images/fleet/car-lift-dubai-toyota-camry-quick-car-lift-uae.webp`,
+      `${BASE_URL}/images/fleet/car-lift-dubai-honda-civic-silver-quick-car-lift-uae.webp`,
+    ],
+    "daily-car-lift-abu-dhabi": [
+      `${BASE_URL}/images/fleet/car-lift-abu-dhabi-kia-k5-quick-car-lift-uae.webp`,
+      `${BASE_URL}/images/fleet/car-lift-dubai-white-suv-quick-car-lift-uae.webp`,
+    ],
+  };
 
   const routePages: MetadataRoute.Sitemap = routeSlugs.map(({ slug, priority }) => ({
     url: `${BASE_URL}/${slug}`,
     lastModified: TODAY,
     changeFrequency: "daily" as ChangeFrequency,
     priority,
+    ...(ROUTE_FLEET_IMAGES[slug] ? { images: ROUTE_FLEET_IMAGES[slug] } : {}),
   }));
 
   return [

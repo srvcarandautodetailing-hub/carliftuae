@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Car,
@@ -22,16 +22,16 @@ import { Badge } from "@/components/ui/badge";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import CtaBanner from "@/components/sections/cta-banner";
 import SchemaScript from "@/components/sections/schema-script";
-import { serviceSchema } from "@/lib/schema";
+import { serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { SERVICES } from "@/data/services";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Quick Car Lift Service UAE – Car Lift & Airport Transfer UAE",
+  title: "Car Lift & Airport Transfer UAE",
   description:
-    "Quick Car Lift Service UAE covers Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Sharjah, and Abu Dhabi ↔ Ajman. Car lift rides and airport transfers. Book by phone or WhatsApp.",
+    "Quick Car Lift Service UAE covers Dubai ↔ Abu Dhabi and Abu Dhabi ↔ Ajman. Car lift rides and airport transfers across the UAE. Book by phone or WhatsApp.",
   alternates: { canonical: "https://www.carliftuae.com/services" },
   openGraph: {
     title: "Quick Car Lift Service UAE – Car Lift & Airport Transfer UAE",
@@ -63,7 +63,7 @@ const comparisonData = [
     note: "AED 200 per trip – both directions available",
   },
   {
-    question: "I need to travel between Abu Dhabi and Sharjah",
+    question: "I need to travel between Abu Dhabi and Ajman",
     answer: "Car Lift Service",
     slug: "car-lift-service",
     note: "AED 130 sharing per trip – both directions available",
@@ -83,14 +83,20 @@ const comparisonData = [
 ];
 
 export default function ServicesPage() {
-  const schemas = SERVICES.map((s) =>
-    serviceSchema({
-      name: s.name,
-      description: s.description,
-      url: `/services/${s.slug}`,
-      price: s.price,
-    })
-  );
+  const schemas = [
+    ...SERVICES.map((s) =>
+      serviceSchema({
+        name: s.name,
+        description: s.description,
+        url: `/services/${s.slug}`,
+        price: s.price,
+      })
+    ),
+    breadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "Services", url: "/services" },
+    ]),
+  ];
 
   return (
     <>

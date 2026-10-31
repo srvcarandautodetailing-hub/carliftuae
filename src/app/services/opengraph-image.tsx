@@ -1,8 +1,8 @@
-﻿import { ImageResponse } from "next/og";
+import { ImageResponse } from "next/og";
 import { buildOgImageJsx } from "@/lib/og-image";
 
 export const runtime = "nodejs";
-export const alt = "Car Lift UAE Services – Daily, Monthly, Ladies & Corporate Transport";
+export const alt = "Car Lift UAE Services – Daily, Ladies & Corporate Transport";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -11,7 +11,7 @@ export default function Image() {
     buildOgImageJsx({
       badge: "Our Services",
       title: "Car Lift Services in UAE",
-      subtitle: "Daily, monthly, ladies, corporate, school & airport transport across Sharjah, Dubai and Ajman.",
+      subtitle: "Daily, ladies & airport transport across Dubai, Abu Dhabi and Ajman.",
       accentColor: "#7c3aed",
       stats: [
         { label: "Daily Car Lift", color: "#10b981" },

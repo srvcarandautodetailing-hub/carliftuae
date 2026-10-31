@@ -1,12 +1,14 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
+import FleetGallery from "@/components/sections/fleet-gallery";
+import { FLEET_PHOTOS } from "@/data/fleet";
 import { Users, Star, Shield, Clock, DollarSign, Eye, Leaf, TrendingDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/sections/breadcrumb";
 import CtaBanner from "@/components/sections/cta-banner";
 import SchemaScript from "@/components/sections/schema-script";
-import { organizationSchema } from "@/lib/schema";
+import { organizationSchema, breadcrumbSchema, imageObjectSchema } from "@/lib/schema";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
 export const revalidate = 86400;
@@ -14,7 +16,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "About Car Lift UAE – Trusted Since 2019",
   description:
-    "Car Lift UAE has been connecting Sharjah and Ajman professionals to Dubai's Business Bay since 2019. Learn about our mission, story, team values, and why 500+ daily riders trust us.",
+    "Quick Car Lift Service UAE connects Dubai, Abu Dhabi & Ajman commuters with daily car lift. Professional drivers, 24/7.",
   alternates: { canonical: "https://www.carliftuae.com/about" },
   openGraph: {
     title: "About Car Lift UAE – Trusted Since 2019",
@@ -63,13 +65,13 @@ const benefitsVsDriving = [
     icon: DollarSign,
     title: "Save AED 850+/month",
     description:
-      "Driving yourself from Sharjah to Business Bay costs AED 1,200+ monthly in fuel, Salik tolls (AED 8 each way × 22 days), parking (AED 130 sharing+), and wear & tear. Car lift costs AED 130 sharing.",
+      "Driving yourself from Ajman to Business Bay costs AED 1,200+ monthly in fuel, Salik tolls (AED 8 each way × 22 days), parking (AED 130 sharing+), and wear & tear. Car lift costs AED 130 sharing.",
   },
   {
     icon: Leaf,
     title: "Reduce Your Carbon Footprint",
     description:
-      "Every shared car lift removes up to 3 individual cars from Sharjah–Dubai roads. Shared mobility reduces CO₂ emissions by up to 75% compared to solo driving.",
+      "Every shared car lift removes up to 3 individual cars from Ajman–Dubai roads. Shared mobility reduces CO₂ emissions by up to 75% compared to solo driving.",
   },
   {
     icon: TrendingDown,
@@ -85,9 +87,25 @@ export default function AboutPage() {
     "Hi! I'd like to know more about Car Lift UAE service."
   );
 
+const ABOUT_FLEET = FLEET_PHOTOS.filter((f) =>
+  f.src.includes("lexus-es-front") ||
+  f.src.includes("toyota-camry") ||
+  f.src.includes("kia-k5") ||
+  f.src.includes("white-suv")
+);
+
   return (
     <>
-      <SchemaScript schema={organizationSchema()} />
+      <SchemaScript
+        schema={[
+          organizationSchema(),
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "About Us", url: "/about" },
+          ]),
+          ...imageObjectSchema(ABOUT_FLEET),
+        ]}
+      />
 
       {/* ─── Page Hero ─── */}
       <section
@@ -124,7 +142,7 @@ export default function AboutPage() {
             About Car Lift UAE
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
-            UAE&apos;s most trusted daily car lift service — connecting Sharjah, Ajman,
+            UAE&apos;s most trusted daily car lift service — connecting Ajman, Abu Dhabi,
             and Dubai since 2019. Safe, affordable, and always on time.
           </p>
         </div>
@@ -149,7 +167,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-slate-600 leading-relaxed mb-4">
                 Millions of professionals in the UAE face a daily struggle: the
-                expensive, stressful solo commute from Sharjah and Ajman to
+                expensive, stressful solo commute from Ajman to
                 Dubai&apos;s business districts. Fuel costs, Salik tolls, parking
                 fees, and traffic congestion add up to thousands of dirhams each
                 month.
@@ -190,7 +208,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-white text-sm">Car Lift UAE Founders</p>
-                    <p className="text-blue-200 text-xs">Sharjah, 2019</p>
+                    <p className="text-blue-200 text-xs">UAE, 2019</p>
                   </div>
                 </div>
               </div>
@@ -216,7 +234,7 @@ export default function AboutPage() {
               From One Route to 50+ Across the UAE
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              What began as a small carpooling idea in Sharjah has grown into
+              What began as a small carpooling idea in the UAE has grown into
               UAE&apos;s most trusted daily car lift network.
             </p>
           </div>
@@ -237,7 +255,13 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="relative">
+          <FleetGallery
+            photos={ABOUT_FLEET}
+            heading="Our Fleet – The Cars Behind 2,000+ Monthly Rides"
+            subheading="Real photos of the vehicles our drivers use every day across Dubai, Abu Dhabi and Ajman."
+            id="fleet-about"
+          />
+          <div className="relative mt-14">
             {/* Timeline line */}
             <div
               className="hidden sm:block absolute left-1/2 top-0 bottom-0 w-px bg-blue-200 -translate-x-1/2"
@@ -252,10 +276,10 @@ export default function AboutPage() {
                     2019
                   </span>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    Founded in Sharjah
+                    Founded in the UAE
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
-                    Car Lift UAE launched with a single route: Al Majaz, Sharjah
+                    Car Lift UAE launched with a single route: Ajman
                     to Business Bay, Dubai. Three cars, twelve passengers, one
                     goal — make the daily commute bearable.
                   </p>
@@ -332,8 +356,8 @@ export default function AboutPage() {
                     500+ Riders, 50+ Routes, 4.9★ Rating
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
-                    Today, Car Lift UAE operates 50+ daily routes connecting all
-                    major areas of Sharjah, Ajman, and Dubai. Our fleet includes
+                    Today, Car Lift UAE operates daily routes connecting all
+                    major areas of Ajman, Abu Dhabi, and Dubai. Our fleet includes
                     Toyota Innova, Mitsubishi Montero, and Honda Odyssey vehicles.
                     We deliver 2,000+ rides every month and maintain a 4.9-star
                     rating — a testament to our commitment to excellence.
@@ -454,7 +478,7 @@ export default function AboutPage() {
           <div className="mt-12 bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div className="bg-slate-800 px-6 py-4">
               <h3 className="text-white font-bold text-lg">
-                Monthly Commute Cost: Driving vs. Car Lift (Sharjah → Business Bay)
+                Monthly Commute Cost: Driving vs. Car Lift (Ajman → Business Bay)
               </h3>
             </div>
             <div className="overflow-x-auto">

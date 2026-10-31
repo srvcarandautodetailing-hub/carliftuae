@@ -240,3 +240,50 @@ body {
 /* Star rating */
 .star-filled { color: #f59e0b; }
 .star-empty { color: #e2e8f0; }
+
+/* ── CSS entrance animations (replaces framer-motion; GPU-composited) ── */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.anim-rise {
+  opacity: 0;
+  animation: rise-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.anim-fade {
+  opacity: 0;
+  animation: fade-in 0.5s ease forwards;
+}
+.anim-delay-1 { animation-delay: 0.08s; }
+.anim-delay-2 { animation-delay: 0.16s; }
+.anim-delay-3 { animation-delay: 0.24s; }
+.anim-delay-4 { animation-delay: 0.32s; }
+.anim-delay-5 { animation-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-rise, .anim-fade {
+    animation: none;
+    opacity: 1;
+  }
+  .whatsapp-pulse::before { animation: none; display: none; }
+  .float { animation: none; }
+}
+
+/* ── Mobile sticky call bar ── */
+.sticky-call-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  padding: 0.625rem 0.75rem calc(0.625rem + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid #e2e8f0;
+  box-shadow: 0 -8px 24px rgba(2, 6, 23, 0.08);
+}
+@media (min-width: 640px) {
+  .sticky-call-bar { display: none; }
+}

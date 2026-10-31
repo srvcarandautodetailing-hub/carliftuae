@@ -11,7 +11,7 @@ export default function Image() {
     buildOgImageJsx({
       badge: "Pick & Drop UAE",
       title: "Pick and Drop Service UAE",
-      subtitle: "Door-to-door from AED 100 · Dubai, Abu Dhabi, Sharjah, Ajman · 24/7",
+      subtitle: "Door-to-door from AED 100 · Dubai, Abu Dhabi, Ajman · 24/7",
       accentColor: "#ea580c",
       stats: [
         { label: "AED 100+ per trip", color: "#10b981" },

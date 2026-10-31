@@ -15,7 +15,7 @@ export default function Image() {
       accentColor: "#334155",
       stats: [
         { label: "AED 180 Private (Abu Dhabi)", color: "#10b981" },
-        { label: "AED 200 Private (Sharjah/Ajman)", color: "#f59e0b" },
+        { label: "AED 200 Private (Ajman)", color: "#f59e0b" },
         { label: "Exclusive Vehicle", color: "#60a5fa" },
         { label: "+971 54 330 8261", color: "#a78bfa" },
       ],

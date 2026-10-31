@@ -1,4 +1,4 @@
-﻿export interface FAQ {
+export interface FAQ {
   question: string;
   answer: string;
   category: string;
@@ -17,18 +17,6 @@ export const FAQS: FAQ[] = [
     question: "How much is a car lift from Abu Dhabi to Dubai?",
     answer:
       "A car lift from Abu Dhabi to Dubai costs AED 100 sharing or AED 180 private. Available 24/7 — WhatsApp +971 54 330 8261.",
-  },
-  {
-    category: "Pricing",
-    question: "How much is a car lift from Abu Dhabi to Sharjah?",
-    answer:
-      "A car lift from Abu Dhabi to Sharjah costs AED 130 sharing or AED 200 private. WhatsApp +971 54 330 8261 to book.",
-  },
-  {
-    category: "Pricing",
-    question: "How much is a car lift from Sharjah to Abu Dhabi?",
-    answer:
-      "A car lift from Sharjah to Abu Dhabi costs AED 130 sharing or AED 200 private. Call or WhatsApp +971 54 330 8261.",
   },
   {
     category: "Pricing",
@@ -54,7 +42,7 @@ export const FAQS: FAQ[] = [
     category: "Routes",
     question: "What routes does Quick Car Lift Service UAE cover?",
     answer:
-      "Quick Car Lift Service UAE covers three inter-emirate routes: Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Sharjah, and Abu Dhabi ↔ Ajman. Both directions are available on every route.",
+      "Quick Car Lift Service UAE covers two main inter-emirate corridors: Dubai ↔ Abu Dhabi and Abu Dhabi ↔ Ajman, plus airport transfers across the UAE. Both directions are available on every route.",
   },
 
   // Airport Transfers

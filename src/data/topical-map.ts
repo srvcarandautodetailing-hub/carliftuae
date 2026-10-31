@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Complete Topical Map for Car Lift UAE
  * ======================================
  * This map defines the full semantic content architecture.
@@ -7,10 +7,10 @@
  * ENTITY TYPES
  * - Primary Entity:   Car Lift UAE (LocalBusiness, TransportService)
  * - Secondary:        Daily Car Lift, Monthly Car Lift, Ladies Car Lift, Corporate Transport
- * - Geo Entities:     Sharjah, Dubai, Business Bay, Ajman, Al Nahda, etc.
- * - Route Entities:   Sharjah→Business Bay, Ajman→Dubai, etc.
+ * - Geo Entities:     Dubai, Abu Dhabi, Ajman, Business Bay, DXB/DWC/AUH airports, etc.
+ * - Route Entities:   Dubai→Abu Dhabi, Ajman→Dubai, etc.
  * - Person Entities:  Verified Drivers, Female Drivers
- * - Competitor:       Uber, Careem, RTA Bus, Dubai Metro
+ * - Competitor:       Uber, Careem, Dubai Metro
  */
 
 export const TOPICAL_MAP = {
@@ -41,46 +41,36 @@ export const TOPICAL_MAP = {
     ],
   },
 
-  // ── CLUSTER 2: Sharjah Car Lift ────────────────────────────────────────────
-  "Sharjah Car Lift": {
-    intent: "local + commercial",
-    pillarPage: "/locations/sharjah",
-    entities: ["Sharjah", "Al Majaz", "Muweilah", "Al Nahda", "Al Khan", "Al Taawun"],
+  // ── CLUSTER 2: Airport Car Lift ────────────────────────────────────────────
+  "Airport Car Lift": {
+    intent: "local + transactional",
+    pillarPage: "/airport-car-lift",
+    entities: ["DXB", "DWC", "AUH", "Sharjah Airport (SHJ)", "airport pickup", "airport drop-off"],
     keywords: [
-      "car lift sharjah",
-      "car lift sharjah to dubai",
-      "car lift sharjah to business bay",
-      "sharjah to business bay car lift",
-      "daily car lift sharjah",
-      "monthly car lift sharjah",
-      "car lift service sharjah",
-      "best car lift sharjah",
-      "car lift sharjah price",
+      "airport car lift dubai",
+      "car lift to dxb airport",
+      "airport transfer dubai abu dhabi",
+      "car lift to abu dhabi airport",
+      "dwc airport car lift",
+      "sharjah airport pickup car lift",
     ],
     supporting: [
-      { slug: "/locations/al-nahda", title: "Car Lift Al Nahda" },
-      { slug: "/locations/al-khan", title: "Car Lift Al Khan" },
-      { slug: "/locations/al-majaz", title: "Car Lift Al Majaz" },
-      { slug: "/locations/al-taawun", title: "Car Lift Al Taawun" },
-      { slug: "/locations/muweilah", title: "Car Lift Muweilah" },
-      { slug: "/blog/sharjah-to-business-bay-car-lift-guide", title: "Route Guide" },
-      { slug: "/blog/best-pickup-points-sharjah-car-lift", title: "Pickup Points" },
-      { slug: "/blog/how-to-find-car-lift-sharjah", title: "How to Find Car Lift" },
-      { slug: "/blog/sharjah-dubai-traffic-avoid-guide", title: "Traffic Guide" },
-      { slug: "/blog/sharjah-dubai-salik-toll-guide", title: "Salik Guide" },
-      { slug: "/blog/top-10-areas-car-lift-sharjah", title: "Top 10 Areas" },
+      { slug: "/airport-car-lift-dubai-dxb", title: "DXB Airport Car Lift" },
+      { slug: "/airport-car-lift-dwc", title: "DWC Airport Car Lift" },
+      { slug: "/airport-car-lift-abu-dhabi-auh", title: "AUH Airport Car Lift" },
+      { slug: "/airport-car-lift-sharjah-shj", title: "Sharjah Airport (SHJ) Car Lift" },
+      { slug: "/services/airport-transfer", title: "Airport Transfer Service" },
     ],
   },
 
   // ── CLUSTER 3: Business Bay Car Lift ──────────────────────────────────────
   "Business Bay Car Lift": {
     intent: "local + transactional",
-    pillarPage: "/locations/business-bay",
+    pillarPage: "/routes",
     entities: ["Business Bay", "Dubai", "Executive Towers", "Bay Square", "DIFC"],
     keywords: [
       "car lift business bay",
       "car lift to business bay",
-      "sharjah to business bay car lift",
       "car lift from business bay",
       "business bay carpooling",
       "car pool business bay dubai",
@@ -89,7 +79,6 @@ export const TOPICAL_MAP = {
       { slug: "/routes", title: "All Routes to Business Bay" },
       { slug: "/pricing", title: "Business Bay Car Lift Price" },
       { slug: "/blog/business-bay-parking-cost-vs-car-lift", title: "Parking vs Car Lift" },
-      { slug: "/blog/sharjah-to-business-bay-car-lift-guide", title: "Sharjah Route Guide" },
     ],
   },
 
@@ -102,18 +91,11 @@ export const TOPICAL_MAP = {
       "car lift dubai",
       "car lift service dubai",
       "daily car lift dubai",
-      "car lift dubai to sharjah",
       "shared ride dubai",
     ],
     supporting: [
-      { slug: "/locations/deira", title: "Car Lift Deira" },
-      { slug: "/locations/bur-dubai", title: "Car Lift Bur Dubai" },
-      { slug: "/locations/jvc", title: "Car Lift JVC" },
-      { slug: "/locations/jlt", title: "Car Lift JLT" },
-      { slug: "/locations/dubai-marina", title: "Car Lift Dubai Marina" },
-      { slug: "/locations/al-qusais", title: "Car Lift Al Qusais" },
-      { slug: "/locations/silicon-oasis", title: "Car Lift Silicon Oasis" },
-      { slug: "/locations/al-qouz", title: "Car Lift Al Qouz" },
+      { slug: "/car-lift-dubai", title: "Car Lift Dubai Hub" },
+      { slug: "/car-lift-from-international-city", title: "International City Route" },
       { slug: "/blog/deira-to-business-bay-car-lift", title: "Deira Route" },
       { slug: "/blog/silicon-oasis-to-business-bay-car-lift", title: "Silicon Oasis Route" },
       { slug: "/blog/car-lift-jvc-to-business-bay", title: "JVC Route" },
@@ -134,7 +116,6 @@ export const TOPICAL_MAP = {
     ],
     supporting: [
       { slug: "/blog/ajman-to-dubai-car-lift-guide", title: "Ajman Route Guide" },
-      { slug: "/blog/ajman-sharjah-dubai-car-lift-route", title: "Ajman-Sharjah-Dubai Route" },
     ],
   },
 
@@ -149,11 +130,9 @@ export const TOPICAL_MAP = {
       "monthly car lift price",
       "car lift per month price",
       "how much is car lift uae",
-      "car lift price sharjah to business bay",
     ],
     supporting: [
       { slug: "/blog/car-lift-pricing-uae-complete-guide", title: "Pricing Guide" },
-      { slug: "/blog/sharjah-to-dubai-commute-cost-comparison", title: "Cost Comparison" },
       { slug: "/blog/business-bay-parking-cost-vs-car-lift", title: "Parking vs Car Lift" },
       { slug: "/blog/monthly-car-lift-worth-it-uae", title: "Monthly Package Review" },
     ],
@@ -162,11 +141,10 @@ export const TOPICAL_MAP = {
   // ── CLUSTER 7: Ladies Car Lift ────────────────────────────────────────────
   "Ladies Car Lift": {
     intent: "local + informational + commercial",
-    pillarPage: "/services/ladies-car-lift",
+    pillarPage: "/ladies-car-lift-ajman-to-dubai",
     entities: ["ladies car lift", "female driver", "women transport", "safety"],
     keywords: [
       "ladies car lift uae",
-      "ladies car lift sharjah",
       "ladies car lift dubai",
       "female car lift service uae",
       "women car lift uae",
@@ -175,14 +153,13 @@ export const TOPICAL_MAP = {
     ],
     supporting: [
       { slug: "/blog/ladies-car-lift-uae-safety-guide", title: "Ladies Safety Guide" },
-      { slug: "/blog/ladies-only-car-lift-sharjah-dubai", title: "Ladies Only Routes" },
     ],
   },
 
   // ── CLUSTER 8: Corporate Transport ────────────────────────────────────────
   "Corporate Car Lift": {
     intent: "commercial + B2B",
-    pillarPage: "/services/corporate-transport",
+    pillarPage: "/services",
     entities: ["corporate transport", "employee transport", "staff shuttle", "HR benefit"],
     keywords: [
       "corporate car lift uae",
@@ -192,27 +169,25 @@ export const TOPICAL_MAP = {
       "office car lift dubai",
     ],
     supporting: [
-      { slug: "/services/office-transport", title: "Office Transport" },
-      { slug: "/services/staff-transport", title: "Staff Transport" },
       { slug: "/blog/corporate-car-lift-benefits-uae-companies", title: "Corporate Benefits" },
     ],
   },
 
-  // ── CLUSTER 9: Monthly Car Lift ───────────────────────────────────────────
-  "Monthly Car Lift": {
+  // ── CLUSTER 9: Daily Car Lift ─────────────────────────────────────────────
+  "Daily Car Lift": {
     intent: "commercial + transactional",
-    pillarPage: "/services/monthly-car-lift",
-    entities: ["monthly subscription", "commuter pass", "reserved seat"],
+    pillarPage: "/daily-car-lift-dubai",
+    entities: ["daily commute", "guaranteed seat", "daily car lift dubai", "daily car lift abu dhabi"],
     keywords: [
-      "monthly car lift uae",
-      "monthly car lift sharjah",
-      "car lift monthly package",
-      "monthly shared ride dubai",
-      "car lift subscription uae",
+      "daily car lift uae",
+      "daily car lift dubai",
+      "daily car lift abu dhabi",
+      "daily car lift dubai to abu dhabi",
     ],
     supporting: [
-      { slug: "/pricing", title: "Monthly Package Pricing" },
-      { slug: "/blog/monthly-car-lift-worth-it-uae", title: "Is Monthly Worth It?" },
+      { slug: "/daily-car-lift-abu-dhabi", title: "Daily Car Lift Abu Dhabi" },
+      { slug: "/car-lift-dubai-to-abu-dhabi", title: "Dubai to Abu Dhabi Daily" },
+      { slug: "/pricing", title: "Daily Fare Pricing" },
       { slug: "/blog/car-lift-pricing-uae-complete-guide", title: "Pricing Guide" },
     ],
   },
@@ -221,7 +196,7 @@ export const TOPICAL_MAP = {
   "UAE Transport Comparisons": {
     intent: "informational + commercial",
     pillarPage: "/blog/complete-guide-car-lift-service-uae",
-    entities: ["Uber", "Careem", "RTA Bus", "Dubai Metro", "driving"],
+    entities: ["Uber", "Careem", "Dubai Metro", "driving"],
     keywords: [
       "car lift vs uber uae",
       "car lift vs careem",
@@ -231,8 +206,6 @@ export const TOPICAL_MAP = {
     ],
     supporting: [
       { slug: "/blog/car-lift-vs-uber-uae-comparison", title: "Car Lift vs Uber" },
-      { slug: "/blog/car-lift-vs-public-bus-uae", title: "Car Lift vs Bus" },
-      { slug: "/blog/sharjah-to-dubai-commute-cost-comparison", title: "Cost Comparison" },
       { slug: "/blog/ridesharing-vs-car-lift-uae", title: "Ridesharing vs Car Lift" },
     ],
   },
@@ -247,13 +220,9 @@ export const ENTITY_MAP = {
     services: ["DailyCarLift", "MonthlyCarLift", "LadiesCarLift", "CorporateTransport"],
   },
   geoEntities: [
-    { name: "Sharjah", type: "City", region: "Emirate of Sharjah" },
     { name: "Dubai", type: "City", region: "Emirate of Dubai" },
     { name: "Ajman", type: "City", region: "Emirate of Ajman" },
     { name: "Business Bay", type: "Neighborhood", city: "Dubai" },
-    { name: "Al Nahda", type: "Neighborhood", city: "Sharjah" },
-    { name: "Al Majaz", type: "Neighborhood", city: "Sharjah" },
-    { name: "Muweilah", type: "Neighborhood", city: "Sharjah" },
     { name: "JVC", type: "Neighborhood", city: "Dubai" },
     { name: "JLT", type: "Neighborhood", city: "Dubai" },
     { name: "Dubai Marina", type: "Neighborhood", city: "Dubai" },
@@ -275,7 +244,7 @@ export const ENTITY_MAP = {
   ],
   transportEntities: [
     "Salik Toll", "Sheikh Zayed Road", "Emirates Road", "Dubai Metro",
-    "Business Bay Metro", "Al Nahda Metro", "GPS Tracking", "WhatsApp Booking",
+    "Business Bay Metro", "GPS Tracking", "WhatsApp Booking",
   ],
 };
 
@@ -283,13 +252,13 @@ export const ENTITY_MAP = {
 export const AEO_ANSWERS = {
   "What is car lift service in UAE?": {
     answer:
-      "A car lift service in UAE is a shared daily commute service where 3-4 passengers share a private vehicle to travel from their residential area (like Sharjah or Ajman) to their workplace (like Business Bay or DIFC in Dubai). It is cheaper than Uber, more comfortable than public buses, and avoids parking stress.",
+      "A car lift service in UAE is a shared daily commute service where 3-4 passengers share a private vehicle to travel from their residential area (like Ajman) to their workplace (like Business Bay or DIFC in Dubai), or between Dubai and Abu Dhabi. It is cheaper than Uber, more comfortable than a taxi queue, and avoids parking stress.",
     speakable: true,
     targetFeaturedSnippet: true,
   },
-  "How much does car lift from Sharjah to Business Bay cost?": {
+  "How much does car lift from Ajman to Business Bay cost?": {
     answer:
-      "A monthly car lift from Sharjah to Business Bay costs between AED 130 sharing and AED 400 per month depending on your pickup area. Daily rates are AED 100 sharing-35 per trip. This includes Salik tolls and both morning and evening rides.",
+      "A car lift from Ajman to Business Bay costs AED 130 sharing or AED 200 private per trip. Monthly packages are also available — WhatsApp +971 54 330 8261 for your exact rate.",
     speakable: true,
     targetFeaturedSnippet: true,
   },

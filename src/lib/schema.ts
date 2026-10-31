@@ -1,4 +1,4 @@
-﻿import { BUSINESS } from "./utils";
+import { BUSINESS } from "./utils";
 
 const BASE_URL = "https://www.carliftuae.com";
 
@@ -35,14 +35,14 @@ export function localBusinessSchema(overrides?: Record<string, unknown>) {
     "@id": `${BASE_URL}/#localbusiness`,
     name: BUSINESS.name,
     description:
-      "Quick Car Lift Service UAE – reliable car lift and carpool rides on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Sharjah, Abu Dhabi ↔ Ajman.",
+      "Quick Car Lift Service UAE – reliable car lift and carpool rides on confirmed inter-emirate routes. Dubai ↔ Abu Dhabi, Abu Dhabi ↔ Ajman.",
     url: BASE_URL,
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
     image: [
       `${BASE_URL}/images/hero/carlift-uae-daily-commuters-interior.webp`,
       `${BASE_URL}/images/hero/carlift-uae-route-dubai-skyline.webp`,
-      `${BASE_URL}/images/locations/sharjah/sharjah-car-lift-morning-pickup.webp`,
+      `${BASE_URL}/images/hero/carlift-uae-boarding-sunset-dubai.webp`,
       `${BASE_URL}/images/locations/business-bay/business-bay-car-lift-professionals.webp`,
       `${BASE_URL}/images/services/carlift-uae-professionals-interior.webp`,
     ],
@@ -325,9 +325,36 @@ export function primaryImageOfPageSchema({
   };
 }
 
+// ImageObject schema for fleet / gallery photos
+export function imageObjectSchema(photos: {
+  src: string;
+  alt: string;
+  caption: string;
+  title: string;
+  width: number;
+  height: number;
+}[]) {
+  return photos.map((p) => {
+    const abs = p.src.startsWith("http") ? p.src : `${BASE_URL}${p.src}`;
+    return {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "@id": `${abs}#image`,
+      url: abs,
+      contentUrl: abs,
+      caption: p.caption,
+      description: p.alt,
+      name: p.title,
+      width: p.width,
+      height: p.height,
+      license: `${BASE_URL}/`,
+      acquireLicensePage: `${BASE_URL}/contact`,
+    };
+  });
+}
+
 // Speakable schema for voice search
-export function speakableSchema(cssSelectors: string[]) {
-  return {
+export function speakableSchema(cssSelectors: string[]) {  return {
     "@context": "https://schema.org",
     "@type": "WebPage",
     speakable: {
