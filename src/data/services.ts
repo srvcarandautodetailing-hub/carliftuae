@@ -35,7 +35,7 @@ export const SERVICES: Service[] = [
       "car lift dubai abu dhabi",
             "car lift abu dhabi ajman",
     ],
-    price: "From AED 100 sharing / AED 180 private",
+    price: "From AED 100 sharing / AED 200 private",
     priceNote: "per trip (one way) · 24/7 service",
     faqs: [
       {
@@ -46,7 +46,7 @@ export const SERVICES: Service[] = [
       {
         question: "What routes does Quick Car Lift Service UAE cover?",
         answer:
-          "We cover Dubai ↔ Abu Dhabi (AED 100 sharing / AED 180 private) and Abu Dhabi ↔ Ajman (AED 140 sharing / AED 220 private), plus airport transfers across the UAE.",
+          "We cover Dubai ↔ Abu Dhabi (AED 100 sharing / AED 200 private) and Abu Dhabi ↔ Ajman (AED 140 sharing / AED 250 private), plus airport transfers across the UAE.",
       },
     ],
   },
@@ -56,12 +56,12 @@ export const SERVICES: Service[] = [
     shortName: "Airport Transfer",
     icon: "Plane",
     description:
-      "Airport transfer service on all confirmed routes. Dubai ↔ Abu Dhabi from AED 180 private and Abu Dhabi ↔ Ajman from AED 220 private, plus pickups from DXB, DWC, AUH and Sharjah Airport (SHJ). Available 24/7.",
+      "Airport transfer service on all confirmed routes. Dubai ↔ Abu Dhabi from AED 200 private and Abu Dhabi ↔ Ajman from AED 250 private, plus pickups from DXB, DWC, AUH and Sharjah Airport (SHJ). Available 24/7.",
     longDescription:
       "Quick Car Lift Service UAE provides luxury airport transfers on all confirmed routes. Book in advance by phone or WhatsApp to ensure availability for your flight.",
     features: [
-      "Dubai ↔ Abu Dhabi airport transfer – AED 180 private",
-            "Abu Dhabi ↔ Ajman airport transfer – AED 220 private",
+      "Dubai ↔ Abu Dhabi airport transfer – AED 200 private",
+            "Abu Dhabi ↔ Ajman airport transfer – AED 250 private",
       "Pre-booked service · Available 24/7",
       "Luxury air-conditioned vehicle",
       "Book by phone or WhatsApp +971 54 330 8261",

@@ -23,7 +23,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Car Lift Routes – Dubai, Abu Dhabi",
   description:
-    "All Car Lift UAE routes. Dubai ↔ Abu Dhabi from AED 100 sharing / AED 180 private. Ajman & airport pickups.",
+    "All Car Lift UAE routes. Dubai ↔ Abu Dhabi from AED 100 sharing / AED 200 private. Ajman & airport pickups.",
   alternates: { canonical: "https://www.carliftuae.com/routes" },
   openGraph: {
     title: "Car Lift Routes UAE – Dubai, Abu Dhabi & Ajman",
@@ -266,11 +266,11 @@ export default function RoutesPage() {
                 <p className="text-slate-600 leading-relaxed mb-4">
                   The UAE&apos;s most in-demand car lift corridor. Quick Car Lift Service
                   UAE operates daily shared and private rides between Dubai and Abu
-                  Dhabi — AED 100 sharing / AED 180 private per trip.
+                  Dhabi — AED 100 sharing / AED 200 private per trip.
                 </p>
                 <ul className="space-y-2 mb-6 list-none" role="list">
                   {[
-                    "AED 100 sharing / AED 180 private per trip",
+                    "AED 100 sharing / AED 200 private per trip",
                     "Morning departures: 6:30 AM – 8:00 AM",
                     "Evening returns: 5:00 PM – 6:30 PM",
                     "Pickup: all major Dubai & Abu Dhabi areas",
@@ -559,7 +559,7 @@ export default function RoutesPage() {
                 { href: "/car-lift-abu-dhabi", label: "Car Lift Abu Dhabi Hub", price: "All Abu Dhabi routes" },
                 { href: "/car-lift-ajman", label: "Car Lift Ajman Hub", price: "All Ajman routes" },
                 { href: "/carpool-dubai", label: "Carpool Dubai", price: "Shared daily commute" },
-                { href: "/private-car-lift-dubai", label: "Private Car Lift Dubai", price: "AED 180 private" },
+                { href: "/private-car-lift-dubai", label: "Private Car Lift Dubai", price: "AED 200 private" },
                 { href: "/daily-car-lift-dubai", label: "Daily Car Lift Dubai", price: "Daily seats" },
                 { href: "/pick-and-drop-service", label: "Pick & Drop Service UAE", price: "All emirates" },
                 { href: "/pick-and-drop-service-dubai", label: "Pick & Drop Dubai", price: "Dubai routes" },

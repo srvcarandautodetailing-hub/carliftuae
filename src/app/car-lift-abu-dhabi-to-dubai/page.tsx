@@ -34,7 +34,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Car Lift Abu Dhabi to Dubai – AED 100",
   description:
-    "Daily car lift Abu Dhabi → Dubai from AED 100 sharing / AED 180 private. Khalifa City, Mussafah, MBZ pickup. WhatsApp +971 54 330 8261.",
+    "Daily car lift Abu Dhabi → Dubai from AED 100 sharing / AED 200 private. Khalifa City, Mussafah, MBZ pickup. WhatsApp +971 54 330 8261.",
   keywords:
     "car lift abu dhabi to dubai, abu dhabi to dubai car lift, sharing taxi from abu dhabi to dubai, carpool abu dhabi to dubai, pick and drop abu dhabi to dubai",
   alternates: {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Car Lift Abu Dhabi to Dubai – AED 100 | +971 54 330 8261",
     description:
-      "Daily car lift from Abu Dhabi to Dubai – AED 100 sharing / AED 180 private per trip. Khalifa City, Mussafah, MBZ pickup. Business Bay, DIFC, JLT drop-off. Salik included.",
+      "Daily car lift from Abu Dhabi to Dubai – AED 100 sharing / AED 200 private per trip. Khalifa City, Mussafah, MBZ pickup. Business Bay, DIFC, JLT drop-off. Salik included.",
   },
 };
 
@@ -55,7 +55,7 @@ const PAGE_FAQS = [
   {
     question: "How much is a car lift from Abu Dhabi to Dubai?",
     answer:
-      "Car lift from Abu Dhabi to Dubai is AED 100 sharing / AED 180 private per one-way trip. The flat per-trip fare applies to all Abu Dhabi pickup zones — Khalifa City, Mussafah, Mohamed Bin Zayed City, Al Shamkha, Baniyas, and more. All E11 Salik tolls are included. No hidden charges.",
+      "Car lift from Abu Dhabi to Dubai is AED 100 sharing / AED 200 private per one-way trip. The flat per-trip fare applies to all Abu Dhabi pickup zones — Khalifa City, Mussafah, Mohamed Bin Zayed City, Al Shamkha, Baniyas, and more. All E11 Salik tolls are included. No hidden charges.",
   },
   {
     question: "How long does the journey from Abu Dhabi to Dubai take?",
@@ -138,12 +138,12 @@ const DUBAI_DESTINATIONS = [
 ];
 
 const PRICING_TABLE = [
-  { area: "Khalifa City / Al Raha / Tourist Club", sharing: "AED 100", private: "AED 180" },
-  { area: "Mussafah (all sectors)", sharing: "AED 100", private: "AED 180" },
-  { area: "Mohamed Bin Zayed City (MBZ)", sharing: "AED 100", private: "AED 180" },
-  { area: "Al Shamkha / Baniyas", sharing: "AED 100", private: "AED 180" },
-  { area: "Abu Dhabi Corniche / Hamdan Street", sharing: "AED 100", private: "AED 180" },
-  { area: "Yas Island / Zayed Sports City", sharing: "AED 100", private: "AED 180" },
+  { area: "Khalifa City / Al Raha / Tourist Club", sharing: "AED 100", private: "AED 200" },
+  { area: "Mussafah (all sectors)", sharing: "AED 100", private: "AED 200" },
+  { area: "Mohamed Bin Zayed City (MBZ)", sharing: "AED 100", private: "AED 200" },
+  { area: "Al Shamkha / Baniyas", sharing: "AED 100", private: "AED 200" },
+  { area: "Abu Dhabi Corniche / Hamdan Street", sharing: "AED 100", private: "AED 200" },
+  { area: "Yas Island / Zayed Sports City", sharing: "AED 100", private: "AED 200" },
 ];
 
 const COST_COMPARISON = [
@@ -189,7 +189,7 @@ export default function CarLiftAbuDhabiToDubaiPage() {
     serviceSchema({
       name: "Car Lift Abu Dhabi to Dubai",
       description:
-        "Daily car lift from Abu Dhabi to Dubai covering Khalifa City, Mussafah, MBZ City, Baniyas, and all major Abu Dhabi areas. AED 100 sharing / AED 180 private per trip via E11. Salik included, GPS-tracked.",
+        "Daily car lift from Abu Dhabi to Dubai covering Khalifa City, Mussafah, MBZ City, Baniyas, and all major Abu Dhabi areas. AED 100 sharing / AED 200 private per trip via E11. Salik included, GPS-tracked.",
       url: "/car-lift-abu-dhabi-to-dubai",
       price: "100",
     }),
@@ -246,7 +246,7 @@ export default function CarLiftAbuDhabiToDubaiPage() {
                 Car Lift Abu Dhabi to<br className="hidden sm:block" /> Dubai – Daily Commute
               </h1>
               <p className="speakable-desc text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
-                Car lift from Abu Dhabi to Dubai costs <strong className="text-white">AED 100 sharing</strong> or <strong className="text-white">AED 180 private</strong> per trip. Daily departures from Khalifa City, Mussafah, MBZ City, Baniyas and all Abu Dhabi areas to Business Bay, DIFC, JLT and Downtown Dubai — via E11 Sheikh Zayed Road with Salik included.
+                Car lift from Abu Dhabi to Dubai costs <strong className="text-white">AED 100 sharing</strong> or <strong className="text-white">AED 200 private</strong> per trip. Daily departures from Khalifa City, Mussafah, MBZ City, Baniyas and all Abu Dhabi areas to Business Bay, DIFC, JLT and Downtown Dubai — via E11 Sheikh Zayed Road with Salik included.
               </p>
               <p className="text-emerald-200/80 text-sm leading-relaxed mb-6 max-w-xl">
                 Driving from Abu Dhabi to Dubai costs AED 4,100+/month in fuel, Salik, and Dubai
@@ -684,7 +684,7 @@ export default function CarLiftAbuDhabiToDubaiPage() {
               {
                 href: "/car-lift-dubai-to-abu-dhabi",
                 label: "Car Lift Dubai to Abu Dhabi",
-                desc: "Reverse route – AED 100 sharing / AED 180 private",
+                desc: "Reverse route – AED 100 sharing / AED 200 private",
               },
               {
                 href: "/car-lift-abu-dhabi",

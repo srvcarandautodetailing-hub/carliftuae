@@ -60,7 +60,7 @@ const PAGE_FAQS = [
   {
     question: "Which daily routes to Dubai do you operate?",
     answer:
-      "Our daily Dubai routes include Ajman → Dubai (Business Bay, DIFC, JLT) at AED 130 sharing / AED 200 private, and Abu Dhabi → Dubai at AED 100 sharing / AED 180 private. Morning and evening departures run every working day.",
+      "Our daily Dubai routes include Ajman → Dubai (Business Bay, DIFC, JLT) at AED 130 sharing / AED 200 private, and Abu Dhabi → Dubai at AED 100 sharing / AED 200 private. Morning and evening departures run every working day.",
   },
   {
     question: "Do I have to book every day?",
@@ -89,7 +89,7 @@ const DAILY_ROUTES = [
     to: "Dubai",
     areas: "Business Bay · DIFC · JLT · Marina",
     sharing: "AED 100",
-    private: "AED 180",
+    private: "AED 200",
   },
 ];
 

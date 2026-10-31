@@ -15,7 +15,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Car Lift UAE – Route Fares & Prices",
   description:
-    "Car lift fares UAE. Dubai ↔ Abu Dhabi AED 100 sharing / AED 180 private. Abu Dhabi ↔ Ajman AED 140 / AED 220. See all fares.",
+    "Car lift fares UAE. Dubai ↔ Abu Dhabi AED 100 sharing / AED 200 private. Abu Dhabi ↔ Ajman AED 140 / AED 250. See all fares.",
   alternates: { canonical: "https://www.carliftuae.com/pricing" },
   openGraph: {
     title: "Quick Car Lift Service UAE – Route Fares & Prices",
@@ -98,11 +98,11 @@ export default function PricingPage() {
               <DollarSign className="h-5 w-5 text-white" aria-hidden="true" />
             </div>
             <p className="text-emerald-900 font-semibold text-sm sm:text-base">
-              <strong>Dubai ↔ Abu Dhabi: AED 100 sharing / AED 180 private.</strong>{" "}
+              <strong>Dubai ↔ Abu Dhabi: AED 100 sharing / AED 200 private.</strong>{" "}
               
-              Abu Dhabi ↔ Ajman: <strong>AED 140 sharing / AED 220 private.</strong>{" "}
-              Abu Dhabi ↔ Ras Al Khaimah: <strong>AED 170 sharing / AED 350 private.</strong>{" "}
-              Abu Dhabi ↔ Al Ain: <strong>AED 120 sharing / AED 200 private.</strong>{" "}
+              Abu Dhabi ↔ Ajman: <strong>AED 140 sharing / AED 250 private.</strong>{" "}
+              Abu Dhabi ↔ Ras Al Khaimah: <strong>AED 170 sharing / AED 400 private.</strong>{" "}
+              Abu Dhabi ↔ Al Ain: <strong>AED 120 sharing / AED 220 private.</strong>{" "}
               Available 24/7 — luxury vehicles.
             </p>
           </div>

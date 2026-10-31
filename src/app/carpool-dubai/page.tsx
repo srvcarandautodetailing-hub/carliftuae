@@ -74,7 +74,7 @@ const PAGE_FAQS = [
   {
     question: "What routes does the Dubai carpool service cover?",
     answer:
-      "We cover: Dubai ↔ Abu Dhabi (AED 100 sharing / AED 180 private) and Ajman ↔ Dubai (AED 130 sharing / AED 200 private). All routes serve both directions.",
+      "We cover: Dubai ↔ Abu Dhabi (AED 100 sharing / AED 200 private) and Ajman ↔ Dubai (AED 130 sharing / AED 200 private). All routes serve both directions.",
   },
   {
     question: "Are carpool vehicles air-conditioned in UAE?",
@@ -94,7 +94,7 @@ const PAGE_FAQS = [
 ];
 
 const ROUTES = [
-  { route: "Dubai ↔ Abu Dhabi", sharing: "AED 100", private: "AED 180" },
+  { route: "Dubai ↔ Abu Dhabi", sharing: "AED 100", private: "AED 200" },
   { route: "Ajman ↔ Dubai", sharing: "AED 130", private: "AED 200" },
 ];
 
@@ -292,7 +292,7 @@ export default function CarpoolDubaiPage() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
               { href: "/car-lift-dubai", label: "Car Lift Dubai", desc: "All Dubai routes hub page" },
-              { href: "/car-lift-dubai-to-abu-dhabi", label: "Car Lift Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 180 private" },
+              { href: "/car-lift-dubai-to-abu-dhabi", label: "Car Lift Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 200 private" },
               { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 130 sharing / AED 200 private" },
               { href: "/private-car-lift-dubai", label: "Private Car Lift Dubai", desc: "Exclusive vehicle, no strangers" },
             ].map(({ href, label, desc }) => (

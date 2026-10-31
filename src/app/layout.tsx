@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: "Quick Car Lift Service UAE – Dubai, Abu Dhabi & Ajman",
   },
   description:
-    "Daily car lift UAE: Dubai ↔ Abu Dhabi AED 100 sharing / AED 180 private. Abu Dhabi ↔ Ajman AED 140 / AED 220. 24/7. WhatsApp +971 54 330 8261.",
+    "Daily car lift UAE: Dubai ↔ Abu Dhabi AED 100 sharing / AED 200 private. Abu Dhabi ↔ Ajman AED 140 / AED 250. 24/7. WhatsApp +971 54 330 8261.",
   keywords:
     "car lift uae, carpool uae, car lift dubai abu dhabi, car lift abu dhabi ajman, Quick Car Lift Service UAE, airport transfer uae, airport car lift dubai",
   metadataBase: new URL(BASE_URL),

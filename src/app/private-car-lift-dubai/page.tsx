@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 const PAGE_FAQS = [
   { question: "What is a private car lift in Dubai?", answer: "A private car lift means the entire vehicle is booked exclusively for you and your group — no other passengers share the ride. You get flexible pickup timing, direct routes, and complete privacy. Quick Car Lift Service UAE offers private car lift across all UAE inter-emirate routes." },
-  { question: "How much is a private car lift from Dubai to Abu Dhabi?", answer: "AED 180 private per trip from any Dubai area to Abu Dhabi. This covers up to 4–5 passengers in one vehicle, making it cost-effective for groups of 2 or more." },
+  { question: "How much is a private car lift from Dubai to Abu Dhabi?", answer: "AED 200 private per trip from any Dubai area to Abu Dhabi. This covers up to 4–5 passengers in one vehicle, making it cost-effective for groups of 2 or more." },
   { question: "How is private car lift different from sharing?", answer: "Sharing: you share the vehicle with up to 3 other passengers going to nearby destinations (cheaper, fixed timings). Private: the vehicle is only for you and your group (higher price, flexible timing, direct door-to-door without detours for other passengers)." },
   { question: "Can I book a private car lift for airport transfer in Dubai?", answer: "Yes. Private car lift is ideal for airport transfers — including DXB, DWC, AUH and Sharjah Airport pickups. Pre-book via WhatsApp +971 54 330 8261 at least a day in advance." },
   { question: "Is private car lift available 24/7 in Dubai?", answer: "Yes. Private car lift operates 24/7 — including overnight, early morning (3:00–5:00 AM), and late night. Pre-booking required. WhatsApp us with your timing and we confirm availability." },
@@ -35,7 +35,7 @@ const PAGE_FAQS = [
 ];
 
 const COMPARISON = [
-  { feature: "Price", sharing: "AED 100–130 per person", private: "AED 180–220 per vehicle" },
+  { feature: "Price", sharing: "AED 100–130 per person", private: "AED 200–400 per vehicle" },
   { feature: "Timing", sharing: "Fixed schedule", private: "Flexible to your preference" },
   { feature: "Passengers", sharing: "Up to 4 shared", private: "Exclusive to your group" },
   { feature: "Route", sharing: "Multi-stop possible", private: "Direct, no detours" },
@@ -73,7 +73,7 @@ export default function PrivateCarLiftDubaiPage() {
               <p className="speakable-desc text-slate-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Private car lift in Dubai: the entire vehicle exclusively for you and your group — no strangers, no stops for other passengers. Direct door-to-door private car lift across all UAE routes, with flexible pickup timing you choose.
               </p>
-              <p className="text-slate-300/80 text-sm leading-relaxed mb-6 max-w-xl">AED 180 private from Abu Dhabi to Dubai. AED 200 private from Ajman to Dubai. 24/7 including overnight.</p>
+              <p className="text-slate-300/80 text-sm leading-relaxed mb-6 max-w-xl">AED 200 private from Abu Dhabi to Dubai. AED 200 private from Ajman to Dubai. 24/7 including overnight.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Private car lift stats">
                 {[
                   { icon: DollarSign, label: "AED 180+", sub: "Private rate" },
@@ -179,7 +179,7 @@ export default function PrivateCarLiftDubaiPage() {
             {[
               { href: "/car-lift-dubai", label: "Car Lift Dubai", desc: "All routes including sharing" },
               { href: "/carpool-dubai", label: "Carpool Dubai", desc: "Sharing from AED 100" },
-              { href: "/car-lift-dubai-to-abu-dhabi", label: "Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 180 private" },
+              { href: "/car-lift-dubai-to-abu-dhabi", label: "Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 200 private" },
               { href: "/pricing", label: "Full Pricing Guide", desc: "All UAE route prices" },
             ].map(({ href, label, desc }) => (
               <li key={href}>

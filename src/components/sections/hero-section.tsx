@@ -30,7 +30,7 @@ const stats = [
   { icon: Car, value: "AED 100", label: "Dubai ↔ Abu Dhabi Sharing" },
   { icon: Route, value: "AED 180", label: "Dubai ↔ Abu Dhabi Private" },
   { icon: TrendingUp, value: "AED 140", label: "Abu Dhabi ↔ Ajman Sharing" },
-  { icon: Users, value: "AED 220", label: "Abu Dhabi ↔ Ajman Private" },
+  { icon: Users, value: "AED 250", label: "Abu Dhabi ↔ Ajman Private" },
 ];
 
 const quickRoutes = [
@@ -128,7 +128,7 @@ export default function HeroSection() {
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
               The carlift service UAE commuters rely on daily — reliable car lift and carpool on confirmed inter-emirate routes.{" "}
               <span className="text-white font-semibold">
-                Dubai ↔ Abu Dhabi from AED 100 sharing / AED 180 private.
+                Dubai ↔ Abu Dhabi from AED 100 sharing / AED 200 private.
               </span>{" "}
               Airport pickups at DXB, DWC, AUH &amp; Sharjah Airport.{" "}
               <span className="text-amber-400 font-semibold">Book by phone or WhatsApp.</span>

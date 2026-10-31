@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 const PAGE_FAQS = [
   { question: "What is the best pick and drop service in Dubai?", answer: "Quick Car Lift Service UAE provides reliable daily pick and drop service across Dubai, operating since 2019 with a 4.9-star rating from 150+ regular riders. We cover all major inter-emirate routes and Dubai drop-off points." },
-  { question: "How much does pick and drop cost in Dubai?", answer: "Pick and drop from Abu Dhabi to Dubai is AED 100 sharing / AED 180 private per trip. From Ajman to Dubai it is AED 130 sharing / AED 200 private. All fares fixed per trip." },
+  { question: "How much does pick and drop cost in Dubai?", answer: "Pick and drop from Abu Dhabi to Dubai is AED 100 sharing / AED 200 private per trip. From Ajman to Dubai it is AED 130 sharing / AED 200 private. All fares fixed per trip." },
   { question: "How do I book pick and drop service in Dubai?", answer: "WhatsApp +971 54 330 8261 with your pickup address, destination, and preferred timing. We confirm within 60 minutes. No app needed, no registration required." },
   { question: "Do you offer pick and drop for office employees in Dubai?", answer: "Yes. Corporate pick and drop packages are available for companies wanting daily employee transport. Group bookings and dedicated vehicles can be arranged with simple per-trip billing. WhatsApp for a corporate quote." },
   { question: "Is pick and drop service safe in Dubai UAE?", answer: "Yes. All Quick Car Lift Service UAE drivers are verified and licensed. Vehicles are GPS-tracked and air-conditioned. Our 4.9★ rating reflects the consistent safety and reliability our 150+ daily riders experience." },
@@ -66,7 +66,7 @@ export default function PickAndDropServiceDubaiPage() {
               <p className="speakable-desc text-blue-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Door-to-door daily pick and drop service across all Dubai areas. From Ajman and Abu Dhabi — confirmed in 60 minutes via WhatsApp.
               </p>
-              <p className="text-blue-200/80 text-sm leading-relaxed mb-6 max-w-xl">Abu Dhabi to Dubai: AED 100 sharing / AED 180 private. Ajman to Dubai: AED 130 sharing / AED 200 private. Fixed per-trip fares.</p>
+              <p className="text-blue-200/80 text-sm leading-relaxed mb-6 max-w-xl">Abu Dhabi to Dubai: AED 100 sharing / AED 200 private. Ajman to Dubai: AED 130 sharing / AED 200 private. Fixed per-trip fares.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key service stats">
                 {[
                   { icon: MapPin, label: "Door-to-Door", sub: "All Dubai areas" },

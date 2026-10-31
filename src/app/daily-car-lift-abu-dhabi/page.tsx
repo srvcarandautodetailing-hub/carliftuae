@@ -60,7 +60,7 @@ const PAGE_FAQS = [
   {
     question: "What is the daily fare from Dubai to Abu Dhabi?",
     answer:
-      "AED 100 sharing / AED 180 private per trip from Dubai to Abu Dhabi. From Ajman to Abu Dhabi it is AED 140 sharing / AED 220 private. Fares are fixed — no surge pricing during rush hour.",
+      "AED 100 sharing / AED 200 private per trip from Dubai to Abu Dhabi. From Ajman to Abu Dhabi it is AED 140 sharing / AED 250 private. Fares are fixed — no surge pricing during rush hour.",
   },
   {
     question: "Which Abu Dhabi areas do you pick up from?",
@@ -81,7 +81,7 @@ const DAILY_ROUTES = [
     to: "Abu Dhabi",
     areas: "Khalifa City · Mussafah · Corniche · Yas Island",
     sharing: "AED 100",
-    private: "AED 180",
+    private: "AED 200",
   },
   {
     href: "/car-lift-ajman-to-dubai",
@@ -89,7 +89,7 @@ const DAILY_ROUTES = [
     to: "Abu Dhabi",
     areas: "Via Dubai · E311 Emirates Road",
     sharing: "AED 140",
-    private: "AED 220",
+    private: "AED 250",
   },
 ];
 

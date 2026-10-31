@@ -155,11 +155,11 @@ const emirateSectionLabel: Record<Location["emirate"], string> = {
 
 const emirateSectionDesc: Record<Location["emirate"], string> = {
   dubai:
-    "Connecting Dubai and Abu Dhabi in both directions. From AED 100 sharing / AED 180 private per trip; airport transfers from AED 180 private.",
+    "Connecting Dubai and Abu Dhabi in both directions. From AED 100 sharing / AED 200 private per trip; airport transfers from AED 200 private.",
   "abu-dhabi":
-    "Abu Dhabi is the hub for all Quick Car Lift routes. Rides available to Dubai (AED 100 sharing / AED 180 private) and Ajman (AED 140 sharing / AED 220 private).",
+    "Abu Dhabi is the hub for all Quick Car Lift routes. Rides available to Dubai (AED 100 sharing / AED 200 private) and Ajman (AED 140 sharing / AED 250 private).",
   ajman:
-    "Connecting Ajman and Abu Dhabi in both directions. Fixed rate of AED 140 sharing / AED 220 private per trip; airport transfers from AED 220 private.",
+    "Connecting Ajman and Abu Dhabi in both directions. Fixed rate of AED 140 sharing / AED 250 private per trip; airport transfers from AED 250 private.",
 };
 
 export default function LocationsPage() {
