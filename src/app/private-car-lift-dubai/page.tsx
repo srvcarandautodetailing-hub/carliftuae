@@ -35,7 +35,7 @@ const PAGE_FAQS = [
 ];
 
 const COMPARISON = [
-  { feature: "Price", sharing: "AED 100–130 per person", private: "AED 200–400 per vehicle" },
+  { feature: "Price", private: "AED 200–400 per vehicle" },
   { feature: "Timing", sharing: "Fixed schedule", private: "Flexible to your preference" },
   { feature: "Passengers", sharing: "Up to 4 shared", private: "Exclusive to your group" },
   { feature: "Route", sharing: "Multi-stop possible", private: "Direct, no detours" },
@@ -127,7 +127,6 @@ export default function PrivateCarLiftDubaiPage() {
               <thead className="bg-slate-50 border-b border-slate-200">
                 <tr>
                   <th className="text-left px-4 py-3 font-semibold text-slate-700">Feature</th>
-                  <th className="text-center px-4 py-3 font-semibold text-slate-700">Sharing</th>
                   <th className="text-right px-4 py-3 font-semibold text-slate-700">Private</th>
                 </tr>
               </thead>
@@ -135,7 +134,6 @@ export default function PrivateCarLiftDubaiPage() {
                 {COMPARISON.map((row, i) => (
                   <tr key={row.feature} className={i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}>
                     <td className="px-4 py-3 text-slate-700 font-medium">{row.feature}</td>
-                    <td className="px-4 py-3 text-center text-slate-600 text-xs">{row.sharing}</td>
                     <td className="px-4 py-3 text-right font-extrabold text-slate-800 text-xs">{row.private}</td>
                   </tr>
                 ))}
@@ -178,8 +176,8 @@ export default function PrivateCarLiftDubaiPage() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
               { href: "/car-lift-dubai", label: "Car Lift Dubai", desc: "All routes including sharing" },
-              { href: "/carpool-dubai", label: "Carpool Dubai", desc: "Sharing from AED 100" },
-              { href: "/car-lift-dubai-to-abu-dhabi", label: "Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 200 private" },
+              { href: "/carpool-dubai", label: "Carpool Dubai", desc: "Private from AED 200" },
+              { href: "/car-lift-dubai-to-abu-dhabi", label: "Dubai to Abu Dhabi", desc: "AED 200 private" },
               { href: "/pricing", label: "Full Pricing Guide", desc: "All UAE route prices" },
             ].map(({ href, label, desc }) => (
               <li key={href}>

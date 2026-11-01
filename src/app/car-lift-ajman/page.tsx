@@ -11,8 +11,8 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift Ajman – AED 130",
-  description: "Car lift Ajman → Dubai & Abu Dhabi. AED 130 sharing / AED 200 private. All Ajman areas. WhatsApp +971 54 330 8261.",
+  title: "Car Lift Ajman – From AED 200",
+  description: "Car lift Ajman → Dubai & Abu Dhabi. AED 200 private. All Ajman areas. WhatsApp +971 54 330 8261.",
   keywords: "car lift ajman, car lift from ajman, car lift ajman to dubai, car lift ajman to abu dhabi, ajman car lift service, car lift in ajman",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-ajman" },
   other: {
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
     "geo.placename": "Ajman, UAE",
   },
   openGraph: {
-    title: "Car Lift Ajman – AED 130 Sharing | +971 54 330 8261",
-    description: "Car lift from Ajman to Dubai and Abu Dhabi. AED 130 sharing / AED 200 private. All Ajman areas covered. 24/7.",
+    title: "Car Lift Ajman – AED 200 Private | +971 54 330 8261",
+    description: "Car lift from Ajman to Dubai and Abu Dhabi. AED 200 private. All Ajman areas covered. 24/7.",
   },
 };
 
 const PAGE_FAQS = [
   { question: "What car lift services are available from Ajman?", answer: "Quick Car Lift Service UAE offers daily shared and private rides from all Ajman areas to Dubai (Business Bay, DIFC, JLT) and Abu Dhabi. Ladies-only car lift also available on request." },
-  { question: "How much is a car lift from Ajman to Dubai?", answer: "AED 130 sharing / AED 200 private per trip from central Ajman to Dubai Business Bay, DIFC, or JLT. Ajman Corniche and farther areas may vary — WhatsApp your location for an exact price." },
-  { question: "Is there a car lift from Ajman to Abu Dhabi?", answer: "Yes. Ajman to Abu Dhabi is AED 140 sharing / AED 250 private per trip via E311 Emirates Road through Dubai. Journey time is approximately 2–2.5 hours." },
+  { question: "How much is a car lift from Ajman to Dubai?", answer: "AED 200 private per trip from central Ajman to Dubai Business Bay, DIFC, or JLT. Ajman Corniche and farther areas may vary — WhatsApp your location for an exact price." },
+  { question: "Is there a car lift from Ajman to Abu Dhabi?", answer: "Yes. Ajman to Abu Dhabi is AED 250 private per trip via E311 Emirates Road through Dubai. Journey time is approximately 2–2.5 hours." },
   { question: "Which areas in Ajman can be picked up?", answer: "We cover Al Nuaimiya, Al Rashidiya, Al Hamidiya, Al Rawdah, Al Jurf, Emirates City, Ajman Corniche, Al Rumailah, and other Ajman areas. WhatsApp your building name and we confirm pickup." },
   { question: "How long is the journey from Ajman to Dubai?", answer: "55–80 minutes from central Ajman to Business Bay Dubai via E311 Emirates Road, depending on traffic. The 6:30 AM departure is typically 55–65 minutes." },
   { question: "Is there a ladies-only car lift from Ajman?", answer: "Yes. A ladies-only car lift is available from Ajman to Dubai and within Ajman. Female driver or ladies-only vehicle available on request at the same price. WhatsApp to arrange." },
@@ -36,9 +36,9 @@ const PAGE_FAQS = [
 
 const PICKUP_AREAS = ["Al Nuaimiya", "Al Rashidiya", "Al Hamidiya", "Al Rawdah", "Al Jurf", "Emirates City", "Ajman Corniche", "Ajman City Centre area", "Al Rumailah"];
 const ROUTES = [
-  { route: "Ajman → Dubai", sharing: "AED 130", private: "AED 200" },
-  { route: "Ajman → Abu Dhabi", sharing: "AED 140", private: "AED 250" },
-  { route: "Ajman → Jebel Ali", sharing: "AED 130", private: "AED 200" },
+  { route: "Ajman → Dubai", private: "AED 200" },
+  { route: "Ajman → Abu Dhabi", private: "AED 250" },
+  { route: "Ajman → Jebel Ali", private: "AED 200" },
 ];
 
 export default function CarLiftAjmanPage() {
@@ -46,7 +46,7 @@ export default function CarLiftAjmanPage() {
   const phoneHref = formatPhoneHref(BUSINESS.phone);
   const schemas = [
     localBusinessSchema(),
-    serviceSchema({ name: "Car Lift Ajman", description: "Daily car lift from Ajman to Dubai and Abu Dhabi. AED 130 sharing / AED 200 private. All Ajman areas covered.", url: "/car-lift-ajman", price: "130" }),
+    serviceSchema({ name: "Car Lift Ajman", description: "Daily car lift from Ajman to Dubai and Abu Dhabi. AED 200 private. All Ajman areas covered.", url: "/car-lift-ajman", price: "200" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Ajman", url: "/car-lift-ajman" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-honda-civic-silver-quick-car-lift-uae.webp", pageUrl: "/car-lift-ajman", caption: "Car lift Ajman – daily rides to Dubai and Abu Dhabi from all Ajman areas" }),
@@ -72,10 +72,10 @@ export default function CarLiftAjmanPage() {
               <p className="speakable-desc text-rose-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Daily shared and private car lift from all Ajman areas to Dubai and Abu Dhabi. Ladies-only option available.
               </p>
-              <p className="text-rose-200/80 text-sm leading-relaxed mb-6 max-w-xl">AED 130 sharing / AED 200 private per trip. Fixed fares, no surge pricing.</p>
+              <p className="text-rose-200/80 text-sm leading-relaxed mb-6 max-w-xl">AED 200 private per trip. Fixed fares, no surge pricing.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[
-                  { icon: DollarSign, label: "AED 130 Sharing", sub: "Per trip" },
+                  { icon: DollarSign, label: "From AED 200 Private", sub: "Per trip" },
                   { icon: DollarSign, label: "AED 200 Private", sub: "Per trip" },
                   { icon: Car, label: "Dubai + AUH", sub: "All routes" },
                   { icon: Clock, label: "24/7", sub: "Available" },
@@ -126,7 +126,6 @@ export default function CarLiftAjmanPage() {
               <thead className="bg-slate-50 border-b border-slate-200">
                 <tr>
                   <th className="text-left px-4 py-3 font-semibold text-slate-700">Route</th>
-                  <th className="text-center px-4 py-3 font-semibold text-slate-700">Sharing</th>
                   <th className="text-right px-4 py-3 font-semibold text-slate-700">Private</th>
                 </tr>
               </thead>
@@ -134,7 +133,6 @@ export default function CarLiftAjmanPage() {
                 {ROUTES.map((row, i) => (
                   <tr key={row.route} className={i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}>
                     <td className="px-4 py-3 text-slate-800 font-medium">{row.route}</td>
-                    <td className="px-4 py-3 text-center font-extrabold text-rose-600">{row.sharing}</td>
                     <td className="px-4 py-3 text-right font-extrabold text-slate-700">{row.private}</td>
                   </tr>
                 ))}
@@ -176,9 +174,9 @@ export default function CarLiftAjmanPage() {
           <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Related Car Lift Services</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
-              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 130 sharing / AED 200 private" },
+              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 200 private" },
               { href: "/ladies-car-lift-ajman-to-dubai", label: "Ladies Car Lift Ajman", desc: "Female-only option" },
-              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 130 sharing / AED 200 private" },
+              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 200 private" },
               { href: "/car-lift-dubai-to-ajman", label: "Car Lift Dubai to Ajman", desc: "Evening return from Dubai" },
             ].map(({ href, label, desc }) => (
               <li key={href}>

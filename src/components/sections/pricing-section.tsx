@@ -28,12 +28,6 @@ function PricingCard({ route }: { route: RoutePrice }) {
           <li className="flex items-center gap-3">
             <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" aria-hidden="true" />
             <span className="text-sm text-slate-700">
-              Sharing: <span className="font-bold text-slate-900">AED {route.sharing}</span>
-            </span>
-          </li>
-          <li className="flex items-center gap-3">
-            <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" aria-hidden="true" />
-            <span className="text-sm text-slate-700">
               Private: <span className="font-bold text-slate-900">AED {route.private}</span>
             </span>
           </li>

@@ -29,7 +29,7 @@ const featuredAnswers = [
   {
     question: "What is a car lift in UAE?",
     answer:
-      "A car lift in UAE is a daily shared ride service where a professional driver picks up multiple commuters along a route and drops them at a common destination — typically a business hub like Business Bay or DIFC. It is similar to carpooling but organized by a service provider with scheduled departure times, fixed pricing, and verified drivers. Car lift UAE services typically run Monday to Saturday and cost AED 200–AED 130 sharing/month.",
+      "A car lift in UAE is a daily shared ride service where a professional driver picks up multiple commuters along a route and drops them at a common destination — typically a business hub like Business Bay or DIFC. It is similar to carpooling but organized by a service provider with scheduled departure times, fixed pricing, and verified drivers. Car lift UAE services typically run Monday to Saturday and cost from AED 200 private per trip.",
   },
   {
     question: "How does Car Lift UAE work?",
@@ -44,7 +44,7 @@ const featuredAnswers = [
   {
     question: "What is the cheapest car lift from Ajman to Business Bay?",
     answer:
-      "Car Lift UAE offers daily car lift from Ajman to Business Bay at AED 130 sharing per trip. Fares are fixed per trip with no surge pricing — WhatsApp +971 54 330 8261 for your exact quote.",
+      "Car Lift UAE offers daily car lift from Ajman to Business Bay at AED 200 private per trip. Fares are fixed per trip with no surge pricing — WhatsApp +971 54 330 8261 for your exact quote.",
   },
 ];
 

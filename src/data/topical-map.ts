@@ -258,7 +258,7 @@ export const AEO_ANSWERS = {
   },
   "How much does car lift from Ajman to Business Bay cost?": {
     answer:
-      "A car lift from Ajman to Business Bay costs AED 130 sharing or AED 200 private per trip. Monthly packages are also available — WhatsApp +971 54 330 8261 for your exact rate.",
+      "A car lift from Ajman to Business Bay costs AED 200 private per trip. Monthly packages are also available — WhatsApp +971 54 330 8261 for your exact rate.",
     speakable: true,
     targetFeaturedSnippet: true,
   },

@@ -50,7 +50,7 @@ const teamValues = [
     icon: DollarSign,
     title: "Affordability",
     description:
-      "We believe daily commuting shouldn't cost a fortune. Our transparent pricing starts from AED 100 sharing/month with no hidden charges — Salik tolls included.",
+      "We believe daily commuting shouldn't cost a fortune. Our transparent pricing starts from AED 200 private per trip with no hidden charges — Salik tolls included.",
   },
   {
     icon: Eye,
@@ -65,7 +65,7 @@ const benefitsVsDriving = [
     icon: DollarSign,
     title: "Save AED 850+/month",
     description:
-      "Driving yourself from Ajman to Business Bay costs AED 1,200+ monthly in fuel, Salik tolls (AED 8 each way × 22 days), parking (AED 130 sharing+), and wear & tear. Car lift costs AED 130 sharing.",
+      "Driving yourself from Ajman to Business Bay costs AED 1,200+ monthly in fuel, Salik tolls (AED 8 each way × 22 days), parking (AED 130+), and wear & tear. Car lift costs AED 200 private per trip.",
   },
   {
     icon: Leaf,
@@ -503,7 +503,7 @@ const ABOUT_FLEET = FLEET_PHOTOS.filter((f) =>
                   </tr>
                   <tr>
                     <td className="px-6 py-3 text-slate-700">Parking (Business Bay)</td>
-                    <td className="px-6 py-3 text-right text-slate-700">AED 130 sharing+</td>
+                    <td className="px-6 py-3 text-right text-slate-700">AED 130+</td>
                     <td className="px-6 py-3 text-right text-emerald-600 font-medium">—</td>
                   </tr>
                   <tr className="bg-slate-50/50">
@@ -514,7 +514,7 @@ const ABOUT_FLEET = FLEET_PHOTOS.filter((f) =>
                   <tr className="bg-red-50 border-t-2 border-red-200">
                     <td className="px-6 py-3 font-bold text-slate-900">Total / Month</td>
                     <td className="px-6 py-3 text-right font-extrabold text-red-600">AED 1,452+</td>
-                    <td className="px-6 py-3 text-right font-extrabold text-emerald-600">AED 130 sharing</td>
+                    <td className="px-6 py-3 text-right font-extrabold text-emerald-600">From AED 200 / trip</td>
                   </tr>
                 </tbody>
               </table>

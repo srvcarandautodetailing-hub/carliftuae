@@ -32,7 +32,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Daily Car Lift Abu Dhabi",
   description:
-    "Daily car lift in Abu Dhabi: guaranteed seat every working day. Dubai→Abu Dhabi AED 100 sharing, Ajman→Abu Dhabi AED 140. WhatsApp +971 54 330 8261.",
+    "Daily car lift in Abu Dhabi: guaranteed seat every working day. Dubai→Abu Dhabi AED 200 private, Ajman→Abu Dhabi AED 250 private. WhatsApp +971 54 330 8261.",
   keywords:
     "daily car lift abu dhabi, abu dhabi daily commute car lift, dubai to abu dhabi daily car lift, guaranteed seat car lift abu dhabi",
   alternates: { canonical: "https://www.carliftuae.com/daily-car-lift-abu-dhabi" },
@@ -60,7 +60,7 @@ const PAGE_FAQS = [
   {
     question: "What is the daily fare from Dubai to Abu Dhabi?",
     answer:
-      "AED 100 sharing / AED 200 private per trip from Dubai to Abu Dhabi. From Ajman to Abu Dhabi it is AED 140 sharing / AED 250 private. Fares are fixed — no surge pricing during rush hour.",
+      "AED 200 private per trip from Dubai to Abu Dhabi. From Ajman to Abu Dhabi it is AED 250 private. Fares are fixed — no surge pricing during rush hour.",
   },
   {
     question: "Which Abu Dhabi areas do you pick up from?",
@@ -80,7 +80,6 @@ const DAILY_ROUTES = [
     from: "Dubai",
     to: "Abu Dhabi",
     areas: "Khalifa City · Mussafah · Corniche · Yas Island",
-    sharing: "AED 100",
     private: "AED 200",
   },
   {
@@ -88,7 +87,6 @@ const DAILY_ROUTES = [
     from: "Ajman",
     to: "Abu Dhabi",
     areas: "Via Dubai · E311 Emirates Road",
-    sharing: "AED 140",
     private: "AED 250",
   },
 ];
@@ -159,7 +157,7 @@ export default function DailyCarLiftAbuDhabiPage() {
           </h1>
           <p className="speakable-desc text-emerald-100 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             Reserve once, ride every working day. Our daily car lift connects Dubai and
-            Ajman with Abu Dhabi — Dubai to Abu Dhabi from AED 100 sharing, with
+            Ajman with Abu Dhabi — Dubai to Abu Dhabi from AED 200 private, with
             punctual morning and evening departures and the same driver on your route.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -224,9 +222,6 @@ export default function DailyCarLiftAbuDhabiPage() {
                     </div>
                   </div>
                   <div className="flex gap-2 mt-1">
-                    <span className="bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full">
-                      {r.sharing} sharing
-                    </span>
                     <span className="bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-full">
                       {r.private} private
                     </span>
@@ -317,7 +312,7 @@ export default function DailyCarLiftAbuDhabiPage() {
               {
                 icon: CheckCircle,
                 title: "Honest per-trip pricing",
-                desc: "AED 100 sharing Dubai–Abu Dhabi, fixed in advance. What we quote on WhatsApp is what you pay.",
+                desc: "AED 200 private Dubai–Abu Dhabi, fixed in advance. What we quote on WhatsApp is what you pay.",
               },
               {
                 icon: Clock,
@@ -391,7 +386,7 @@ export default function DailyCarLiftAbuDhabiPage() {
             Reserve Your Daily Seat in Abu Dhabi
           </h2>
           <p className="text-emerald-100 text-sm mb-6">
-            Dubai → Abu Dhabi from AED 100 sharing · Ajman → Abu Dhabi from AED 140 sharing.
+            Dubai → Abu Dhabi from AED 200 private · Ajman → Abu Dhabi from AED 250 private.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button

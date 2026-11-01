@@ -12,7 +12,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Pick & Drop Service Dubai – Daily",
-  description: "Daily pick and drop service in Dubai. From Ajman and Abu Dhabi to any Dubai area. AED 100 sharing per trip. Book via WhatsApp +971 54 330 8261.",
+  description: "Daily pick and drop service in Dubai. From Ajman and Abu Dhabi to any Dubai area. AED 200 private per trip. Book via WhatsApp +971 54 330 8261.",
   keywords: "pick and drop service in dubai, pick up and drop service dubai, pick and drop service dubai, daily pick and drop service in dubai, car pick up service dubai, car pick up dubai",
   alternates: { canonical: "https://www.carliftuae.com/pick-and-drop-service-dubai" },
   other: {
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Pick & Drop Service Dubai – Daily | +971 54 330 8261",
-    description: "Daily door-to-door pick and drop service in Dubai. AED 100+ per trip. From Ajman and Abu Dhabi. WhatsApp +971 54 330 8261.",
+    description: "Daily door-to-door pick and drop service in Dubai. AED 200+ per trip. From Ajman and Abu Dhabi. WhatsApp +971 54 330 8261.",
   },
 };
 
 const PAGE_FAQS = [
   { question: "What is the best pick and drop service in Dubai?", answer: "Quick Car Lift Service UAE provides reliable daily pick and drop service across Dubai, operating since 2019 with a 4.9-star rating from 150+ regular riders. We cover all major inter-emirate routes and Dubai drop-off points." },
-  { question: "How much does pick and drop cost in Dubai?", answer: "Pick and drop from Abu Dhabi to Dubai is AED 100 sharing / AED 200 private per trip. From Ajman to Dubai it is AED 130 sharing / AED 200 private. All fares fixed per trip." },
+  { question: "How much does pick and drop cost in Dubai?", answer: "Pick and drop from Abu Dhabi to Dubai is AED 200 private per trip. From Ajman to Dubai it is AED 200 private. All fares fixed per trip." },
   { question: "How do I book pick and drop service in Dubai?", answer: "WhatsApp +971 54 330 8261 with your pickup address, destination, and preferred timing. We confirm within 60 minutes. No app needed, no registration required." },
   { question: "Do you offer pick and drop for office employees in Dubai?", answer: "Yes. Corporate pick and drop packages are available for companies wanting daily employee transport. Group bookings and dedicated vehicles can be arranged with simple per-trip billing. WhatsApp for a corporate quote." },
   { question: "Is pick and drop service safe in Dubai UAE?", answer: "Yes. All Quick Car Lift Service UAE drivers are verified and licensed. Vehicles are GPS-tracked and air-conditioned. Our 4.9★ rating reflects the consistent safety and reliability our 150+ daily riders experience." },
@@ -40,7 +40,7 @@ export default function PickAndDropServiceDubaiPage() {
   const phoneHref = formatPhoneHref(BUSINESS.phone);
   const schemas = [
     localBusinessSchema(),
-    serviceSchema({ name: "Pick and Drop Service Dubai", description: "Daily door-to-door pick and drop service in Dubai from AED 100 per trip. From Ajman and Abu Dhabi to any Dubai area.", url: "/pick-and-drop-service-dubai", price: "100" }),
+    serviceSchema({ name: "Pick and Drop Service Dubai", description: "Daily door-to-door pick and drop service in Dubai from AED 200 per trip. From Ajman and Abu Dhabi to any Dubai area.", url: "/pick-and-drop-service-dubai", price: "200" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Pick and Drop Service Dubai", url: "/pick-and-drop-service-dubai" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-white-suv-quick-car-lift-uae.webp", pageUrl: "/pick-and-drop-service-dubai", caption: "Pick and drop service Dubai – daily door-to-door transport to Business Bay and all Dubai areas" }),
@@ -66,11 +66,11 @@ export default function PickAndDropServiceDubaiPage() {
               <p className="speakable-desc text-blue-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
                 Door-to-door daily pick and drop service across all Dubai areas. From Ajman and Abu Dhabi — confirmed in 60 minutes via WhatsApp.
               </p>
-              <p className="text-blue-200/80 text-sm leading-relaxed mb-6 max-w-xl">Abu Dhabi to Dubai: AED 100 sharing / AED 200 private. Ajman to Dubai: AED 130 sharing / AED 200 private. Fixed per-trip fares.</p>
+              <p className="text-blue-200/80 text-sm leading-relaxed mb-6 max-w-xl">Abu Dhabi to Dubai: AED 200 private. Ajman to Dubai: AED 200 private. Fixed per-trip fares.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key service stats">
                 {[
                   { icon: MapPin, label: "Door-to-Door", sub: "All Dubai areas" },
-                  { icon: DollarSign, label: "AED 100+", sub: "Per trip" },
+                  { icon: DollarSign, label: "AED 200+", sub: "Per trip" },
                   { icon: Car, label: "All Dubai", sub: "Every area" },
                   { icon: Clock, label: "Daily Service", sub: "Mon–Sat" },
                 ].map(({ icon: Icon, label, sub }) => (
@@ -137,7 +137,7 @@ export default function PickAndDropServiceDubaiPage() {
               { href: "/pick-and-drop-service", label: "Pick & Drop UAE", desc: "All UAE pick and drop hub" },
               { href: "/car-lift-dubai", label: "Car Lift Dubai", desc: "All Dubai routes" },
               { href: "/daily-car-lift-dubai", label: "Daily Car Lift Dubai", desc: "Guaranteed daily seat to Dubai" },
-              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 130 sharing per trip" },
+              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 200 private per trip" },
             ].map(({ href, label, desc }) => (
               <li key={href}>
                 <Link href={href} className="group flex flex-col gap-2 p-5 border border-slate-200 hover:border-blue-300 rounded-2xl hover:shadow-md transition-all h-full">

@@ -34,9 +34,9 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift Abu Dhabi – AED 100",
+  title: "Car Lift Abu Dhabi – AED 200",
   description:
-    "Car lift to/from Abu Dhabi. Dubai ↔ Abu Dhabi AED 100 sharing / AED 200 private. Ajman routes. WhatsApp +971 54 330 8261.",
+    "Car lift to/from Abu Dhabi. Dubai ↔ Abu Dhabi AED 200 private. Ajman routes. WhatsApp +971 54 330 8261.",
   keywords:
     "car lift abu dhabi, car lift to abu dhabi, abu dhabi car lift, carpool abu dhabi, sharing taxi abu dhabi to dubai",
   alternates: {
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     "geo.placename": "Abu Dhabi, UAE",
   },
   openGraph: {
-    title: "Car Lift Abu Dhabi – AED 100 Sharing | +971 54 330 8261",
+    title: "Car Lift Abu Dhabi – AED 200 Private | +971 54 330 8261",
     description:
-      "Car lift to/from Abu Dhabi. Dubai route AED 100 sharing / AED 200 private. Ajman route AED 140 sharing / AED 250 private. 24/7.",
+      "Car lift to/from Abu Dhabi. Dubai route AED 200 private. Ajman route AED 250 private. 24/7.",
   },
 };
 
@@ -57,7 +57,7 @@ const PAGE_FAQS = [
   {
     question: "How much is a car lift from Abu Dhabi to Dubai?",
     answer:
-      "AED 100 sharing / AED 200 private per one-way trip. This covers all pickup points in Abu Dhabi to any major Dubai destination — Business Bay, DIFC, JLT, and more.",
+      "AED 200 private per one-way trip. This covers all pickup points in Abu Dhabi to any major Dubai destination — Business Bay, DIFC, JLT, and more.",
   },
   {
     question: "How long is the journey from Abu Dhabi to Dubai?",
@@ -72,7 +72,7 @@ const PAGE_FAQS = [
   {
     question: "Is there a car lift from Abu Dhabi to Ajman?",
     answer:
-      "Yes. Abu Dhabi to Ajman is AED 140 sharing / AED 250 private per trip. The route goes via Dubai and Emirates Road (E311). Contact via WhatsApp to arrange.",
+      "Yes. Abu Dhabi to Ajman is AED 250 private per trip. The route goes via Dubai and Emirates Road (E311). Contact via WhatsApp to arrange.",
   },
 ];
 
@@ -93,8 +93,8 @@ const TIMINGS = [
 ];
 
 const ROUTES_TABLE = [
-  { route: "Dubai ↔ Abu Dhabi", sharing: "AED 100", private: "AED 200" },
-  { route: "Ajman ↔ Abu Dhabi", sharing: "AED 140", private: "AED 250" },
+  { route: "Dubai ↔ Abu Dhabi", private: "AED 200" },
+  { route: "Ajman ↔ Abu Dhabi", private: "AED 250" },
 ];
 
 export default function CarLiftAbuDhabiPage() {
@@ -114,9 +114,9 @@ const ABUDHABI_FLEET = FLEET_PHOTOS.filter((f) =>
     serviceSchema({
       name: "Car Lift Abu Dhabi",
       description:
-        "Daily car lift to and from Abu Dhabi. Dubai to Abu Dhabi AED 100 sharing / AED 200 private. Ajman route AED 140 sharing / AED 250 private. 24/7 service.",
+        "Daily car lift to and from Abu Dhabi. Dubai to Abu Dhabi AED 200 private. Ajman route AED 250 private. 24/7 service.",
       url: "/car-lift-abu-dhabi",
-      price: "100",
+      price: "200",
     }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([
@@ -165,11 +165,11 @@ const ABUDHABI_FLEET = FLEET_PHOTOS.filter((f) =>
                 Daily shared and private car lift from Abu Dhabi to Dubai and Ajman. All major Abu Dhabi areas covered — Mussafah, Khalifa City, MBZ City.
               </p>
               <p className="text-emerald-200/80 text-sm leading-relaxed mb-6 max-w-xl">
-                Abu Dhabi to Dubai: AED 100 sharing / AED 200 private. Ajman route: AED 140 sharing / AED 250 private per trip.
+                Abu Dhabi to Dubai: AED 200 private. Ajman route: AED 250 private per trip.
               </p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[
-                  { icon: DollarSign, label: "AED 100 Sharing", sub: "Dubai route" },
+                  { icon: DollarSign, label: "AED 200 Private", sub: "Dubai route" },
                   { icon: DollarSign, label: "AED 200 Private", sub: "Dubai route" },
                   { icon: Car, label: "2 Routes", sub: "Dubai, Ajman" },
                   { icon: Clock, label: "24/7", sub: "Available" },
@@ -228,7 +228,6 @@ const ABUDHABI_FLEET = FLEET_PHOTOS.filter((f) =>
               <thead className="bg-slate-50 border-b border-slate-200">
                 <tr>
                   <th className="text-left px-4 py-3 font-semibold text-slate-700">Route</th>
-                  <th className="text-center px-4 py-3 font-semibold text-slate-700">Sharing</th>
                   <th className="text-right px-4 py-3 font-semibold text-slate-700">Private</th>
                 </tr>
               </thead>
@@ -236,7 +235,6 @@ const ABUDHABI_FLEET = FLEET_PHOTOS.filter((f) =>
                 {ROUTES_TABLE.map((row, i) => (
                   <tr key={row.route} className={i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}>
                     <td className="px-4 py-3 text-slate-800 font-medium">{row.route}</td>
-                    <td className="px-4 py-3 text-center font-extrabold text-emerald-600">{row.sharing}</td>
                     <td className="px-4 py-3 text-right font-extrabold text-slate-700">{row.private}</td>
                   </tr>
                 ))}
@@ -325,8 +323,8 @@ const ABUDHABI_FLEET = FLEET_PHOTOS.filter((f) =>
           <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Related Car Lift Services</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
-              { href: "/car-lift-dubai-to-abu-dhabi", label: "Car Lift Dubai to Abu Dhabi", desc: "AED 100 sharing / AED 200 private" },
-              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 130 sharing / AED 200 private" },
+              { href: "/car-lift-dubai-to-abu-dhabi", label: "Car Lift Dubai to Abu Dhabi", desc: "AED 200 private" },
+              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 200 private" },
               { href: "/daily-car-lift-abu-dhabi", label: "Daily Car Lift Abu Dhabi", desc: "Guaranteed daily seat, no rebooking" },
               { href: "/pricing", label: "Full Pricing Guide", desc: "All UAE routes and prices" },
             ].map(({ href, label, desc }) => (

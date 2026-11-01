@@ -10,7 +10,7 @@ export interface OgImageParams {
 }
 
 const DEFAULT_STATS = [
-  { label: "From AED 130 sharing/mo", color: "#10b981" },
+  { label: "From AED 200 Private", color: "#10b981" },
   { label: "4.9★ Rated", color: "#f59e0b" },
   { label: "GPS Tracked", color: "#60a5fa" },
   { label: "247+ Riders", color: "#a78bfa" },

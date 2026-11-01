@@ -32,9 +32,9 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift Abu Dhabi to Dubai – AED 100",
+  title: "Car Lift Abu Dhabi to Dubai – AED 200",
   description:
-    "Daily car lift Abu Dhabi → Dubai from AED 100 sharing / AED 200 private. Khalifa City, Mussafah, MBZ pickup. WhatsApp +971 54 330 8261.",
+    "Daily car lift Abu Dhabi → Dubai from AED 200 private. Khalifa City, Mussafah, MBZ pickup. WhatsApp +971 54 330 8261.",
   keywords:
     "car lift abu dhabi to dubai, abu dhabi to dubai car lift, sharing taxi from abu dhabi to dubai, carpool abu dhabi to dubai, pick and drop abu dhabi to dubai",
   alternates: {
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     "geo.placename": "Abu Dhabi, UAE",
   },
   openGraph: {
-    title: "Car Lift Abu Dhabi to Dubai – AED 100 | +971 54 330 8261",
+    title: "Car Lift Abu Dhabi to Dubai – AED 200 | +971 54 330 8261",
     description:
-      "Daily car lift from Abu Dhabi to Dubai – AED 100 sharing / AED 200 private per trip. Khalifa City, Mussafah, MBZ pickup. Business Bay, DIFC, JLT drop-off. Salik included.",
+      "Daily car lift from Abu Dhabi to Dubai – AED 200 private per trip. Khalifa City, Mussafah, MBZ pickup. Business Bay, DIFC, JLT drop-off. Salik included.",
   },
 };
 
@@ -55,7 +55,7 @@ const PAGE_FAQS = [
   {
     question: "How much is a car lift from Abu Dhabi to Dubai?",
     answer:
-      "Car lift from Abu Dhabi to Dubai is AED 100 sharing / AED 200 private per one-way trip. The flat per-trip fare applies to all Abu Dhabi pickup zones — Khalifa City, Mussafah, Mohamed Bin Zayed City, Al Shamkha, Baniyas, and more. All E11 Salik tolls are included. No hidden charges.",
+      "Car lift from Abu Dhabi to Dubai is AED 200 private per one-way trip. The flat per-trip fare applies to all Abu Dhabi pickup zones — Khalifa City, Mussafah, Mohamed Bin Zayed City, Al Shamkha, Baniyas, and more. All E11 Salik tolls are included. No hidden charges.",
   },
   {
     question: "How long does the journey from Abu Dhabi to Dubai take?",
@@ -138,12 +138,12 @@ const DUBAI_DESTINATIONS = [
 ];
 
 const PRICING_TABLE = [
-  { area: "Khalifa City / Al Raha / Tourist Club", sharing: "AED 100", private: "AED 200" },
-  { area: "Mussafah (all sectors)", sharing: "AED 100", private: "AED 200" },
-  { area: "Mohamed Bin Zayed City (MBZ)", sharing: "AED 100", private: "AED 200" },
-  { area: "Al Shamkha / Baniyas", sharing: "AED 100", private: "AED 200" },
-  { area: "Abu Dhabi Corniche / Hamdan Street", sharing: "AED 100", private: "AED 200" },
-  { area: "Yas Island / Zayed Sports City", sharing: "AED 100", private: "AED 200" },
+  { area: "Khalifa City / Al Raha / Tourist Club", private: "AED 200" },
+  { area: "Mussafah (all sectors)", private: "AED 200" },
+  { area: "Mohamed Bin Zayed City (MBZ)", private: "AED 200" },
+  { area: "Al Shamkha / Baniyas", private: "AED 200" },
+  { area: "Abu Dhabi Corniche / Hamdan Street", private: "AED 200" },
+  { area: "Yas Island / Zayed Sports City", private: "AED 200" },
 ];
 
 const COST_COMPARISON = [
@@ -151,7 +151,7 @@ const COST_COMPARISON = [
   { item: "Salik on E11 (4–6 gates roundtrip × 26 days)", driving: "AED 832", carlift: "Included" },
   { item: "Dubai parking (monthly)", driving: "AED 600", carlift: "—" },
   { item: "Vehicle wear & depreciation", driving: "AED 600", carlift: "—" },
-  { item: "Total monthly cost", driving: "AED 4,112+", carlift: "AED 2,600 (sharing × 26 trips)", highlight: true },
+  { item: "Total monthly cost", driving: "AED 4,112+", carlift: "AED 5,200 (private × 26 trips)", highlight: true },
 ];
 
 const SERVICES = [
@@ -189,9 +189,9 @@ export default function CarLiftAbuDhabiToDubaiPage() {
     serviceSchema({
       name: "Car Lift Abu Dhabi to Dubai",
       description:
-        "Daily car lift from Abu Dhabi to Dubai covering Khalifa City, Mussafah, MBZ City, Baniyas, and all major Abu Dhabi areas. AED 100 sharing / AED 200 private per trip via E11. Salik included, GPS-tracked.",
+        "Daily car lift from Abu Dhabi to Dubai covering Khalifa City, Mussafah, MBZ City, Baniyas, and all major Abu Dhabi areas. AED 200 private per trip via E11. Salik included, GPS-tracked.",
       url: "/car-lift-abu-dhabi-to-dubai",
-      price: "100",
+      price: "200",
     }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([
@@ -237,7 +237,7 @@ export default function CarLiftAbuDhabiToDubaiPage() {
             <div className="flex-1">
               <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full px-4 py-1.5 text-sm text-emerald-300 font-semibold mb-5">
                 <Car className="h-4 w-4" aria-hidden="true" />
-                AED 100 Sharing / AED 200 Private per Trip · E11 Route · Salik Included
+                AED 200 Private per Trip · E11 Route · Salik Included
               </div>
               <h1
                 id="hero-heading"
@@ -246,11 +246,11 @@ export default function CarLiftAbuDhabiToDubaiPage() {
                 Car Lift Abu Dhabi to<br className="hidden sm:block" /> Dubai – Daily Commute
               </h1>
               <p className="speakable-desc text-emerald-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">
-                Car lift from Abu Dhabi to Dubai costs <strong className="text-white">AED 100 sharing</strong> or <strong className="text-white">AED 200 private</strong> per trip. Daily departures from Khalifa City, Mussafah, MBZ City, Baniyas and all Abu Dhabi areas to Business Bay, DIFC, JLT and Downtown Dubai — via E11 Sheikh Zayed Road with Salik included.
+                Car lift from Abu Dhabi to Dubai costs <strong className="text-white">AED 200 private</strong> per trip. Daily departures from Khalifa City, Mussafah, MBZ City, Baniyas and all Abu Dhabi areas to Business Bay, DIFC, JLT and Downtown Dubai — via E11 Sheikh Zayed Road with Salik included.
               </p>
               <p className="text-emerald-200/80 text-sm leading-relaxed mb-6 max-w-xl">
                 Driving from Abu Dhabi to Dubai costs AED 4,100+/month in fuel, Salik, and Dubai
-                parking. Our car lift starts at AED 100 sharing per trip — all tolls covered,
+                parking. Our car lift starts at AED 200 private per trip — all tolls covered,
                 door-to-area service.
               </p>
               <ul
@@ -259,7 +259,7 @@ export default function CarLiftAbuDhabiToDubaiPage() {
                 aria-label="Key route stats"
               >
                 {[
-                  { icon: DollarSign, label: "AED 100 sharing", sub: "per trip" },
+                  { icon: DollarSign, label: "AED 200 private", sub: "per trip" },
                   { icon: Clock, label: "75–110 min", sub: "Journey Time" },
                   { icon: Car, label: "E11 Route", sub: "Sheikh Zayed Rd" },
                   { icon: Users, label: "Ladies Option", sub: "Available" },
@@ -591,7 +591,6 @@ export default function CarLiftAbuDhabiToDubaiPage() {
               <thead className="bg-slate-800 text-white">
                 <tr>
                   <th className="text-left px-4 py-3 font-semibold">Abu Dhabi Pickup Area</th>
-                  <th className="text-right px-4 py-3 font-semibold">Sharing</th>
                   <th className="text-right px-4 py-3 font-semibold">Private</th>
                 </tr>
               </thead>
@@ -599,7 +598,6 @@ export default function CarLiftAbuDhabiToDubaiPage() {
                 {PRICING_TABLE.map((row, i) => (
                   <tr key={row.area} className={i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}>
                     <td className="px-4 py-3 text-slate-800 font-medium">{row.area}</td>
-                    <td className="px-4 py-3 text-right font-extrabold text-emerald-600">{row.sharing}</td>
                     <td className="px-4 py-3 text-right font-medium text-slate-700">{row.private}</td>
                   </tr>
                 ))}
@@ -684,7 +682,7 @@ export default function CarLiftAbuDhabiToDubaiPage() {
               {
                 href: "/car-lift-dubai-to-abu-dhabi",
                 label: "Car Lift Dubai to Abu Dhabi",
-                desc: "Reverse route – AED 100 sharing / AED 200 private",
+                desc: "Reverse route – AED 200 private",
               },
               {
                 href: "/car-lift-abu-dhabi",

@@ -12,7 +12,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Ladies Car Lift Ajman to Dubai",
-  description: "Ladies-only car lift Ajman → Dubai. Female-only shared rides, AED 130 per trip. WhatsApp +971 54 330 8261.",
+  description: "Ladies-only car lift Ajman → Dubai. Female-only rides, AED 200 private per trip. WhatsApp +971 54 330 8261.",
   keywords: "ladies car lift ajman to dubai, female car lift ajman dubai, women car lift ajman, ladies taxi ajman dubai, ladies transport ajman",
   alternates: { canonical: "https://www.carliftuae.com/ladies-car-lift-ajman-to-dubai" },
   other: {
@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     "geo.placename": "Ajman, UAE",
   },
   openGraph: {
-    title: "Ladies Car Lift Ajman to Dubai – AED 130 | +971 54 330 8261",
-    description: "Safe female-only car lift from Ajman to Dubai. AED 130 sharing. Verified drivers. Morning and evening service.",
+    title: "Ladies Car Lift Ajman to Dubai – AED 200 | +971 54 330 8261",
+    description: "Safe female-only car lift from Ajman to Dubai. AED 200 private. Verified drivers. Morning and evening service.",
   },
 };
 
 const PAGE_FAQS = [
-  { question: "Is there a ladies-only car lift from Ajman to Dubai?", answer: "Yes. Quick Car Lift Service UAE provides a dedicated ladies car lift from Ajman to Dubai. The service is designed for women commuters with a focus on safety, comfort, and punctuality. AED 130 sharing per trip. WhatsApp +971 54 330 8261 to book." },
+  { question: "Is there a ladies-only car lift from Ajman to Dubai?", answer: "Yes. Quick Car Lift Service UAE provides a dedicated ladies car lift from Ajman to Dubai. The service is designed for women commuters with a focus on safety, comfort, and punctuality. AED 200 private per trip. WhatsApp +971 54 330 8261 to book." },
   { question: "Is the ladies car lift service safe?", answer: "Yes. All drivers for the ladies car lift are verified professionals. The vehicles are GPS-tracked, and trip details are shared with emergency contacts on request. Your safety is our top priority." },
   { question: "Which Ajman areas are covered for ladies car lift?", answer: "We pick up from Al Nuaimia, Al Rashidiya, Al Jurf, Emirates City, Al Rumailah, and Al Mowaihat in Ajman. Additional pickup points can be arranged — WhatsApp to discuss your location." },
   { question: "Which Dubai areas do you drop off at for ladies car lift?", answer: "Drop-off points include Deira, Bur Dubai, Al Qusais, Al Nahda (Dubai), Business Bay, Downtown Dubai, and JLT/Marina area. Confirm your workplace or destination when booking." },
@@ -55,7 +55,7 @@ export default function LadiesCarLiftAjmanToDubaiPage() {
   const phoneHref = formatPhoneHref(BUSINESS.phone);
   const schemas = [
     localBusinessSchema(),
-    serviceSchema({ name: "Ladies Car Lift Ajman to Dubai", description: "Female-only car lift from Ajman to Dubai. Safe, comfortable shared rides with verified drivers. AED 130 sharing per trip.", url: "/ladies-car-lift-ajman-to-dubai", price: "130" }),
+    serviceSchema({ name: "Ladies Car Lift Ajman to Dubai", description: "Female-only car lift from Ajman to Dubai. Safe, comfortable rides with verified drivers. AED 200 private per trip.", url: "/ladies-car-lift-ajman-to-dubai", price: "200" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Ladies Car Lift Ajman to Dubai", url: "/ladies-car-lift-ajman-to-dubai" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-honda-civic-silver-quick-car-lift-uae.webp", pageUrl: "/ladies-car-lift-ajman-to-dubai", caption: "Ladies car lift from Ajman to Dubai – female-only safe commuter service" }),
@@ -77,11 +77,11 @@ export default function LadiesCarLiftAjmanToDubaiPage() {
               <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Ladies Car Lift Ajman to Dubai – Safe Female-Only Service
               </h1>
-              <p className="speakable-desc text-pink-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Dedicated ladies car lift from Ajman to Dubai. Female-only shared rides with verified professional drivers. AED 130 sharing per trip. Safe, punctual, and comfortable.</p>
+              <p className="speakable-desc text-pink-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Dedicated ladies car lift from Ajman to Dubai. Female-only rides with verified professional drivers. AED 200 private per trip. Safe, punctual, and comfortable.</p>
               <p className="text-pink-200/80 text-sm leading-relaxed mb-6 max-w-xl">40–60 minutes from Ajman to Dubai via Emirates Road. Morning departures from 7:00 AM. Daily seats available.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key service stats">
                 {[
-                  { icon: DollarSign, label: "AED 130 Sharing", sub: "Per trip" },
+                  { icon: DollarSign, label: "AED 200 Private", sub: "Per trip" },
                   { icon: Shield, label: "Verified Drivers", sub: "Safety first" },
                   { icon: Clock, label: "40–60 min", sub: "Journey time" },
                   { icon: Users, label: "Ladies Only", sub: "Female service" },
@@ -188,7 +188,7 @@ export default function LadiesCarLiftAjmanToDubaiPage() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
               { href: "/car-lift-ajman", label: "Car Lift Ajman Hub", desc: "All Ajman routes" },
-              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 130 sharing / AED 200 private" },
+              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 200 private" },
               { href: "/car-lift-dubai-to-ajman", label: "Car Lift Dubai to Ajman", desc: "Evening return service" },
               { href: "/car-lift-dubai", label: "Car Lift Dubai Hub", desc: "All Dubai routes" },
             ].map(({ href, label, desc }) => (

@@ -35,7 +35,7 @@ export const SERVICES: Service[] = [
       "car lift dubai abu dhabi",
             "car lift abu dhabi ajman",
     ],
-    price: "From AED 100 sharing / AED 200 private",
+    price: "From AED 200 private",
     priceNote: "per trip (one way) · 24/7 service",
     faqs: [
       {
@@ -46,7 +46,7 @@ export const SERVICES: Service[] = [
       {
         question: "What routes does Quick Car Lift Service UAE cover?",
         answer:
-          "We cover Dubai ↔ Abu Dhabi (AED 100 sharing / AED 200 private) and Abu Dhabi ↔ Ajman (AED 140 sharing / AED 250 private), plus airport transfers across the UAE.",
+          "We cover Dubai ↔ Abu Dhabi (AED 200 private) and Abu Dhabi ↔ Ajman (AED 250 private), plus airport transfers across the UAE.",
       },
     ],
   },

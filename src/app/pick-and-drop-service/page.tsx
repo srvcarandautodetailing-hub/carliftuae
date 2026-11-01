@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pick & Drop Service UAE – Door-to-Door | +971 54 330 8261",
     description:
-      "Daily pick and drop service across UAE. Door-to-door from AED 100 per trip. Dubai, Abu Dhabi, Ajman. WhatsApp +971 54 330 8261.",
+      "Daily pick and drop service across UAE. Door-to-door from AED 200 per trip. Dubai, Abu Dhabi, Ajman. WhatsApp +971 54 330 8261.",
   },
 };
 
@@ -59,7 +59,7 @@ const PAGE_FAQS = [
   {
     question: "How much does pick and drop service cost in UAE?",
     answer:
-      "Pick and drop pricing starts from AED 100 sharing per trip for Abu Dhabi to Dubai routes. Ajman to Dubai is AED 130 sharing per trip. Fares are fixed per trip with no surge pricing.",
+      "Pick and drop pricing starts from AED 200 private per trip for Abu Dhabi to Dubai routes. Ajman to Dubai is AED 200 private per trip. Fares are fixed per trip with no surge pricing.",
   },
   {
     question: "Is pick and drop service available in Dubai?",
@@ -108,7 +108,7 @@ export default function PickAndDropServicePage() {
     serviceSchema({
       name: "Pick and Drop Service UAE",
       description:
-        "Daily pick and drop service across UAE. Door-to-door transport from AED 100 per trip. Dubai, Abu Dhabi and Ajman covered.",
+        "Daily pick and drop service across UAE. Door-to-door transport from AED 200 per trip. Dubai, Abu Dhabi and Ajman covered.",
       url: "/pick-and-drop-service",
       price: "100",
     }),
@@ -158,12 +158,12 @@ export default function PickAndDropServicePage() {
                 Door-to-door pick and drop service for daily commuters across UAE. From your home to your office — across Dubai, Abu Dhabi and Ajman.
               </p>
               <p className="text-orange-200/80 text-sm leading-relaxed mb-6 max-w-xl">
-                From AED 100 per trip. GPS-tracked vehicles, verified drivers, 24/7 availability.
+                From AED 200 private per trip. GPS-tracked vehicles, verified drivers, 24/7 availability.
               </p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key pick and drop stats">
                 {[
                   { icon: MapPin, label: "Door-to-Door", sub: "Pickup & drop" },
-                  { icon: DollarSign, label: "AED 100+", sub: "Per trip" },
+                  { icon: DollarSign, label: "AED 200+", sub: "Per trip" },
                   { icon: Car, label: "All Emirates", sub: "UAE coverage" },
                   { icon: Clock, label: "24/7", sub: "Available" },
                 ].map(({ icon: Icon, label, sub }) => (
@@ -294,7 +294,7 @@ export default function PickAndDropServicePage() {
             Book Your Pick and Drop Service Today
           </h2>
           <p className="text-orange-100 text-sm mb-6">
-            {BUSINESS.reviewCount}+ daily riders trust Quick Car Lift Service UAE. Door-to-door from AED 100. WhatsApp now.
+            {BUSINESS.reviewCount}+ daily riders trust Quick Car Lift Service UAE. Door-to-door from AED 200. WhatsApp now.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="xl" className="bg-white text-orange-600 hover:bg-orange-50 font-bold">

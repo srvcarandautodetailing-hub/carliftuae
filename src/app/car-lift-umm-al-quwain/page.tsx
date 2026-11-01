@@ -45,7 +45,7 @@ export default function CarLiftUmmAlQuwainPage() {
   const phoneHref = formatPhoneHref(BUSINESS.phone);
   const schemas = [
     localBusinessSchema(),
-    serviceSchema({ name: "Car Lift Umm Al Quwain", description: "Daily intercity car lift from Umm Al Quwain to Dubai. Contact for pricing and availability.", url: "/car-lift-umm-al-quwain", price: "130" }),
+    serviceSchema({ name: "Car Lift Umm Al Quwain", description: "Daily intercity car lift from Umm Al Quwain to Dubai. Contact for pricing and availability.", url: "/car-lift-umm-al-quwain" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Umm Al Quwain", url: "/car-lift-umm-al-quwain" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-honda-civic-silver-quick-car-lift-uae.webp", pageUrl: "/car-lift-umm-al-quwain", caption: "Car lift Umm Al Quwain to Dubai – intercity commuter service via Emirates Road" }),
@@ -162,7 +162,7 @@ export default function CarLiftUmmAlQuwainPage() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
               { href: "/car-lift-ajman", label: "Car Lift Ajman Hub", desc: "All Ajman routes" },
-              { href: "/car-lift-dubai-to-ajman", label: "Car Lift Dubai to Ajman", desc: "AED 130 sharing, evening return" },
+              { href: "/car-lift-dubai-to-ajman", label: "Car Lift Dubai to Ajman", desc: "AED 200 private, evening return" },
               { href: "/airport-car-lift", label: "Airport Car Lift", desc: "DXB, DWC, AUH & SHJ pickups" },
               { href: "/car-lift-dubai", label: "Car Lift Dubai Hub", desc: "All Dubai routes" },
             ].map(({ href, label, desc }) => (

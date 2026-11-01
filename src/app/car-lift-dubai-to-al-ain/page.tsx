@@ -163,7 +163,7 @@ export default function CarLiftDubaiToAlAinPage() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none" role="list">
             {[
               { href: "/car-lift-abu-dhabi", label: "Car Lift Abu Dhabi Hub", desc: "All Abu Dhabi routes" },
-              { href: "/car-lift-abu-dhabi-to-dubai", label: "Car Lift Abu Dhabi to Dubai", desc: "AED 100 sharing / AED 200 private" },
+              { href: "/car-lift-abu-dhabi-to-dubai", label: "Car Lift Abu Dhabi to Dubai", desc: "AED 200 private" },
               { href: "/car-lift-dubai", label: "Car Lift Dubai Hub", desc: "All Dubai routes" },
               { href: "/private-car-lift-dubai", label: "Private Car Lift Dubai", desc: "Private vehicle service" },
             ].map(({ href, label, desc }) => (

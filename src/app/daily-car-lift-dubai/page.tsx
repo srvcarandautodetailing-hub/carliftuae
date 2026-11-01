@@ -60,7 +60,7 @@ const PAGE_FAQS = [
   {
     question: "Which daily routes to Dubai do you operate?",
     answer:
-      "Our daily Dubai routes include Ajman → Dubai (Business Bay, DIFC, JLT) at AED 130 sharing / AED 200 private, and Abu Dhabi → Dubai at AED 100 sharing / AED 200 private. Morning and evening departures run every working day.",
+      "Our daily Dubai routes include Ajman → Dubai (Business Bay, DIFC, JLT) at AED 200 private, and Abu Dhabi → Dubai at AED 200 private. Morning and evening departures run every working day.",
   },
   {
     question: "Do I have to book every day?",
@@ -80,7 +80,6 @@ const DAILY_ROUTES = [
     from: "Ajman",
     to: "Dubai",
     areas: "Business Bay · DIFC · JLT",
-    sharing: "AED 130",
     private: "AED 200",
   },
   {
@@ -88,7 +87,6 @@ const DAILY_ROUTES = [
     from: "Abu Dhabi",
     to: "Dubai",
     areas: "Business Bay · DIFC · JLT · Marina",
-    sharing: "AED 100",
     private: "AED 200",
   },
 ];
@@ -159,8 +157,8 @@ export default function DailyCarLiftDubaiPage() {
           </h1>
           <p className="speakable-desc text-blue-100 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             Stop booking rides every morning. Our daily car lift gives Dubai commuters
-            a guaranteed seat every working day — Ajman to Dubai from AED 130 sharing,
-            Abu Dhabi to Dubai from AED 100 sharing. Same driver, same timing, no
+            a guaranteed seat every working day — Ajman to Dubai from AED 200 private,
+            Abu Dhabi to Dubai from AED 200 private. Same driver, same timing, no
             daily hassle.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -225,9 +223,6 @@ export default function DailyCarLiftDubaiPage() {
                     </div>
                   </div>
                   <div className="flex gap-2 mt-1">
-                    <span className="bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full">
-                      {r.sharing} sharing
-                    </span>
                     <span className="bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-full">
                       {r.private} private
                     </span>
@@ -318,7 +313,7 @@ export default function DailyCarLiftDubaiPage() {
               {
                 icon: CheckCircle,
                 title: "Fixed, honest fares",
-                desc: "AED 100–130 sharing per trip depending on route. The fare never surges in rush hour.",
+                desc: "AED 200 private per trip depending on route. The fare never surges in rush hour.",
               },
               {
                 icon: Clock,
@@ -382,7 +377,7 @@ export default function DailyCarLiftDubaiPage() {
             Reserve Your Daily Seat to Dubai
           </h2>
           <p className="text-blue-100 text-sm mb-6">
-            Ajman → Dubai from AED 130 sharing · Abu Dhabi → Dubai from AED 100 sharing.
+            Ajman → Dubai from AED 200 private · Abu Dhabi → Dubai from AED 200 private.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button

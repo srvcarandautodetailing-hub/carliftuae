@@ -11,8 +11,8 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift Dubai to Ajman – AED 130",
-  description: "Daily car lift from Dubai to Ajman. Evening return service from Deira, Bur Dubai, Al Qusais. AED 130 sharing / AED 200 private. WhatsApp +971 54 330 8261.",
+  title: "Car Lift Dubai to Ajman – AED 200",
+  description: "Daily car lift from Dubai to Ajman. Evening return service from Deira, Bur Dubai, Al Qusais. AED 200 private. WhatsApp +971 54 330 8261.",
   keywords: "car lift dubai to ajman, dubai to ajman car lift, car lift from dubai to ajman, dubai ajman sharing car, evening car lift ajman",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-dubai-to-ajman" },
   other: {
@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     "geo.placename": "Dubai, UAE",
   },
   openGraph: {
-    title: "Car Lift Dubai to Ajman – AED 130 | +971 54 330 8261",
-    description: "Daily car lift from Dubai to Ajman. Evening return from Deira, Bur Dubai, Al Qusais. AED 130 sharing / AED 200 private.",
+    title: "Car Lift Dubai to Ajman – AED 200 | +971 54 330 8261",
+    description: "Daily car lift from Dubai to Ajman. Evening return from Deira, Bur Dubai, Al Qusais. AED 200 private.",
   },
 };
 
 const PAGE_FAQS = [
-  { question: "Is there a car lift from Dubai to Ajman?", answer: "Yes. Quick Car Lift Service UAE provides daily car lift from Dubai to Ajman. Evening return service departs from Deira, Bur Dubai, Al Qusais, and other Dubai areas. AED 130 sharing / AED 200 private per trip." },
+  { question: "Is there a car lift from Dubai to Ajman?", answer: "Yes. Quick Car Lift Service UAE provides daily car lift from Dubai to Ajman. Evening return service departs from Deira, Bur Dubai, Al Qusais, and other Dubai areas. AED 200 private per trip." },
   { question: "How long does Dubai to Ajman take by car lift?", answer: "35–55 minutes from Deira/Al Qusais to Ajman City via Emirates Road (E611). Traffic after 5 PM can extend journey to 55–75 minutes." },
   { question: "Which areas in Dubai do you pick up from for Ajman?", answer: "We pick up from Deira, Bur Dubai, Al Qusais, Al Nahda (Dubai), Al Rashidiya, and Al Garhoud for the Dubai–Ajman evening return route." },
   { question: "Which areas in Ajman do you drop off at?", answer: "We cover Ajman City Centre, Al Jurf, Al Rashidiya Ajman, Al Nuaimia, Al Rumailah, Emirates City, and Al Mowaihat. Confirm your drop-off location when booking." },
@@ -46,7 +46,7 @@ export default function CarLiftDubaiToAjmanPage() {
   const phoneHref = formatPhoneHref(BUSINESS.phone);
   const schemas = [
     localBusinessSchema(),
-    serviceSchema({ name: "Car Lift Dubai to Ajman", description: "Daily car lift from Dubai to Ajman. Evening return service from Deira, Bur Dubai, Al Qusais. AED 130 sharing / AED 200 private per trip.", url: "/car-lift-dubai-to-ajman", price: "130" }),
+    serviceSchema({ name: "Car Lift Dubai to Ajman", description: "Daily car lift from Dubai to Ajman. Evening return service from Deira, Bur Dubai, Al Qusais. AED 200 private per trip.", url: "/car-lift-dubai-to-ajman", price: "200" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Dubai to Ajman", url: "/car-lift-dubai-to-ajman" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-honda-civic-white-rear-quick-car-lift-uae.webp", pageUrl: "/car-lift-dubai-to-ajman", caption: "Car lift from Dubai to Ajman – evening return service via Emirates Road" }),
@@ -68,11 +68,11 @@ export default function CarLiftDubaiToAjmanPage() {
               <h1 id="hero-heading" className="speakable-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Car Lift Dubai to Ajman – Evening Return Service
               </h1>
-              <p className="speakable-desc text-rose-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Dubai to Ajman. Evening departures from Deira, Bur Dubai, Al Qusais, and Al Nahda Dubai. AED 130 sharing / AED 200 private per trip.</p>
+              <p className="speakable-desc text-rose-100 text-base sm:text-lg leading-relaxed mb-3 max-w-xl">Daily car lift from Dubai to Ajman. Evening departures from Deira, Bur Dubai, Al Qusais, and Al Nahda Dubai. AED 200 private per trip.</p>
               <p className="text-rose-200/80 text-sm leading-relaxed mb-6 max-w-xl">35–55 minutes to Ajman City via Emirates Road. Morning service from Ajman also available.</p>
               <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" role="list" aria-label="Key route stats">
                 {[
-                  { icon: DollarSign, label: "AED 130 Sharing", sub: "Per trip" },
+                  { icon: DollarSign, label: "AED 200 Private", sub: "Per trip" },
                   { icon: DollarSign, label: "AED 200 Private", sub: "Per trip" },
                   { icon: Clock, label: "35–55 min", sub: "Journey time" },
                   { icon: Car, label: "Evening Slots", sub: "5PM–6:30PM" },
@@ -163,7 +163,7 @@ export default function CarLiftDubaiToAjmanPage() {
             {[
               { href: "/car-lift-ajman", label: "Car Lift Ajman Hub", desc: "All Ajman routes" },
               { href: "/car-lift-ajman", label: "Car Lift Ajman Hub", desc: "All Ajman routes & pricing" },
-              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 130 sharing / AED 200 private" },
+              { href: "/car-lift-ajman-to-dubai", label: "Car Lift Ajman to Dubai", desc: "AED 200 private" },
               { href: "/ladies-car-lift-ajman-to-dubai", label: "Ladies Car Lift Ajman to Dubai", desc: "Female-only service" },
             ].map(({ href, label, desc }) => (
               <li key={href}>

@@ -56,9 +56,9 @@ const emirateAirportPrice: Record<Emirate, number> = {
 };
 
 const emirateNormalPriceDisplay: Record<Emirate, string> = {
-  dubai:       "AED 100 sharing / AED 200 private",
-  "abu-dhabi": "From AED 100 sharing",
-  ajman:       "AED 140 sharing / AED 250 private",
+  dubai:       "AED 200 private",
+  "abu-dhabi": "From AED 200 private",
+  ajman:       "AED 250 private",
 };
 
 // Route label shown in hero / pills

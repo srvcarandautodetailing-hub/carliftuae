@@ -6,7 +6,7 @@ import { ROUTE_PRICES, type RoutePrice } from "@/data/pricing";
 import { BUSINESS, formatWhatsAppHref } from "@/lib/utils";
 
 function buildWhatsAppMessage(route: RoutePrice): string {
-  return `Hi! I'm interested in a car lift on the ${route.route} route. Sharing AED ${route.sharing} / Private AED ${route.private}. Please share more details.`;
+  return `Hi! I'm interested in a car lift on the ${route.route} route. Private AED ${route.private}. Please share more details.`;
 }
 
 // Route page links for internal linking (Koray hub↔spoke)
@@ -51,15 +51,9 @@ function RouteTableRow({ route, index }: { route: RoutePrice; index: number }) {
         </div>
       </td>
 
-      {/* Sharing rate */}
-      <td className="py-4 px-4 sm:px-6 text-center">
-        <span className="text-lg font-extrabold text-blue-700">AED {route.sharing}</span>
-        <span className="block text-xs text-slate-400 font-medium mt-0.5">sharing</span>
-      </td>
-
       {/* Private rate */}
       <td className="py-4 px-4 sm:px-6 text-center">
-        <span className="text-sm font-bold text-slate-700">AED {route.private}</span>
+        <span className="text-lg font-extrabold text-slate-700">AED {route.private}</span>
         <span className="block text-xs text-slate-400 font-medium mt-0.5">private</span>
       </td>
 
@@ -114,13 +108,9 @@ function RouteMobileCard({ route, index }: { route: RoutePrice; index: number })
 
       {/* Pricing */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="flex-1 bg-blue-50 rounded-lg px-3 py-2.5 text-center border border-blue-100">
-          <span className="block text-xs text-blue-600 font-semibold mb-0.5">Sharing</span>
-          <span className="text-xl font-extrabold text-blue-700">AED {route.sharing}</span>
-        </div>
         <div className="flex-1 bg-slate-50 rounded-lg px-3 py-2.5 text-center border border-slate-100">
           <span className="block text-xs text-slate-500 font-semibold mb-0.5">Private</span>
-          <span className="text-lg font-bold text-slate-700">AED {route.private}</span>
+          <span className="text-xl font-extrabold text-slate-700">AED {route.private}</span>
         </div>
       </div>
 
@@ -179,12 +169,6 @@ export default function RouteSection() {
                   className="py-4 px-4 sm:px-6 text-left text-sm font-semibold tracking-wide"
                 >
                   Route
-                </th>
-                <th
-                  scope="col"
-                  className="py-4 px-4 sm:px-6 text-center text-sm font-semibold tracking-wide"
-                >
-                  Sharing
                 </th>
                 <th
                   scope="col"
@@ -254,8 +238,8 @@ export default function RouteSection() {
 
         {/* Pricing transparency note */}
         <p className="mt-5 text-center text-xs text-slate-400">
-          All fares are per trip, one way. Sharing = shared vehicle · Private = exclusive
-          vehicle. Both directions served on every route. Available 24/7.
+          All fares are per trip, one way. Private = exclusive
+          vehicle for your group. Both directions served on every route. Available 24/7.
         </p>
       </div>
     </section>

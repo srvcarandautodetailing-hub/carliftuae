@@ -122,7 +122,7 @@ export default function CarLiftFromInternationalCityPage() {
       description:
         "Daily car lift from International City (all phases, Dragon Mart, Al Warsan) to Business Bay, DIFC, Downtown Dubai, and other areas via Al Khail Road. 35–55 min journey.",
       url: "/car-lift-from-international-city",
-      price: "130",
+      price: "200",
     }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([

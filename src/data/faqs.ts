@@ -10,31 +10,31 @@ export const FAQS: FAQ[] = [
     category: "Pricing",
     question: "How much is a car lift from Dubai to Abu Dhabi?",
     answer:
-      "A car lift from Dubai to Abu Dhabi costs AED 100 sharing or AED 200 private. Call or WhatsApp +971 54 330 8261 to book.",
+      "A car lift from Dubai to Abu Dhabi costs AED 200 private. Call or WhatsApp +971 54 330 8261 to book.",
   },
   {
     category: "Pricing",
     question: "How much is a car lift from Abu Dhabi to Dubai?",
     answer:
-      "A car lift from Abu Dhabi to Dubai costs AED 100 sharing or AED 200 private. Available 24/7 — WhatsApp +971 54 330 8261.",
+      "A car lift from Abu Dhabi to Dubai costs AED 200 private. Available 24/7 — WhatsApp +971 54 330 8261.",
   },
   {
     category: "Pricing",
     question: "How much is a car lift from Abu Dhabi to Ajman?",
     answer:
-      "A car lift from Abu Dhabi to Ajman costs AED 130 sharing or AED 250 private. WhatsApp +971 54 330 8261 to confirm.",
+      "A car lift from Abu Dhabi to Ajman costs AED 250 private. WhatsApp +971 54 330 8261 to confirm.",
   },
   {
     category: "Pricing",
     question: "How much is a car lift from Ajman to Abu Dhabi?",
     answer:
-      "A car lift from Ajman to Abu Dhabi costs AED 140 sharing or AED 250 private. Available 24/7 — call +971 54 330 8261.",
+      "A car lift from Ajman to Abu Dhabi costs AED 250 private. Available 24/7 — call +971 54 330 8261.",
   },
   {
     category: "Pricing",
     question: "What is the difference between sharing and private car lift?",
     answer:
-      "Sharing means you share the vehicle with other passengers going the same direction — lower cost (AED 100–140). Private means the vehicle is exclusively for you and your group (AED 200–400). Both options use luxury air-conditioned vehicles.",
+      "Sharing means you share the vehicle with other passengers going the same direction at a lower cost. Private means the vehicle is exclusively for you and your group (AED 200–400). Both options use luxury air-conditioned vehicles.",
   },
 
   // Routes
