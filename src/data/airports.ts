@@ -80,6 +80,11 @@ export const AIRPORTS: AirportInfo[] = [
           "DWC to Dubai Marina is approximately 25–35 minutes. WhatsApp us your exact drop-off for a fixed private quote — no surge pricing.",
       },
       {
+        question: "How much is a car lift from DWC to Abu Dhabi?",
+        answer:
+          "A private car lift from DWC to Abu Dhabi is AED 230 per trip. WhatsApp us your flight details for confirmation.",
+      },
+      {
         question: "Is DWC pickup available late at night?",
         answer:
           "Yes. Our airport car lift is available 24/7. Pre-booking is recommended for late-night and early-morning flights so a driver is assigned in advance.",
@@ -157,6 +162,11 @@ export const AIRPORTS: AirportInfo[] = [
           "Yes. Airport pickup from SHJ to Dubai is available as a pre-booked private ride. Share your flight details on WhatsApp for a fixed quote.",
       },
       {
+        question: "How much is a car lift from SHJ to Abu Dhabi?",
+        answer:
+          "A private car lift from SHJ to Abu Dhabi is AED 250 per trip. WhatsApp us your flight details for confirmation.",
+      },
+      {
         question: "Do you offer city rides inside Sharjah?",
         answer:
           "No. We discontinued city routes in Sharjah. We only serve Sharjah International Airport for pickups and drop-offs.",
@@ -192,7 +202,7 @@ export const AIRPORTS: AirportInfo[] = [
       {
         question: "How much is a car lift from RKT airport?",
         answer:
-          "Fares depend on your destination. Share your pickup and drop-off points on WhatsApp +971 54 330 8261 and we confirm a fixed fare before you travel — no surge pricing.",
+          "A private car lift from RKT to Abu Dhabi is AED 430 per trip. For other destinations, share your pickup and drop-off points on WhatsApp +971 54 330 8261 and we confirm a fixed fare before you travel — no surge pricing.",
       },
       {
         question: "How do I book an RKT airport pickup?",

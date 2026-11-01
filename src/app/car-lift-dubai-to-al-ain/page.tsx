@@ -11,7 +11,7 @@ import { BUSINESS, formatWhatsAppHref, formatPhoneHref } from "@/lib/utils";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Car Lift Dubai to Al Ain – AED 200",
+  title: "Car Lift Dubai to Al Ain – Private & Shared Rides",
   description: "Long-distance car lift Dubai → Al Ain. Private & shared intercity rides. Contact for price. WhatsApp +971 54 330 8261.",
   keywords: "car lift dubai to al ain, dubai to al ain car lift, car lift to al ain, dubai al ain transport, al ain car lift service",
   alternates: { canonical: "https://www.carliftuae.com/car-lift-dubai-to-al-ain" },
@@ -46,7 +46,7 @@ export default function CarLiftDubaiToAlAinPage() {
   const phoneHref = formatPhoneHref(BUSINESS.phone);
   const schemas = [
     localBusinessSchema(),
-    serviceSchema({ name: "Car Lift Dubai to Al Ain", description: "Long-distance intercity car lift from Dubai to Al Ain via E66. Sharing and private options available. Contact for pricing.", url: "/car-lift-dubai-to-al-ain", price: "200" }),
+    serviceSchema({ name: "Car Lift Dubai to Al Ain", description: "Long-distance intercity car lift from Dubai to Al Ain via E66. Sharing and private options available. Contact for pricing.", url: "/car-lift-dubai-to-al-ain" }),
     faqSchema(PAGE_FAQS),
     breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Car Lift Dubai to Al Ain", url: "/car-lift-dubai-to-al-ain" }]),
     primaryImageOfPageSchema({ imageUrl: "/images/fleet/car-lift-dubai-white-suv-quick-car-lift-uae.webp", pageUrl: "/car-lift-dubai-to-al-ain", caption: "Car lift from Dubai to Al Ain – long distance intercity route via E66 Dubai-Al Ain Road" }),
